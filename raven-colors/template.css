@@ -1,0 +1,9 @@
+﻿div.page {
+	page-break-before:always;
+}
+p.spaceAbove {
+	margin-top:1.5em
+}
+h1.title {
+	text-align:center;
+}
