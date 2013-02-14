@@ -58,7 +58,6 @@ float:left;
 page-break-inside:avoid;
 }
 .imgfloat {
-float:left;
 position:fixed;
 bottom:0;
 left:0;
