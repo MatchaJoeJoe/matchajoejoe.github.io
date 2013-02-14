@@ -63,6 +63,7 @@ position:fixed;
 bottom:0;
 left:0;
 width:50%;
+z-index:2;
 }
 .Header {
 	font-size: xx-large;
@@ -84,6 +85,7 @@ width:50%;
 }
 .righthalf {
 margin-left:50%;
+z-index:1;
 }
 .text {
 	font-size: medium;
