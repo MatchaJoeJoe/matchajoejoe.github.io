@@ -61,7 +61,7 @@ page-break-inside:avoid;
 }
 .image {
 background-image:url('../images/Me_now_by_sublimishone.png');
-background-attachment:scrolling;
+background-attachment:fixed;
 background-repeat:no-repeat;
 background-position:left bottom; 
 background-size: 50%;
