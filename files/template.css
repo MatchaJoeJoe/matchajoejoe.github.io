@@ -57,12 +57,14 @@ float:left;
 .group {
 page-break-inside:avoid;
 }
+.image {
+z-index:1;
+}
 .imgfloat {
 position:fixed;
 bottom:0;
 left:0;
 width:50%;
-z-index:1;
 }
 .Header {
 	font-size: xx-large;
