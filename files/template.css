@@ -10,20 +10,20 @@
 	cursor: pointer;	
 }
 a:link {
-	border-color: #FFFFFF;
-	color: #FFFFFF;
+	border-color: #fff;
+	color: #fff;
 }
 a:hover {
-	border-color: #CCCCCC;
-	color: #CCCCCC;
+	border-color: #ccc;
+	color: #ccc;
 }
 a:active {
-	border-color: #999999;
-	color: #999999;
+	border-color: #999;
+	color: #999;
 }
 a:visited {
-	border-color: #666666;
-	color: #666666;
+	border-color: #fff;
+	color: #fff;
 }
 a.tab {
 	box-shadow: 5px 5px 5px #000;
