@@ -27,7 +27,7 @@ a:visited {
 }
 a.tab {
 	box-shadow: 5px 5px 5px #000;
-	padding:.5% 2%;
+	padding: 0 2%;
 	margin: 2%;
 	line-height:1.5em;
 	background-color:#494949;
