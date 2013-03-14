@@ -16,22 +16,11 @@ html {
 	cursor: hand;
 	cursor: pointer;	
 }
-a:link {
-	border-color: #fff;
-	color: #fff;
-}
-a:hover {
-	border-color: #ccc;
-	color: #ccc;
-}
-a:active {
-	border-color: #999;
-	color: #999;
-}
-a:visited {
+a {
 	border-color: #494949;
 	color: #494949;
 }
+
 a.tab {
 	font-size: large;
 	box-shadow: 5px 5px 5px #b7b7b7;
@@ -125,6 +114,10 @@ float:left;
 	height:100%;
 }
 .text {
+	font-size: medium;
+	font-style: normal;
+}
+.textcenter {
 	font-size: medium;
 	font-style: normal;
 	text-align: center;
