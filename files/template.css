@@ -150,7 +150,10 @@ padding: 0;
 	width:100%;
 	text-align: center;
 }
-.w50 {
+.w50r {
 	float:right;
 	width:50%;
+}
+.w50l {
+	width: 45%;
 }
