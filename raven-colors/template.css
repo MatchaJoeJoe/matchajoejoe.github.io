@@ -1,12 +1,41 @@
 ﻿div.page {
 	page-break-before:always;
 }
-p {
-margin:0;
+p.text {
+	margin: 0 15% 0 20%;
+	text-indent:-1em;
 }
 p.spaceAbove {
-	margin-top:1.5em
+	margin:5em 15% 0 20%;
+	text-indent:-1em;
 }
 h1.title {
+	margin:3em 0 0 0;
 	text-align:center;
+}
+h2.Author {
+	text-align:center;
+}
+div.pageControls {
+	position: fixed;
+	bottom:1%;
+	width:95%;
+	margin:0 0 0 1.5%;
+}
+p.nextPage {
+	float:right;
+	font-size: 3em;
+	margin:0;
+}
+p.lastPage {
+	font-size: 3em;
+	margin:0;
+}
+a.pageButton {
+	opacity:.3;
+	color: #666;
+	background-color: #333;
+	padding: 0 .25em;
+	border-radius: 3em;
+	text-decoration:none;
 }
