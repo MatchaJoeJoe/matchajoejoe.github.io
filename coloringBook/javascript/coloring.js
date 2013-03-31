@@ -139,9 +139,10 @@ function canvasApp(){
     function touch_move_gesture (ev) {
 	// For touchscreen browsers/readers that support touchmove
 	var x, y;
+	var thefill = "rgb(" + r + "," + g + "," + b + ")";
 	ev.preventDefault(); //override default UI behavior for better results on touchscreen devices
 	context.beginPath();
-	context.fillStyle = colorChosen.innerHTML;
+	context.fillStyle = thefill;
 	if(ev.touches.length == 1){
 	    var touch = ev.touches[0];
 	    x = touch.pageX;
