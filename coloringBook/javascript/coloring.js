@@ -146,7 +146,7 @@ function canvasApp(){
     function mouse_moved (ev) {
 	var x, y;	
 	// Get the mouse position in the canvas
-	x = (ev.pageX-175);
+	x = (ev.pageX-180);
 	y = ev.pageY;
 
 	if (begin_drawing) {
@@ -171,7 +171,7 @@ function canvasApp(){
 	context.fillStyle = thefill;
 	if(ev.touches.length == 1){
 	    var touch = ev.touches[0];
-	    x = (touch.pageX-175);
+	    x = (touch.pageX-180);
 	    y = touch.pageY;
 	    context.arc(x, y, w/2, (Math.PI/180)*0, (Math.PI/180)*360, false);
 	    context.fill();
