@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Canvas Coloring Book</title>
+<link rel="stylesheet" href="css/style.css" type="text/css"/>
+<script type="text/javascript" src="javascript/coloring.js"/>
+<script type="text/javascript" src="javascript/jquery-1.6.2.js"/>
+<meta name="viewport" content="width=959, height=768"/>
+</head>
+<body onload="circlePreview()">
+<div class="page">
+<table class="w25">
+<tr>
+<td rowspan="2" colspan="2"><canvas id="circle_preview" width="100" height="100">Your Reading System does not support canvas.</canvas></td>
+<td class="colors">Red</td><td class="colors"><input class="button" type="button" value="+" onclick="RedUp()"/><input class="button" type="button" value="-" onclick="RedDown()"/></td>
+</tr>
+<tr>
+<td class="colors">Green</td><td class="colors"><input class="button" type="button" value="+" onclick="GreenUp()"/><input class="button" type="button" value="-" onclick="GreenDown()"/></td>
+</tr>
+<tr>
+<td class="colors">Size</td><td class="colors"><input class="button" type="button" value="+" onclick="SizeUp()"/><input class="button" type="button" value="-" onclick="SizeDown()"/></td>
+<td class="colors">Blue</td><td class="colors"><input class="button" type="button" value="+" onclick="BlueUp()"/><input class="button" type="button" value="-" onclick="BlueDown()"/></td>
+</tr>
+</table>
+<img id="bebop" class="w25" src="images/bebop.png" alt="Cowboy Bebop" onclick="setBebop()"/>
+<img id="hawk" class="w25" src="images/Hawk.png" alt="Hawk" onclick="setHawk()"/>
+<img id="joker" class="w25" src="images/Joker.png" alt="Joker" onclick="setJoker()"/>
+<div class="clear"><input type="button" value="Test" onclick="TryThis()"/></div>
+<div id="circles_container">
+<canvas id="circles_canvas" width="930" height="500">Your Reading System does not support canvas.</canvas>
+</div>
+</div>
+</body>
+</html>
