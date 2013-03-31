@@ -139,6 +139,7 @@ var context = theCanvas.getContext('2d');
 	    y = touch.pageY;
 	    context.arc(x, y, w/2, (Math.PI/180)*0, (Math.PI/180)*360, false);
 	    context.fill();
+		context.drawImage(img,0,0);
 	}
 	}
 }
