@@ -67,12 +67,15 @@ var img = new Image();
 
 function setBebop(){
 window.img.src = "images/bebop.png"; //transparent png
+canvasApp();
 }
 function setHawk(){
  window.img.src = "images/Hawk.png"; //transparent png
+canvasApp();
 }
 function setJoker(){
   window.img.src = "images/Joker.png"; //transparent png
+canvasApp();
 }
 window.addEventListener('load', eventWindowLoaded, false);	
 function eventWindowLoaded() {
@@ -96,6 +99,7 @@ var context = theCanvas.getContext('2d');
 	context.fillRect(0, 0, theCanvas.width, theCanvas.height);
 	context.strokeStyle = '#000000'; 
 	context.strokeRect(1,  1, theCanvas.width-2, theCanvas.height-2);
+	context.drawImage(img,0,0);
     }
 
     // For the mouse_moved event handler.
