@@ -15,54 +15,6 @@ function circlePreview(){
 	ctx.fill();
     ctx.closePath();
 }
-function RedUp(){
-	if (r<236){
-		window.r = (r+20);
-	}
-	circlePreview();
-}
-function RedDown(){
-	if (r>19){
-		window.r = (r-20);
-	}
-	circlePreview();
-}
-function GreenUp(){
-	if (g<236){
-		window.g = (g+20);
-	}
-	circlePreview();
-}
-function GreenDown(){
-	if (g>19){
-		window.g = (g-20);
-	}
-	circlePreview();
-}
-function BlueUp(){
-	if (b<236){
-		window.b = (b+20);
-	}
-	circlePreview();
-}
-function BlueDown(){
-	if (b>19){
-		window.b = (b-20);
-	}
-	circlePreview();
-}
-function SizeUp(){
-	if (w<90){
-		window.w = (w+10);
-	}
-	circlePreview();
-}
-function SizeDown(){
-	if (w>10){
-		window.w = (w-10);
-	}
-	circlePreview();
-}
 var img = new Image();
 
 function setBebop(){
@@ -84,14 +36,94 @@ function eventWindowLoaded() {
 	circlePreview();
 }
 function canvasApp(){  
-var theCanvas = document.getElementById('circles_canvas');
-var context = theCanvas.getContext('2d');
-
+	var theCanvas = document.getElementById('circles_canvas');
+	var context = theCanvas.getContext('2d');
 	theCanvas.addEventListener('mousedown', mouse_pressed_down, false);
 	theCanvas.addEventListener('mousemove', mouse_moved, false);
 	theCanvas.addEventListener('mouseup', mouse_released, false);
 	theCanvas.addEventListener('touchmove', touch_move_gesture, false);
 	
+	var RedUpButton = document.getElementById('RedUp');
+	RedUpButton.addEventListener('click', RedUp, false);
+	RedUpButton.addEventListener('dblclick', RedUp, false);
+	function RedUp(ev){
+	ev.preventDefault();
+		if (r<236){
+			window.r = (r+20);
+		}
+		circlePreview();
+	}
+	var RedDownButton = document.getElementById('RedDown');
+	RedDownButton.addEventListener('click', RedDown, false);
+	RedDownButton.addEventListener('dblclick', RedDown, false);
+	function RedDown(ev){
+	ev.preventDefault();
+		if (r>19){
+			window.r = (r-20);
+		}
+		circlePreview();
+	}
+	var GreenUpButton = document.getElementById('GreenUp');
+	GreenUpButton.addEventListener('click', GreenUp, false);
+	GreenUpButton.addEventListener('dblclick', GreenUp, false);
+	function GreenUp(ev){
+	ev.preventDefault();
+		if (g<236){
+			window.g = (g+20);
+		}
+		circlePreview();
+	}
+	var GreenDownButton = document.getElementById('GreenDown');
+	GreenDownButton.addEventListener('click', GreenDown, false);
+	GreenDownButton.addEventListener('dblclick', GreenDown, false);
+	function GreenDown(ev){
+	ev.preventDefault();
+		if (g>19){
+			window.g = (g-20);
+		}
+		circlePreview();
+	}
+	var BlueUpButton = document.getElementById('BlueUp');
+	BlueUpButton.addEventListener('click', BlueUp, false);
+	BlueUpButton.addEventListener('dblclick', BlueUp, false);
+	function BlueUp(ev){
+	ev.preventDefault();
+		if (b<236){
+			window.b = (b+20);
+		}
+		circlePreview();
+	}
+	var BlueDownButton = document.getElementById('BlueDown');
+	BlueDownButton.addEventListener('click', BlueDown, false);
+	BlueDownButton.addEventListener('dblclick', BlueDown, false);
+	function BlueDown(ev){
+	ev.preventDefault();
+		if (b>19){
+			window.b = (b-20);
+		}
+		circlePreview();
+	}
+	var SizeUpButton = document.getElementById('SizeUp');
+	SizeUpButton.addEventListener('click', SizeUp, false);
+	SizeUpButton.addEventListener('dblclick', SizeUp, false);
+	function SizeUp(ev){
+	ev.preventDefault();
+		if (w<100){
+			window.w = (w+5);
+		}
+		circlePreview();
+	}
+	var SizeDownButton = document.getElementById('SizeDown');
+	SizeDownButton.addEventListener('click', SizeDown, false);
+	SizeDownButton.addEventListener('dblclick', SizeDown, false);
+	function SizeDown(ev){
+	ev.preventDefault();
+		if (w>5){
+			window.w = (w-5);
+		}
+		circlePreview();
+	}
+
 	drawScreen();
 
     function drawScreen() {
@@ -114,7 +146,7 @@ var context = theCanvas.getContext('2d');
     function mouse_moved (ev) {
 	var x, y;	
 	// Get the mouse position in the canvas
-	x = ev.pageX;
+	x = (ev.pageX-175);
 	y = ev.pageY;
 
 	if (begin_drawing) {
@@ -139,7 +171,7 @@ var context = theCanvas.getContext('2d');
 	context.fillStyle = thefill;
 	if(ev.touches.length == 1){
 	    var touch = ev.touches[0];
-	    x = touch.pageX;
+	    x = (touch.pageX-175);
 	    y = touch.pageY;
 	    context.arc(x, y, w/2, (Math.PI/180)*0, (Math.PI/180)*360, false);
 	    context.fill();

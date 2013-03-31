@@ -4,29 +4,43 @@
 <title>Canvas Coloring Book</title>
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <script type="text/javascript" src="javascript/coloring.js"/>
-<meta name="viewport" content="width=959, height=768"/>
+<meta name="viewport" content="width=900, height=600"/>
 </head>
 <body>
 <div class="page">
-<div id="circles_container">
-<canvas id="circles_canvas" width="800" height="400">Your Reading System does not support canvas.</canvas>
-</div>
-<table class="w25">
+<table class="px200">
 <tr>
-<td rowspan="2" colspan="2"><canvas id="circle_preview" width="100" height="100">Your Reading System does not support canvas.</canvas></td>
-<td class="colors">Red</td><td class="colors"><input class="button" type="button" value="+" onclick="RedUp()"/><input class="button" type="button" value="-" onclick="RedDown()"/></td>
+<td rowspan="4" colspan="2"><canvas id="circle_preview" width="100" height="100">Your Reading System does not support canvas.</canvas></td>
+<td class="colors" colspan="2" width="100">Red</td>
 </tr>
 <tr>
-<td class="colors">Green</td><td class="colors"><input class="button" type="button" value="+" onclick="GreenUp()"/><input class="button" type="button" value="-" onclick="GreenDown()"/></td>
+<td class="buttons"><img class="button" alt="plus sign" src="images/plus.png" id="RedUp"/></td>
+<td class="buttons"><img class="button" alt="minus sign" src="images/minus.png" id="RedDown"/></td>
 </tr>
 <tr>
-<td class="colors">Size</td><td class="colors"><input class="button" type="button" value="+" onclick="SizeUp()"/><input class="button" type="button" value="-" onclick="SizeDown()"/></td>
-<td class="colors">Blue</td><td class="colors"><input class="button" type="button" value="+" onclick="BlueUp()"/><input class="button" type="button" value="-" onclick="BlueDown()"/></td>
+<td class="colors" colspan="2">Green</td>
+</tr>
+<tr>
+<td class="buttons"><img class="button" alt="plus sign" src="images/plus.png" id="GreenUp"/></td>
+<td class="buttons"><img class="button" alt="minus sign" src="images/minus.png" id="GreenDown"/></td>
+</tr>
+<tr>
+<td class="colors" colspan="2">Size</td><td class="colors" colspan="2">Blue</td>
+</tr>
+<tr>
+<td class="buttons"><img class="button" alt="plus sign" src="images/plus.png" id="SizeUp"/></td>
+<td class="buttons"><img class="button" alt="minus sign" src="images/minus.png" id="SizeDown"/></td>
+<td class="buttons"><img class="button" alt="plus sign" src="images/plus.png" id="BlueUp"/></td>
+<td class="buttons"><img class="button" alt="minus sign" src="images/minus.png" id="BlueDown"/></td>
 </tr>
 </table>
-<img id="bebop" class="w25" src="images/bebop.png" alt="Cowboy Bebop" onclick="setBebop()"/>
-<img id="hawk" class="w25" src="images/Hawk.png" alt="Hawk" onclick="setHawk()"/>
-<img id="joker" class="w25" src="images/Joker.png" alt="Joker" onclick="setJoker()"/>
+<div id="circles_container">
+<canvas id="circles_canvas" width="519" height="400">Your Reading System does not support canvas.</canvas>
+</div>
+
+<img id="bebop" class="w33" src="images/bebop.png" alt="Cowboy Bebop" onclick="setBebop()"/>
+<img id="hawk" class="w33" src="images/Hawk.png" alt="Hawk" onclick="setHawk()"/>
+<img id="joker" class="w33" src="images/Joker.png" alt="Joker" onclick="setJoker()"/>
 </div>
 </body>
 </html>
