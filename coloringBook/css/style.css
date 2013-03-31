@@ -1,0 +1,50 @@
+.page {
+	width: 959px;
+	height: 768px;
+  overflow: hidden;
+}
+body {
+	width: 959px;
+	height: 768px;
+	margin: 0;
+}
+.text {
+font-size: medium;
+font-family: Georgia;
+margin:0;
+}
+.header {
+font-size: xx-large;
+font-family: Courier;
+}
+img.w25 {
+width:23%;
+}
+table.w25 {
+float:left;
+width:23%;
+border:thin black solid;
+}
+td.colors {
+padding: 0 0 0 0;
+}
+#circles_container {
+text-align:center;
+}
+#circles_canvas {
+z-index:1;
+border:thin black solid;
+}
+#circle_preview {
+border:thin black solid;
+float: left;
+}
+.clear {
+clear:both;
+text-align:center;
+}
+.button {
+padding:1em;
+color:red;
+background-color:black;
+}
