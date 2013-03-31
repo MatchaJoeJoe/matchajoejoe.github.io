@@ -3,7 +3,8 @@ var r = 127;
 var g = 127;
 var b = 127;
 var thefill = "rgb(" + r + "," + g + "," + b + ")";
-$(window).load(function(){
+function coloring(){
+	circlePreview();
 	$(document.getElementById('circles_canvas')).bind('touchstart',function(e){
 		e.preventDefault();
 		var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
@@ -43,7 +44,7 @@ $(window).load(function(){
 		ctx.arc(x, y, w/2, 0, 2 * Math.PI, false);
 		ctx.fill();
 	});
-});
+}
 function reloadPage() {
 	location.reload();
 }
