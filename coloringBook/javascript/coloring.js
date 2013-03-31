@@ -64,11 +64,12 @@ function SizeDown(){
 	circlePreview();
 }
 var img = new Image();
+
 function setBebop(){
-	img.src = "images/bebop.png"; //transparent png
+window.img.src = "images/bebop.png"; //transparent png
 }
 function setHawk(){
-  window.img.src = "images/Hawk.png"; //transparent png
+ window.img.src = "images/Hawk.png"; //transparent png
 }
 function setJoker(){
   window.img.src = "images/Joker.png"; //transparent png
@@ -80,14 +81,14 @@ function eventWindowLoaded() {
 	circlePreview();
 }
 function canvasApp(){  
-	var theCanvas = document.getElementById('circles_canvas');
+var theCanvas = document.getElementById('circles_canvas');
+var context = theCanvas.getContext('2d');
+
 	theCanvas.addEventListener('mousedown', mouse_pressed_down, false);
 	theCanvas.addEventListener('mousemove', mouse_moved, false);
 	theCanvas.addEventListener('mouseup', mouse_released, false);
 	theCanvas.addEventListener('touchmove', touch_move_gesture, false);
-
-	var context = theCanvas.getContext('2d');
-
+	
 	drawScreen();
 
     function drawScreen() {
