@@ -29,7 +29,7 @@ td.colors {
 padding: 0 0 0 0;
 }
 #circles_container {
-text-align:center;
+text-align:left;
 }
 #circles_canvas {
 z-index:1;

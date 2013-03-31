@@ -63,33 +63,21 @@ function SizeDown(){
 	}
 	circlePreview();
 }
+var img = new Image();
 function setBebop(){
-	var canvas=document.getElementById("circles_canvas");
-	var ctx=canvas.getContext("2d");
-	ctx.fillStyle="#FFF";
-	ctx.fillRect(0,0,700,500);
-	var img=document.getElementById("bebop");
-	ctx.drawImage(img,0,0);
+	img.src = "images/bebop.png"; //transparent png
 }
 function setHawk(){
-	var canvas=document.getElementById("circles_canvas");
-	var ctx=canvas.getContext("2d");
-	ctx.fillStyle="#FFF";
-	ctx.fillRect(0,0,700,500);
-	var img=document.getElementById("hawk");
-	ctx.drawImage(img,0,0);
+  window.img.src = "images/Hawk.png"; //transparent png
 }
 function setJoker(){
-	var canvas=document.getElementById("circles_canvas");
-	var ctx=canvas.getContext("2d");
-	ctx.fillStyle="#FFF";
-	ctx.fillRect(0,0,700,500);
-	var img=document.getElementById("joker");
-	ctx.drawImage(img,0,0);
+  window.img.src = "images/Joker.png"; //transparent png
 }
 window.addEventListener('load', eventWindowLoaded, false);	
 function eventWindowLoaded() {
     canvasApp();
+	setBebop();
+	circlePreview();
 }
 function canvasApp(){  
 	var theCanvas = document.getElementById('circles_canvas');
@@ -99,7 +87,7 @@ function canvasApp(){
 	theCanvas.addEventListener('touchmove', touch_move_gesture, false);
 
 	var context = theCanvas.getContext('2d');
-	circlePreview();
+
 	drawScreen();
 
     function drawScreen() {
@@ -129,6 +117,7 @@ function canvasApp(){
 	    context.arc(x, y, w/2, (Math.PI/180)*0, (Math.PI/180)*360, false);
 	    context.fill();
         context.closePath();
+		context.drawImage(img,0,0);
 	}
     }
 
