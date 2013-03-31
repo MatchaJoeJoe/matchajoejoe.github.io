@@ -4,11 +4,13 @@
 <title>Canvas Coloring Book</title>
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <script type="text/javascript" src="javascript/coloring.js"/>
-<script src="modernizr-1.6.min.js"></script>
 <meta name="viewport" content="width=959, height=768"/>
 </head>
 <body onload="circlePreview()">
 <div class="page">
+<div id="circles_container">
+<canvas id="circles_canvas" width="930" height="500">Your Reading System does not support canvas.</canvas>
+</div>
 <table class="w25">
 <tr>
 <td rowspan="2" colspan="2"><canvas id="circle_preview" width="100" height="100">Your Reading System does not support canvas.</canvas></td>
@@ -25,10 +27,6 @@
 <img id="bebop" class="w25" src="images/bebop.png" alt="Cowboy Bebop" onclick="setBebop()"/>
 <img id="hawk" class="w25" src="images/Hawk.png" alt="Hawk" onclick="setHawk()"/>
 <img id="joker" class="w25" src="images/Joker.png" alt="Joker" onclick="setJoker()"/>
-<div class="clear"><input type="button" value="Test" onclick="TryThis()"/></div>
-<div id="circles_container">
-<canvas id="circles_canvas" width="930" height="500">Your Reading System does not support canvas.</canvas>
-</div>
 </div>
 </body>
 </html>

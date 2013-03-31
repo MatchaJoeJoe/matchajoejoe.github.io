@@ -33,7 +33,6 @@ text-align:center;
 }
 #circles_canvas {
 z-index:1;
-border:thin black solid;
 }
 #circle_preview {
 border:thin black solid;
@@ -44,7 +43,7 @@ clear:both;
 text-align:center;
 }
 .button {
-padding:1em;
+padding:5px;
 color:red;
 background-color:black;
 }
