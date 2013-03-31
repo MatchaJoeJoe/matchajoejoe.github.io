@@ -3,47 +3,51 @@ var r = 127;
 var g = 127;
 var b = 127;
 var thefill = "rgb(" + r + "," + g + "," + b + ")";
-function coloring(){
-	circlePreview();
-	$(document.getElementById('circles_canvas')).bind('touchstart',function(e){
-		e.preventDefault();
-		var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-		var canvas = document.getElementById('circles_canvas');
-		var thefill = "rgb(" + r + "," + g + "," + b + ")";
-		var ctx = canvas.getContext("2d");
-		var x = touch.clientX;
-		var y = touch.clientY;
-		ctx.beginPath();
-		ctx.fillStyle = thefill;
-		ctx.arc(x, y, w/2, 0, 2 * Math.PI, false);
-		ctx.fill();
-	});
-	$(document.getElementById('circles_canvas')).bind('touchmove',function(e){
-		var thefill = "rgb(" + r + "," + g + "," + b + ")";
-		e.preventDefault();
-		var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-		var canvas = document.getElementById('circles_canvas');
-		var ctx = canvas.getContext("2d");
-		var x = touch.clientX;
-		var y = touch.clientY;
-		ctx.beginPath();
-		ctx.fillStyle = thefill;
-		ctx.arc(x, y, w/2, 0, 2 * Math.PI, false);
-		ctx.fill();
-	});
-	$(document.getElementById('circles_canvas')).bind('touchend',function(e){
-		var thefill = "rgb(" + r + "," + g + "," + b + ")";
-		e.preventDefault();
-		var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-		var canvas = document.getElementById('circles_canvas');
-		var ctx = canvas.getContext("2d");
-		var x = touch.clientX;
-		var y = touch.clientY;
-		ctx.beginPath();
-		ctx.fillStyle = thefill;
-		ctx.arc(x, y, w/2, 0, 2 * Math.PI, false);
-		ctx.fill();
-	});
+var theCanvas = document.getElementById('circles_canvas');
+var ctx = theCanvas.getContext('2d');
+var begin_drawing = false;
+
+
+theCanvas.addEventListener('mousedown', mouse_pressed_down, false);
+theCanvas.addEventListener('mousemove', mouse_moved, false);
+theCanvas.addEventListener('mouseup', mouse_released, false);
+theCanvas.addEventListener('touchmove', touch_move_gesture, false);
+
+function mouse_pressed_down (ev) {
+	var thefill = "rgb(" + r + "," + g + "," + b + ")";
+	context.fillStyle = thefill;
+	begin_drawing = true;
+}
+
+function mouse_moved (ev) {
+	var x, y;	
+	// Get the mouse position in the canvas
+	x = ev.pageX;
+	y = ev.pageY;
+
+	if (begin_drawing) {
+	    context.beginPath();
+	    context.arc(x, y, w/2, (Math.PI/180)*0, (Math.PI/180)*360, false);
+	    context.fill();
+            context.closePath();
+	}
+}
+function mouse_released (ev) {
+	begin_drawing = false;
+}
+function touch_move_gesture (ev) {
+	// For touchscreen browsers/readers that support touchmove
+	var x, y;
+	ev.preventDefault(); //override default UI behavior for better results on touchscreen devices
+	context.beginPath();
+	context.fillStyle = colorChosen.innerHTML;
+	if(ev.touches.length == 1){
+	    var touch = ev.touches[0];
+	    x = touch.pageX;
+	    y = touch.pageY;
+	    context.arc(x, y, 7, (Math.PI/180)*0, (Math.PI/180)*360, false);
+	    context.fill();
+	}
 }
 function reloadPage() {
 	location.reload();
