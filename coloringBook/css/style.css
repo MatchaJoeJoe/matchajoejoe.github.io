@@ -1,36 +1,32 @@
-.page{
-width:720px;
-height:600px;
-overflow:hidden;}
-.text {
+body {
 font-size: medium;
 font-family: Georgia;
 margin:0;
 }
-.header {
-font-size: xx-large;
-font-family: Courier;
+.page{
+width:730px;
+overflow:hidden;
+}
+.sidebar{
+float:left;
+width:150px;
+height:400px;
+text-align:center;
+border: thin dashed black;
 }
 img.w33 {
 width:30%;
+border: thin dashed black;
+margin:0;
 }
-table.px200 {
-float:left;
-width:175px;
-border:thin black solid;
-}
-td.colors {
+div.options {
 text-align:center;
-width:100px;
-}
-td.buttons {
-text-align:center;
-width:50px;
 }
 #circles_container {
 text-align:left;
 }
 #circles_canvas {
+border: thin dashed black;
 z-index:1;
 }
 #circle_preview {
@@ -39,7 +35,5 @@ z-index:1;
 clear:both;
 text-align:center;
 }
-.button {
-width:30px;
-height:30px;
+input {
 }

@@ -4,43 +4,31 @@
 <title>Canvas Coloring Book</title>
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <script type="text/javascript" src="javascript/coloring.js"/>
-<meta name="viewport" content="width=900, height=600"/>
+<meta name="viewport" content="width=675, height=575"/>
 </head>
 <body>
 <div class="page">
-<table class="px200">
-<tr>
-<td rowspan="4" colspan="2"><canvas id="circle_preview" width="100" height="100">Your Reading System does not support canvas.</canvas></td>
-<td class="colors" colspan="2" width="100">Red</td>
-</tr>
-<tr>
-<td class="buttons"><img class="button" alt="plus sign" src="images/plus.png" id="RedUp"/></td>
-<td class="buttons"><img class="button" alt="minus sign" src="images/minus.png" id="RedDown"/></td>
-</tr>
-<tr>
-<td class="colors" colspan="2">Green</td>
-</tr>
-<tr>
-<td class="buttons"><img class="button" alt="plus sign" src="images/plus.png" id="GreenUp"/></td>
-<td class="buttons"><img class="button" alt="minus sign" src="images/minus.png" id="GreenDown"/></td>
-</tr>
-<tr>
-<td class="colors" colspan="2">Size</td><td class="colors" colspan="2">Blue</td>
-</tr>
-<tr>
-<td class="buttons"><img class="button" alt="plus sign" src="images/plus.png" id="SizeUp"/></td>
-<td class="buttons"><img class="button" alt="minus sign" src="images/minus.png" id="SizeDown"/></td>
-<td class="buttons"><img class="button" alt="plus sign" src="images/plus.png" id="BlueUp"/></td>
-<td class="buttons"><img class="button" alt="minus sign" src="images/minus.png" id="BlueDown"/></td>
-</tr>
-</table>
+<div class="sidebar" id="sidebar">
+<canvas id="circle_preview" width="100" height="100">Your Reading System does not support canvas.</canvas>
+<div class="options"><span class="red">Red</span>: <span id="RedValue">127</span></div>
+<div class="options"><input type="range" name="RedInput" min="1" max="255" id="RedInput"/></div>
+<div class="options"><span class="green">Green</span>: <span id="GreenValue">127</span></div>
+<div class="options"><input type="range" name="GreenInput" min="1" max="255" id="GreenInput"/></div>
+<div class="options"><span class="blue">Blue</span>: <span id="BlueValue">127</span></div>
+<div class="options"><input type="range" name="BlueInput" min="1" max="255" id="BlueInput"/></div>
+<div class="options">Size: <span id="SizeValue">50px</span></div>
+<div class="options"><input type="range" name="SizeInput" min="1" max="100" id="SizeInput"/></div>
+<div class="options">Opacity: <span id="OpacityValue">100%</span></div>
+<div class="options"><input type="range" name="OpacityInput" min="0" max="100" value="100" id="OpacityInput"/></div>
+<div class="options"><input type="button" name="FillBackground" value="Fill Background" id="FillButton"/></div>
+</div>
 <div id="circles_container">
 <canvas id="circles_canvas" width="519" height="400">Your Reading System does not support canvas.</canvas>
 </div>
 
-<img id="bebop" class="w33" src="images/bebop.png" alt="Cowboy Bebop" onclick="setBebop()"/>
-<img id="hawk" class="w33" src="images/Hawk.png" alt="Hawk" onclick="setHawk()"/>
-<img id="joker" class="w33" src="images/Joker.png" alt="Joker" onclick="setJoker()"/>
+<img id="bebop" class="w33" src="images/bebop.png" alt="Cowboy Bebop"/>
+<img id="hawk" class="w33" src="images/Hawk.png" alt="Hawk"/>
+<img id="joker" class="w33" src="images/Joker.png" alt="Joker"/>
 </div>
 </body>
 </html>

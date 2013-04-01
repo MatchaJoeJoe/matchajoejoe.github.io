@@ -2,11 +2,12 @@ var w = 50;
 var r = 127;
 var g = 127;
 var b = 127;
-var thefill = "rgb(" + r + "," + g + "," + b + ")";
+var o = 1;
+var thefill = "rgba(" + r + "," + g + "," + b + "," + o + ")";
 function circlePreview(){
 	var canvas = document.getElementById('circle_preview');
 	var ctx = canvas.getContext("2d");
-	var thefill = "rgb(" + r + "," + g + "," + b + ")";
+	var thefill = "rgba(" + r + "," + g + "," + b + "," + o + ")";
 	ctx.fillStyle="#FFF";
 	ctx.fillRect(0,0,100,100);
 	ctx.beginPath();
@@ -36,92 +37,65 @@ function eventWindowLoaded() {
 	circlePreview();
 }
 function canvasApp(){  
+	var bebopIMG = document.getElementById('bebop');
+	bebopIMG.addEventListener('click', setBebop, false);
+	var hawkIMG = document.getElementById('hawk');
+	hawkIMG.addEventListener('click', setHawk, false);
+	var jokerIMG = document.getElementById('joker');
+	jokerIMG.addEventListener('click', setJoker, false);
+	
+	var FillButton = document.getElementById('FillButton');
+	FillButton.addEventListener('click', fillColor, false);
+	
+	function fillColor(){
+		var thefill = "rgba(" + r + "," + g + "," + b + "," + o + ")";
+		context.fillStyle = thefill;
+		context.fillRect(0, 0, theCanvas.width, theCanvas.height);
+		context.drawImage(img,0,0);
+	}
+
 	var theCanvas = document.getElementById('circles_canvas');
 	var context = theCanvas.getContext('2d');
 	theCanvas.addEventListener('mousedown', mouse_pressed_down, false);
 	theCanvas.addEventListener('mousemove', mouse_moved, false);
 	theCanvas.addEventListener('mouseup', mouse_released, false);
+	theCanvas.addEventListener('touchstart', touch_move_gesture, false);
 	theCanvas.addEventListener('touchmove', touch_move_gesture, false);
 	
-	var RedUpButton = document.getElementById('RedUp');
-	RedUpButton.addEventListener('click', RedUp, false);
-	RedUpButton.addEventListener('dblclick', RedUp, false);
-	function RedUp(ev){
-	ev.preventDefault();
-		if (r<236){
-			window.r = (r+20);
-		}
+    var RedInput = document.getElementById('RedInput');
+	RedInput.addEventListener('change', RedChange, true);
+	function RedChange(ev){
+		window.r = RedInput.value;
 		circlePreview();
+		document.getElementById("RedValue").innerHTML=r;
 	}
-	var RedDownButton = document.getElementById('RedDown');
-	RedDownButton.addEventListener('click', RedDown, false);
-	RedDownButton.addEventListener('dblclick', RedDown, false);
-	function RedDown(ev){
-	ev.preventDefault();
-		if (r>19){
-			window.r = (r-20);
-		}
+    var GreenInput = document.getElementById('GreenInput');
+	GreenInput.addEventListener('change', GreenChange, true);
+	function GreenChange(ev){
+		window.g = GreenInput.value;
 		circlePreview();
+		document.getElementById("GreenValue").innerHTML=g;
 	}
-	var GreenUpButton = document.getElementById('GreenUp');
-	GreenUpButton.addEventListener('click', GreenUp, false);
-	GreenUpButton.addEventListener('dblclick', GreenUp, false);
-	function GreenUp(ev){
-	ev.preventDefault();
-		if (g<236){
-			window.g = (g+20);
-		}
+    var BlueInput = document.getElementById('BlueInput');
+	BlueInput.addEventListener('change', BlueChange, true);
+	function BlueChange(ev){
+		window.b = BlueInput.value;
 		circlePreview();
+		document.getElementById("BlueValue").innerHTML=b;
 	}
-	var GreenDownButton = document.getElementById('GreenDown');
-	GreenDownButton.addEventListener('click', GreenDown, false);
-	GreenDownButton.addEventListener('dblclick', GreenDown, false);
-	function GreenDown(ev){
-	ev.preventDefault();
-		if (g>19){
-			window.g = (g-20);
-		}
+    var SizeInput = document.getElementById('SizeInput');
+	SizeInput.addEventListener('change', SizeChange, true);
+	function SizeChange(ev){
+		window.w = SizeInput.value;
 		circlePreview();
+		document.getElementById("SizeValue").innerHTML=w+"px";
 	}
-	var BlueUpButton = document.getElementById('BlueUp');
-	BlueUpButton.addEventListener('click', BlueUp, false);
-	BlueUpButton.addEventListener('dblclick', BlueUp, false);
-	function BlueUp(ev){
-	ev.preventDefault();
-		if (b<236){
-			window.b = (b+20);
-		}
+    var OpacityInput = document.getElementById('OpacityInput');
+	OpacityInput.addEventListener('change', OpacityChange, true);
+	function OpacityChange(ev){
+		window.o = OpacityInput.value/100;
 		circlePreview();
-	}
-	var BlueDownButton = document.getElementById('BlueDown');
-	BlueDownButton.addEventListener('click', BlueDown, false);
-	BlueDownButton.addEventListener('dblclick', BlueDown, false);
-	function BlueDown(ev){
-	ev.preventDefault();
-		if (b>19){
-			window.b = (b-20);
-		}
-		circlePreview();
-	}
-	var SizeUpButton = document.getElementById('SizeUp');
-	SizeUpButton.addEventListener('click', SizeUp, false);
-	SizeUpButton.addEventListener('dblclick', SizeUp, false);
-	function SizeUp(ev){
-	ev.preventDefault();
-		if (w<100){
-			window.w = (w+5);
-		}
-		circlePreview();
-	}
-	var SizeDownButton = document.getElementById('SizeDown');
-	SizeDownButton.addEventListener('click', SizeDown, false);
-	SizeDownButton.addEventListener('dblclick', SizeDown, false);
-	function SizeDown(ev){
-	ev.preventDefault();
-		if (w>5){
-			window.w = (w-5);
-		}
-		circlePreview();
+		document.getElementById("OpacityValue").innerHTML=OpacityInput.value+"%";
 	}
 
 	drawScreen();
@@ -129,8 +103,6 @@ function canvasApp(){
     function drawScreen() {
 	context.fillStyle = 'white';
 	context.fillRect(0, 0, theCanvas.width, theCanvas.height);
-	context.strokeStyle = '#000000'; 
-	context.strokeRect(1,  1, theCanvas.width-2, theCanvas.height-2);
 	context.drawImage(img,0,0);
     }
 
@@ -139,14 +111,14 @@ function canvasApp(){
 
     function mouse_pressed_down (ev) {
 	begin_drawing = true;
-	var thefill = "rgb(" + r + "," + g + "," + b + ")";
+	var thefill = "rgba(" + r + "," + g + "," + b + "," + o + ")";
 	context.fillStyle = thefill;
     }
 
     function mouse_moved (ev) {
 	var x, y;	
 	// Get the mouse position in the canvas
-	x = (ev.pageX-180);
+	x = (ev.pageX-150);
 	y = ev.pageY;
 
 	if (begin_drawing) {
@@ -165,13 +137,13 @@ function canvasApp(){
     function touch_move_gesture (ev) {
 	// For touchscreen browsers/readers that support touchmove
 	var x, y;
-	var thefill = "rgb(" + r + "," + g + "," + b + ")";
+	var thefill = "rgba(" + r + "," + g + "," + b + "," + o + ")";
 	ev.preventDefault(); //override default UI behavior for better results on touchscreen devices
 	context.beginPath();
 	context.fillStyle = thefill;
 	if(ev.touches.length == 1){
 	    var touch = ev.touches[0];
-	    x = (touch.pageX-180);
+	    x = (touch.pageX-150);
 	    y = touch.pageY;
 	    context.arc(x, y, w/2, (Math.PI/180)*0, (Math.PI/180)*360, false);
 	    context.fill();
