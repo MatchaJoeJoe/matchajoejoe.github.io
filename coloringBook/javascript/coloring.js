@@ -22,8 +22,8 @@ function setBebop(){
 window.img.src = "images/bebop.png"; //transparent png
 canvasApp();
 }
-function setHawk(){
- window.img.src = "images/Hawk.png"; //transparent png
+function setSpawn(){
+ window.img.src = "images/spawn.png"; //transparent png
 canvasApp();
 }
 function setJoker(){
@@ -39,8 +39,8 @@ function eventWindowLoaded() {
 function canvasApp(){  
 	var bebopIMG = document.getElementById('bebop');
 	bebopIMG.addEventListener('click', setBebop, false);
-	var hawkIMG = document.getElementById('hawk');
-	hawkIMG.addEventListener('click', setHawk, false);
+	var spawnIMG = document.getElementById('spawn');
+	spawnIMG.addEventListener('click', setSpawn, false);
 	var jokerIMG = document.getElementById('joker');
 	jokerIMG.addEventListener('click', setJoker, false);
 	
