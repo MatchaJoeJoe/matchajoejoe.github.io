@@ -46,15 +46,15 @@ function brushPreview(){
 	var squarecontext = squarecanvas.getContext("2d");
 	var trianglecanvas = document.getElementById('triangleBrush');
 	var trianglecontext = trianglecanvas.getContext("2d");
-		circlecontext.arc(30, 30, 25, 0, 2 * Math.PI, false);
+		circlecontext.arc(25, 25, 20, 0, 2 * Math.PI, false);
 		circlecontext.fill();
-		squarecontext.fillRect(5, 5, 50, 50);
+		squarecontext.fillRect(5, 5, 40, 40);
 		squarecontext.fill();
 		trianglecontext.beginPath();
-		trianglecontext.moveTo(30, 5); 
-		trianglecontext.lineTo(55, 55);
-		trianglecontext.lineTo(5, 55);
-		trianglecontext.lineTo(30, 5);
+		trianglecontext.moveTo(25, 5); 
+		trianglecontext.lineTo(45, 45);
+		trianglecontext.lineTo(0, 45);
+		trianglecontext.lineTo(25, 5);
 		trianglecontext.fill();
 }
 function setBebop(){
@@ -123,6 +123,7 @@ function canvasApp(){
 		window.setTriangle = false;
 		window.setSpray = false;
 		circlePreview();
+		document.getElementById("BrushValue").innerHTML= 'Circle';
 	}
 	
     var squareBrush = document.getElementById('squareBrush');
@@ -133,6 +134,7 @@ function canvasApp(){
 		window.setTriangle = false;
 		window.setSpray = false;
 		circlePreview();
+		document.getElementById("BrushValue").innerHTML= 'Square';
 	}
     var triangleBrush = document.getElementById('triangleBrush');
 	triangleBrush.addEventListener('click', makeTriangle, false);
@@ -142,6 +144,7 @@ function canvasApp(){
 		window.setTriangle = true;
 		window.setSpray = false;
 		circlePreview();
+		document.getElementById("BrushValue").innerHTML= 'Triangle';
 	}
 
 	//color input

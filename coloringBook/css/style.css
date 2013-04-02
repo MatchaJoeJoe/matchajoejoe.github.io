@@ -9,17 +9,13 @@ overflow:hidden;
 }
 .leftbar{
 float:left;
-width:145px;
-margin: 0 1px 0 1px;
+width:150px;
+margin: 0 1px 0 0;
 text-align:center;
 border: thin dashed black;
 }
-.rightbar{
+.brush{
 float:left;
-width:115px;
-margin: 0 1px 0 1px;
-text-align:left;
-border: thin dashed black;
 }
 img.thumbs {
 width:190px;
