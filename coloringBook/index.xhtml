@@ -4,12 +4,12 @@
 <title>Canvas Coloring Book</title>
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <script type="text/javascript" src="javascript/coloring.js"/>
-<meta name="viewport" content="width=675, height=575"/>
+<meta name="viewport" content="width=800, height=600"/>
 </head>
 <body>
 <div class="page">
-<div class="sidebar" id="sidebar">
-<canvas id="circle_preview" width="100" height="100">Your Reading System does not support canvas.</canvas>
+<div class="leftbar" id="leftbar">
+<canvas id="brushPreview" width="100" height="100">Your Reading System does not support canvas.</canvas>
 <div class="options"><span class="red">Red</span>: <span id="RedValue">127</span></div>
 <div class="options"><input type="range" name="RedInput" min="0" max="255" value="127" id="RedInput"/></div>
 <div class="options"><span class="green">Green</span>: <span id="GreenValue">127</span></div>
@@ -22,13 +22,23 @@
 <div class="options"><input type="range" name="OpacityInput" min="0" max="100" value="100" id="OpacityInput"/></div>
 <div class="options"><input type="button" name="FillScreen" value="Fill Screen" id="FillButton"/></div>
 </div>
-<div id="circles_container">
-<canvas id="circles_canvas" width="519" height="400">Your Reading System does not support canvas.</canvas>
+<div id="canvas_container">
+<canvas id="painting_canvas" width="519" height="400">Your Reading System does not support canvas.</canvas>
 </div>
-
-<img id="bebop" class="w33" src="images/bebop.png" alt="Cowboy Bebop"/>
-<img id="spawn" class="w33" src="images/spawn.png" alt="Spawn"/>
-<img id="joker" class="w33" src="images/Joker.png" alt="Joker"/>
+<div class="rightbar" id="rightbar">
+<canvas class="brush" id="circleBrush" width="60" height="60">Your Reading System does not support canvas.</canvas>
+<br/>
+<canvas class="brush" id="squareBrush" width="60" height="60">Your Reading System does not support canvas.</canvas>
+<br/>
+<canvas class="brush" id="triangleBrush" width="60" height="60">Your Reading System does not support canvas.</canvas>
+<br/>
+<canvas class="brush" id="sprayBrush" width="60" height="60">Your Reading System does not support canvas.</canvas>
+</div>
+<div class="clear">&#160;</div>
+<img id="bebop" class="thumbs" src="images/bebop.png" alt="Cowboy Bebop"/>
+<img id="spawn" class="thumbs" src="images/spawn.png" alt="Spawn"/>
+<img id="joker" class="thumbs" src="images/Joker.png" alt="Joker"/>
+<img id="avengers" class="thumbs" src="images/avengers.png" alt="Avengers"/>
 </div>
 </body>
 </html>

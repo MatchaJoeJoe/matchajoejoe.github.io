@@ -4,36 +4,42 @@ font-family: Georgia;
 margin:0;
 }
 .page{
-width:730px;
+width:820px;
 overflow:hidden;
 }
-.sidebar{
+.leftbar{
 float:left;
-width:150px;
-height:400px;
+width:145px;
+margin: 0 1px 0 1px;
 text-align:center;
 border: thin dashed black;
 }
-img.w33 {
-width:30%;
+.rightbar{
+float:left;
+width:145px;
+margin: 0 1px 0 1px;
+text-align:left;
+border: thin dashed black;
+}
+img.thumbs {
+width:200px;
 border: thin dashed black;
 margin:0;
 }
 div.options {
 text-align:center;
 }
-#circles_container {
-text-align:left;
+#canvas_container {
+float:left;
 }
-#circles_canvas {
+#painting_canvas {
 border: thin dashed black;
 z-index:1;
 }
-#circle_preview {
+#brushPreview {
 }
 .clear {
 clear:both;
-text-align:center;
-}
+height:0;}
 input {
 }
