@@ -228,15 +228,12 @@ function canvasApp(){
 
     function touch_move_gesture (ev) {
 		// For touchscreen browsers/readers that support touchmove
-		var x, y;
 		var thefill = "rgba(" + r + "," + g + "," + b + "," + o + ")";
 		ev.preventDefault(); //override default UI behavior for better results on touchscreen devices
 		context.fillStyle = thefill;
-		if(ev.touches.length == 1){
-			var touch = ev.touches[0];
-			x = (touch.pageX-145);
-			y = touch.pageY;
-			drawBrush();
-		}
+		var touch = ev.touches[0];
+		x = (touch.pageX-145);
+		y = touch.pageY;
+		drawBrush();
 	}
 }
