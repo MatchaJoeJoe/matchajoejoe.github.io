@@ -215,8 +215,8 @@ function canvasApp(){
 	}
     function mouse_moved (ev) {
 		// Get the mouse position in the canvas
-		x = (ev.pageX-145);
-		y = ev.pageY;
+		window.x = (ev.pageX-145);
+		window.y = ev.pageY;
 
 		if (begin_drawing) {
 		drawBrush();
@@ -232,8 +232,8 @@ function canvasApp(){
 		ev.preventDefault(); //override default UI behavior for better results on touchscreen devices
 		context.fillStyle = thefill;
 		var touch = ev.touches[0];
-		x = (touch.pageX-145);
-		y = touch.pageY;
+		window.x = (touch.pageX-145);
+		window.y = touch.pageY;
 		drawBrush();
 	}
 }
