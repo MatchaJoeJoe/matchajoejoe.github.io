@@ -16,13 +16,13 @@ border: thin dashed black;
 }
 .rightbar{
 float:left;
-width:145px;
+width:115px;
 margin: 0 1px 0 1px;
 text-align:left;
 border: thin dashed black;
 }
 img.thumbs {
-width:200px;
+width:190px;
 border: thin dashed black;
 margin:0;
 }
