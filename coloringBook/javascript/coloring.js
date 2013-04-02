@@ -211,6 +211,7 @@ function canvasApp(){
 				context.lineTo(x-w/2, y+w/2);
 				context.lineTo(x, y-w/2);
 				context.fill();
+				context.drawImage(img,0,0);
 			}
 	}
     function mouse_moved (ev) {
