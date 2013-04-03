@@ -297,6 +297,7 @@ function canvasApp(){
 	//color input
     var RedInput = document.getElementById('RedInput');
 	RedInput.addEventListener('change', RedChange, true);
+	RedInput.addEventListener('click', RedChange, true);
 	function RedChange(ev){
 		window.r = RedInput.value;
 		circlePreview();
@@ -305,6 +306,7 @@ function canvasApp(){
 	}
     var GreenInput = document.getElementById('GreenInput');
 	GreenInput.addEventListener('change', GreenChange, true);
+	GreenInput.addEventListener('click', GreenChange, true);
 	function GreenChange(ev){
 		window.g = GreenInput.value;
 		circlePreview();
@@ -313,6 +315,7 @@ function canvasApp(){
 	}
     var BlueInput = document.getElementById('BlueInput');
 	BlueInput.addEventListener('change', BlueChange, true);
+	BlueInput.addEventListener('click', BlueChange, true);
 	function BlueChange(ev){
 		window.b = BlueInput.value;
 		circlePreview();
@@ -321,6 +324,7 @@ function canvasApp(){
 	}
     var SizeInput = document.getElementById('SizeInput');
 	SizeInput.addEventListener('change', SizeChange, true);
+	SizeInput.addEventListener('click', SizeChange, true);
 	function SizeChange(ev){
 		window.w = SizeInput.value;
 		circlePreview();
@@ -328,6 +332,7 @@ function canvasApp(){
 	}
     var OpacityInput = document.getElementById('OpacityInput');
 	OpacityInput.addEventListener('change', OpacityChange, true);
+	OpacityInput.addEventListener('click', OpacityChange, true);
 	function OpacityChange(ev){
 		window.o = OpacityInput.value/100;
 		circlePreview();
