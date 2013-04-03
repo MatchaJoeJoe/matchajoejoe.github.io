@@ -1,3 +1,4 @@
+//color defaults
 var w = 50;
 var r = 127;
 var g = 127;
@@ -5,31 +6,41 @@ var b = 127;
 var o = 1;
 var x = 0;
 var y = 0;	
-var img = new Image();
 var thefill = "rgba(" + r + "," + g + "," + b + "," + o + ")";
+
+//palette defaults
 var thefill1 = "rgba(255,255,255,1)";
 var thefill2 = "rgba(127,127,127,1)";
 var thefill3 = "rgba(0,0,0,1)";
 var thefill4 = "rgba(255,0,0,1)";
 var thefill5 = "rgba(0,255,0,1)";
 var thefill6 = "rgba(0,0,255,1)";
-//default brush is circle
-var setCircle = true;
+
+//brush defaults
+var setCircle = true;//default brush is circle
 var setSquare = false;
 var setTriangle = false;
 var setSpray = false;
+
+//setting up the image
+var img = new Image();
+
+//function to update palette colors
 function updateColors() {
+	
+	//1st canvas color
 	var color1canvas = document.getElementById('color1');
 	var color1context = color1canvas.getContext("2d");
-	var color1text = document.getElementById('color1text');
-	color1text.innerHTML = thefill1
-	color1context.fillStyle = "rgba(255,255,255,1)";
+	var color1text = document.getElementById('color1text');	
+	color1text.innerHTML = thefill1	//showing color value on screen
+	color1context.fillStyle = "rgba(255,255,255,1)"; //fill with white first to blank out canvas
 	color1context.fillRect(0,0,color1canvas.width,color1canvas.height);
 	color1context.fill();
-	color1context.fillStyle = thefill1;
+	color1context.fillStyle = thefill1;	//then fill with new color
 	color1context.fillRect(0,0,color1canvas.width,color1canvas.height);
 	color1context.fill();
 	
+	//the rest of the colors are just copies of the first	
 	var color2canvas = document.getElementById('color2');
 	var color2context = color2canvas.getContext("2d");
 	var color2text = document.getElementById('color2text');
@@ -85,6 +96,8 @@ function updateColors() {
 	color6context.fillRect(0,0,color6canvas.width,color6canvas.height);
 	color6context.fill();
 }
+
+//functions to save colors when save button is clicked
 function saveColor1() {
 	window.thefill1 = thefill;	
 	updateColors();
@@ -110,6 +123,7 @@ function saveColor6() {
 	updateColors();
 }
 
+//functions to set saved color to current color
 function setColor1() {
 	window.thefill = thefill1;
 	circlePreview();	
@@ -135,12 +149,16 @@ function setColor6() {
 	circlePreview();	
 }
 
+//function to display how the brush will look on screen
 function circlePreview(){
 	var previewcanvas = document.getElementById('brushPreview');
 	var previewcontext = previewcanvas.getContext("2d");
+	//fill with white again
 	previewcontext.fillStyle="#FFF";
 	previewcontext.fillRect(0,0,100,100);
+	//then fill with color
 	previewcontext.fillStyle = thefill;
+	//if statements around which brush should be used
 	if (setCircle){
 		previewcontext.beginPath();
 		previewcontext.arc(50, 50, w/2, 0, 2 * Math.PI, false);
@@ -160,6 +178,8 @@ function circlePreview(){
 		previewcontext.fill();
 	}
 }
+
+//function to show the brush shapes
 function brushPreview(){
 	var circlecanvas = document.getElementById('circleBrush');
 	var circlecontext = circlecanvas.getContext("2d");
@@ -167,17 +187,19 @@ function brushPreview(){
 	var squarecontext = squarecanvas.getContext("2d");
 	var trianglecanvas = document.getElementById('triangleBrush');
 	var trianglecontext = trianglecanvas.getContext("2d");
-		circlecontext.arc(20, 20, 15, 0, 2 * Math.PI, false);
-		circlecontext.fill();
-		squarecontext.fillRect(5, 5, 30, 30);
-		squarecontext.fill();
-		trianglecontext.beginPath();
-		trianglecontext.moveTo(20, 5); 
-		trianglecontext.lineTo(35, 35);
-		trianglecontext.lineTo(0, 35);
-		trianglecontext.lineTo(20, 5);
-		trianglecontext.fill();
+	circlecontext.arc(20, 20, 15, 0, 2 * Math.PI, false);
+	circlecontext.fill();
+	squarecontext.fillRect(5, 5, 30, 30);
+	squarecontext.fill();
+	trianglecontext.beginPath();
+	trianglecontext.moveTo(20, 5); 
+	trianglecontext.lineTo(35, 35);
+	trianglecontext.lineTo(0, 35);
+	trianglecontext.lineTo(20, 5);
+	trianglecontext.fill();
 }
+
+//functions to set the image source
 function setBebop(){
 window.img.src = "images/bebop.png"; //transparent png
 drawScreen();
@@ -194,6 +216,8 @@ function setAvengers(){
 window.img.src = "images/avengers.png"; //transparent png
 drawScreen();
 }
+
+//function to blank out screen when new image is selected
 function drawScreen() {
 	var theCanvas = document.getElementById('painting_canvas');
 	var context = theCanvas.getContext('2d');
@@ -202,14 +226,27 @@ function drawScreen() {
 	context.drawImage(img,0,0);
 }
 
+//functions that load automatically
 window.addEventListener('load', eventWindowLoaded, false);	
 function eventWindowLoaded() {
     canvasApp();
 	circlePreview();
 	brushPreview();
 	updateColors();
+	drawScreen();
 }
+
+//main painting function
 function canvasApp(){  
+
+//defining canvases and adding event handlers
+	var theCanvas = document.getElementById('painting_canvas');
+	var context = theCanvas.getContext('2d');
+	theCanvas.addEventListener('mousedown', mouse_pressed_down, false);
+	theCanvas.addEventListener('mousemove', mouse_moved, false);
+	theCanvas.addEventListener('mouseup', mouse_released, false);
+	theCanvas.addEventListener('touchstart', touch_move_gesture, false);
+	theCanvas.addEventListener('touchmove', touch_move_gesture, false);
 	var color1canvas = document.getElementById('color1');
 	color1canvas.addEventListener('click', setColor1, false);
 	var color2canvas = document.getElementById('color2');
@@ -222,7 +259,14 @@ function canvasApp(){
 	color5canvas.addEventListener('click', setColor5, false);
 	var color6canvas = document.getElementById('color6');
 	color6canvas.addEventListener('click', setColor6, false);
+    var circleBrush = document.getElementById('circleBrush');
+	circleBrush.addEventListener('click', makeCircle, false);
+    var squareBrush = document.getElementById('squareBrush');
+	squareBrush.addEventListener('click', makeSquare, false);
+    var triangleBrush = document.getElementById('triangleBrush');
+	triangleBrush.addEventListener('click', makeTriangle, false);
 
+//defining buttons and adding handlers
 	var color1button = document.getElementById('savecolor1');
 	color1button.addEventListener('click', saveColor1, false);
 	var color2button = document.getElementById('savecolor2');
@@ -235,7 +279,32 @@ function canvasApp(){
 	color5button.addEventListener('click', saveColor5, false);
 	var color6button = document.getElementById('savecolor6');
 	color6button.addEventListener('click', saveColor6, false);
+	var FillButton = document.getElementById('FillButton');
+	FillButton.addEventListener('click', fillColor, false);
+	
+//defining sliders and setting handlers
+	var RedInput = document.getElementById('RedInput');
+	RedInput.addEventListener('change', RedChange, true);
+	RedInput.addEventListener('click', RedChange, true);
+	RedInput.addEventListener('touchstart', RedChange, true);
+    var GreenInput = document.getElementById('GreenInput');
+	GreenInput.addEventListener('change', GreenChange, true);
+	GreenInput.addEventListener('click', GreenChange, true);
+	GreenInput.addEventListener('touchstart', GreenChange, true);
+    var BlueInput = document.getElementById('BlueInput');
+	BlueInput.addEventListener('change', BlueChange, true);
+	BlueInput.addEventListener('click', BlueChange, true);
+	BlueInput.addEventListener('touchstart', BlueChange, true);
+    var SizeInput = document.getElementById('SizeInput');
+	SizeInput.addEventListener('change', SizeChange, true);
+	SizeInput.addEventListener('click', SizeChange, true);
+	SizeInput.addEventListener('touchstart', SizeChange, true);
+    var OpacityInput = document.getElementById('OpacityInput');
+	OpacityInput.addEventListener('change', OpacityChange, true);
+	OpacityInput.addEventListener('click', OpacityChange, true);
+	OpacityInput.addEventListener('touchstart', OpacityChange, true);
 
+//defining images and adding handlers
 	var bebopIMG = document.getElementById('bebop');
 	bebopIMG.addEventListener('click', setBebop, false);
 	var spawnIMG = document.getElementById('spawn');
@@ -245,25 +314,14 @@ function canvasApp(){
 	var avengersIMG = document.getElementById('avengers');
 	avengersIMG.addEventListener('click', setAvengers, false);
 	
-	var FillButton = document.getElementById('FillButton');
-	FillButton.addEventListener('click', fillColor, false);
-	
+//function that fills entire screen with selected color
 	function fillColor(){
 		context.fillStyle = thefill;
 		context.fillRect(0, 0, theCanvas.width, theCanvas.height);
 		context.drawImage(img,0,0);
 	}
 
-	var theCanvas = document.getElementById('painting_canvas');
-	var context = theCanvas.getContext('2d');
-	theCanvas.addEventListener('mousedown', mouse_pressed_down, false);
-	theCanvas.addEventListener('mousemove', mouse_moved, false);
-	theCanvas.addEventListener('mouseup', mouse_released, false);
-	theCanvas.addEventListener('touchstart', touch_move_gesture, false);
-	theCanvas.addEventListener('touchmove', touch_move_gesture, false);
-	
-    var circleBrush = document.getElementById('circleBrush');
-	circleBrush.addEventListener('click', makeCircle, false);
+//functions for brush previews
 	function makeCircle(){
 		window.setCircle = true;
 		window.setSquare = false;
@@ -272,9 +330,6 @@ function canvasApp(){
 		circlePreview();
 		document.getElementById("BrushValue").innerHTML= 'Circle';
 	}
-	
-    var squareBrush = document.getElementById('squareBrush');
-	squareBrush.addEventListener('click', makeSquare, false);
 	function makeSquare(){
 		window.setCircle = false;
 		window.setSquare = true;
@@ -283,8 +338,6 @@ function canvasApp(){
 		circlePreview();
 		document.getElementById("BrushValue").innerHTML= 'Square';
 	}
-    var triangleBrush = document.getElementById('triangleBrush');
-	triangleBrush.addEventListener('click', makeTriangle, false);
 	function makeTriangle(){
 		window.setCircle = false;
 		window.setSquare = false;
@@ -294,50 +347,30 @@ function canvasApp(){
 		document.getElementById("BrushValue").innerHTML= 'Triangle';
 	}
 
-	//color input
-    var RedInput = document.getElementById('RedInput');
-	RedInput.addEventListener('change', RedChange, true);
-	RedInput.addEventListener('click', RedChange, true);
-	RedInput.addEventListener('touchstart', RedChange, true);
+//color/size/opacity input functions
 	function RedChange(ev){
 		window.r = RedInput.value;
 		circlePreview();
 		document.getElementById("RedValue").innerHTML=r;
 		window.thefill = "rgba(" + r + "," + g + "," + b + "," + o + ")";
 	}
-    var GreenInput = document.getElementById('GreenInput');
-	GreenInput.addEventListener('change', GreenChange, true);
-	GreenInput.addEventListener('click', GreenChange, true);
-	GreenInput.addEventListener('touchstart', GreenChange, true);
 	function GreenChange(ev){
 		window.g = GreenInput.value;
 		circlePreview();
 		document.getElementById("GreenValue").innerHTML=g;
 		window.thefill = "rgba(" + r + "," + g + "," + b + "," + o + ")";
 	}
-    var BlueInput = document.getElementById('BlueInput');
-	BlueInput.addEventListener('change', BlueChange, true);
-	BlueInput.addEventListener('click', BlueChange, true);
-	BlueInput.addEventListener('touchstart', BlueChange, true);
 	function BlueChange(ev){
 		window.b = BlueInput.value;
 		circlePreview();
 		document.getElementById("BlueValue").innerHTML=b;
 		window.thefill = "rgba(" + r + "," + g + "," + b + "," + o + ")";
 	}
-    var SizeInput = document.getElementById('SizeInput');
-	SizeInput.addEventListener('change', SizeChange, true);
-	SizeInput.addEventListener('click', SizeChange, true);
-	SizeInput.addEventListener('touchstart', SizeChange, true);
 	function SizeChange(ev){
 		window.w = SizeInput.value;
 		circlePreview();
 		document.getElementById("SizeValue").innerHTML=w+"px";
 	}
-    var OpacityInput = document.getElementById('OpacityInput');
-	OpacityInput.addEventListener('change', OpacityChange, true);
-	OpacityInput.addEventListener('click', OpacityChange, true);
-	OpacityInput.addEventListener('touchstart', OpacityChange, true);
 	function OpacityChange(ev){
 		window.o = OpacityInput.value/100;
 		circlePreview();
@@ -345,38 +378,13 @@ function canvasApp(){
 		window.thefill = "rgba(" + r + "," + g + "," + b + "," + o + ")";
 	}
 
-	drawScreen();
-
-    // For the mouse_moved event handler.
-    var begin_drawing = false;
+//Mouse Functions
+    var begin_drawing = false; //default is not drawing
     
     function mouse_pressed_down (ev) {
-		begin_drawing = true;
+		begin_drawing = true;//drawing turned on when left mouse button down
 		context.fillStyle = thefill;
     }
-	function drawBrush(){
-			if (setCircle) {
-				context.beginPath();
-				context.arc(x, y, w/2, (Math.PI/180)*0, (Math.PI/180)*360, false);
-				context.fill();
-				context.drawImage(img,0,0);
-			}
-			if (setSquare){
-				context.beginPath();
-				context.fillRect(x-w/2,y-w/2,w,w);
-				context.fill();
-				context.drawImage(img,0,0);
-			}
-			if (setTriangle){
-				context.beginPath();
-				context.moveTo(x, y-w/2); // give the (x,y) coordinates
-				context.lineTo(x+w/2, y+w/2);
-				context.lineTo(x-w/2, y+w/2);
-				context.lineTo(x, y-w/2);
-				context.fill();
-				context.drawImage(img,0,0);
-			}
-	}
     function mouse_moved (ev) {
 		// Get the mouse position in the canvas
 		window.x = (ev.pageX-161);
@@ -390,6 +398,7 @@ function canvasApp(){
 		begin_drawing = false;
     }
 
+//touch screen function
     function touch_move_gesture (ev) {
 		// For touchscreen browsers/readers that support touchmove
 		ev.preventDefault(); //override default UI behavior for better results on touchscreen devices
@@ -398,5 +407,30 @@ function canvasApp(){
 		window.x = (touch.pageX-161);
 		window.y = touch.pageY;
 		drawBrush();
+	}
+
+//Drawing function
+	function drawBrush(){
+		if (setCircle) {  //if statements based on which brush used
+			context.beginPath();
+			context.arc(x, y, w/2, (Math.PI/180)*0, (Math.PI/180)*360, false);
+			context.fill();
+			context.drawImage(img,0,0);
+		}
+		if (setSquare){
+			context.beginPath();
+			context.fillRect(x-w/2,y-w/2,w,w);
+			context.fill();
+			context.drawImage(img,0,0);
+		}
+		if (setTriangle){
+			context.beginPath();
+			context.moveTo(x, y-w/2); // give the (x,y) coordinates
+			context.lineTo(x+w/2, y+w/2);
+			context.lineTo(x-w/2, y+w/2);
+			context.lineTo(x, y-w/2);
+			context.fill();
+			context.drawImage(img,0,0);
+		}
 	}
 }
