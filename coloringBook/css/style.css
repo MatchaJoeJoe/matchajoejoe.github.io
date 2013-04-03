@@ -19,7 +19,7 @@ border: thin dotted black;
 float:left;
 width:160px;
 height:400px;
-margin: 2px 1px;
+margin: 0 0 0 1px;
 text-align:center;
 }
 .brush{

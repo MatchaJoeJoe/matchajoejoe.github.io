@@ -4,6 +4,30 @@ var r = 127;
 var g = 127;
 var b = 127;
 var o = 1;
+var r1 = 255;
+var g1 = 255;
+var b1 = 255;
+var o1 = 1;
+var r2 = 127;
+var g2 = 127;
+var b2 = 127;
+var o2 = 1;
+var r3 = 0;
+var g3 = 0;
+var b3 = 0;
+var o3 = 1;
+var r4 = 255;
+var g4 = 0;
+var b4 = 0;
+var o4 = 1;
+var r5 = 0;
+var g5 = 255;
+var b5 = 0;
+var o5 = 1;
+var r6 = 0;
+var g6 = 0;
+var b6 = 255;
+var o6 = 1;
 var x = 0;
 var y = 0;	
 var thefill = "rgba(" + r + "," + g + "," + b + "," + o + ")";
@@ -101,52 +125,118 @@ function updateColors() {
 function saveColor1() {
 	window.thefill1 = thefill;	
 	updateColors();
+	window.r1=r;
+	window.g1=g;
+	window.b1=b;
+	window.o1=o;
 }
 function saveColor2() {
 	window.thefill2 = thefill;	
 	updateColors();
+	window.r2=r;
+	window.g2=g;
+	window.b2=b;
+	window.o2=o;
 }
 function saveColor3() {
 	window.thefill3 = thefill;	
 	updateColors();
+	window.r3=r;
+	window.g3=g;
+	window.b3=b;
+	window.o3=o;
 }
 function saveColor4() {
 	window.thefill4 = thefill;	
 	updateColors();
+	window.r4=r;
+	window.g4=g;
+	window.b4=b;
+	window.o4=o;
 }
 function saveColor5() {
 	window.thefill5 = thefill;	
 	updateColors();
+	window.r5=r;
+	window.g5=g;
+	window.b5=b;
+	window.o5=o;
 }
 function saveColor6() {
 	window.thefill6 = thefill;	
 	updateColors();
+	window.r6=r;
+	window.g6=g;
+	window.b6=b;
+	window.o6=o;
 }
 
 //functions to set saved color to current color
 function setColor1() {
+	window.r=r1;
+	window.g=g1;
+	window.b=b1;
+	window.o=o1;
 	window.thefill = thefill1;
 	circlePreview();	
+	updateSliders();
 }
 function setColor2() {
-	window.thefill = thefill2;	
+	window.r=r2;
+	window.g=g2;
+	window.b=b2;
+	window.o=o2;
+	window.thefill = thefill2;
 	circlePreview();	
+	updateSliders();
 }
 function setColor3() {
-	window.thefill = thefill3;	
+	window.r=r3;
+	window.g=g3;
+	window.b=b3;
+	window.o=o3;
+	window.thefill = thefill3;
 	circlePreview();	
+	updateSliders();
 }
 function setColor4() {
-	window.thefill = thefill4;	
+	window.r=r4;
+	window.g=g4;
+	window.b=b4;
+	window.o=o4;
+	window.thefill = thefill4;
 	circlePreview();	
+	updateSliders();
 }
 function setColor5() {
-	window.thefill = thefill5;	
+	window.r=r5;
+	window.g=g5;
+	window.b=b5;
+	window.o=o5;
+	window.thefill = thefill5;
 	circlePreview();	
+	updateSliders();
 }
 function setColor6() {
-	window.thefill = thefill6;	
+	window.r=r6;
+	window.g=g6;
+	window.b=b6;
+	window.o=o6;
+	window.thefill = thefill6;
 	circlePreview();	
+	updateSliders();
+}
+
+//function to update sliders
+function updateSliders() {
+	document.getElementById('RedInput').value = r;
+	document.getElementById("RedValue").innerHTML=r;
+    document.getElementById('GreenInput').value = g;
+	document.getElementById("GreenValue").innerHTML=g;
+    document.getElementById('BlueInput').value = b;
+	document.getElementById("BlueValue").innerHTML=b;
+    document.getElementById('OpacityInput').value = (o*100);
+	document.getElementById("OpacityValue").innerHTML=(o*100)+"%";
 }
 
 //function to display how the brush will look on screen
