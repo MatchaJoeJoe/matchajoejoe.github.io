@@ -249,7 +249,6 @@ function canvasApp(){
 	FillButton.addEventListener('click', fillColor, false);
 	
 	function fillColor(){
-		var thefill = "rgba(" + r + "," + g + "," + b + "," + o + ")";
 		context.fillStyle = thefill;
 		context.fillRect(0, 0, theCanvas.width, theCanvas.height);
 		context.drawImage(img,0,0);
@@ -383,7 +382,6 @@ function canvasApp(){
 
     function touch_move_gesture (ev) {
 		// For touchscreen browsers/readers that support touchmove
-		var thefill = "rgba(" + r + "," + g + "," + b + "," + o + ")";
 		ev.preventDefault(); //override default UI behavior for better results on touchscreen devices
 		context.fillStyle = thefill;
 		var touch = ev.touches[0];
