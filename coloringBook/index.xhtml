@@ -4,7 +4,7 @@
 <title>Canvas Coloring Book</title>
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <script type="text/javascript" src="javascript/coloring.js"/>
-<meta name="viewport" content="width=800, height=600"/>
+<meta name="viewport" content="width=850, height=600"/>
 </head>
 <body>
 <div class="page">
@@ -22,14 +22,39 @@
 <div class="options"><input type="range" name="OpacityInput" min="0" max="100" value="100" id="OpacityInput"/></div>
 <div class="options"><input type="button" name="FillScreen" value="Fill Screen" id="FillButton"/></div>
 <div class="options">Brush: <span id="BrushValue">Circle</span></div>
-<canvas class="brush" id="circleBrush" width="50" height="50">Your Reading System does not support canvas.</canvas>
-<canvas class="brush" id="squareBrush" width="50" height="50">Your Reading System does not support canvas.</canvas>
-<canvas class="brush" id="triangleBrush" width="50" height="50">Your Reading System does not support canvas.</canvas>
+<canvas class="brush" id="circleBrush" width="40" height="40">You should find a system that supports canvas.</canvas>
+<canvas class="brush" id="squareBrush" width="40" height="40">There are a lot of them out there.</canvas>
+<canvas class="brush" id="triangleBrush" width="40" height="40">My cell phone supports canvas, c'mon.</canvas>
+<canvas class="brush" id="otherBrush" width="40" height="40">Just go find one.</canvas>
 </div>
 <div id="canvas_container">
-<canvas id="painting_canvas" width="519" height="400">Your Reading System does not support canvas.</canvas>
+<canvas id="painting_canvas" width="520" height="400">No canvas here, sorry.</canvas>
 </div>
 <div class="rightbar" id="rightbar">
+<div class="dots">
+<canvas class="colorbox" id="color1" width="60" height="40">No canvas for you!</canvas><input id="savecolor1" class="savebutton" value="save color" type="button" />
+<div class="clear" id="color1text">&#160;</div>
+</div>
+<div class="dots">
+<canvas class="colorbox" id="color2" width="60" height="40">You don't get no stinkin' canvas.</canvas><input id="savecolor2" class="savebutton" value="save color" type="button" />
+<div class="clear" id="color2text">&#160;</div>
+</div>
+<div class="dots">
+<canvas class="colorbox" id="color3" width="60" height="40">Your browser ain't good enough for this canvas.</canvas><input id="savecolor3" class="savebutton" value="save color" type="button" />
+<div class="clear" id="color3text">&#160;</div>
+</div>
+<div class="dots">
+<canvas class="colorbox" id="color4" width="60" height="40">...</canvas><input id="savecolor4" class="savebutton" value="save color" type="button" />
+<div class="clear" id="color4text">&#160;</div>
+</div>
+<div class="dots">
+<canvas class="colorbox" id="color5" width="60" height="40">I got nothing to say to you and your silly system.</canvas><input id="savecolor5" class="savebutton" value="save color" type="button" />
+<div class="clear" id="color5text">&#160;</div>
+</div>
+<div class="dots">
+<canvas class="colorbox" id="color6" width="60" height="40">Go get some canvas, it's good for you.</canvas><input id="savecolor6" class="savebutton" value="save color" type="button" />
+<div class="clear" id="color6text">&#160;</div>
+</div>
 </div>
 <div class="clear">&#160;</div>
 <img id="bebop" class="thumbs" src="images/bebop.png" alt="Cowboy Bebop"/>
