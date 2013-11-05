@@ -332,6 +332,7 @@ function canvasApp(){
 //defining canvases and adding event handlers
 	var theCanvas = document.getElementById('painting_canvas');
 	var context = theCanvas.getContext('2d');
+	theCanvas.addEventListener('click', drawBrush, false);
 	theCanvas.addEventListener('mousedown', mouse_pressed_down, false);
 	theCanvas.addEventListener('mousemove', mouse_moved, false);
 	theCanvas.addEventListener('mouseup', mouse_released, false);
@@ -473,14 +474,11 @@ function canvasApp(){
     
     function mouse_pressed_down (ev) {
 		begin_drawing = true;//drawing turned on when left mouse button down
-		context.fillStyle = thefill;
-		drawBrush();
     }
     function mouse_moved (ev) {
 		// Get the mouse position in the canvas
 		window.x = (ev.pageX-161);
 		window.y = ev.pageY;
-
 		if (begin_drawing) {
 		drawBrush();
 		}
@@ -493,7 +491,6 @@ function canvasApp(){
     function touch_move_gesture (ev) {
 		// For touchscreen browsers/readers that support touchmove
 		ev.preventDefault(); //override default UI behavior for better results on touchscreen devices
-		context.fillStyle = thefill;
 		var touch = ev.touches[0];
 		window.x = (touch.pageX-161);
 		window.y = touch.pageY;
@@ -502,6 +499,7 @@ function canvasApp(){
 
 //Drawing function
 	function drawBrush(){
+		context.fillStyle = thefill;
 		if (setCircle) {  //if statements based on which brush used
 			context.beginPath();
 			context.arc(x, y, w/2, (Math.PI/180)*0, (Math.PI/180)*360, false);
