@@ -2,7 +2,6 @@ body {
 font-size: small;
 font-family: Georgia;
 margin:0;
-cursor:crosshair;
 }
 .page{
 width:850px;
@@ -40,6 +39,7 @@ float:left;
 #painting_canvas {
 border: thin dotted black;
 z-index:1;
+cursor: crosshair;
 }
 #brushPreview {
 }

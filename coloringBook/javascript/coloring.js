@@ -474,7 +474,6 @@ function canvasApp(){
     function mouse_pressed_down (ev) {
 		begin_drawing = true;//drawing turned on when left mouse button down
 		context.fillStyle = thefill;
-		theCanvas.style.cursor ="crosshair";
 
     }
     function mouse_moved (ev) {
@@ -503,7 +502,6 @@ function canvasApp(){
 
 //Drawing function
 	function drawBrush(){
-		theCanvas.style.cursor ="crosshair";
 		if (setCircle) {  //if statements based on which brush used
 			context.beginPath();
 			context.arc(x, y, w/2, (Math.PI/180)*0, (Math.PI/180)*360, false);
