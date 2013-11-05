@@ -501,6 +501,7 @@ function canvasApp(){
 
 //Drawing function
 	function drawBrush(){
+		theCanvas.style.cursor ="crosshair";
 		if (setCircle) {  //if statements based on which brush used
 			context.beginPath();
 			context.arc(x, y, w/2, (Math.PI/180)*0, (Math.PI/180)*360, false);
