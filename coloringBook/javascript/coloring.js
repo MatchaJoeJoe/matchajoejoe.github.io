@@ -474,6 +474,8 @@ function canvasApp(){
     function mouse_pressed_down (ev) {
 		begin_drawing = true;//drawing turned on when left mouse button down
 		context.fillStyle = thefill;
+		theCanvas.style.cursor ="crosshair";
+
     }
     function mouse_moved (ev) {
 		// Get the mouse position in the canvas
