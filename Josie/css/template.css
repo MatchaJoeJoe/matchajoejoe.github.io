@@ -6,11 +6,6 @@ body {
 	background-position:center top;
 }
 div.lightbox {
-	background-color:rgba(240, 255, 240, .5);
-	width: 80%;
-	margin-left: 8.5%;
-	margin-top: 1em;
-	padding:1em;
 }	
 a {
 	border-color: #494949;
@@ -24,7 +19,7 @@ tr {
 	width:100%;
 }
 td {
-text-align: center;
+	text-align: center;
 	width:20%;
 	padding:.5em;
 	font-size: .75em;
@@ -50,7 +45,11 @@ img.w100{
 width:100%;
 }
 div.content{
-	margin:10px;
+	background-color:rgba(240, 255, 240, .5);
+	width: 80%;
+	margin-left: 8.5%;
+	margin-top: 1em;
+	padding:1em;
 	height: 500px;
 	overflow: auto;
 }
