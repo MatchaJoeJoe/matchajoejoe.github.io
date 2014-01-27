@@ -73,6 +73,7 @@ div.h95 {
 .authorname {
 	font-weight: bold;
 	clear: both;
+	margin: 1em 0 0 0;
 }
 .headline {
 	font-size: 2em;
