@@ -8,9 +8,11 @@ body {
 div.content{
 	background-color:rgba(240, 255, 240, .5);
 	width: 80%;
+	height: 40%;
 	margin-left: 8.5%;
 	margin-top: 1em;
 	padding:1em;
+	overflow: auto;
 }
 div.
 a {
@@ -56,8 +58,6 @@ img.w100{
 	width:100%;
 }
 div.h95 {
-	height: 95%;
-	overflow: hidden;
 }
 .h20{
 	height: 10%;
