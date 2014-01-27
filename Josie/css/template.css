@@ -22,6 +22,7 @@ a {
 	color: #494949;
 }
 table.NavBar {
+	width: 95%;
 	margin: 2.5%;
 }
 tr {
@@ -82,7 +83,7 @@ div.h95 {
 .w50fr {
 	width: 30%;
 	float: right;
-	margin: -1em 4em 2em 4em;
+	margin: 0 4em 2em 4em;
 }
 img.h3em {
 	height: 3em;
