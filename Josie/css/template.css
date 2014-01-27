@@ -12,11 +12,10 @@ div.content{
 	margin-left: 8.5%;
 	margin-top: 1em;
 	padding:1em;
-	height: 400px;
+	height: 380px;
 	overflow: auto;
 }
-div.lightbox {
-}	
+div.
 a {
 	border-color: #494949;
 	color: #494949;
@@ -27,13 +26,6 @@ table.NavBar {
 }
 tr {
 	width:100%;
-}
-td {
-	text-align: center;
-	width:20%;
-	padding:.5em;
-	font-size: .75em;
-	background-color:rgba(240, 255, 240, .5);
 }
 td.w30{
 	text-align: center;
@@ -51,7 +43,8 @@ td.w20{
 td.current {
 	text-align: center;
 	width:20%;
-	padding:1em;
+	padding:.25em;
+	font-size: 1.2em;
 	background-color:rgba(200, 255, 200, .7);
 }
 div.w30{
