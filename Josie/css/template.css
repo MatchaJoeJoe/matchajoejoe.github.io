@@ -95,3 +95,14 @@ div.w30lf{
 	float: left;
 	margin: -1em 0;
 }
+.footer {
+	padding:1em;
+	width: 95%;
+	font-size: .8em;
+}
+.copyright{
+float: left;
+}
+.socialmedia{
+text-align: right;
+}
