@@ -11,7 +11,6 @@ div.content{
 	margin-left: 8.5%;
 	margin-top: 1em;
 	padding:1em;
-	height: 380px;
 }
 div.
 a {
@@ -94,8 +93,6 @@ div.w30lf{
 	margin: -1em 0;
 }
 .footer {
-	position: absolute;
-	bottom:0;
 	padding:.25em 1em;
 	width: 95%;
 	margin-left: 2.5%;
