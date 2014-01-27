@@ -64,9 +64,12 @@ text-align: center;
 }
 .authorphoto {
 	float: right;
-	margin:0 10% 2em 5%;
+	margin:-1em 10% 2em 5%;
 	width: 20%;
-	clear: both;
+}
+.authorname {
+font-weight: bold;
+clear: both;
 }
 .headline {
 font-size: 2em;
