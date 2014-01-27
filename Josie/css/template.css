@@ -98,7 +98,7 @@ div.w30lf{
 .footer {
 	padding:1em;
 	width: 95%;
-	font-size: .8em;
+	background-color:rgba(240, 255, 240, .7);	
 }
 .copyright{
 float: left;
