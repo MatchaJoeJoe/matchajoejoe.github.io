@@ -45,9 +45,12 @@ tr {
 td.w20{
 	text-align: center;
 	width:20%;
-	margin: 0 5%;
+	margin: 5%;
 	padding:.5em;
 	font-size: .8em;
+}
+td.w20:hover,td.current:hover{
+	background-color:#52CCCC;
 }
 td.current {
 	text-align: center;
