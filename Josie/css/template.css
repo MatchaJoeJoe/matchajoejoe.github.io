@@ -1,4 +1,4 @@
-p,h1,h2,h3,li,div,span,table {margin:0;}
+p,h1,h2,h3,div,span,table {margin:0;}
 body {
 font-family: Tahoma, Geneva, sans-serif;
 background-color: #dadada;
@@ -70,7 +70,7 @@ td.w30{
 	padding:2.5%;
 	text-align: center;
 }
-td.w50{
+.w50{
 	width:50%;
 	padding:1%;
 }
@@ -180,7 +180,7 @@ table.social{
 float: right;
 }
 img.icon{
-height:2em;
+height:3em;
 }
 td.lquote{
 font-size: 4em;
