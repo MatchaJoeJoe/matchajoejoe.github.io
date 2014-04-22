@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Josie Robin, Science Fiend - Home</title>
+		<link rel="stylesheet" href="css/template.css" type="text/css" />
+	</head>
+	<body>
+		<div class="w90grey">
+			<div class="lightgrey">			
+				<h1 class="header"><span class="hover">Josie</span>&#160;<span class="hover">Robin</span><span class="hover">,</span> <span class="hover">Science</span>&#160;<span class="hover">Fiend</span></h1>
+				<p class="subtitle">Adventure. Science. Fun.<img class="o0 floatr" src="images/ibooks.png" alt="Download on iBooks"/></p>			
+				<table class="NavBar">
+					<tr>
+						<td class="current">Home</td>
+						<td class="w20"><a href="aboutjosie/">About Josie</a></td>
+						<td class="w20"><a href="aboutauthor/">About the Author</a></td>
+						<td class="w20"><a href="press/">Press</a></td>
+					</tr>
+				</table>
+				<div class="content">
+					<h2 class="headline">Sorry, that page cannot be found.</h1>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<table class="social">
+				<tr>
+					<td><a href="https://www.facebook.com/josierobinsciencefiend?ref=hl"><img class="icon" src="images/facebook.png" alt="facebook icon"/></a></td>
+					<td><a href="https://plus.google.com/110250686286890549952/posts"><img class="icon" src="images/gplus.png" alt="gplus icon"/></a></td>
+					<td><a href="https://twitter.com/Josierobinsf"><img class="icon" src="images/twitter.png" alt="twitter icon"/></a></td>
+					<td><a href="http://www.pinterest.com/josierobin/"><img class="icon" src="images/pinterest.png" alt="pinterest icon"/></a></td>
+				</tr>
+			</table>
+			<h2 class="footerhead">Josie&#160;Robin, Science&#160;Fiend</h2>
+			<p class="copyright">© All rights reserved</p>
+			<p class="presented">Presented by ELECTRIC YARN <a href="mailto:info@electric-yarn.com">info@electric-yarn.com</a></p>
+		</div>
+	</body>
+</html>
