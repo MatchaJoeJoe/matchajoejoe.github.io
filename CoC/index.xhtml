@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Clash of Clans Tracker</title>
+<link rel="stylesheet" href="css/style.css" type="text/css"/>
+<script type="text/javascript" src="javascript/CoC.js"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+</head>
+	<body>
+		<div id="container">
+			<div id="HomeBackground">
+				<div id="account">Account:
+					<select class="input" id="accountInput" onchange="changeUser();">
+					    <optgroup label="Users" id="users">
+							<option value="Default" class="Username" id="firstUser">Default</option>
+						</optgroup>
+						<optgroup label="-------">
+							<option value="New">New</option>
+						</optgroup>
+					</select>
+					<input type="button" value="Edit User" onclick="editUser();"/>
+				</div>
+				<div id="tabs">
+					<div class="activetab" onclick="makeTabActive(this);">Other</div>
+					<div class="tab" onclick="makeTabActive(this);">Defense</div>
+					<div class="tab" onclick="makeTabActive(this);">Resources</div>
+					<div class="tab" onclick="makeTabActive(this);">Army</div>
+					<div class="tab" onclick="makeTabActive(this);">Troops</div>
+				</div>
+				<div id="tabContent">
+				</div>
+			</div>
+			<div id="LoadingBackground">
+				<div id="LoadingText" class="fadeIn">CoC&#160;&#160;&#160;<br/>TRA-&#160;<br/>CKER</div>
+			</div>
+		</div>
+	</body>
+</html>

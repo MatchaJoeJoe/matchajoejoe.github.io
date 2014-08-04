@@ -1,0 +1,191 @@
+@font-face {
+    font-family: SuperCell;
+    src: url(../fonts/Supercell-Magic_5.ttf);
+}
+body {
+	font-family: SuperCell;
+	margin:0;
+	padding:0;
+	background-color: black;
+	height: 100%;
+	overflow: hidden;
+}
+input {
+	border-radius: 10px;
+	position: relative;
+	height:25px;
+	top:-5px;
+	font-family: SuperCell;
+	background-color: #fff;
+	-webkit-appearance: none;
+	text-align: center;
+}
+select {
+	font-family: SuperCell;
+	height:25px;
+	position: relative;
+	top:-5px;
+	background-color: #fff;
+	-webkit-appearance: none;
+	padding-left: 10px;
+	text-align: center;
+}
+#HomeBackground {
+	display: table;
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	border-radius: 20px;
+	background-color: #E6E6E6;
+	z-index: 1;
+}
+#account {
+	text-align: center;
+	font-size: 20px;
+	padding: 15px;
+	margin: 10px;
+	background-color: #4C4C4C;
+	color: white;
+	border-radius: 20px;
+	border: thin solid grey;
+}
+#inputs {
+	margin-top: 10px;
+	text-align: left;
+	width: 90%;
+	margin-left: 5%;
+}
+#greyedout {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: .7;
+}
+#NewAccount {
+	display: table-cell;
+	position: absolute;
+	vertical-align: middle;
+	text-align: center;
+	top:2.5%;
+	left: 5%;
+	width: 80%;
+	height: 80%;
+	padding: 5%;
+	border-radius: 25px;
+	background-color: white;
+	border: thick solid grey;
+	z-index: 99;
+	opacity: 1;
+}
+input.ok {
+	color: white;
+	background-color: green;
+}
+input.cancel {
+	color: white;
+	background-color: red;
+}
+#tabs {
+	width: 100%;
+}
+div.tab {
+	position: relative;
+	float:left;
+	padding: 1% 0 3% 0;
+	margin-top:1%;
+	margin-bottom: -2%;
+	width:20%;
+	text-align: center;
+	background-color: #B8B8B8;
+	border-radius: 10px;
+	z-index: 0;
+}
+div.activetab {
+	position: relative;
+	float:left;
+	padding: 2% 0 3% 0;
+	margin-bottom: -2%;
+	width:20%;
+	text-align: center;
+	background-color: #CFCFCF;
+	border-radius: 10px;
+	z-index: 4;
+	box-shadow: 10px 5px 5px #888888;
+}
+#tabContent {
+	text-align: center;
+	clear: both;
+	width: 96%;
+	position: relative;
+	background-color: #CFCFCF;
+	z-index: 5;
+	padding: 2%;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+span.button {
+padding:20px;
+margin: 20px;
+line-height: 80px;
+background-color: #0029A3;
+color: white;
+border-radius: 15px;
+border:thick solid #6C91FF;
+white-space:nowrap;
+}
+
+#LoadingBackground {
+	display: table;
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color: black;
+	z-index: 100;
+}
+#LoadingText {
+	display: table-cell;
+	font-size: 30px;
+	line-height: 32px;
+	color: white;
+	vertical-align: middle;
+	text-align: center;
+}
+
+
+.fadeout {
+	opacity:0;
+	-webkit-animation-name: fadeout;
+	-webkit-animation-duration:1s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease;
+}
+@-webkit-keyframes fadeout{
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+.fadeIn {
+	opacity: 1;
+	-webkit-animation-name: fadeIn;
+	-webkit-animation-duration:2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease;
+}
+@-webkit-keyframes fadeIn{
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
