@@ -24,16 +24,21 @@ function changeUser() {
 		theContainer.appendChild(NewDiv);
 	}
 	if (currentUser != 'New'){
-		xmlhttp=new XMLHttpRequest();
+		if (window.XMLHttpRequest) {
+			// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp=new XMLHttpRequest();
+			} else { // code for IE6, IE5
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
 		xmlhttp.onreadystatechange=function() {
 			if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-			alert(xmlhttp.responseText);
-//			document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+			document.getElementById("accountinfo").innerHTML=xmlhttp.responseText;
 			}
 		}
-		xmlhttp.open("GET","php/getuser.php?q="+currentUser,true);
+		xmlhttp.open("GET","getuser.php?q="+currentUser,true);
 		xmlhttp.send();
 	}
+
 }
 function editUser(){
 	var userInput = document.getElementById('accountInput');
