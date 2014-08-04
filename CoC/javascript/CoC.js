@@ -35,7 +35,7 @@ function changeUser() {
 			document.getElementById("accountinfo").innerHTML=xmlhttp.responseText;
 			}
 		}
-		xmlhttp.open("GET","getuser.php?q="+currentUser,true);
+		xmlhttp.open("GET","php/getuser.php?q="+currentUser,true);
 		xmlhttp.send();
 	}
 
