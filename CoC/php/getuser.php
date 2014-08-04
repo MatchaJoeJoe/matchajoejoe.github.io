@@ -1,7 +1,7 @@
 <?php
 $q = intval($_GET['q']);
 
-$con = mysqli_connect('http://192.168.1.104:8080','root','eBooks4$','CoC');
+$con = mysqli_connect('127.0.0.1:8080','root','eBooks4$','CoC');
 if (!$con) {
   die('Could not connect: ' . mysqli_error($con));
 }
