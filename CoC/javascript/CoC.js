@@ -22,12 +22,8 @@ function changeUser() {
 		NewDiv.id = 'NewAccount';
 		NewDiv.innerHTML = 'New Account Name: <input autofocus="autofocus" type="text" id="NewName" onkeydown="if (event.keyCode == 13) {document.getElementById(\'ok\').click();}if (event.keyCode == 27) {document.getElementById(\'cancel\').click();}"/><br/><br/><input type="button" value="Cancel" class="cancel" id="cancel" onclick="cancelUser();"/>&#160;&#160;&#160;<input class="ok" type="button" value="OK" id="ok" onclick="createUser();"/>';
 		theContainer.appendChild(NewDiv);
-		var mySQLOutput = '<?php $q = intval($_GET['+NewAccount+']); $con = mysqli_connect(\'127.0.0.1:8080\',\'root\',\'eBooks4$\',\'CoC\'); if (!$con) {die(\'Could not connect: \' . mysqli_error($con));}$sql="SELECT * FROM Users WHERE Username = '".$q."'";echo json_encode(mysqli_query($con,$sql));mysqli_close($con);?>';
-		alert(mySQLOutput);
 	}
 	if (currentUser != 'New'){
-		var mySQLOutput = '<?php $q = intval($_GET['+currentUser+']); $con = mysqli_connect(\'127.0.0.1:8080\',\'root\',\'eBooks4$\',\'CoC\'); if (!$con) {die(\'Could not connect: \' . mysqli_error($con));}$sql="SELECT * FROM Users WHERE Username = '".$q."'";echo json_encode(mysqli_query($con,$sql));mysqli_close($con);?>';
-		alert(mySQLOutput);
 	}
 
 }
