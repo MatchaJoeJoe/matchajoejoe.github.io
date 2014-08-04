@@ -31,7 +31,7 @@ function changeUser() {
 			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 		}
 		xmlhttp.onreadystatechange=function() {
-		alert(xmlhttp.readyState);
+		alert(xmlhttp.status);
 			if (xmlhttp.readyState==4 && xmlhttp.status==200) {
 			document.getElementById("accountinfo").innerHTML=xmlhttp.responseText;
 			}
