@@ -10,6 +10,19 @@ function eventWindowLoaded() {
 	}, 4000);
 	loadContent();
 }
+function recalculateGold(currentElement){
+	currentElement.blur();
+}
+function recalculateElixer(currentElement){
+	currentElement.blur();
+}
+function recalculateDElixer(currentElement){
+	currentElement.blur();
+}
+function recalculateGems(currentElement){
+	currentElement.blur();
+}
+
 function changeUser() {
 	var userInput = document.getElementById('accountInput');
 	var currentUser = userInput.options[userInput.selectedIndex].text;
@@ -173,37 +186,37 @@ function loadContent(){
     while(i--) {
 		var TabContent = activeTabs[i].textContent;
 	}
-	if (TabContent=='Other'){
-		tabContentDiv.innerHTML = 'These buildings are those that are neither offensive, defensive, or resource-giving.<br/><br/><span class="button" onclick="loadSubContent(this);">Town Hall</span> <span class="button" onclick="loadSubContent(this);">Clan Castle</span> <span class="button" onclick="loadSubContent(this);">Decorations</span> <span class="button" onclick="loadSubContent(this);">Obstacles</span>';
+	if (TabContent.lastIndexOf("Other")==0){
+		tabContentDiv.innerHTML = '<span class="tabtext">These buildings are those that are neither offensive, defensive, or resource-giving.</span><br/><br/><span class="button" onclick="loadSubContent(this);">Town Hall<span class="bubble">1</span></span> <span class="button" onclick="loadSubContent(this);">Clan Castle<span class="bubble">1</span></span> <span class="button" onclick="loadSubContent(this);">Decorations<span class="bubble">36</span></span> <span class="button" onclick="loadSubContent(this);">Obstacles<span class="bubble">19</span></span>';
 		
 	}
-	if (TabContent=='Defense'){
-		tabContentDiv.innerHTML = 'Defenses serve to safeguard trophies and protect resources from enemy troops.<br/><br/><span class="button" onclick="loadSubContent(this);">Cannons</span> <span class="button" onclick="loadSubContent(this);">Archer Towers</span> <span class="button" onclick="loadSubContent(this);">Mortars</span> <span class="button" onclick="loadSubContent(this);">Air Defenses</span> <span class="button" onclick="loadSubContent(this);">Wizard Towers</span> <span class="button" onclick="loadSubContent(this);">Hidden Teslas</span> <span class="button" onclick="loadSubContent(this);">X-bows</span> <span class="button" onclick="loadSubContent(this);">Walls</span> <span class="button" onclick="loadSubContent(this);">Traps</span>';
+	if (TabContent.lastIndexOf("Defense")==0){
+		tabContentDiv.innerHTML = '<span class="tabtext">Defenses serve to safeguard trophies and protect resources from enemy troops.</span><br/><br/><span class="button" onclick="loadSubContent(this);">Cannons</span> <span class="button" onclick="loadSubContent(this);">Archer Towers</span> <span class="button" onclick="loadSubContent(this);">Mortars</span> <span class="button" onclick="loadSubContent(this);">Air Defenses</span> <span class="button" onclick="loadSubContent(this);">Wizard Towers</span> <span class="button" onclick="loadSubContent(this);">Hidden Teslas</span> <span class="button" onclick="loadSubContent(this);">X-bows</span> <span class="button" onclick="loadSubContent(this);">Walls<span class="bubble">99+</span></span> <span class="button" onclick="loadSubContent(this);">Traps</span>';
 		
 	}
-	if (TabContent=='Resources'){
-		tabContentDiv.innerHTML = 'Resources are the currencies used to purchase and upgrade assets.<br/><br/><span class="button" onclick="loadSubContent(this);">Gold Mine</span> <span class="button" onclick="loadSubContent(this);">Gold Storage</span> <span class="button" onclick="loadSubContent(this);">Elixir Collector</span> <span class="button" onclick="loadSubContent(this);">Elixir Storage</span> <span class="button" onclick="loadSubContent(this);">Dark Elixir Drill</span> <span class="button" onclick="loadSubContent(this);">Dark Elixir Storage</span> <span class="button" onclick="loadSubContent(this);">Builder’s Hut</span>';
+	if (TabContent.lastIndexOf("Resources")==0){
+		tabContentDiv.innerHTML = '<span class="tabtext">Resources are the currencies used to purchase and upgrade assets.</span><br/><br/><span class="button" onclick="loadSubContent(this);">Gold Mine</span> <span class="button" onclick="loadSubContent(this);">Gold Storage</span> <span class="button" onclick="loadSubContent(this);">Elixir Collector</span> <span class="button" onclick="loadSubContent(this);">Elixir Storage</span> <span class="button" onclick="loadSubContent(this);">Dark Elixir Drill</span> <span class="button" onclick="loadSubContent(this);">Dark Elixir Storage</span> <span class="button" onclick="loadSubContent(this);">Builder’s Hut</span>';
 		
 	}
-	if (TabContent=='Army'){
-		tabContentDiv.innerHTML = 'The Army section of the in-game shop that will impact the strength of your attacking army, allowing you to win more attacks.<br/><br/><span class="button" onclick="loadSubContent(this);">Army Camp</span> <span class="button" onclick="loadSubContent(this);">Barracks</span> <span class="button" onclick="loadSubContent(this);">Dark Barracks</span> <span class="button" onclick="loadSubContent(this);">Laboratory</span> <span class="button" onclick="loadSubContent(this);">Spell Factory</span> <span class="button" onclick="loadSubContent(this);">Barbarian King Altar</span> <span class="button" onclick="loadSubContent(this);">Archer Queen Altar</span>';
+	if (TabContent.lastIndexOf("Army")==0){
+		tabContentDiv.innerHTML = '<span class="tabtext">The Army section of the in-game shop that will impact the strength of your attacking army, allowing you to win more attacks.</span><br/><br/><span class="button" onclick="loadSubContent(this);">Army Camp</span> <span class="button" onclick="loadSubContent(this);">Barracks</span> <span class="button" onclick="loadSubContent(this);">Dark Barracks</span> <span class="button" onclick="loadSubContent(this);">Laboratory</span> <span class="button" onclick="loadSubContent(this);">Spell Factory</span> <span class="button" onclick="loadSubContent(this);">Barbarian King Altar</span> <span class="button" onclick="loadSubContent(this);">Archer Queen Altar</span>';
 		
 	}
-	if (TabContent=='Troops'){
-		tabContentDiv.innerHTML = 'Troops are used against either the goblins on the campaign map, or other players in order to win Trophies and loot Gold and Elixir.<br/><br/><span class="button" onclick="loadSubContent(this);">Tier 1</span> <span class="button" onclick="loadSubContent(this);">Tier 2</span> <span class="button" onclick="loadSubContent(this);">Tier 3</span> <span class="button" onclick="loadSubContent(this);">Dark Elixer Troops</span> <span class="button" onclick="loadSubContent(this);">Heroes</span> <span class="button" onclick="loadSubContent(this);">Spells</span>';
+	if (TabContent.lastIndexOf("Troops")==0){
+		tabContentDiv.innerHTML = '<span class="tabtext">Troops are used against either the goblins on the campaign map, or other players in order to win Trophies and loot Gold and Elixir.</span><br/><br/><span class="button" onclick="loadSubContent(this);">Tier 1</span> <span class="button" onclick="loadSubContent(this);">Tier 2</span> <span class="button" onclick="loadSubContent(this);">Tier 3</span> <span class="button" onclick="loadSubContent(this);">Dark Elixer Troops</span> <span class="button" onclick="loadSubContent(this);">Heroes</span> <span class="button" onclick="loadSubContent(this);">Spells</span>';
 		
 	}
 }
 
 function loadSubContent(currentButton){
-	var theSubContent = currentButton.textContent;
-	var theContainer = document.getElementById('HomeBackground');
+	var theSubContent = currentButton.innerHTML;
+	var theContainer = document.getElementById('tabContent');
 	var greydiv = document.createElement('div');
 	greydiv.id= 'greyedout';
 	theContainer.appendChild(greydiv);
 	var NewDiv = document.createElement('div');
 	NewDiv.id = 'PopUpWindow';
-	NewDiv.innerHTML = '<span id="backButton" onclick="closePopUpWindow();">Back</span><br/>'+theSubContent;
+	NewDiv.innerHTML = '<span id="backButton" onclick="closePopUpWindow();">Back</span><span class="button" >'+theSubContent+'</span>';
 	theContainer.appendChild(NewDiv);
 }
 function closePopUpWindow(){
