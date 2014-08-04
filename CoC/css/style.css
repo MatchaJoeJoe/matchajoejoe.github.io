@@ -4,6 +4,7 @@
 }
 body {
 	font-family: SuperCell;
+	font-size: 10px;
 	margin:0;
 	padding:0;
 	background-color: black;
@@ -13,7 +14,7 @@ body {
 input {
 	border-radius: 10px;
 	position: relative;
-	height:20px;
+	height:25px;
 	top:-5px;
 	font-family: SuperCell;
 	background-color: #fff;
@@ -44,7 +45,7 @@ select {
 }
 #account {
 	text-align: center;
-	font-size: 20px;
+	font-size: 15px;
 	padding: 15px;
 	margin: 5px;
 	background-color: #FFAD33;
@@ -57,7 +58,6 @@ select {
 	border: thick solid #B80000;
 }
 #accountinfo {
-	font-size: 10px;
 	line-height: 20px;
 	width: 100%;
 }
@@ -111,9 +111,9 @@ select {
 }
 span.bubble{
 	position: relative;
-	top:-10px;
+	top:-8px;
 	right:-5px;
-	font-size: 10px;
+	font-size: 8px;
 	padding: 3px 6px;
 	line-height: 12px;
 	color: white;
@@ -136,9 +136,9 @@ input.cancel {
 div.tab {
 	position: relative;
 	float:left;
-	padding: 1% 0 1% 0;
+	padding: 1% 0 1.5% 0;
+	margin-bottom: -.5%;
 	margin-top:.5%;
-	margin-bottom: 0;
 	width:20%;
 	text-align: center;
 	background-color: #A6A6A6;
@@ -153,8 +153,8 @@ div.tab {
 div.activetab {
 	position: relative;
 	float:left;
-	padding: 1.5% 0 1% 0;
-	margin-bottom: 0;
+	padding: 1.5% 0 1.5% 0;
+	margin-bottom: -.5%;
 	width:20%;
 	text-align: center;
 	background-color: #CFCFCF;
@@ -186,7 +186,6 @@ div.activetab {
 }
 span.tabtext {
 	line-height: 12px;
-	font-size: 10px;
 }
 span.button {
 	padding:10px;
