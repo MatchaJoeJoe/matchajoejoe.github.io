@@ -19,7 +19,7 @@ function changeUser() {
 		greydiv.id= 'greyedout';
 		theContainer.appendChild(greydiv);
 		var NewDiv = document.createElement('div');
-		NewDiv.id = 'NewAccount';
+		NewDiv.id = 'PopUpWindow';
 		NewDiv.innerHTML = 'New Account Name: <input autofocus="autofocus" type="text" id="NewName" onkeydown="if (event.keyCode == 13) {document.getElementById(\'ok\').click();}if (event.keyCode == 27) {document.getElementById(\'cancel\').click();}"/><br/><br/><input type="button" value="Cancel" class="cancel" id="cancel" onclick="cancelUser();"/>&#160;&#160;&#160;<input class="ok" type="button" value="OK" id="ok" onclick="createUser();"/>';
 		theContainer.appendChild(NewDiv);
 	}
@@ -35,8 +35,8 @@ function editUser(){
 	greydiv.id= 'greyedout';
 	theContainer.appendChild(greydiv);
 	var NewDiv = document.createElement('div');
-	NewDiv.id = 'NewAccount';
-	NewDiv.innerHTML = 'Edit Account Name: <input autofocus="autofocus" value="'+currentUser+'" type="text" id="NewName" onkeydown="if (event.keyCode == 13) {document.getElementById(\'ok\').click();}if (event.keyCode == 27) {document.getElementById(\'cancel\').click();}"/><br/><br/><input type="button" value="Cancel" class="cancel" id="cancel" onclick="cancelUser();"/>&#160;&#160;&#160;<input class="ok" type="button" value="Update" id="update" onclick="updateUser();"/><br/><br/><input class="cancel" type="button" value="Delete" id="delete" onclick="deleteUser();"/>';
+	NewDiv.id = 'PopUpWindow';
+	NewDiv.innerHTML = 'Edit Account Name: <input autofocus="autofocus" value="'+currentUser+'" type="text" id="NewName" onkeydown="if (event.keyCode == 13) {document.getElementById(\'update\').click();}if (event.keyCode == 27) {document.getElementById(\'cancel\').click();}"/><br/><br/><input type="button" value="Cancel" class="cancel" id="cancel" onclick="cancelUser();"/>&#160;&#160;&#160;<input class="ok" type="button" value="Update" id="update" onclick="updateUser();"/><br/><br/><input class="cancel" type="button" value="Delete" id="delete" onclick="deleteUser();"/>';
 	theContainer.appendChild(NewDiv);
 }
 function createUser(){
@@ -66,7 +66,7 @@ function createUser(){
 		}
 		var greydiv = document.getElementById('greyedout');
 		greydiv.parentNode.removeChild(greydiv);
-		var NewAccountPage = document.getElementById('NewAccount');
+		var NewAccountPage = document.getElementById('PopUpWindow');
 		NewAccountPage.parentNode.removeChild(NewAccountPage);
 
 		userInput.options.forEach(function(element, index){
@@ -99,7 +99,7 @@ function updateUser(){
 			var UserList = document.getElementById('users');
 			var greydiv = document.getElementById('greyedout');
 			greydiv.parentNode.removeChild(greydiv);
-			var NewAccountPage = document.getElementById('NewAccount');
+			var NewAccountPage = document.getElementById('PopUpWindow');
 			NewAccountPage.parentNode.removeChild(NewAccountPage);
 
 			userInput.options.forEach(function(element, index){
@@ -131,10 +131,9 @@ function deleteUser(){
 			}
 		});
 	}
-
 	var greydiv = document.getElementById('greyedout');
 	greydiv.parentNode.removeChild(greydiv);
-	var NewAccountPage = document.getElementById('NewAccount');
+	var NewAccountPage = document.getElementById('PopUpWindow');
 	NewAccountPage.parentNode.removeChild(NewAccountPage);
 	var originalUser = 'firstUser';
 	userInput.options.forEach(function(element, index){
@@ -147,7 +146,7 @@ function deleteUser(){
 function cancelUser(){
 	var greydiv = document.getElementById('greyedout');
 	greydiv.parentNode.removeChild(greydiv);
-	var NewAccountPage = document.getElementById('NewAccount');
+	var NewAccountPage = document.getElementById('PopUpWindow');
 	NewAccountPage.parentNode.removeChild(NewAccountPage);
 	HTMLOptionsCollection.prototype.forEach = Array.prototype.forEach;
 	var userInput = document.getElementById('accountInput');
@@ -175,23 +174,41 @@ function loadContent(){
 		var TabContent = activeTabs[i].textContent;
 	}
 	if (TabContent=='Other'){
-		tabContentDiv.innerHTML = 'These buildings are those that are neither offensive, defensive, or resource-giving.<br/><br/><span class="button">Town Hall</span> <span class="button">Clan Castle</span> <span class="button">Decorations</span> <span class="button">Obstacles</span>';
+		tabContentDiv.innerHTML = 'These buildings are those that are neither offensive, defensive, or resource-giving.<br/><br/><span class="button" onclick="loadSubContent(this);">Town Hall</span> <span class="button" onclick="loadSubContent(this);">Clan Castle</span> <span class="button" onclick="loadSubContent(this);">Decorations</span> <span class="button" onclick="loadSubContent(this);">Obstacles</span>';
 		
 	}
 	if (TabContent=='Defense'){
-		tabContentDiv.innerHTML = 'Defenses serve to safeguard trophies and protect resources from enemy troops.<br/><br/><span class="button">Cannons</span> <span class="button">Archer Towers</span> <span class="button">Mortars</span> <span class="button">Air Defenses</span> <span class="button">Wizard Towers</span> <span class="button">Hidden Teslas</span> <span class="button">X-bows</span> <span class="button">Walls</span> <span class="button">Traps</span>';
+		tabContentDiv.innerHTML = 'Defenses serve to safeguard trophies and protect resources from enemy troops.<br/><br/><span class="button" onclick="loadSubContent(this);">Cannons</span> <span class="button" onclick="loadSubContent(this);">Archer Towers</span> <span class="button" onclick="loadSubContent(this);">Mortars</span> <span class="button" onclick="loadSubContent(this);">Air Defenses</span> <span class="button" onclick="loadSubContent(this);">Wizard Towers</span> <span class="button" onclick="loadSubContent(this);">Hidden Teslas</span> <span class="button" onclick="loadSubContent(this);">X-bows</span> <span class="button" onclick="loadSubContent(this);">Walls</span> <span class="button" onclick="loadSubContent(this);">Traps</span>';
 		
 	}
 	if (TabContent=='Resources'){
-		tabContentDiv.innerHTML = 'These buildings are those that are neither offensive, defensive, or resource-giving.';
+		tabContentDiv.innerHTML = 'Resources are the currencies used to purchase and upgrade assets.<br/><br/><span class="button" onclick="loadSubContent(this);">Gold Mine</span> <span class="button" onclick="loadSubContent(this);">Gold Storage</span> <span class="button" onclick="loadSubContent(this);">Elixir Collector</span> <span class="button" onclick="loadSubContent(this);">Elixir Storage</span> <span class="button" onclick="loadSubContent(this);">Dark Elixir Drill</span> <span class="button" onclick="loadSubContent(this);">Dark Elixir Storage</span> <span class="button" onclick="loadSubContent(this);">Builder’s Hut</span>';
 		
 	}
 	if (TabContent=='Army'){
-		tabContentDiv.innerHTML = 'These buildings are those that are neither offensive, defensive, or resource-giving.';
+		tabContentDiv.innerHTML = 'The Army section of the in-game shop that will impact the strength of your attacking army, allowing you to win more attacks.<br/><br/><span class="button" onclick="loadSubContent(this);">Army Camp</span> <span class="button" onclick="loadSubContent(this);">Barracks</span> <span class="button" onclick="loadSubContent(this);">Dark Barracks</span> <span class="button" onclick="loadSubContent(this);">Laboratory</span> <span class="button" onclick="loadSubContent(this);">Spell Factory</span> <span class="button" onclick="loadSubContent(this);">Barbarian King Altar</span> <span class="button" onclick="loadSubContent(this);">Archer Queen Altar</span>';
 		
 	}
 	if (TabContent=='Troops'){
-		tabContentDiv.innerHTML = 'These buildings are those that are neither offensive, defensive, or resource-giving.';
+		tabContentDiv.innerHTML = 'Troops are used against either the goblins on the campaign map, or other players in order to win Trophies and loot Gold and Elixir.<br/><br/><span class="button" onclick="loadSubContent(this);">Tier 1</span> <span class="button" onclick="loadSubContent(this);">Tier 2</span> <span class="button" onclick="loadSubContent(this);">Tier 3</span> <span class="button" onclick="loadSubContent(this);">Dark Elixer Troops</span> <span class="button" onclick="loadSubContent(this);">Heroes</span> <span class="button" onclick="loadSubContent(this);">Spells</span>';
 		
 	}
+}
+
+function loadSubContent(currentButton){
+	var theSubContent = currentButton.textContent;
+	var theContainer = document.getElementById('HomeBackground');
+	var greydiv = document.createElement('div');
+	greydiv.id= 'greyedout';
+	theContainer.appendChild(greydiv);
+	var NewDiv = document.createElement('div');
+	NewDiv.id = 'PopUpWindow';
+	NewDiv.innerHTML = '<span id="backButton" onclick="closePopUpWindow();">Back</span><br/>'+theSubContent;
+	theContainer.appendChild(NewDiv);
+}
+function closePopUpWindow(){
+	var greydiv = document.getElementById('greyedout');
+	greydiv.parentNode.removeChild(greydiv);
+	var NewAccountPage = document.getElementById('PopUpWindow');
+	NewAccountPage.parentNode.removeChild(NewAccountPage);
 }
