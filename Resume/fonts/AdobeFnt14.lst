@@ -1,0 +1,154 @@
+%!Adobe-FontList 1.14
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:ACaslonPro-Bold
+FamilyName:Adobe Caslon Pro
+StyleName:Bold
+MenuName:Adobe Caslon Pro Bold
+StyleBits:0
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:Adobe Caslon Pro Bold
+WritingScript:Roman
+OutlineFileName:\ACaslonPro-Bold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+FileLength:143692
+FileModTime:1406816842
+DesignSize:120
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:ACaslonPro-Regular
+FamilyName:Adobe Caslon Pro
+StyleName:Regular
+MenuName:Adobe Caslon Pro
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Adobe Caslon Pro
+WritingScript:Roman
+OutlineFileName:\ACaslonPro-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+FileLength:167536
+FileModTime:1358847408
+DesignSize:120
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:ACaslonPro-Semibold
+FamilyName:Adobe Caslon Pro
+StyleName:Semibold
+MenuName:Adobe Caslon Pro
+StyleBits:2
+WeightClass:600
+WidthClass:5
+AngleClass:0
+FullName:Adobe Caslon Pro Semibold
+WritingScript:Roman
+OutlineFileName:\ACaslonPro-Semibold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+FileLength:170992
+FileModTime:1406816855
+DesignSize:120
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:ACaslonPro-SemiboldItalic
+FamilyName:Adobe Caslon Pro
+StyleName:Semibold Italic
+MenuName:Adobe Caslon Pro
+StyleBits:3
+WeightClass:600
+WidthClass:5
+AngleClass:1
+FullName:Adobe Caslon Pro Semibold Italic
+WritingScript:Roman
+OutlineFileName:\ACaslonPro-SemiboldItalic.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+FileLength:171196
+FileModTime:1406816861
+DesignSize:120
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:AppleSymbols
+FamilyName:Apple Symbols
+StyleName:Regular
+MenuName:Apple Symbols
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Apple Symbols
+FamilyNameNative:
+StyleNameNative:Regular
+FullNameNative:
+WritingScript:Greek
+OutlineFileName:\Apple Symbols.ttf
+DataFormat:sfntData
+FileLength:3751680
+FileModTime:1391622900
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:ImpactLTStd
+FamilyName:Impact LT Std
+StyleName:Roman
+MenuName:Impact LT Std
+StyleBits:0
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:Impact LT Std Roman
+WritingScript:Roman
+OutlineFileName:\ImpactLTStd.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+FileLength:29052
+FileModTime:1407169416
+DesignSize:180
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Wingdings-Regular
+FamilyName:Wingdings
+StyleName:Regular
+MenuName:Wingdings
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Wingdings
+WritingScript:Roman
+OutlineFileName:\Wingdings.ttf
+DataFormat:sfntData
+FileLength:83496
+FileModTime:1281561977
+%EndFont
+

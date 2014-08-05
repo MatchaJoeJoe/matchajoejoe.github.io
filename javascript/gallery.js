@@ -8,7 +8,7 @@ function init() {
 		
 	for (i = 0; i < imgs.length; i++) { 
 		
-		imgs[i].onclick = function() {
+		imgs[i].onmouseover = function() {
 			var self = this; 
 		
 			var img = new Image();
@@ -55,9 +55,7 @@ function init() {
 			);
 		}
 		
-		imgs[i].onmouseover = function() { this.className = 'transparent'; }
-		imgs[i].onmouseout = function() { this.className = this.className.replace(/transparent/, ''); }
 	}
 	
-	imgs[0].onclick();
+	imgs[0].onmouseover();
 }
