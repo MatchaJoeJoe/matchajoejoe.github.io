@@ -1,5 +1,6 @@
 var tt = null, ii = null, imgs = [], current = 0;
-function init() {
+window.addEventListener('load', eventWindowLoaded, false);	
+function eventWindowLoaded() {
 	var c = document.getElementById('images'),
 		i;
 		

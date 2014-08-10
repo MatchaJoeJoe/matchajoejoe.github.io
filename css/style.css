@@ -3,10 +3,13 @@ body {
 	margin:0;
 	padding:0;
 	height: 100%;
-background-color: black;
 }
 body.grey {
-background-color: none;
+	background-color: #CFCFCF;/*BABABA*/
+	background: -webkit-radial-gradient(#CFCFCF 5%, rgba(0,0,0,0) 20%); /* Safari 5.1 to 6.0 */
+	background: -o-radial-gradient(#CFCFCF 5%, rgba(0,0,0,0) 20%); /* For Opera 11.6 to 12.0 */
+	background: -moz-radial-gradient(#CFCFCF 5%, rgba(0,0,0,0) 20%); /* For Firefox 3.6 to 15 */
+	background: radial-gradient(#CFCFCF 5%, rgba(0,0,0,0) 20%); /* Standard syntax */
 }
 input {
 	border-radius: 10px;
@@ -28,7 +31,7 @@ select {
 	padding-left: 10px;
 	text-align: center;
 }
-.container{
+#container{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -55,6 +58,7 @@ span.bubble{
 	width: 20%;
 }
 div.footer{
+	font-size: .6em;
 	position: absolute;
 	right: 0;
 	width: 10%;
@@ -62,55 +66,58 @@ div.footer{
 }
 div.footertab {
 	position: relative;
+	font-size: 1.2em;
+	margin:2% 0;
 	padding: 10px;
 	text-align: center;
-	background-color: #A6A6A6;
-	background: -webkit-linear-gradient(#A6A6A6, #B8B8B8); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(#A6A6A6, #B8B8B8); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#A6A6A6, #B8B8B8); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#A6A6A6, #B8B8B8); /* Standard syntax */
-	border-radius: 10px;
+	color: #CFCFCF;
 	z-index: 99;
 }
 div.tab {
 	position: relative;
+	font-size: 1.2em;
+	margin:2% 0;
 	padding: 10px;
+	color: #CFCFCF;
 	text-align: center;
-	background-color: #A6A6A6;
-	background: -webkit-linear-gradient(#A6A6A6, #B8B8B8); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(#A6A6A6, #B8B8B8); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#A6A6A6, #B8B8B8); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#A6A6A6, #B8B8B8); /* Standard syntax */
-	border-radius: 10px;
-	z-index: 99;
+	z-index: 98;
 }
 div.activetab {
 	position: relative;
+	font-size: 1.5em;
 	padding: 10px;
+	margin:2% 0;
 	text-align: center;
-	background-color: #CFCFCF;
-	background: -webkit-linear-gradient(#BABABA, #CFCFCF); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(#BABABA, #CFCFCF); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#BABABA, #CFCFCF); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#BABABA, #CFCFCF); /* Standard syntax */
+	background-color: #CFCFCF;/*BABABA*/
+	background: -webkit-radial-gradient(#fff 5%, rgba(0,0,0,0) 60%); /* Safari 5.1 to 6.0 */
+	background: -o-radial-gradient(#fff 5%, rgba(0,0,0,0) 60%); /* For Opera 11.6 to 12.0 */
+	background: -moz-radial-gradient(#fff 5%, rgba(0,0,0,0) 60%); /* For Firefox 3.6 to 15 */
+	background: radial-gradient(#fff 5%, rgba(0,0,0,0) 60%); /* Standard syntax */
 	border-radius: 10px;
 	z-index: 99;
-	box-shadow: 10px 5px 5px #888888;
 }
 #tabContent {
 	text-align: center;
 	width: 70%;
 	height: 100%;
-	margin-left: 20%;
-	position: relative;
-	background-color: #CFCFCF;
+	padding-left: 20%;
+	padding-right: 10%;
+	position: absolute;
+	top: 0;
+	left:0;
 	z-index: 5;
 	border-radius: 10px;
-	background: -webkit-linear-gradient(#CFCFCF, #FCFCFC); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(#CFCFCF, #FCFCFC); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#CFCFCF, #FCFCFC); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#CFCFCF, #FCFCFC); /* Standard syntax */
-
+	background-color: #BABABA;/*CFCFCF*/
+	background: -webkit-radial-gradient(#BABABA 0%, rgba(0,0,0,0) 90%); /* Safari 5.1 to 6.0 */
+	background: -o-radial-gradient(#BABABA 0%, rgba(0,0,0,0) 90%); /* For Opera 11.6 to 12.0 */
+	background: -moz-radial-gradient(#BABABA 0%, rgba(0,0,0,0) 90%); /* For Firefox 3.6 to 15 */
+	background: radial-gradient(#BABABA 0%, rgba(0,0,0,0) 90%); /* Standard syntax */
+	border-radius: 20px;
+}
+iframe.w90 {
+	width: 90%;
+	height: 90%;
+	margin: 5%;
 }
 span.tabtext {
 	line-height: 12px;
@@ -149,13 +156,20 @@ span.button {
 	text-align: center;
 }
 
-
 .fadeout {
 	opacity:0;
 	-webkit-animation-name: fadeout;
 	-webkit-animation-duration:1s;
 	-webkit-animation-iteration-count: 1;
 	-webkit-animation-timing-function: ease;
+	-moz-animation-name: fadeout;
+	-moz-animation-duration:1s;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: ease;
+	animation-name: fadeout;
+	animation-duration:1s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease;
 }
 @-webkit-keyframes fadeout{
 	0% {
@@ -165,12 +179,20 @@ span.button {
 		opacity: 0;
 	}
 }
-.fadeIn {
+.fadein {
 	opacity: 1;
 	-webkit-animation-name: fadeIn;
-	-webkit-animation-duration:2s;
+	-webkit-animation-duration:1s;
 	-webkit-animation-iteration-count: 1;
 	-webkit-animation-timing-function: ease;
+	-moz-animation-name: fadeIn;
+	-moz-animation-duration:1s;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: ease;
+	animation-name: fadeIn;
+	animation-duration:1s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease;
 }
 @-webkit-keyframes fadeIn{
 	0% {
@@ -180,11 +202,39 @@ span.button {
 		opacity: 1;
 	}
 }
+.glow {
+	opacity: 1;
+	-webkit-animation-name: glow;
+	-webkit-animation-duration:3s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: ease;
+	-moz-animation-name: glow;
+	-moz-animation-duration:3s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-timing-function: ease;
+	animation-name: glow;
+	animation-duration:3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease;
+}
+@-webkit-keyframes glow{
+	0% {
+		opacity: .5;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: .5;
+	}
+}
+
 .w50r{
 	position:absolute;
 	top: 0;
-	right:0;
-	width: 50%;
+	right:10%;
+	width: 40%;
+	
 	height: 100%;
 }
 div.videowrapper {
@@ -200,8 +250,8 @@ div.videowrapper {
 	height: 100%;
 }
 .textcenter {
-text-align: center;
-margin:3em
+	text-align: center;
+	margin:3em;
 }
 .thegallerycontainer {
 text-align: center;
@@ -212,4 +262,7 @@ height: 70%;
 }
 .shirtdetail > img {
 height: 70%;
+}
+.hidden {
+opacity:0;
 }

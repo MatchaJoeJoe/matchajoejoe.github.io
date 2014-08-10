@@ -1,13 +1,22 @@
-var theUsers = 
+var orgTabContent = '';
 window.addEventListener('load', eventWindowLoaded, false);	
 function eventWindowLoaded() {
+	var tabContentDiv = document.getElementById('tabContent');
+	window.orgTabContent = tabContentDiv.innerHTML;
 	var LoadingBG = document.getElementById('LoadingBackground');
+	var LoadingText = document.getElementById('LoadingText');
 	setTimeout(function() {
-		LoadingBG.className = 'fadeout';
+		LoadingText.innerHTML='<span class="fadeout">Hi.</span><br/><br/><span class="fadein" >I’m Joe.</span><br/><br/>&#160;';
+	}, 1000);
+	setTimeout(function() {
+		LoadingText.innerHTML='&#160;<br/><br/><span class="fadeout">I’m Joe.</span><br/><br/><span class="fadein" >Welcome to my site.</span>';
 	}, 3000);
 	setTimeout(function() {
+		LoadingBG.className = 'fadeout';
+	}, 5000);
+	setTimeout(function() {
 		LoadingBG.parentNode.removeChild(LoadingBG);
-	}, 4000);
+	}, 7000);
 	loadContent();
 }
 function makeTabActive(currentTab){
@@ -15,7 +24,7 @@ function makeTabActive(currentTab){
     while(i--) {
 		activeTabs[i].className = 'tab';
 	}
-	currentTab.className='activetab';
+	currentTab.className='activetab glow';
 	loadContent();
 }
 
@@ -24,27 +33,28 @@ function loadContent(){
 	var tabContentDiv = document.getElementById('tabContent');
 	
     while(i--) {
-    
 		var TabContent = activeTabs[i].textContent;
 	}
 	if (TabContent.lastIndexOf("Feed")==0){
-		tabContentDiv.innerHTML = '<div class="w50r"><div class="videowrapper"><iframe width="100%" height="100%" src="http://www.youtube.com/embed/videoseries?list=UUTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div></div><div class="w50l"><a class="twitter-timeline" href="https://twitter.com/JoeFrizzell" data-widget-id="312040975352602624">Tweets by @JoeFrizzell</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>';
+		tabContentDiv.innerHTML = window.orgTabContent;
+	}
+	if (TabContent.lastIndexOf("About")==0){
+		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="about.html"/>';
 	}
 	if (TabContent.lastIndexOf("Resume")==0){
-		tabContentDiv.innerHTML = '<iframe frameborder="0" width="100%" height="100%" src="Resume/Frizzell-Joe_resume.html"/>';
-		
+		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="Resume/Frizzell-Joe_resume.html"/>';
 	}
 	if (TabContent.lastIndexOf("Portfolio")==0){
-		tabContentDiv.innerHTML = '<iframe frameborder="0" width="90%" height="90%" src="portfolio.html"/>';
-		
+		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="portfolio.html"/>';
 	}
-	if (TabContent.lastIndexOf("Army")==0){
-		tabContentDiv.innerHTML = '<span class="tabtext">The Army section of the in-game shop that will impact the strength of your attacking army, allowing you to win more attacks.</span><br/><br/><span class="button" onclick="loadSubContent(this);">Army Camp</span> <span class="button" onclick="loadSubContent(this);">Barracks</span> <span class="button" onclick="loadSubContent(this);">Dark Barracks</span> <span class="button" onclick="loadSubContent(this);">Laboratory</span> <span class="button" onclick="loadSubContent(this);">Spell Factory</span> <span class="button" onclick="loadSubContent(this);">Barbarian King Altar</span> <span class="button" onclick="loadSubContent(this);">Archer Queen Altar</span><br/>';
-		
+	if (TabContent.lastIndexOf("Coloring Book")==0){
+		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="coloringBook/index.xhtml"/>';
 	}
-	if (TabContent.lastIndexOf("Troops")==0){
-		tabContentDiv.innerHTML = '<span class="tabtext">Troops are used against either the goblins on the campaign map, or other players in order to win Trophies and loot Gold and Elixir.</span><br/><br/><span class="button" onclick="loadSubContent(this);">Tier 1</span> <span class="button" onclick="loadSubContent(this);">Tier 2</span> <span class="button" onclick="loadSubContent(this);">Tier 3</span> <span class="button" onclick="loadSubContent(this);">Dark Elixer Troops</span> <span class="button" onclick="loadSubContent(this);">Heroes</span> <span class="button" onclick="loadSubContent(this);">Spells</span><br/>';
-		
+	if (TabContent.lastIndexOf("Raven’s Colors")==0){
+		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="raven-colors/index.xhtml"/>';
+	}
+	if (TabContent.lastIndexOf("Deviant Art")==0){
+		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="http://sublimishone.deviantart.com"/>';
 	}
 }
 

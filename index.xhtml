@@ -17,26 +17,37 @@
 		<script type="text/javascript" src="javascript/main.js"/>
 		<link onclick="OpenInNewTab(css/Frizzell-Joe_resume.css)" rel="stylesheet" type="text/css" />
 	</head>
-	<body>
+	<body class="black">
 		<div id="container">	
 			<div id="tabs">
-				<div class="activetab" onmouseover="makeTabActive(this)">Feed</div>
+				<div class="activetab glow" onmouseover="makeTabActive(this)">Feed</div>
+				<div class="tab" onmouseover="makeTabActive(this)">About</div>
+				<div class="tab" onmouseover="makeTabActive(this)">Coloring Book</div>
+				<div class="tab" onmouseover="makeTabActive(this)">Raven’s Colors</div>
 				<div class="tab" onmouseover="makeTabActive(this)">Portfolio</div>
 				<div class="tab" onmouseover="makeTabActive(this)">Resume</div>
-				<div class="tab" onmouseover="makeTabActive(this)">Links</div>
 			</div>
 			<div id="tabContent">
+				<div class="w50r">
+					<div class="videowrapper">
+						<iframe width="100%" height="100%" src="http://www.youtube.com/embed/videoseries?list=UUTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+					</div>
+				</div>
+				<div class="w50l">
+					<a class="twitter-timeline" href="https://twitter.com/JoeFrizzell" data-widget-id="312040975352602624">Tweets by @JoeFrizzell</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				</div>
 			</div>
 			<div class="footer">
 				<div class="footertab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('mailto:joefrizzell@gmail.com');">eMail</div>
-				<div class="footertab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('http://www.linkedin.com/in/joefrizzell');">Linked&nbsp;In</div>
-				<div class="footertab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab(http://sublimishone.deviantart.com/)">Deviant&nbsp;Art</div>
-				<div class="footertab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab(http://www.last.fm/user/joefrizzell)">Last&nbsp;FM</div> 
-				<div class="footertab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab(http://www.facebook.com/joefrizz)">Facebook</div>
+				<div class="footertab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('http://www.linkedin.com/in/joefrizzell');">Linked In</div>
+				<div class="footertab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('http://sublimishone.deviantart.com/')">Deviant Art</div>
+				<div class="footertab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('http://www.last.fm/user/joefrizzell')">Last FM</div> 
+				<div class="footertab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('http://www.facebook.com/joefrizz')">Facebook</div>
 			</div>
 		</div>
-			<div id="LoadingBackground">
-				<div id="LoadingText" class="fadeIn">Hello</div>
-			</div>
+		<div id="LoadingBackground">
+			<div id="LoadingText" class="fadein">Hi.<br/><br/>&#160;<br/><br/>&#160;</div>
+		</div>
 	</body>
 </html>

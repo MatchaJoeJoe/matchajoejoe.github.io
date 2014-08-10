@@ -313,7 +313,10 @@ function drawScreen() {
 	var context = theCanvas.getContext('2d');
 	context.fillStyle = 'white';
 	context.fillRect(0, 0, theCanvas.width, theCanvas.height);
-	context.drawImage(img,0,0);
+	setTimeout(function() {	
+		context.drawImage(img,0,0);
+	}, 10);
+
 }
 
 //functions that load automatically
