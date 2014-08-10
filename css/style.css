@@ -24,6 +24,9 @@ select {
 	padding-left: 10px;
 	text-align: center;
 }
+.container{
+	background-color: black;
+}
 span.bubble{
 	position: relative;
 	top:-8px;
@@ -194,7 +197,6 @@ margin:3em
 .thegallerycontainer {
 text-align: center;
 height: 100%;
-	background-color: black;
 }
 .shirtdetail {
 height: 70%;
