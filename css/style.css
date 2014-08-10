@@ -3,7 +3,6 @@ body {
 	margin:0;
 	padding:0;
 	height: 100%;
-	background-color: black;
 }
 input {
 	border-radius: 10px;
@@ -195,6 +194,7 @@ margin:3em
 .thegallerycontainer {
 text-align: center;
 height: 100%;
+	background-color: black;
 }
 .shirtdetail {
 height: 70%;
