@@ -205,13 +205,6 @@ span.Info {
 	font-style:normal;
 	font-weight:normal;
 }
-span.Thumbs {
-	color:#007db0;
-	font-family:Wingdings, sans-serif;
-	font-size:14px;
-	font-style:normal;
-	font-weight:normal;
-}
 p.para-style-override-1 {
 	font-family:"Adobe Caslon Pro", serif;
 	font-style:normal;
@@ -236,4 +229,8 @@ span.char-style-override-4 {
 .floatright {
 float: right;
 font-size: 10px;
+}
+img.Thumbs {
+	height: 1em;
+	margin-left: 2px;
 }
