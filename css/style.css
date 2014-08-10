@@ -124,6 +124,12 @@ span.button {
 	border:thick solid #0029A3;
 	white-space:nowrap;
 }
+table.noBorder{
+width: 100%;
+height: 100%;
+border-collapse: collapse;
+border: none;
+}
 
 #LoadingBackground {
 	display: table;
