@@ -6,7 +6,7 @@ body {
 background-color: black;
 }
 body.grey {
-background-color: #0029A3;
+background-color: none;
 }
 input {
 	border-radius: 10px;
