@@ -56,6 +56,10 @@ function loadContent(){
 	if (TabContent.lastIndexOf("Deviant Art")==0){
 		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="http://sublimishone.deviantart.com"/>';
 	}
+	setTimeout(function() {
+		loadTwitter();
+	}, 10);
+
 }
 
 function loadSubContent(currentButton){
@@ -78,4 +82,7 @@ function closePopUpWindow(){
 function OpenInNewTab(url) {
   var win = window.open(url, '_blank');
   win.focus();
+}
+function loadTwitter(){
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");	var tabContentDiv = document.getElementById('tabContent');
 }
