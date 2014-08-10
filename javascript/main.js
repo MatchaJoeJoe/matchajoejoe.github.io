@@ -28,7 +28,7 @@ function loadContent(){
 		var TabContent = activeTabs[i].textContent;
 	}
 	if (TabContent.lastIndexOf("Feed")==0){
-		tabContentDiv.innerHTML = '<div class="w50r"><div class="videowrapper"><iframe width="100%" height="100%" src="http://www.youtube.com/embed/videoseries?list=UUTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div></div><div class="w50l"><a class="twitter-timeline"  href="https://twitter.com/JoeFrizzell"  data-widget-id="312040975352602624">Tweets by @JoeFrizzell</a></div><script>function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>';
+		tabContentDiv.innerHTML = '<div class="w50r"><div class="videowrapper"><iframe width="100%" height="100%" src="http://www.youtube.com/embed/videoseries?list=UUTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div></div><div class="w50l"><a class="twitter-timeline" href="https://twitter.com/JoeFrizzell" data-widget-id="312040975352602624">Tweets by @JoeFrizzell</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>';
 	}
 	if (TabContent.lastIndexOf("Resume")==0){
 		tabContentDiv.innerHTML = '<iframe frameborder="0" width="100%" height="100%" src="Resume/Frizzell-Joe_resume.html"/>';
