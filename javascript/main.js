@@ -31,29 +31,37 @@ function makeTabActive(currentTab){
 function loadContent(){
 	var activeTabs = document.getElementsByClassName('activetab'), i = activeTabs.length;
 	var tabContentDiv = document.getElementById('tabContent');
+	var twitterFeed = document.getElementById('twitterwrapper');
 	
     while(i--) {
 		var TabContent = activeTabs[i].textContent;
 	}
 	if (TabContent.lastIndexOf("Feed")==0){
+		twitterFeed.style.zIndex = '98';
 		tabContentDiv.innerHTML = window.orgTabContent;
 	}
 	if (TabContent.lastIndexOf("About")==0){
+		twitterFeed.style.zIndex = '-1';
 		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="about.html"/>';
 	}
 	if (TabContent.lastIndexOf("Resume")==0){
+		twitterFeed.style.zIndex = '-1';
 		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="Resume/Frizzell-Joe_resume.html"/>';
 	}
 	if (TabContent.lastIndexOf("Portfolio")==0){
+		twitterFeed.style.zIndex = '-1';
 		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="portfolio.html"/>';
 	}
 	if (TabContent.lastIndexOf("Coloring Book")==0){
+		twitterFeed.style.zIndex = '-1';
 		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="coloringBook/index.xhtml"/>';
 	}
 	if (TabContent.lastIndexOf("Raven’s Colors")==0){
+		twitterFeed.style.zIndex = '-1';
 		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="raven-colors/index.xhtml"/>';
 	}
 	if (TabContent.lastIndexOf("Deviant Art")==0){
+		twitterFeed.style.zIndex = '-1';
 		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="http://sublimishone.deviantart.com"/>';
 	}
 	setTimeout(function() {

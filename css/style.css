@@ -6,11 +6,6 @@ body {
 	overflow: hidden;
 }
 body.grey {
-	background-color: #CFCFCF;/*BABABA*/
-	background: -webkit-radial-gradient(#CFCFCF 5%, rgba(0,0,0,0) 20%); /* Safari 5.1 to 6.0 */
-	background: -o-radial-gradient(#CFCFCF 5%, rgba(0,0,0,0) 20%); /* For Opera 11.6 to 12.0 */
-	background: -moz-radial-gradient(#CFCFCF 5%, rgba(0,0,0,0) 20%); /* For Firefox 3.6 to 15 */
-	background: radial-gradient(#CFCFCF 5%, rgba(0,0,0,0) 20%); /* Standard syntax */
 }
 input {
 	border-radius: 10px;
@@ -36,7 +31,6 @@ select {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-color: black;
 	width: 100%;
 	height: 100%;
 }
@@ -89,18 +83,16 @@ div.activetab {
 	text-align: center;
 	width: 70%;
 	height: 90%;
-	padding: 5% 10% 5% 20%;
+	padding: 5% 15% 5% 15%;
 	position: absolute;
 	top: 0;
 	left:0;
 	z-index: 5;
-	border-radius: 10px;
-	background-color: #BABABA;/*CFCFCF*/
-	background: -webkit-radial-gradient(#BABABA 0%, rgba(0,0,0,0) 90%); /* Safari 5.1 to 6.0 */
-	background: -o-radial-gradient(#BABABA 0%, rgba(0,0,0,0) 90%); /* For Opera 11.6 to 12.0 */
-	background: -moz-radial-gradient(#BABABA 0%, rgba(0,0,0,0) 90%); /* For Firefox 3.6 to 15 */
-	background: radial-gradient(#BABABA 0%, rgba(0,0,0,0) 90%); /* Standard syntax */
-	border-radius: 20px;
+	background-color: #FFF;/*CFCFCF*/
+	background: -webkit-radial-gradient(#FFF 0%, rgba(30,30,30,1) 90%); /* Safari 5.1 to 6.0 */
+	background: -o-radial-gradient(#FFF 0%, rgba(30,30,30,1) 90%); /* For Opera 11.6 to 12.0 */
+	background: -moz-radial-gradient(#FFF 0%, rgba(30,30,30,1) 90%); /* For Firefox 3.6 to 15 */
+	background: radial-gradient(#FFF 0%, rgba(30,30,30,1) 90%); /* Standard syntax */
 }
 iframe.w90 {
 	width: 90%;
@@ -110,25 +102,11 @@ iframe.w90 {
 span.tabtext {
 	line-height: 12px;
 }
-span.button {
-	padding:10px;
-	margin: 10px;
-	line-height: 60px;
-	background-color: #0029A3;
-	background: -webkit-linear-gradient(#6C91FF, #0029A3); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(#6C91FF, #0029A3); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#6C91FF, #0029A3); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#6C91FF, #0029A3); /* Standard syntax */
-	color: white;
-	border-radius: 15px;
-	border:thick solid #0029A3;
-	white-space:nowrap;
-}
 table.noBorder{
-width: 100%;
-height: 100%;
-border-collapse: collapse;
-border: none;
+	width: 100%;
+	height: 100%;
+	border-collapse: collapse;
+	border: none;
 }
 
 #LoadingBackground {
@@ -235,6 +213,14 @@ div.videowrapper {
 	position: relative;
 	padding: 28.125% 0; /* 16:9 */
 	height: 0;
+}
+#twitterwrapper {
+
+	margin-top: 10%;
+	position: relative;
+	padding: 20.125% 0; /* 16:9 */
+	height: 0;
+	z-index: 98;
 }
 .w50l{
 	position:absolute;
