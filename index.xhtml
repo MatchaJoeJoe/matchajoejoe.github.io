@@ -18,14 +18,28 @@
 	</head>
 	<body class="black">
 		<div id="container">	
-			<div id="tabs">
-				<div class="activetab glow" onmouseover="makeTabActive(this)">Feed</div>
-				<div class="tab" onmouseover="makeTabActive(this)">About</div>
-				<div class="tab" onmouseover="makeTabActive(this)">Coloring Book</div>
-				<div class="tab" onmouseover="makeTabActive(this)">Raven’s Colors</div>
-				<div class="tab" onmouseover="makeTabActive(this)">Portfolio</div>
-				<div class="tab" onmouseover="makeTabActive(this)">Resume</div>
-			</div>
+			<table id="tabs">
+				<tr>
+					<td>
+						<div class="activetab glow" onmouseover="makeTabActive(this)">Feed</div>
+					</td>
+					<td>
+						<div class="tab" onmouseover="makeTabActive(this)">About</div>
+					</td>
+					<td>
+						<div class="tab" onmouseover="makeTabActive(this)">Coloring Book</div>
+					</td>
+					<td>
+						<div class="tab" onmouseover="makeTabActive(this)">Raven’s Colors</div>
+					</td>
+					<td>
+						<div class="tab" onmouseover="makeTabActive(this)">Portfolio</div>
+					</td>
+					<td>
+						<div class="tab" onmouseover="makeTabActive(this)">Resume</div>
+					</td>
+				</tr>
+			</table>
 			<div class="w50l">
 				<div id="twitterwrapper">
 					<a onmouseover="loadTwitter();" class="twitter-timeline" href="https://twitter.com/JoeFrizzell" data-widget-id="312040975352602624">Tweets by @JoeFrizzell</a>
@@ -38,13 +52,25 @@
 					</div>
 				</div>
 			</div>
-			<div class="footer">
-				<div class="tab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('mailto:joefrizzell@gmail.com');">eMail</div>
-				<div class="tab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('http://www.linkedin.com/in/joefrizzell');">Linked In</div>
-				<div class="tab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('http://sublimishone.deviantart.com/')">Deviant Art</div>
-				<div class="tab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('http://www.last.fm/user/joefrizzell')">Last FM</div> 
-				<div class="tab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('http://www.facebook.com/joefrizz')">Facebook</div>
-			</div>
+			<table id="footer">
+				<tr>
+					<td>
+						<div class="tab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('mailto:joefrizzell@gmail.com');">eMail</div>
+					</td>
+					<td>
+						<div class="tab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('http://www.linkedin.com/in/joefrizzell');">Linked In</div>
+					</td>
+					<td>
+						<div class="tab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('http://sublimishone.deviantart.com/')">Deviant Art</div>
+					</td>
+					<td>
+						<div class="tab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('http://www.last.fm/user/joefrizzell')">Last FM</div> 
+					</td>
+					<td>
+						<div class="tab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('http://www.facebook.com/joefrizz')">Facebook</div>
+					</td>
+				</tr>
+			</table>
 		</div>
 		<div id="LoadingBackground">
 			<div id="LoadingText" class="fadein">Hi.<br/><br/>&#160;<br/><br/>&#160;</div>
