@@ -5,8 +5,6 @@ body {
 	height: 100%;
 	overflow: hidden;
 }
-body.grey {
-}
 input {
 	border-radius: 10px;
 	position: relative;
@@ -34,56 +32,59 @@ select {
 	width: 100%;
 	height: 100%;
 	background-color: #FFF;/*CFCFCF*/
-	background: -webkit-radial-gradient(#FFF 0%, rgba(30,30,30,1) 90%); /* Safari 5.1 to 6.0 */
-	background: -o-radial-gradient(#FFF 0%, rgba(30,30,30,1) 90%); /* For Opera 11.6 to 12.0 */
-	background: -moz-radial-gradient(#FFF 0%, rgba(30,30,30,1) 90%); /* For Firefox 3.6 to 15 */
-	background: radial-gradient(#FFF 0%, rgba(30,30,30,1) 90%); /* Standard syntax */
+	background: -webkit-radial-gradient(#FFF 0%, rgba(30,30,30,.5) 90%); /* Safari 5.1 to 6.0 */
+	background: -o-radial-gradient(#FFF 0%, rgba(30,30,30,.5) 90%); /* For Opera 11.6 to 12.0 */
+	background: -moz-radial-gradient(#FFF 0%, rgba(30,30,30,.5) 90%); /* For Firefox 3.6 to 15 */
+	background: radial-gradient(#FFF 0%, rgba(30,30,30,.5) 90%); /* Standard syntax */
 }
 #tabs {
 	position: absolute;
 	top:0;
 	left:0;
+	max-width: 100%;
 }
 #footer{
 	font-size: .6em;
 	position: absolute;
 	right: 0;
-	bottom: .5%;
+	bottom: 0;
 }
 div.tab {
 	position: relative;
 	font-size: 1.2em;
+	line-height: .83em;
 	margin: 2% 0;
 	padding: 10px;
 	color: #CFCFCF;
-	text-shadow: 0 0 1em #fff;
+	text-shadow: 0 0 1em #919191;
 	text-align: center;
 	z-index: 98;
 }
 div.activetab {
 	position: relative;
 	font-size: 1.5em;
+	line-height: .67em;
 	padding: 10px;
 	margin:2% 0;
 	color: #fff;
-	text-shadow: 0 0 1.5em #fff;
+	text-shadow: 0 0 1.5em #919191;
 	text-align: center;
 	border-radius: 10px;
 	z-index: 99;
 }
 #tabContent {
 	text-align: center;
-	width: 100%;
-	height: 100%;
-	position: absolute;
+	width: 90%;
+	height: 80%;
+	position: relative;
 	top: 0;
 	left: 0;
 	z-index: 5;
+	padding: 5% 5% 3em 5% ;
 }
 iframe.w90 {
-	width: 90%;
-	height: 85%;
-	margin: 5%;
+	width: 100%;
+	height: 100%;
 }
 span.tabtext {
 	line-height: 12px;
@@ -271,4 +272,34 @@ opacity:0;
 	0% {opacity: .5;}
 	50% {opacity: 1;}
 	100% {opacity: .5;}
+}
+.colorChange{
+	background-color:black;
+	-webkit-animation-name: colorChange;
+	-webkit-animation-duration:8s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: ease;
+	-moz-animation-name: colorChange;
+	-moz-animation-duration:8s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-timing-function: ease;
+	animation-name: colorChange;
+	animation-duration:8s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease;
+}
+@-webkit-keyframes colorChange{
+	0% {background-color:Black;}
+	50% {background-color: DarkSlateGray;}
+	100% {background-color: Black;}
+}
+@-moz-keyframes colorChange{
+	0% {background-color:Black;}
+	50% {background-color: DarkSlateGray;}
+	100% {background-color: Black;}
+}
+@keyframes colorChange{
+	0% {background-color:Black;}
+	50% {background-color: DarkSlateGray;}
+	100% {background-color: Black;}
 }

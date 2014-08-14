@@ -99,7 +99,7 @@ function loadContent(){
 		setTimeout(function() {
 			tabContentDiv.className = "quickfadein";
 			twitterFeed.style.zIndex = '-1';
-			tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="Resume/Frizzell-Joe_resume.html"/>';
+			tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="Resume/Frizzell-Joe_resume.pdf"/>';
 		}, 500);
 	}
 	if (TabContent.lastIndexOf("Portfolio")===0){
@@ -127,15 +127,6 @@ function loadContent(){
 			tabContentDiv.className = "quickfadein";
 			twitterFeed.style.zIndex = '-1';
 			tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="raven-colors/index.xhtml"/>';
-		}, 500);
-	}
-	if (TabContent.lastIndexOf("Deviant Art")===0){
-		tabContentDiv.className = "quickfadeout";
-		twitterFeed.className = "quickfadeout";
-		setTimeout(function() {
-			tabContentDiv.className = "quickfadein";
-			twitterFeed.style.zIndex = '-1';
-			tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="http://sublimishone.deviantart.com"/>';
 		}, 500);
 	}
 	setTimeout(function() {
