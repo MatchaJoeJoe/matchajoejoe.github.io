@@ -39,7 +39,7 @@ select {
 }
 #tabs {
 	position: absolute;
-	top:0;
+	top:.5em;
 	left:0;
 	max-width: 100%;
 }
@@ -47,7 +47,7 @@ select {
 	font-size: .6em;
 	position: absolute;
 	right: 0;
-	bottom: 0;
+	bottom: .5em;
 }
 div.tab {
 	position: relative;

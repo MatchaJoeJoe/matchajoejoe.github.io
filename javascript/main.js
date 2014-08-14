@@ -64,7 +64,6 @@ function makeTabActive(currentTab){
 		activeTabs[i].className = 'tab';
 	}
 	currentTab.className='activetab glow';
-	loadContent();
 }
 
 function loadContent(){
