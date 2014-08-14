@@ -99,7 +99,7 @@ function loadContent(){
 		setTimeout(function() {
 			tabContentDiv.className = "quickfadein";
 			twitterFeed.style.zIndex = '-1';
-			tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="Resume/Frizzell-Joe_resume.pdf"/>';
+			tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="Frizzell-Joe_resume.pdf"/>';
 		}, 500);
 	}
 	if (TabContent.lastIndexOf("Portfolio")===0){
