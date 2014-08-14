@@ -1,24 +1,63 @@
-var orgTabContent = '';
 window.addEventListener('load', eventWindowLoaded, false);	
 function eventWindowLoaded() {
-	var tabContentDiv = document.getElementById('tabContent');
-	window.orgTabContent = tabContentDiv.innerHTML;
 	var LoadingBG = document.getElementById('LoadingBackground');
 	var LoadingText = document.getElementById('LoadingText');
-	setTimeout(function() {
-		LoadingText.innerHTML='<span class="fadeout">Hi.</span><br/><br/><span class="fadein" >I’m Joe.</span><br/><br/>&#160;';
-	}, 1000);
-	setTimeout(function() {
-		LoadingText.innerHTML='&#160;<br/><br/><span class="fadeout">I’m Joe.</span><br/><br/><span class="fadein" >Welcome to my site.</span>';
-	}, 3000);
-	setTimeout(function() {
-		LoadingBG.className = 'fadeout';
-	}, 5000);
-	setTimeout(function() {
-		LoadingBG.parentNode.removeChild(LoadingBG);
-	}, 7000);
+    var user=getCookie("username");
+    if (user != "") {
+		LoadingText.innerHTML='<span class="fadein" >Hey '+user+'.</span><br/><br/>&#160;';
+		setTimeout(function() {
+			LoadingText.innerHTML='<span class="fadeout" >Hey '+user+'.</span><br/><br/><span class="fadein" >Welcome back.</span>';
+		}, 2000);
+		setTimeout(function() {
+			LoadingBG.className = 'fadeout';
+		}, 4000);
+		setTimeout(function() {
+			LoadingBG.parentNode.removeChild(LoadingBG);
+		}, 6000);
+    } else {
+		LoadingText.innerHTML='<span class="fadein" >Hi, I’m Joe.</span><br/><br/>&#160;<br/><br/>&#160;<br/>&#160;';
+		setTimeout(function() {
+			LoadingText.innerHTML='<span class="fadeout">Hi, I’m Joe.</span><br/><br/><span class="fadein" >Welcome to my site.</span><br/><br/>&#160;<br/>&#160;';
+		}, 2000);
+		setTimeout(function() {
+			LoadingText.innerHTML='&#160;<br/><br/><span class="fadeout" >Welcome to my site.</span><br/><br/><span class="fadein">What’s your name?<br/><input autofocus="autofocus" type="text" id="NewName" onkeydown="if (event.keyCode == 13) {setCookie(\'username\', this, 30);};"/></span>';
+		}, 4000);
+    }	
 	loadContent();
 }
+function setCookie(cname, theInput,exdays) {
+	var LoadingBG = document.getElementById('LoadingBackground');
+	var LoadingText = document.getElementById('LoadingText');
+	var cvalue = theInput.value
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname+"="+cvalue+"; "+expires;
+	LoadingText.innerHTML='&#160;<br/><br/>&#160;<br/><br/><span class="fadeout">What’s your name?<br/><input autofocus="autofocus" type="text" id="NewName" onkeydown="if (event.keyCode == 13) {setCookie(\'username\', this, 30);};"/></span>';
+	setTimeout(function() {
+		LoadingText.innerHTML='&#160;<br/><br/><span class="fadein" >Nice to meet you '+cvalue+'.</span><br/><br/>&#160;<br/>&#160;';
+	}, 1000);
+	setTimeout(function() {
+		LoadingBG.className = 'fadeout';
+	}, 4000);
+	setTimeout(function() {
+		LoadingBG.parentNode.removeChild(LoadingBG);
+	}, 6000);
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') {c = c.substring(1);}
+        if (c.indexOf(name) != -1) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
 function makeTabActive(currentTab){
 	var activeTabs = document.getElementsByClassName('activetab'), i = activeTabs.length;
     while(i--) {
@@ -36,31 +75,31 @@ function loadContent(){
     while(i--) {
 		var TabContent = activeTabs[i].textContent;
 	}
-	if (TabContent.lastIndexOf("Feed")==0){
+	if (TabContent.lastIndexOf("Feed")===0){
 		twitterFeed.style.zIndex = '98';
-		tabContentDiv.innerHTML = window.orgTabContent;
+		tabContentDiv.innerHTML = '<div class="w50r"><div class="videowrapper"><iframe width="100%" height="100%" src="http://www.youtube.com/embed/videoseries?list=UUTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div></div>';
 	}
-	if (TabContent.lastIndexOf("About")==0){
+	if (TabContent.lastIndexOf("About")===0){
 		twitterFeed.style.zIndex = '-1';
 		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="about.html"/>';
 	}
-	if (TabContent.lastIndexOf("Resume")==0){
+	if (TabContent.lastIndexOf("Resume")===0){
 		twitterFeed.style.zIndex = '-1';
 		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="Resume/Frizzell-Joe_resume.html"/>';
 	}
-	if (TabContent.lastIndexOf("Portfolio")==0){
+	if (TabContent.lastIndexOf("Portfolio")===0){
 		twitterFeed.style.zIndex = '-1';
 		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="portfolio.html"/>';
 	}
-	if (TabContent.lastIndexOf("Coloring Book")==0){
+	if (TabContent.lastIndexOf("Coloring Book")===0){
 		twitterFeed.style.zIndex = '-1';
 		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="coloringBook/index.xhtml"/>';
 	}
-	if (TabContent.lastIndexOf("Raven’s Colors")==0){
+	if (TabContent.lastIndexOf("Raven’s Colors")===0){
 		twitterFeed.style.zIndex = '-1';
 		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="raven-colors/index.xhtml"/>';
 	}
-	if (TabContent.lastIndexOf("Deviant Art")==0){
+	if (TabContent.lastIndexOf("Deviant Art")===0){
 		twitterFeed.style.zIndex = '-1';
 		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="http://sublimishone.deviantart.com"/>';
 	}

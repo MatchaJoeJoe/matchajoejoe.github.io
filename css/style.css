@@ -10,8 +10,7 @@ body.grey {
 input {
 	border-radius: 10px;
 	position: relative;
-	height:25px;
-	top:-5px;
+	font-size: .7em;
 	font-family: Futura, "Gill Sans", sans-serif;
 	background-color: #fff;
 	-webkit-appearance: none;
