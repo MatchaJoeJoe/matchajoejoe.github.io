@@ -76,32 +76,67 @@ function loadContent(){
 		var TabContent = activeTabs[i].textContent;
 	}
 	if (TabContent.lastIndexOf("Feed")===0){
-		twitterFeed.style.zIndex = '98';
-		tabContentDiv.innerHTML = '<div class="w50r"><div class="videowrapper"><iframe width="100%" height="100%" src="http://www.youtube.com/embed/videoseries?list=UUTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div></div>';
+		tabContentDiv.className = "quickfadeout";
+		setTimeout(function() {
+			twitterFeed.className = "quickfadein";
+			twitterFeed.style.zIndex = '98';
+			tabContentDiv.className = "quickfadein";
+			tabContentDiv.innerHTML = '<div class="w50r"><div class="videowrapper"><iframe width="100%" height="100%" src="http://www.youtube.com/embed/videoseries?list=UUTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div></div>';
+		}, 500);
 	}
 	if (TabContent.lastIndexOf("About")===0){
-		twitterFeed.style.zIndex = '-1';
-		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="about.html"/>';
+		tabContentDiv.className = "quickfadeout";
+		twitterFeed.className = "quickfadeout";
+		setTimeout(function() {
+			tabContentDiv.className = "quickfadein";
+			twitterFeed.style.zIndex = '-1';
+			tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="about.html"/>';
+		}, 500);
 	}
 	if (TabContent.lastIndexOf("Resume")===0){
-		twitterFeed.style.zIndex = '-1';
-		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="Resume/Frizzell-Joe_resume.html"/>';
+		tabContentDiv.className = "quickfadeout";
+		twitterFeed.className = "quickfadeout";
+		setTimeout(function() {
+			tabContentDiv.className = "quickfadein";
+			twitterFeed.style.zIndex = '-1';
+			tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="Resume/Frizzell-Joe_resume.html"/>';
+		}, 500);
 	}
 	if (TabContent.lastIndexOf("Portfolio")===0){
-		twitterFeed.style.zIndex = '-1';
-		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="portfolio.html"/>';
+		tabContentDiv.className = "quickfadeout";
+		twitterFeed.className = "quickfadeout";
+		setTimeout(function() {
+			tabContentDiv.className = "quickfadein";
+			twitterFeed.style.zIndex = '-1';
+			tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="portfolio.html"/>';
+		}, 500);
 	}
 	if (TabContent.lastIndexOf("Coloring Book")===0){
-		twitterFeed.style.zIndex = '-1';
-		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="coloringBook/index.xhtml"/>';
+		tabContentDiv.className = "quickfadeout";
+		twitterFeed.className = "quickfadeout";
+		setTimeout(function() {
+			tabContentDiv.className = "quickfadein";
+			twitterFeed.style.zIndex = '-1';
+			tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="coloringBook/index.xhtml"/>';
+		}, 500);
 	}
 	if (TabContent.lastIndexOf("Raven’s Colors")===0){
-		twitterFeed.style.zIndex = '-1';
-		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="raven-colors/index.xhtml"/>';
+		tabContentDiv.className = "quickfadeout";
+		twitterFeed.className = "quickfadeout";
+		setTimeout(function() {
+			tabContentDiv.className = "quickfadein";
+			twitterFeed.style.zIndex = '-1';
+			tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="raven-colors/index.xhtml"/>';
+		}, 500);
 	}
 	if (TabContent.lastIndexOf("Deviant Art")===0){
-		twitterFeed.style.zIndex = '-1';
-		tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="http://sublimishone.deviantart.com"/>';
+		tabContentDiv.className = "quickfadeout";
+		twitterFeed.className = "quickfadeout";
+		setTimeout(function() {
+			tabContentDiv.className = "quickfadein";
+			twitterFeed.style.zIndex = '-1';
+			tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="http://sublimishone.deviantart.com"/>';
+		}, 500);
 	}
 	setTimeout(function() {
 		loadTwitter();

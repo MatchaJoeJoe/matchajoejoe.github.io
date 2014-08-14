@@ -11,6 +11,7 @@ input {
 	border-radius: 10px;
 	position: relative;
 	font-size: .7em;
+	line-height: 0;
 	font-family: Futura, "Gill Sans", sans-serif;
 	background-color: #fff;
 	-webkit-appearance: none;
@@ -47,7 +48,7 @@ select {
 	font-size: .6em;
 	position: absolute;
 	right: 0;
-	bottom: 1%;
+	bottom: .5%;
 }
 div.tab {
 	position: relative;
@@ -106,92 +107,17 @@ table.noBorder{
 }
 #LoadingText {
 	display: table-cell;
+	vertical-align: middle;
 	font-size: 30px;
 	line-height: 32px;
 	color: white;
-	vertical-align: middle;
 	text-align: center;
 }
-
-.fadeout {
-	opacity:0;
-	-webkit-animation-name: fadeout;
-	-webkit-animation-duration:1s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease;
-	-moz-animation-name: fadeout;
-	-moz-animation-duration:1s;
-	-moz-animation-iteration-count: 1;
-	-moz-animation-timing-function: ease;
-	animation-name: fadeout;
-	animation-duration:1s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease;
-}
-@-webkit-keyframes fadeout{
-	0% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-	}
-}
-.fadein {
-	opacity: 1;
-	-webkit-animation-name: fadeIn;
-	-webkit-animation-duration:1s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease;
-	-moz-animation-name: fadeIn;
-	-moz-animation-duration:1s;
-	-moz-animation-iteration-count: 1;
-	-moz-animation-timing-function: ease;
-	animation-name: fadeIn;
-	animation-duration:1s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease;
-}
-@-webkit-keyframes fadeIn{
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-.glow {
-	opacity: 1;
-	-webkit-animation-name: glow;
-	-webkit-animation-duration:3s;
-	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-timing-function: ease;
-	-moz-animation-name: glow;
-	-moz-animation-duration:3s;
-	-moz-animation-iteration-count: infinite;
-	-moz-animation-timing-function: ease;
-	animation-name: glow;
-	animation-duration:3s;
-	animation-iteration-count: infinite;
-	animation-timing-function: ease;
-}
-@-webkit-keyframes glow{
-	0% {
-		opacity: .5;
-	}
-	50% {
-		opacity: 1;
-	}
-	100% {
-		opacity: .5;
-	}
-}
-
 .w50r{
 	position:absolute;
 	top: 0;
 	right:10%;
 	width: 40%;
-	
 	height: 100%;
 }
 div.videowrapper {
@@ -200,7 +126,6 @@ div.videowrapper {
 	height: 0;
 }
 #twitterwrapper {
-
 	margin-top: 10%;
 	position: relative;
 	padding: 20.125% 0; /* 16:9 */
@@ -230,4 +155,120 @@ height: 70%;
 }
 .hidden {
 opacity:0;
+}
+
+/*animations*/
+.quickfadein {
+	opacity: 1;
+	-webkit-animation-name: fadeIn;
+	-webkit-animation-duration:.5s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease;
+	-moz-animation-name: fadeIn;
+	-moz-animation-duration:.5s;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: ease;
+	animation-name: fadeIn;
+	animation-duration:.5s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease;
+}
+.quickfadeout {
+	opacity:0;
+	-webkit-animation-name: fadeout;
+	-webkit-animation-duration:.5s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease;
+	-moz-animation-name: fadeout;
+	-moz-animation-duration:.5s;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: ease;
+	animation-name: fadeout;
+	animation-duration:.5s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease;
+}
+.fadein {
+	opacity: 1;
+	-webkit-animation-name: fadeIn;
+	-webkit-animation-duration:1s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease;
+	-moz-animation-name: fadeIn;
+	-moz-animation-duration:1s;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: ease;
+	animation-name: fadeIn;
+	animation-duration:1s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease;
+}
+.fadeout {
+	opacity:0;
+	-webkit-animation-name: fadeout;
+	-webkit-animation-duration:1s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease;
+	-moz-animation-name: fadeout;
+	-moz-animation-duration:1s;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: ease;
+	animation-name: fadeout;
+	animation-duration:1s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease;
+}
+@-moz-keyframes fadeout{
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+@-moz-keyframes fadeIn{
+	100% {opacity: 1;}
+	0% {opacity: 0;}
+}
+@-webkit-keyframes fadeout{
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+@-webkit-keyframes fadeIn{
+	100% {opacity: 1;}
+	0% {opacity: 0;}
+}
+@keyframes fadeout{
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+@keyframes fadeIn{
+	100% {opacity: 1;}
+	0% {opacity: 0;}
+}
+.glow {
+	opacity: 1;
+	-webkit-animation-name: glow;
+	-webkit-animation-duration:3s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: ease;
+	-moz-animation-name: glow;
+	-moz-animation-duration:3s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-timing-function: ease;
+	animation-name: glow;
+	animation-duration:3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease;
+}
+@-webkit-keyframes glow{
+	0% {opacity: .5;}
+	50% {opacity: 1;}
+	100% {opacity: .5;}
+}
+@-moz-keyframes glow{
+	0% {opacity: .5;}
+	50% {opacity: 1;}
+	100% {opacity: .5;}
+}
+@keyframes glow{
+	0% {opacity: .5;}
+	50% {opacity: 1;}
+	100% {opacity: .5;}
 }
