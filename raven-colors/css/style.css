@@ -2,7 +2,7 @@
 background-color: #fff;
 }
 div.page {
-	page-break-before:always;
+	height: 100%;
 }
 p.text {
 	margin: 0 15% 0 20%;
@@ -215,7 +215,7 @@ a.pageButton {
 }
 #ASCII{
 font-family: monospace;
-font-size: .05em;
+font-size: .1%;
 position:absolute;
 top: 0;
 left: 0;
