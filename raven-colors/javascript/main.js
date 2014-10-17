@@ -7,9 +7,9 @@ function hideButton(theButton){
 	theButton.style.opacity='0';
 }
 window.addEventListener('load', loadASCIIDoc, false);	
-var ASCIIDocName = "RavenWings.txt";
+var ASCIIDocName = "ASCII/RavenWings.txt";
 function loadASCIIDoc(){
-alert(ASCIIDocName);
+
 	var xmlhttp;
 	if (window.XMLHttpRequest){
 		// code for IE7+, Firefox, Chrome, Opera, Safari
