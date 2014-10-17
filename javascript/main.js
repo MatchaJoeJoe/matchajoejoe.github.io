@@ -116,7 +116,7 @@ function loadContent(){
 		setTimeout(function() {
 			tabContentDiv.className = "quickfadein";
 			twitterFeed.style.zIndex = '-1';
-			tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="coloringBook/index.html"/>';
+			tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="coloringBook/index.xhtml"/>';
 		}, 500);
 	}
 	if (TabContent.lastIndexOf("Raven’s Colors")===0){
@@ -125,7 +125,7 @@ function loadContent(){
 		setTimeout(function() {
 			tabContentDiv.className = "quickfadein";
 			twitterFeed.style.zIndex = '-1';
-			tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="raven-colors/index.xhtml"/>';
+			tabContentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="raven-colors/index.html"/>';
 		}, 500);
 	}
 	setTimeout(function() {
