@@ -215,7 +215,7 @@ a.pageButton {
 }
 #ASCII{
 font-family: monospace;
-font-size: .1%;
+font-size: 5px;
 position:absolute;
 top: 0;
 left: 0;
