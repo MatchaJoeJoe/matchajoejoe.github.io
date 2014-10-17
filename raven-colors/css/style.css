@@ -213,3 +213,7 @@ a.pageButton {
 	87% {color: purple;}
 	100% {color: black;}
 }
+#ASCII{
+font-family: monospace;
+font-size: .2em;
+}
