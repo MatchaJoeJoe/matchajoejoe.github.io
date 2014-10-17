@@ -63,6 +63,7 @@ div.tab {
 div.activetab {
 	position: relative;
 	font-size: 1.5em;
+	font-weight: bold;
 	line-height: .67em;
 	padding: 10px;
 	margin:2% 0;
@@ -124,12 +125,12 @@ table.noBorder{
 div.videowrapper {
 	position: relative;
 	padding: 28.125% 0; /* 16:9 */
-	height: 0;
+	height: 40%;
 }
 #twitterwrapper {
 	margin-top: 10%;
 	position: relative;
-	padding: 20.125% 0; /* 16:9 */
+	padding: 25.125% 0; /* 16:9 */
 	height: 0;
 	z-index: 98;
 }

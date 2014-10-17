@@ -80,7 +80,7 @@ function loadContent(){
 			twitterFeed.className = "quickfadein";
 			twitterFeed.style.zIndex = '98';
 			tabContentDiv.className = "quickfadein";
-			tabContentDiv.innerHTML = '<div class="w50r"><div class="videowrapper"><iframe width="100%" height="100%" src="http://www.youtube.com/embed/videoseries?list=UUTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div></div>';
+			tabContentDiv.innerHTML = '<div class="w50r"><div class="videowrapper"><iframe width="100%" height="100%" src="http://www.youtube.com/embed/H-0GKrFG8kw?list=UUTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div></div>';
 		}, 500);
 	}
 	if (TabContent.lastIndexOf("About")===0){
