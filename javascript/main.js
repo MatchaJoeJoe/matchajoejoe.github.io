@@ -18,7 +18,7 @@ function eventWindowLoaded() {
 		}, 6000);
 		setTimeout(function() {
 			JoeContainer.removeChild(document.getElementById('bubbleBox'));
-			LoadingBackground.parentNode.removeChild(LoadingContainer);
+			LoadingBackground.parentNode.removeChild(LoadingBackground);
 		}, 8000);
     } else {
 		setTimeout(function() {
