@@ -13,7 +13,7 @@ function eventWindowLoaded() {
 			JoeContainer.innerHTML='<div class="frontAndCenter" ><img id="JoeBody" src="images/Joe8Bit_talking.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble"><span class="fadeout" >Hey '+user+'.</span><br/><span class="fadein" >Welcome back.</span></span></div>';
 		}, 4000);
 		setTimeout(function() {
-			JoeContainer.innerHTML='<div class="frontAndCenter" ><img id="JoeBody" src="images/Joe8Bit.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble fadeout"><span class="fadeout" >Hey '+user+'.</span><br/><span class="fadein" >Welcome back.</span></span></div>';
+			JoeContainer.innerHTML='<div class="frontAndCenter" ><img id="JoeBody" src="images/Joe8Bit.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble fadeout">&#160;<br/><span class="fadeout" >Welcome back.</span></span></div>';
 			LoadingBackground.className = 'fadeout';
 		}, 6000);
 		setTimeout(function() {
