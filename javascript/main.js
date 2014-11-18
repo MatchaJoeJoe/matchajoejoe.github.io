@@ -17,8 +17,8 @@ function eventWindowLoaded() {
 			LoadingBackground.className = 'fadeout';
 		}, 6000);
 		setTimeout(function() {
-			JoeContainer.removeChild(document.getElementById('bubbleBox'));
 			LoadingBackground.parentNode.removeChild(LoadingBackground);
+			JoeContainer.removeChild(document.getElementById('bubbleBox'));
 		}, 8000);
     } else {
 		setTimeout(function() {
