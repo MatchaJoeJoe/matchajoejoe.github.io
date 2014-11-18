@@ -1,47 +1,63 @@
 window.addEventListener('load', eventWindowLoaded, false);	
 function eventWindowLoaded() {
-	var LoadingBG = document.getElementById('LoadingBackground');
-	var LoadingText = document.getElementById('LoadingText');
+	var LoadingBackground = document.getElementById('LoadingBackground');
+	var LoadingContainer = document.getElementById('LoadingContainer');
+	var JoeContainer = document.getElementById('JoeContainer');
     var user=getCookie("username");
+	LoadingContainer.innerHTML='';
     if (user != "") {
-		LoadingText.innerHTML='<span class="fadein" >Hey '+user+'.</span><br/><br/>&#160;';
 		setTimeout(function() {
-			LoadingText.innerHTML='<span class="fadeout" >Hey '+user+'.</span><br/><br/><span class="fadein" >Welcome back.</span>';
+			JoeContainer.innerHTML='<div class="frontAndCenter" ><img id="JoeBody" src="images/Joe8Bit_talking.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble fadein">Hey'+user+'.<br/>&#160;</span></div>';
 		}, 2000);
 		setTimeout(function() {
-			LoadingBG.className = 'fadeout';
+			JoeContainer.innerHTML='<div class="frontAndCenter" ><img id="JoeBody" src="images/Joe8Bit_talking.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble"><span class="fadeout" >Hey'+user+'.</span><br/><span class="fadein" >Welcome back.</span></span></div>';
 		}, 4000);
 		setTimeout(function() {
-			LoadingBG.parentNode.removeChild(LoadingBG);
+			document.getElementById('bubbleBox').className = 'speechBubble fadeout';
+			LoadingContainer.className = 'fadeout';
 		}, 6000);
-    } else {
-		LoadingText.innerHTML='<span class="fadein" >Hi, I’m Joe.</span><br/><br/>&#160;<br/><br/>&#160;<br/>&#160;';
 		setTimeout(function() {
-			LoadingText.innerHTML='<span class="fadeout">Hi, I’m Joe.</span><br/><br/><span class="fadein" >Welcome to my site.</span><br/><br/>&#160;<br/>&#160;';
+			JoeContainer.removeChild(document.getElementById('bubbleBox'));
+			LoadingContainer.parentNode.removeChild(LoadingContainer);
+		}, 8000);
+    } else {
+		setTimeout(function() {
+			JoeContainer.innerHTML='<div class="frontAndCenter" ><img id="JoeBody" src="images/Joe8Bit_talking.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble fadein">Hi, I’m Joe.<br/>&#160;<br/>&#160;<br/>&#160;</span></div>';
 		}, 2000);
 		setTimeout(function() {
-			LoadingText.innerHTML='&#160;<br/><br/><span class="fadeout" >Welcome to my site.</span><br/><br/><span class="fadein">What’s your name?<br/><input autofocus="autofocus" type="text" id="NewName" onkeydown="if (event.keyCode == 13) {setCookie(\'username\', this, 30);};"/></span>';
+			JoeContainer.innerHTML='<div class="frontAndCenter" ><img id="JoeBody" src="images/Joe8Bit_talking.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble"><span class="fadeout">Hi, I’m Joe.</span><br/><span class="fadein" >Welcome to my site.</span><br/>&#160;<br/>&#160;</span></div>'
 		}, 4000);
+		setTimeout(function() {
+			JoeContainer.innerHTML='<span class="frontAndCenter" ><img id="JoeBody" src="images/Joe8Bit_talking.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble">&#160;<br/><span class="fadeout" >Welcome to my site.</span><br/><span class="fadein">What’s your name?<br/>&#160;</span></span></span>';
+		}, 6000);
+		setTimeout(function() {
+			JoeContainer.innerHTML='<div class="frontAndCenter" ><img id="JoeBody" src="images/Joe8Bit.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble">&#160;<br/><br/>What’s your name?<br/><span class="fadein"><input autofocus="autofocus" type="text" id="NewName" onkeydown="if (event.keyCode == 13) {setUsername(\'username\', this, 30);};"/></span></span></div>';
+		}, 8000);
     }	
 	loadContent();
 }
-function setCookie(cname, theInput,exdays) {
-	var LoadingBG = document.getElementById('LoadingBackground');
-	var LoadingText = document.getElementById('LoadingText');
+function setUsername(cname, theInput,exdays) {
+	var LoadingBackground = document.getElementById('LoadingBackground');
+	var LoadingContainer = document.getElementById('LoadingContainer');
 	var cvalue = theInput.value
+    if (cvalue != "") {
+    	cvalue = ' ' +cvalue
+    }
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires=" + d.toGMTString();
     document.cookie = cname+"="+cvalue+"; "+expires;
-	LoadingText.innerHTML='&#160;<br/><br/>&#160;<br/><br/><span class="fadeout">What’s your name?<br/><input autofocus="autofocus" type="text" id="NewName" onkeydown="if (event.keyCode == 13) {setCookie(\'username\', this, 30);};"/></span>';
+	JoeContainer.innerHTML='<div class="frontAndCenter" ><img id="JoeBody" src="images/Joe8Bit.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble">&#160;<br/><br/><span class="fadeout">What’s your name?<br/>'+cvalue+'&#160;</span></span></div>';
 	setTimeout(function() {
-		LoadingText.innerHTML='&#160;<br/><br/><span class="fadein" >Nice to meet you '+cvalue+'.</span><br/><br/>&#160;<br/>&#160;';
+		JoeContainer.innerHTML='<div class="frontAndCenter" ><img id="JoeBody" src="images/Joe8Bit_talking.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble">&#160;<br/><span class="fadein" >Nice to meet you'+cvalue+'.</span><br/><br/>&#160;</span></div>';
 	}, 1000);
 	setTimeout(function() {
-		LoadingBG.className = 'fadeout';
+		JoeContainer.innerHTML='<div class="frontAndCenter" ><img id="JoeBody" src="images/Joe8Bit.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble fadeout">&#160;<br/>Nice to meet you'+cvalue+'.<br/><br/>&#160;</span></div>';
+		LoadingBackground.className = 'fadeout';
 	}, 4000);
 	setTimeout(function() {
-		LoadingBG.parentNode.removeChild(LoadingBG);
+		LoadingBackground.parentNode.removeChild(LoadingBackground);
+		JoeContainer.removeChild(document.getElementById('bubbleBox'));
 	}, 6000);
 }
 

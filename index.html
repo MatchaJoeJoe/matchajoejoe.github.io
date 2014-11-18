@@ -13,8 +13,7 @@
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			})();
 		</script>
-		<script type="text/javascript" src="javascript/main.js"/>
-		<link onclick="OpenInNewTab(css/Frizzell-Joe_resume.css)" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="javascript/main.js"></script>
 	</head>
 	<body class="colorChange">
 		<div id="container">	
@@ -47,7 +46,7 @@
 			<table id="footer">
 				<tr>
 					<td style="border-right:thin solid white;">
-						<div class="tab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('mailto:joefrizzell@gmail.com');">eMail</div>
+						<div class="tab" onmouseover="makeTabActive(this)"><a href="mailto:joefrizzell@gmail.com">eMail</a></div>
 					</td>
 					<td style="border-right:thin solid white;">
 						<div class="tab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('http://www.linkedin.com/in/joefrizzell');">Linked In</div>
@@ -65,7 +64,11 @@
 			</table>
 		</div>
 		<div id="LoadingBackground">
-			<div id="LoadingText" class="fadein"></div>
+			<div id="LoadingContainer">&#160;<br/><br/><br/><img src="images/loading.gif" width="30" height="30" alt="loading" /><br/><br/>You need to have Javascript enabled for this site to work.
+			</div>
 		</div>
+		<div id="floor">&#160;</div>
+		<div id="doorFrame"><img id="outside" src="images/outside.jpg" width="80" height="160" alt="outside" /><img id="door" src="images/door.gif" width="80" height="160" alt="door" /></div>
+		<div id="JoeContainer"><img class="walkIn" id="JoeBody" src="images/Joe8Bit_walking.gif" alt=""/></div>
 	</body>
 </html>
