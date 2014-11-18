@@ -7,7 +7,7 @@ function eventWindowLoaded() {
 	LoadingContainer.innerHTML='';
     if (user != "") {
 		setTimeout(function() {
-			JoeContainer.innerHTML='<div class="frontAndCenter" ><img id="JoeBody" src="images/Joe8Bit_talking.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble fadein">Hey'+user+'.<br/>&#160;</span></div>';
+			JoeContainer.innerHTML='<div class="frontAndCenter" ><img id="JoeBody" src="images/Joe8Bit_talking.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble fadein">Hey '+user+'.<br/>&#160;</span></div>';
 		}, 2000);
 		setTimeout(function() {
 			JoeContainer.innerHTML='<div class="frontAndCenter" ><img id="JoeBody" src="images/Joe8Bit_talking.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble"><span class="fadeout" >Hey'+user+'.</span><br/><span class="fadein" >Welcome back.</span></span></div>';
