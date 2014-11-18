@@ -15,35 +15,24 @@
 		</script>
 		<script type="text/javascript" src="javascript/main.js"></script>
 	</head>
-	<body class="colorChange">
-		<div id="container">	
-			<table id="tabs">
-				<tr>
-					<td style="border-right:thin solid white;">
-						<div class="activetab glow" onclick="loadContent()" onmouseover="makeTabActive(this)" id="Feed">Feed</div>
-					</td>
-					<td style="border-right:thin solid white;">
-						<div class="tab" onclick="loadContent()" onmouseover="makeTabActive(this)" id="ColoringBook">Coloring Book</div>
-					</td>
-					<td style="border-right:thin solid white;">
-						<div class="tab" onclick="loadContent()" onmouseover="makeTabActive(this)" id="RavenColors">Raven’s Colors</div>
-					</td>
-					<td style="border-right:thin solid white;">
-						<div class="tab" onclick="loadContent()" onmouseover="makeTabActive(this)" id="Portfolio">Portfolio</div>
-					</td>
-					<td>
-						<div class="tab" onclick="loadContent()" onmouseover="makeTabActive(this)" id="Resume">Resume</div>
-					</td>
-				</tr>
-			</table>
-			<div class="w50l">
-				<div id="twitterwrapper">
-					<a class="twitter-timeline" href="https://twitter.com/JoeFrizzell" data-widget-id="312040975352602624">Tweets by @JoeFrizzell</a>
+	<body>
+		<div id="container" onclick="loadContent(this)">	
+			<div id="LoadingBackground">
+				<div id="LoadingContainer">&#160;<br/><br/><br/><img src="images/loading.gif" width="30" height="30" alt="loading" /><br/><br/>You need to have Javascript enabled for this site to work.
 				</div>
 			</div>
-			<div id="tabContent">
+			<div id="floor" onclick="loadContent(this)">&#160;</div>
+			<div id="furniture">
+				<img id="art" src="images/frame.gif" width="129" height="129" alt="frame" onclick="loadContent(this)" />
+				<img id="chair" src="images/chair.gif" width="160" height="192" alt="chair" onclick="loadContent(this)" />
+				<img id="laptop" src="images/laptopTable.gif" width="96" height="160" alt="laptopTable" onclick="loadContent(this)" />
+				<img id="table" src="images/table.gif" width="147" height="96" alt="table" onclick="loadContent(this)" />
+				<img id="phone" src="images/phone.gif" width="64" height="32" alt="phone" onclick="loadContent(this)" />
 			</div>
-			<table id="footer">
+			<div id="doorFrame"><img id="outside" src="images/outside.jpg" width="80" height="160" alt="outside" /><img id="door" src="images/door.gif" width="80" height="160" alt="door" /></div>
+			<div id="JoeContainer"><img class="walkIn" id="JoeBody" src="images/Joe8Bit_walking.gif" alt=""/></div>
+
+			<table id="footer" class="hidden">
 				<tr>
 					<td style="border-right:thin solid white;">
 						<div class="tab" onmouseover="makeTabActive(this)"><a href="mailto:joefrizzell@gmail.com">eMail</a></div>
@@ -63,12 +52,5 @@
 				</tr>
 			</table>
 		</div>
-		<div id="LoadingBackground">
-			<div id="LoadingContainer">&#160;<br/><br/><br/><img src="images/loading.gif" width="30" height="30" alt="loading" /><br/><br/>You need to have Javascript enabled for this site to work.
-			</div>
-		</div>
-		<div id="floor">&#160;</div>
-		<div id="doorFrame"><img id="outside" src="images/outside.jpg" width="80" height="160" alt="outside" /><img id="door" src="images/door.gif" width="80" height="160" alt="door" /></div>
-		<div id="JoeContainer"><img class="walkIn" id="JoeBody" src="images/Joe8Bit_walking.gif" alt=""/></div>
 	</body>
 </html>
