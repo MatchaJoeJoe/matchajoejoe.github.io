@@ -25,12 +25,13 @@ function eventWindowLoaded() {
 			}, 1500);
 		}, 2000);
 		setTimeout(function() {
-			JoeContainer.innerHTML='<div><img id="JoeBody" src="images/Joe8Bit.gif" alt=""/><img id="JoeMouth" src="images/Joe8Bit_talking.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble"><span class="fadeout" >Hey '+user+'.</span><br/><span class="fadein" >Welcome back.</span></span></div>';
-		}, 4000);
-		setTimeout(function() {
-			JoeContainer.innerHTML='<div><img id="JoeBody" src="images/Joe8Bit.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble fadeout">&#160;<br/><span class="fadeout" >Welcome back.</span></span></div>';
+			theText = 'Welcome back.';
+			startTalking(theText);
+			setTimeout(function() {
+				stopTalking(theText);
 			blockerDiv.parentNode.removeChild(blockerDiv);
-		}, 6000);
+			}, 1500);
+		}, 4000);
     } 
     else {
 		setTimeout(function() {
@@ -68,13 +69,22 @@ function setUsername(cname, theInput,exdays) {
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires=" + d.toGMTString();
     document.cookie = cname+"="+cvalue+"; "+expires;
-	JoeContainer.innerHTML='<div><img id="JoeBody" src="images/Joe8Bit.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble">&#160;<br/><br/><span class="fadeout">What’s your name?<br/>'+cvalue+'&#160;</span></span></div>';
+	theText = 'What’s your name?<br/>'+cvalue;
+	stopTalking(theText);
 	setTimeout(function() {
-		JoeContainer.innerHTML='<div><img id="JoeBody" src="images/Joe8Bit.gif" alt=""/><img id="JoeMouth" src="images/Joe8Bit_talking.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble">&#160;<br/><span class="fadein" >Nice to meet you'+cvalue+'.</span><br/><br/>&#160;</span></div>';
-	}, 1000);
-	setTimeout(function() {
-		JoeContainer.innerHTML='<div><img id="JoeBody" src="images/Joe8Bit.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble fadeout">&#160;<br/>Nice to meet you'+cvalue+'.<br/><br/>&#160;</span></div>';
-	}, 4000);
+		theText = 'Nice to meet you'+cvalue+'.';
+		startTalking(theText);
+		setTimeout(function() {
+			stopTalking(theText);
+			setTimeout(function() {
+				theText = 'Take a look around. If you click on something, I’ll tell you about it.';
+				startTalking(theText);
+				setTimeout(function() {
+					stopTalking(theText);
+				}, 3000);
+			}, 500);
+		}, 2000);
+	}, 500);
 }
 
 function getCookie(cname) {
@@ -134,7 +144,7 @@ function loadContent(theCaller){
 		}, 4000);
 	}
 	if (callerID.lastIndexOf("phone")===0){
-		theText = 'Isn’t it great that we are always connected with anyone we’ve ever met? Isn’t it??';
+		theText = 'Isn’t it great that we are always connected with anyone we’ve ever met? <br/>Isn’t it??';
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);
@@ -179,6 +189,13 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			stopTalking(theText);
 		}, 1501);
+	}
+	if (callerID.lastIndexOf("wall")===0){
+		theText = 'I really like how the paint came out. <br/>The color is darkslategray.';
+		startTalking(theText);
+		setTimeout(function() {
+			stopTalking(theText);
+		}, 2500);
 	}
 }
 function hideContent(){

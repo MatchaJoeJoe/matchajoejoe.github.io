@@ -1,5 +1,5 @@
 body {
-	background-color:DarkSlateGray;
+	background-color: darkslategray;
 	font-family: Futura, "Gill Sans", sans-serif;
 	margin:0;
 	padding:0;
@@ -13,6 +13,15 @@ body {
 a {
 	color: inherit;
 	text-decoration: none;
+}
+#wall {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding:10%;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
 }
 #floor{
 	height: 128px;
@@ -165,8 +174,8 @@ a {
 	top: 0;
 	left: 0;
 	padding:10%;
-	width: 100%;
-	height: 100%;
+	width: 90%;
+	height: 90%;
 	background-color: #CFCFCF;/*CFCFCF*/
 	background: -webkit-radial-gradient(#CFCFCF 0%, rgba(30,30,30,.5) 90%); /* Safari 5.1 to 6.0 */
 	background: -o-radial-gradient(#CFCFCF 0%, rgba(30,30,30,.5) 90%); /* For Opera 11.6 to 12.0 */
