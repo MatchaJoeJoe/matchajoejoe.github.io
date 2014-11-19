@@ -55,6 +55,7 @@ a {
 	bottom: 0;
 	left: 0;
 	z-index: 103;
+	cursor: pointer; cursor: hand;
 }
 .doorClose{
 	-webkit-animation-name: doorClose;
@@ -65,7 +66,6 @@ a {
 	animation-duration:1s;
 	animation-iteration-count: 1;
 	animation-timing-function: linear;
-	cursor: pointer; cursor: hand;
 }
 @-webkit-keyframes doorClose{
 	0% {-webkit-transform: perspective(5000) rotateY(90deg);
@@ -88,7 +88,6 @@ a {
 	animation-duration:1s;
 	animation-iteration-count: 1;
 	animation-timing-function: linear;
-	cursor: pointer; cursor: hand;
 }
 @-webkit-keyframes doorOpen{
 	0% {-webkit-transform: perspective(5000) rotateY(0deg);
@@ -101,6 +100,12 @@ a {
        transform-origin: 0% 0%;}
 	100% {transform: perspective(5000) rotateY(90deg);
         transform-origin: 0% 0%;}
+}
+#JoeContainer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 107;
 }
 #JoeBody {
 	height: 256px;
@@ -123,14 +128,21 @@ a {
 	left: 10px;
 	z-index: 109;
 }
-#window {
+#JoeTshirt {
+	height: 256px;
+	position: absolute;
+	bottom: 0;
+	left: 10px;
+	z-index: 110;
+}
+#art {
 	position: absolute;
 	bottom: 138px;
 	right: 20%;
 	z-index: 104;
 	cursor: pointer; cursor: hand;
 }
-#art {
+#window {
 	position: absolute;
 	top: 10%;
 	left: 15%;

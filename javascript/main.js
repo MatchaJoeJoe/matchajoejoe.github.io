@@ -1,5 +1,6 @@
 window.addEventListener('load', eventWindowLoaded, false);	
 var masterVolume = 5;
+var JoeTshirt = document.getElementById('JoeTshirt');
 function eventWindowLoaded() {
 	document.body.addEventListener('touchmove', function(e){ e.preventDefault(); });
 	var LoadingBackground = document.getElementById('LoadingBackground');
@@ -21,25 +22,24 @@ function eventWindowLoaded() {
 	setTimeout(function() {
 		loadTwitter();
 	}, 1000);
-	if (user != "") {
-		setTimeout(function() {
-			theText = 'Hey '+user+'.';
-			startTalking(theText);
-			setTimeout(function() {
-				stopTalking(theText);
+	setTimeout(function() {
+		changeShirts();
+		if (user != "") {
+				theText = 'Hey '+user+'.';
+				startTalking(theText);
 				setTimeout(function() {
-					theText = 'Welcome back.';
-					startTalking(theText);
+					stopTalking(theText);
 					setTimeout(function() {
-						stopTalking(theText);
-					blockerDiv.parentNode.removeChild(blockerDiv);
-					}, 1500);
-				}, 500);
-			}, 1500);
-		}, 2000);
-    } 
-    else {
-		setTimeout(function() {
+						theText = 'Welcome back.';
+						startTalking(theText);
+						setTimeout(function() {
+							stopTalking(theText);
+						blockerDiv.parentNode.removeChild(blockerDiv);
+						}, 1500);
+					}, 500);
+				}, 1500);
+		} 
+		else {
 			theText = 'Hi, I’m Joe.';
 			startTalking(theText);
 			setTimeout(function() {
@@ -60,8 +60,8 @@ function eventWindowLoaded() {
 					}, 2000);
 				}, 500);
 			}, 1400);
-		}, 2000);
-    }	
+		}	
+	}, 2000);
 }
 function setUsername(cname, theInput, exdays) {
 	var cvalue = theInput.value;
@@ -130,9 +130,9 @@ function loadContent(theCaller){
 	var blockerDiv = document.createElement("div");
 	blockerDiv.id = 'blocker';
 	containerDiv.appendChild(blockerDiv);
-	var tabTest = document.getElementById('content');
-	if(tabTest == null){
-		var contentDiv = document.createElement("div");
+	var contentDiv = document.getElementById('content');
+	if(contentDiv == null){
+		contentDiv = document.createElement("div");
 		contentDiv.id = 'content';
 		containerDiv.appendChild(contentDiv);
 		contentDiv.className = 'hidden'; 
@@ -141,7 +141,7 @@ function loadContent(theCaller){
 		}
 	}
 	else {
-		var contentDiv = document.getElementById('content');
+		contentDiv = document.getElementById('content');
 	}
 	var tabClass = contentDiv.className;
 	if (tabClass !='hidden'){
@@ -300,11 +300,28 @@ function loadTwitter(){
 function startTalking(theText){
 	var JoeContainer = document.getElementById('JoeContainer');
 	JoeContainer.innerHTML='<div><img id="JoeBody" src="images/Joe8Bit.gif" alt=""/><img id="JoeMouth" src="images/Joe8Bit_talking.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble quickfadein">'+theText+'</span></div>';
+	JoeContainer.appendChild(window.JoeTshirt);
 }
 function stopTalking(theText){
 	var JoeContainer = document.getElementById('JoeContainer');
 	JoeContainer.innerHTML='<div><img id="JoeBody" src="images/Joe8Bit.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble quickfadeout">'+theText+'</span></div>';
+	JoeContainer.appendChild(window.JoeTshirt);
 	setTimeout(function() {
 		JoeContainer.innerHTML='<div><img id="JoeBody" src="images/Joe8Bit.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/>';
+		JoeContainer.appendChild(window.JoeTshirt);
 	}, 500);
 }
+function changeShirts() {
+	var JoeContainer = document.getElementById('JoeContainer');
+	var shirtName = 'Joe8Bit_T'+randomInteger(1,8)+'.gif';
+	window.JoeTshirt = document.getElementById('JoeTshirt');
+	if(JoeTshirt !== null){
+		window.JoeTshirt.parentNode.removeChild(JoeTshirt);
+	}
+	window.JoeTshirt = document.createElement('img');
+	window.JoeTshirt.id = 'JoeTshirt';
+	window.JoeTshirt.onclick = function () {changeShirts()};
+	window.JoeTshirt.src = 'images/'+shirtName;
+	JoeContainer.appendChild(window.JoeTshirt);
+}
+	
