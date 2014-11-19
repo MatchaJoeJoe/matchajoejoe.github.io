@@ -1,8 +1,13 @@
 window.addEventListener('load', eventWindowLoaded, false);	
+var masterVolume = 5;
 function eventWindowLoaded() {
+	document.body.addEventListener('touchmove', function(e){ e.preventDefault(); });
 	var LoadingBackground = document.getElementById('LoadingBackground');
 	var JoeContainer = document.getElementById('JoeContainer');
-    var user=getCookie("username");
+    var user = getCookie("username");
+	var	SongId = 'audio'+randomInteger(1,3);
+    var startingSong = document.getElementById(SongId);
+	changeMusic(startingSong);
 	LoadingBackground.parentNode.removeChild(LoadingBackground);
 	var containerDiv = document.getElementById('container');
 	var blockerDiv = document.createElement("div");
@@ -22,16 +27,16 @@ function eventWindowLoaded() {
 			startTalking(theText);
 			setTimeout(function() {
 				stopTalking(theText);
+				setTimeout(function() {
+					theText = 'Welcome back.';
+					startTalking(theText);
+					setTimeout(function() {
+						stopTalking(theText);
+					blockerDiv.parentNode.removeChild(blockerDiv);
+					}, 1500);
+				}, 500);
 			}, 1500);
 		}, 2000);
-		setTimeout(function() {
-			theText = 'Welcome back.';
-			startTalking(theText);
-			setTimeout(function() {
-				stopTalking(theText);
-			blockerDiv.parentNode.removeChild(blockerDiv);
-			}, 1500);
-		}, 4000);
     } 
     else {
 		setTimeout(function() {
@@ -39,28 +44,26 @@ function eventWindowLoaded() {
 			startTalking(theText);
 			setTimeout(function() {
 				stopTalking(theText);
+				setTimeout(function() {
+					theText = 'Welcome to my site.';
+					startTalking(theText);
+					setTimeout(function() {
+						stopTalking(theText);
+						setTimeout(function() {
+							theText = 'What’s your name?<br/><input autofocus="autofocus" type="text" id="NewName" onkeydown="if (event.keyCode == 13) {setUsername(\'username\', this, 30);};"/>';
+							startTalking(theText);
+							setTimeout(function() {
+								document.getElementById('JoeMouth').className = 'hidden';
+							}, 1400);
+							blockerDiv.parentNode.removeChild(blockerDiv);
+						}, 500);
+					}, 2000);
+				}, 500);
 			}, 1400);
 		}, 2000);
-		setTimeout(function() {
-			theText = 'Welcome to my site.';
-			startTalking(theText);
-			setTimeout(function() {
-				stopTalking(theText);
-			}, 2000);
-		}, 3900);
-		setTimeout(function() {
-			theText = 'What’s your name?<br/><input autofocus="autofocus" type="text" id="NewName" onkeydown="if (event.keyCode == 13) {setUsername(\'username\', this, 30);};"/>';
-			startTalking(theText);
-			setTimeout(function() {
-				document.getElementById('JoeMouth').className = 'hidden';
-			}, 1400);
-			blockerDiv.parentNode.removeChild(blockerDiv);
-		}, 6400);
     }	
 }
-function setUsername(cname, theInput,exdays) {
-	var LoadingBackground = document.getElementById('LoadingBackground');
-	var LoadingContainer = document.getElementById('LoadingContainer');
+function setUsername(cname, theInput, exdays) {
 	var cvalue = theInput.value;
     if (cvalue != "") {
     	cvalue = ' ' +cvalue;
@@ -86,7 +89,26 @@ function setUsername(cname, theInput,exdays) {
 		}, 2000);
 	}, 500);
 }
-
+function randomInteger(low, high) {
+    return low + Math.floor(Math.random() * high);
+}
+function changeMusic(theAudioLink){
+	for (var i = 1; i < 4; i++) {
+		var audioLink = document.getElementById('audio'+i);
+		audioLink.className = '';
+	}
+	theAudioLink.className = 'glow';
+	var songName = theAudioLink.innerHTML;
+	var backgroundMusic = document.getElementById('backgroundMusic');
+	backgroundMusic.innerHTML = '<audio id="musicPlayer" autoplay loop controls><source src="audio/'+songName+'.wav" type="audio/wav"><source src="audio/'+songName+'.mp3" type="audio/mpeg"><source src="audio/'+songName+'.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>';
+	changeVolume(masterVolume);
+}
+function changeVolume(volumeLevel){
+	volumeLevel = volumeLevel/10;
+	var musicPlayer = document.getElementById('musicPlayer');
+	musicPlayer.volume = volumeLevel;
+	window.masterVolume = volumeLevel*10;
+}
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -105,6 +127,9 @@ function loadContent(theCaller){
 	var JoeContainer = document.getElementById('JoeContainer');
 	var callerID = theCaller.id;
 	var containerDiv = document.getElementById('container');
+	var blockerDiv = document.createElement("div");
+	blockerDiv.id = 'blocker';
+	containerDiv.appendChild(blockerDiv);
 	var tabTest = document.getElementById('content');
 	if(tabTest == null){
 		var contentDiv = document.createElement("div");
@@ -130,8 +155,11 @@ function loadContent(theCaller){
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);
+			var youTubeDiv = document.getElementById('youTube');
+			var youTubeContents = youTubeDiv.innerHTML;
 			contentDiv.className = "quickfadein";
-			contentDiv.innerHTML = '<div class="videoWrapper"><iframe width="100%" height="100%" src="http://www.youtube.com/embed/H-0GKrFG8kw?list=UUTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>';
+			contentDiv.innerHTML = youTubeContents;
+			changeVolume(1);
 		}, 4000);
 	}
 	if (callerID.lastIndexOf("laptop")===0){
@@ -162,11 +190,14 @@ function loadContent(theCaller){
 			contentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="portfolio.html"/>';
 		}, 3000);
 	}
-	if (callerID.lastIndexOf("book")===0){
+	if (callerID.lastIndexOf("drafting")===0){
+		 theText = 'I used to love coloring when I was a kid... Good thing I’m still a kid at heart!';
+		startTalking(theText);
 		setTimeout(function() {
+			stopTalking(theText);
 			contentDiv.className = "quickfadein";
 			contentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="coloringBook/index.xhtml"/>';
-		}, 500);
+		}, 3500);
 	}
 	if (callerID.lastIndexOf("raven")===0){
 		setTimeout(function() {
@@ -174,19 +205,42 @@ function loadContent(theCaller){
 			contentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="raven-colors/index.html"/>';
 		}, 500);
 	}
-	
-	/*Just for fun*/
-	if (callerID.lastIndexOf("table")===0){
-		theText = 'That is just a coffee table.';
+	if (callerID.lastIndexOf("window")===0){
+		theText = 'Its a great, big, wondrous world out there.';
 		startTalking(theText);
 		setTimeout(function() {
+			stopTalking(theText);
+			var linksDiv = document.getElementById('links');
+			var linksContents = linksDiv.innerHTML;
+			contentDiv.className = "quickfadein";
+			contentDiv.innerHTML = linksContents;
+		}, 2000);
+	}
+	if (callerID.lastIndexOf("radio")===0){
+		theText = 'Music to soothe the savage beats.';
+		startTalking(theText);
+		setTimeout(function() {
+			stopTalking(theText);
+			var audioListDiv = document.getElementById('audioList');
+			audioListDiv.className = "quickfadein";
+			contentDiv.className = "quickfadein";
+		}, 2000);
+	}
+
+	/*Just for fun*/
+	if (callerID.lastIndexOf("table")===0){
+		theText = 'That’s just a coffee table.';
+		startTalking(theText);
+		setTimeout(function() {
+			removeBlocker();
 			stopTalking(theText);
 		}, 1500);
 	}
 	if (callerID.lastIndexOf("floor")===0){
-		theText = 'Do you like my floors? They’re nice, right?';
+		theText = 'Do you like my floors? It’s amazing how real they look.';
 		startTalking(theText);
 		setTimeout(function() {
+			removeBlocker();
 			stopTalking(theText);
 		}, 1501);
 	}
@@ -194,11 +248,30 @@ function loadContent(theCaller){
 		theText = 'I really like how the paint came out. <br/>The color is darkslategray.';
 		startTalking(theText);
 		setTimeout(function() {
+			removeBlocker();
 			stopTalking(theText);
 		}, 2500);
 	}
+	if (callerID.lastIndexOf("door")===0){
+		var theDoor = document.getElementById('door');
+		theDoor.className = 'doorOpen'
+		setTimeout(function() {
+			removeBlocker();
+			theDoor.className = 'doorClose'
+		}, 1000);
+	}
+}
+function removeBlocker(){
+	var blockerDiv = document.getElementById("blocker");
+	blockerDiv.parentNode.removeChild(blockerDiv);
 }
 function hideContent(){
+	removeBlocker();
+	var audioListDiv = document.getElementById('audioList');
+	var audioClass = audioListDiv.className;
+	if (audioClass !='hidden'){
+		audioListDiv.className = 'quickfadeout';
+	}
 	var twitterwrapper = document.getElementById('twitterwrapper');
 	var twitterClass = twitterwrapper.className;
 	if (twitterClass !='hidden'){
@@ -210,14 +283,16 @@ function hideContent(){
 		contentDiv.className = 'quickfadeout';
 	}
 	setTimeout(function() {
+		audioListDiv.className = 'hidden';
 		twitterwrapper.className = 'hidden';
 		contentDiv.innerHTML = '';
 		contentDiv.parentNode.removeChild(contentDiv);
 	}, 500);
 }
 function OpenInNewTab(url) {
-  var win = window.open(url, '_blank');
-  win.focus();
+	var win = window.open(url, '_blank');
+	win.blur();
+	window.focus();
 }
 function loadTwitter(){
 	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
@@ -229,4 +304,7 @@ function startTalking(theText){
 function stopTalking(theText){
 	var JoeContainer = document.getElementById('JoeContainer');
 	JoeContainer.innerHTML='<div><img id="JoeBody" src="images/Joe8Bit.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble quickfadeout">'+theText+'</span></div>';
+	setTimeout(function() {
+		JoeContainer.innerHTML='<div><img id="JoeBody" src="images/Joe8Bit.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/>';
+	}, 500);
 }

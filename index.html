@@ -1,6 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=.6, maximum-scale=.6, user-scalable=0"/> <!--320-->
 		<title>Joe Frizzell - Home</title>
 		<link rel="stylesheet" href="css/style.css" type="text/css" />
 		<script type="text/javascript">
@@ -16,42 +17,50 @@
 		<script type="text/javascript" src="javascript/main.js"></script>
 	</head>
 	<body id="body">
-		<div id="container" onclick="loadContent(this)">	
+		<div id="container">	
 			<div id="LoadingBackground">
 				<div id="LoadingContainer">&#160;<br/><br/><br/><img src="images/loading.gif" width="30" height="30" alt="loading" /><br/><br/>You need to have Javascript enabled for this site to work.
 				</div>
 			</div>
 			<div id="wall" onclick="loadContent(this)">&#160;</div>
+			<img id="window" onclick="loadContent(this)" src="images/window.jpg" width="128" height="428" alt="window" />
+			<div id="doorFrame"><img id="outside" src="images/outside.jpg" width="80" height="160" alt="outside" /><img id="door" class="doorClose" src="images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/></div>
 			<div id="floor" onclick="loadContent(this)">&#160;</div>
-			<div id="furniture">
-				<img id="art" src="images/frame.gif" width="129" height="129" alt="frame" onclick="loadContent(this)" />
-				<img id="chair" src="images/chair.gif" width="160" height="192" alt="chair" onclick="loadContent(this)" />
-				<img id="laptop" src="images/laptopTable.gif" width="96" height="160" alt="laptopTable" onclick="loadContent(this)" />
-				<img id="table" src="images/table.gif" width="147" height="96" alt="table" onclick="loadContent(this)" />
-				<img id="phone" src="images/phone.gif" width="64" height="32" alt="phone" onclick="loadContent(this)" />
-			</div>
-			<div id="doorFrame"><img id="outside" src="images/outside.jpg" width="80" height="160" alt="outside" /><img id="door" src="images/door.gif" width="80" height="160" alt="door" /></div>
+			<img id="art" src="images/frame.gif" width="129" height="129" alt="frame" onclick="loadContent(this)" />
+			<img id="radio" src="images/radio.gif" width="148" height="96" alt="radio" onclick="loadContent(this)" />
+			<img id="drafting" src="images/draftingTable.gif" width="200" height="173" alt="draftingTable" onclick="loadContent(this)" />
+			<img id="chair" src="images/chair.gif" width="160" height="192" alt="chair" onclick="loadContent(this)" />
+			<img id="laptop" src="images/laptopTable.gif" width="96" height="160" alt="laptopTable" onclick="loadContent(this)" />
+			<img id="table" src="images/table.gif" width="147" height="96" alt="table" onclick="loadContent(this)" />
+			<img id="phone" src="images/phone.gif" width="64" height="32" alt="phone" onclick="loadContent(this)" />
 			<div id="JoeContainer"><img class="walkIn" id="JoeBody" src="images/Joe8Bit_walking.gif" alt=""/></div>
-
-			<table id="footer" class="hidden">
-				<tr>
-					<td style="border-right:thin solid white;">
-						<div class="tab" onmouseover="makeTabActive(this)"><a href="mailto:joefrizzell@gmail.com">eMail</a></div>
-					</td>
-					<td style="border-right:thin solid white;">
-						<div class="tab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('http://www.linkedin.com/in/joefrizzell');">Linked In</div>
-					</td>
-					<td style="border-right:thin solid white;">
-						<div class="tab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('http://sublimishone.deviantart.com/')">Deviant Art</div>
-					</td>
-					<td style="border-right:thin solid white;">
-						<div class="tab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('http://www.last.fm/user/joefrizzell')">Last FM</div> 
-					</td>
-					<td>
-						<div class="tab" onmouseover="makeTabActive(this)" onclick="OpenInNewTab('http://www.facebook.com/joefrizz')">Facebook</div>
-					</td>
-				</tr>
-			</table>
+			<div id="loading" class="hidden">
+				<div id="links">
+					<a href="mailto:joefrizzell@gmail.com">eMail</a><br/><br/>
+					<a onclick="OpenInNewTab('http://www.linkedin.com/in/joefrizzell');">Linked In</a><br/><br/>
+					<a onclick="OpenInNewTab('http://sublimishone.deviantart.com/')">Deviant Art</a><br/><br/>
+					<a onclick="OpenInNewTab('http://www.last.fm/user/joefrizzell')">Last FM</a><br/><br/>
+					<a onclick="OpenInNewTab('http://www.facebook.com/joefrizz')">Facebook</a><br/><br/>
+					<a onclick="OpenInNewTab('https://play.spotify.com/user/1256556439')">Spotify</a>
+				</div>
+				<img src="images/Frizzell-Joe_resume.jpg" alt="Frizzell-Joe_resume" />
+				<img id="JoeBody" src="images/Joe8Bit.gif" alt=""/>
+				<img id="JoeMouth" src="images/Joe8Bit_talking.gif" alt=""/>
+				<img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/>
+				<div id="youTube">
+					<div class="videoWrapper">
+						<iframe width="100%" height="100%" src="http://www.youtube.com/embed/H-0GKrFG8kw?list=UUTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+					</div>
+				</div>
+			</div>
+			<div id="audioList" class="hidden">
+				<div id="backgroundMusic">
+					<audio onclick="changeVolume(this.volume*10); id="musicPlayer" loop controls><source src="audio/8bit-harmony-lowcutoff-envelope.wav" type="audio/wav"><source src="audio/8bit-harmony-lowcutoff-envelope.mp3" type="audio/mpeg"><source src="audio/8bit-harmony-lowcutoff-envelope.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>
+				</div><br/><br/>
+				<a id="audio1" onclick="OpenInNewTab('https://www.freesound.org/people/DirtyJewbs/sounds/159392/'); changeMusic(this);">8bit-harmony-lowcutoff-envelope</a><br/><br/>
+				<a id="audio2" onclick="OpenInNewTab('https://www.freesound.org/people/reaktorplayer/sounds/98283/'); changeMusic(this);">Sequence-7</a><br/><br/>
+				<a id="audio3" onclick="OpenInNewTab('https://www.freesound.org/people/ac.verbeck/sounds/115361/'); changeMusic(this);">arp-04</a><br/><br/>
+			</div>
 		</div>
 	</body>
 </html>
