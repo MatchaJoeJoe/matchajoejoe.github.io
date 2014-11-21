@@ -5,8 +5,8 @@ function eventWindowLoaded() {
 	var windowHeight = window.innerHeight;
 	var theScale = 1;
 	viewport = document.querySelector("meta[name=viewport]");
-	if (windowWidth<2048){
-		theScale = (windowWidth/1140);
+	if (windowWidth<1000){
+		theScale = (windowWidth/1000);
 		alert(theScale);
 		viewport.setAttribute('content', 'width=device-width, initial-scale='+theScale+', maximum-scale='+theScale+', user-scalable=0');
 	}
