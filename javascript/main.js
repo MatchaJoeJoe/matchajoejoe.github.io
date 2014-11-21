@@ -20,7 +20,6 @@ function eventWindowLoaded() {
  	var door = document.getElementById('door');
  	door.className = 'doorClose';
 	var shirtName = 'Joe8Bit_T0.gif';
-	document.body.addEventListener('touchmove', function(e){ e.preventDefault(); });
 	var LoadingBackground = document.getElementById('LoadingBackground');
     var user = getCookie("username");
 	var	SongId = 'audio'+randomInteger(1,3);
@@ -253,7 +252,9 @@ function loadContent(theCaller){
 		theText = 'That’s just a coffee table.';
 		startTalking(theText);
 		setTimeout(function() {
-			removeBlocker();
+			setTimeout(function() {
+				removeBlocker();
+			}, 500);			
 			stopTalking(theText);
 		}, 1500);
 	}
@@ -261,7 +262,9 @@ function loadContent(theCaller){
 		theText = 'Do you like my floors? It’s amazing how real they look.';
 		startTalking(theText);
 		setTimeout(function() {
-			removeBlocker();
+			setTimeout(function() {
+				removeBlocker();
+			}, 500);			
 			stopTalking(theText);
 		}, 1501);
 	}
@@ -269,7 +272,9 @@ function loadContent(theCaller){
 		theText = 'I really like how the paint came out. <br/>The color is darkslategray.';
 		startTalking(theText);
 		setTimeout(function() {
-			removeBlocker();
+			setTimeout(function() {
+				removeBlocker();
+			}, 500);			
 			stopTalking(theText);
 		}, 2500);
 	}
@@ -277,7 +282,9 @@ function loadContent(theCaller){
 		var theDoor = document.getElementById('door');
 		theDoor.className = 'doorOpen'
 		setTimeout(function() {
-			removeBlocker();
+			setTimeout(function() {
+				removeBlocker();
+			}, 500);			
 			theDoor.className = 'doorClose'
 		}, 1000);
 	}
@@ -286,7 +293,9 @@ function loadContent(theCaller){
 		theText = 'It is '+theTime+'.';
 		startTalking(theText);
 		setTimeout(function() {
-			removeBlocker();
+			setTimeout(function() {
+				removeBlocker();
+			}, 500);			
 			stopTalking(theText);
 		}, 2000);
 	}
