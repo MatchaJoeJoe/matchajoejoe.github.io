@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=.6, maximum-scale=.6, user-scalable=0"/> <!--320-->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
 		<title>Joe Frizzell - Home</title>
 		<link rel="stylesheet" href="css/style.css" type="text/css" />
 		<script type="text/javascript">
@@ -19,21 +19,32 @@
 	<body id="body">
 		<div id="container">	
 			<div id="LoadingBackground">
-				<div id="LoadingContainer">&#160;<br/><br/><br/><img src="images/loading.gif" width="30" height="30" alt="loading" /><br/><br/>You need to have Javascript enabled for this site to work.
+				<div id="LoadingContainer">&#160;<br/><br/><br/><img src="images/loading.gif" width="30" height="30" alt="loading" />&#160;<br/><br/>Loading...<br/><br/>You need to have Javascript enabled for this site to work.
 				</div>
 			</div>
+			<div id="demo"></div>
 			<div id="wall" onclick="loadContent(this)">&#160;</div>
 			<img id="art" onclick="loadContent(this)" src="images/window.jpg" width="128" height="428" alt="window" />
-			<div id="doorFrame"><img id="outside" src="images/outside.jpg" width="80" height="160" alt="outside" /><img id="door" class="doorClose" src="images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/></div>
+			<div id="doorFrame">
+				<img id="outside" src="images/outside.jpg" width="80" height="160" alt="outside" />
+				<img id="door" class="hidden" src="images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
+			</div>
 			<div id="floor" onclick="loadContent(this)">&#160;</div>
-			<img id="window" src="images/frame.gif" width="129" height="129" alt="frame" onclick="loadContent(this)" />
+			<img id="diploma" src="images/frame.gif" width="129" height="129" alt="frame" onclick="loadContent(this)" />
+			<img id="clock" src="images/clock.gif" width="64" height="64" alt="clock" onclick="loadContent(this)" />
 			<img id="radio" src="images/radio.gif" width="148" height="96" alt="radio" onclick="loadContent(this)" />
 			<img id="drafting" src="images/draftingTable.gif" width="200" height="173" alt="draftingTable" onclick="loadContent(this)" />
 			<img id="chair" src="images/chair.gif" width="160" height="192" alt="chair" onclick="loadContent(this)" />
 			<img id="laptop" src="images/laptopTable.gif" width="96" height="160" alt="laptopTable" onclick="loadContent(this)" />
 			<img id="table" src="images/table.gif" width="147" height="96" alt="table" onclick="loadContent(this)" />
 			<img id="phone" src="images/phone.gif" width="64" height="32" alt="phone" onclick="loadContent(this)" />
-			<div id="JoeContainer"><img class="walkIn" id="JoeBody" src="images/Joe8Bit_walking.gif" alt=""/><img class="walkIn" id="JoeTshirt" src="images/Joe8Bit_T1.gif" alt="" onclick="changeShirts();"/></div>
+			<div id="JoeContainer">
+				<img class="walkIn" id="JoeBody" src="images/Joe8Bit_walking.gif" alt=""/>
+				<img class="walkIn" id="JoeTshirt" src="images/Joe8Bit_T0.gif" alt="" onclick="changeShirts();"/>
+				<img class="hidden" id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/>
+				<img class="hidden" id="JoeMouth" src="images/Joe8Bit_talking.gif" alt=""/>
+				<span id="bubbleBox" class="hidden"></span>
+			</div>
 			<div id="loading" class="hidden">
 				<div id="links">
 					<a href="mailto:joefrizzell@gmail.com">eMail</a><br/><br/>
@@ -44,15 +55,15 @@
 					<a onclick="OpenInNewTab('https://play.spotify.com/user/1256556439')">Spotify</a>
 				</div>
 				<img src="images/Frizzell-Joe_resume.jpg" alt="Frizzell-Joe_resume" />
-				<img id="JoeBody" src="images/Joe8Bit.gif" alt=""/>
-				<img id="JoeMouth" src="images/Joe8Bit_talking.gif" alt=""/>
-				<img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/>
+				<img src="images/Joe8Bit.gif" alt=""/>
+				<img src="images/Joe8Bit_T1.gif" width="64" height="128" alt="" />
 				<img src="images/Joe8Bit_T2.gif" width="64" height="128" alt="" />
 				<img src="images/Joe8Bit_T3.gif" width="64" height="128" alt="" />
 				<img src="images/Joe8Bit_T4.gif" width="64" height="128" alt="" />
 				<img src="images/Joe8Bit_T5.gif" width="64" height="128" alt="" />
 				<img src="images/Joe8Bit_T6.gif" width="64" height="128" alt="" />
 				<img src="images/Joe8Bit_T7.gif" width="64" height="128" alt="" />
+				<img src="images/Joe8Bit_T8.gif" width="64" height="128" alt="" />
 				<div id="youTube">
 					<div class="videoWrapper">
 						<iframe width="100%" height="100%" src="http://www.youtube.com/embed/H-0GKrFG8kw?list=UUTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe>

@@ -1,10 +1,21 @@
 window.addEventListener('load', eventWindowLoaded, false);	
 var masterVolume = 5;
-var JoeTshirt = document.getElementById('JoeTshirt');
 function eventWindowLoaded() {
+	var windowWidth = window.innerWidth;
+	var windowHeight = window.innerHeight;
+	var theScale = 1;
+	viewport = document.querySelector("meta[name=viewport]");
+	if (windowWidth<2048){
+		theScale = (windowWidth/1140);
+		alert(theScale);
+		viewport.setAttribute('content', 'width=device-width, initial-scale='+theScale+', maximum-scale='+theScale+', user-scalable=0');
+	}
+ 	var JoeContainer = document.getElementById('JoeContainer');
+ 	var door = document.getElementById('door');
+ 	door.className = 'doorClose';
+	var shirtName = 'Joe8Bit_T0.gif';
 	document.body.addEventListener('touchmove', function(e){ e.preventDefault(); });
 	var LoadingBackground = document.getElementById('LoadingBackground');
-	var JoeContainer = document.getElementById('JoeContainer');
     var user = getCookie("username");
 	var	SongId = 'audio'+randomInteger(1,3);
     var startingSong = document.getElementById(SongId);
@@ -23,8 +34,11 @@ function eventWindowLoaded() {
 		loadTwitter();
 	}, 1000);
 	setTimeout(function() {
-		changeShirts();
-		if (user != "") {
+		var JoeBody = document.getElementById('JoeBody');
+		var JoeEyes = document.getElementById('JoeEyes');
+		JoeEyes.className = "";
+		JoeBody.src = "images/Joe8Bit.gif";
+		if (user !== "") {
 				theText = 'Hey '+user+'.';
 				startTalking(theText);
 				setTimeout(function() {
@@ -34,7 +48,9 @@ function eventWindowLoaded() {
 						startTalking(theText);
 						setTimeout(function() {
 							stopTalking(theText);
-						blockerDiv.parentNode.removeChild(blockerDiv);
+							setTimeout(function() {
+								blockerDiv.parentNode.removeChild(blockerDiv);
+							}, 500);
 						}, 1500);
 					}, 500);
 				}, 1500);
@@ -65,7 +81,7 @@ function eventWindowLoaded() {
 }
 function setUsername(cname, theInput, exdays) {
 	var cvalue = theInput.value;
-    if (cvalue != "") {
+    if (cvalue !== "") {
     	cvalue = ' ' +cvalue;
     }
     var d = new Date();
@@ -131,14 +147,12 @@ function loadContent(theCaller){
 	blockerDiv.id = 'blocker';
 	containerDiv.appendChild(blockerDiv);
 	var contentDiv = document.getElementById('content');
-	if(contentDiv == null){
+	if(contentDiv === null){
 		contentDiv = document.createElement("div");
 		contentDiv.id = 'content';
 		containerDiv.appendChild(contentDiv);
 		contentDiv.className = 'hidden'; 
-		contentDiv.onclick = function () {
-			hideContent();
-		}
+		contentDiv.onclick = function () {hideContent();};
 	}
 	else {
 		contentDiv = document.getElementById('content');
@@ -163,13 +177,15 @@ function loadContent(theCaller){
 		}, 4000);
 	}
 	if (callerID.lastIndexOf("laptop")===0){
-		theText = 'I spend ridiculous amounts of time working on my laptop... Working, yeah, that’s what I’m doing.';
+		theText = 'Internet, why do you have all the things?';
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);
+			var linksDiv = document.getElementById('links');
+			var linksContents = linksDiv.innerHTML;
 			contentDiv.className = "quickfadein";
-			contentDiv.innerHTML = '<img id="resume" onclick="OpenInNewTab(\'http://joefrizzell.com/Frizzell-Joe_resume.pdf\')" src="images/Frizzell-Joe_resume.jpg" alt="Frizzell-Joe_resume" />';
-		}, 4000);
+			contentDiv.innerHTML = linksContents;
+		}, 2000);
 	}
 	if (callerID.lastIndexOf("phone")===0){
 		theText = 'Isn’t it great that we are always connected with anyone we’ve ever met? <br/>Isn’t it??';
@@ -205,15 +221,13 @@ function loadContent(theCaller){
 			contentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="raven-colors/index.html"/>';
 		}, 500);
 	}
-	if (callerID.lastIndexOf("window")===0){
-		theText = 'Its a great, big, wondrous world out there.';
+	if (callerID.lastIndexOf("diploma")===0){
+		theText = 'I am so smart. I am so smart. S-M-R-T.';
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);
-			var linksDiv = document.getElementById('links');
-			var linksContents = linksDiv.innerHTML;
 			contentDiv.className = "quickfadein";
-			contentDiv.innerHTML = linksContents;
+			contentDiv.innerHTML = '<img id="resume" onclick="OpenInNewTab(\'http://joefrizzell.com/Frizzell-Joe_resume.pdf\')" src="images/Frizzell-Joe_resume.jpg" alt="Frizzell-Joe_resume" />';
 		}, 2000);
 	}
 	if (callerID.lastIndexOf("radio")===0){
@@ -260,6 +274,15 @@ function loadContent(theCaller){
 			theDoor.className = 'doorClose'
 		}, 1000);
 	}
+	if (callerID.lastIndexOf("clock")===0){
+		var theTime = setTheTime();
+		theText = 'It is '+theTime+'.';
+		startTalking(theText);
+		setTimeout(function() {
+			removeBlocker();
+			stopTalking(theText);
+		}, 2000);
+	}
 }
 function removeBlocker(){
 	var blockerDiv = document.getElementById("blocker");
@@ -298,30 +321,51 @@ function loadTwitter(){
 	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 }
 function startTalking(theText){
-	var JoeContainer = document.getElementById('JoeContainer');
-	JoeContainer.innerHTML='<div><img id="JoeBody" src="images/Joe8Bit.gif" alt=""/><img id="JoeMouth" src="images/Joe8Bit_talking.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble quickfadein">'+theText+'</span></div>';
-	JoeContainer.appendChild(window.JoeTshirt);
+	var bubbleBox = document.getElementById('bubbleBox');
+	bubbleBox.className = 'quickfadein';
+	bubbleBox.innerHTML = theText;
+	var JoeMouth = document.getElementById('JoeMouth');
+	JoeMouth.className = '';
 }
 function stopTalking(theText){
-	var JoeContainer = document.getElementById('JoeContainer');
-	JoeContainer.innerHTML='<div><img id="JoeBody" src="images/Joe8Bit.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/><span id="bubbleBox" class="speechBubble quickfadeout">'+theText+'</span></div>';
+	var JoeMouth = document.getElementById('JoeMouth');
+		JoeMouth.className = 'hidden';
+	var bubbleBox = document.getElementById('bubbleBox');
+	bubbleBox.className = 'quickfadeout';
 	JoeContainer.appendChild(window.JoeTshirt);
 	setTimeout(function() {
-		JoeContainer.innerHTML='<div><img id="JoeBody" src="images/Joe8Bit.gif" alt=""/><img id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/>';
-		JoeContainer.appendChild(window.JoeTshirt);
+		bubbleBox.className = 'hidden';
 	}, 500);
 }
 function changeShirts() {
-	var JoeContainer = document.getElementById('JoeContainer');
+	var JoeTshirt = document.getElementById('JoeTshirt');
 	var shirtName = 'Joe8Bit_T'+randomInteger(1,8)+'.gif';
-	window.JoeTshirt = document.getElementById('JoeTshirt');
-	if(JoeTshirt !== null){
-		window.JoeTshirt.parentNode.removeChild(JoeTshirt);
-	}
-	window.JoeTshirt = document.createElement('img');
-	window.JoeTshirt.id = 'JoeTshirt';
-	window.JoeTshirt.onclick = function () {changeShirts()};
-	window.JoeTshirt.src = 'images/'+shirtName;
-	JoeContainer.appendChild(window.JoeTshirt);
+	JoeTshirt = document.getElementById('JoeTshirt');
+	JoeTshirt.src = 'images/'+shirtName;
 }
-	
+function setTheTime(){
+	var theTime = "";
+	var theHours = 0;
+	var amPM = "";		
+	var theDate = new Date();
+	if(theDate.getHours()>12){
+		theHours = theDate.getHours()-12;
+		if (theHours>11){
+			amPM = " am";
+		}
+		else{
+			amPM = " pm";
+		}
+	}
+	else {
+		theHours = theDate.getHours();
+		if (theHours>11){
+			amPM = " pm";
+		}
+		else{
+			amPM = " am";
+		}
+	}
+	theTime = theHours+":"+theDate.getMinutes()+amPM;
+	return theTime;
+}

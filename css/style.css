@@ -8,7 +8,6 @@ body {
 }
 .whiteBG {
 	background-color:white;
-
 }
 a {
 	color: inherit;
@@ -142,10 +141,17 @@ a {
 	z-index: 104;
 	cursor: pointer; cursor: hand;
 }
-#window {
+#diploma {
 	position: absolute;
 	top: 10%;
 	left: 15%;
+	z-index: 104;
+	cursor: pointer; cursor: hand;
+}
+#clock {
+	position: absolute;
+	bottom: 60%;
+	left: 32%;
 	z-index: 104;
 	cursor: pointer; cursor: hand;
 }
@@ -201,7 +207,7 @@ a {
 	z-index: 107;
 	opacity: 0;
 }
-.speechBubble {
+#bubbleBox {
 	position: absolute;
 	bottom: 266px;
 	width: 256px;
@@ -284,6 +290,7 @@ select {
 	color: white;
 	font-size: 20px;
 	line-height: 28px;
+    overflow: scroll;
 }
 #closeButton{
 	position:absolute;
@@ -524,4 +531,26 @@ height: 70%;
 		left: 0;
 	}
 	100% {}
+}
+.popUp{
+	-webkit-animation-name: popUp;
+	-webkit-animation-duration:.5s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: linear;
+	animation-name: popUp;
+	animation-duration:1s;
+	animation-iteration-count:.5;
+	animation-timing-function: linear;
+}
+@-webkit-keyframes popUp{
+	0% {-webkit-transform: perspective(1000) rotateX(90deg);
+       -webkit-transform-origin: 100% 100%;}
+	100% {-webkit-transform: perspective(1000) rotateX(0deg);
+        -webkit-transform-origin: 100% 100%;}
+}
+@keyframes popUp{
+	0% {transform: perspective(1000) rotateX(90deg);
+       transform-origin: 100% 100%;}
+	100% {transform: perspective(1000) rotateX(0deg);
+        transform-origin: 100% 100%;}
 }
