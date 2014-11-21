@@ -19,6 +19,7 @@ a {
 .downloadLink {
 	font-size: 80%;
 	color: blue;
+    text-shadow: 2px 2px 5px #fff;
 }
 #wall {
 	position: absolute;
