@@ -3,13 +3,17 @@ var masterVolume = 5;
 function eventWindowLoaded() {
 	var windowWidth = window.innerWidth;
 	var windowHeight = window.innerHeight;
+	var theMeasurement = Math.min(windowWidth, windowHeight);
 	var theScale = 1;
 	viewport = document.querySelector("meta[name=viewport]");
-	if (windowWidth<1000){
-		theScale = (windowWidth/1000);
-		alert(theScale);
+	if (theMeasurement<700){
+		theScale = (theMeasurement/700);
 		viewport.setAttribute('content', 'width=device-width, initial-scale='+theScale+', maximum-scale='+theScale+', user-scalable=0');
 	}
+	var JoeBody = document.getElementById('JoeBody');
+	var JoeTshirt = document.getElementById('JoeTshirt');
+ 	JoeTshirt.className = 'walkin';
+ 	JoeBody.className = 'walkin';
  	var JoeContainer = document.getElementById('JoeContainer');
  	var door = document.getElementById('door');
  	door.className = 'doorClose';
@@ -34,7 +38,6 @@ function eventWindowLoaded() {
 		loadTwitter();
 	}, 1000);
 	setTimeout(function() {
-		var JoeBody = document.getElementById('JoeBody');
 		var JoeEyes = document.getElementById('JoeEyes');
 		JoeEyes.className = "";
 		JoeBody.src = "images/Joe8Bit.gif";
@@ -116,7 +119,9 @@ function changeMusic(theAudioLink){
 	theAudioLink.className = 'glow';
 	var songName = theAudioLink.innerHTML;
 	var backgroundMusic = document.getElementById('backgroundMusic');
-	backgroundMusic.innerHTML = '<audio id="musicPlayer" autoplay loop controls><source src="audio/'+songName+'.wav" type="audio/wav"><source src="audio/'+songName+'.mp3" type="audio/mpeg"><source src="audio/'+songName+'.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>';
+	backgroundMusic.innerHTML = '<audio id="musicPlayer" loop controls><source src="audio/'+songName+'.mp3" type="audio/mpeg"><source src="audio/'+songName+'.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>';
+	var musicPlayer = document.getElementById('musicPlayer');
+	musicPlayer.play();
 	changeVolume(masterVolume);
 }
 function changeVolume(volumeLevel){
@@ -364,6 +369,7 @@ function setTheTime(){
 		}
 		else{
 			amPM = " am";
+			if(theHours === 0){theHours= 12}
 		}
 	}
 	theTime = theHours+":"+theDate.getMinutes()+amPM;

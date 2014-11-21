@@ -30,7 +30,7 @@
 				<img id="door" class="hidden" src="images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
 			</div>
 			<div id="floor" onclick="loadContent(this)">&#160;</div>
-			<img id="diploma" src="images/frame.gif" width="129" height="129" alt="frame" onclick="loadContent(this)" />
+			<img id="diploma" src="images/frame.gif" width="154" height="129" alt="frame" onclick="loadContent(this)" />
 			<img id="clock" src="images/clock.gif" width="64" height="64" alt="clock" onclick="loadContent(this)" />
 			<img id="radio" src="images/radio.gif" width="148" height="96" alt="radio" onclick="loadContent(this)" />
 			<img id="drafting" src="images/draftingTable.gif" width="200" height="173" alt="draftingTable" onclick="loadContent(this)" />
@@ -39,8 +39,8 @@
 			<img id="table" src="images/table.gif" width="147" height="96" alt="table" onclick="loadContent(this)" />
 			<img id="phone" src="images/phone.gif" width="64" height="32" alt="phone" onclick="loadContent(this)" />
 			<div id="JoeContainer">
-				<img class="walkIn" id="JoeBody" src="images/Joe8Bit_walking.gif" alt=""/>
-				<img class="walkIn" id="JoeTshirt" src="images/Joe8Bit_T0.gif" alt="" onclick="changeShirts();"/>
+				<img class="hidden" id="JoeBody" src="images/Joe8Bit_walking.gif" alt=""/>
+				<img class="hidden" id="JoeTshirt" src="images/Joe8Bit_T0.gif" alt="" onclick="changeShirts();"/>
 				<img class="hidden" id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/>
 				<img class="hidden" id="JoeMouth" src="images/Joe8Bit_talking.gif" alt=""/>
 				<span id="bubbleBox" class="hidden"></span>
@@ -64,6 +64,9 @@
 				<img src="images/Joe8Bit_T6.gif" width="64" height="128" alt="" />
 				<img src="images/Joe8Bit_T7.gif" width="64" height="128" alt="" />
 				<img src="images/Joe8Bit_T8.gif" width="64" height="128" alt="" />
+				<audio><source src="audio/8bit-harmony-lowcutoff-envelope.mp3" type="audio/mpeg"><source src="audio/8bit-harmony-lowcutoff-envelope.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>
+				<audio><source src="audio/Sequence-7.mp3" type="audio/mpeg"><source src="audio/Sequence-7.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>
+				<audio><source src="audio/arp-04.mp3" type="audio/mpeg"><source src="audio/arp-04.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>
 				<div id="youTube">
 					<div class="videoWrapper">
 						<iframe width="100%" height="100%" src="http://www.youtube.com/embed/H-0GKrFG8kw?list=UUTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
@@ -72,11 +75,10 @@
 			</div>
 			<div id="audioList" class="hidden">
 				<div id="backgroundMusic">
-					<audio onclick="changeVolume(this.volume*10); id="musicPlayer" loop controls><source src="audio/8bit-harmony-lowcutoff-envelope.wav" type="audio/wav"><source src="audio/8bit-harmony-lowcutoff-envelope.mp3" type="audio/mpeg"><source src="audio/8bit-harmony-lowcutoff-envelope.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>
 				</div><br/><br/>
-				<a id="audio1" onclick="OpenInNewTab('https://www.freesound.org/people/DirtyJewbs/sounds/159392/'); changeMusic(this);">8bit-harmony-lowcutoff-envelope</a><br/><br/>
-				<a id="audio2" onclick="OpenInNewTab('https://www.freesound.org/people/reaktorplayer/sounds/98283/'); changeMusic(this);">Sequence-7</a><br/><br/>
-				<a id="audio3" onclick="OpenInNewTab('https://www.freesound.org/people/ac.verbeck/sounds/115361/'); changeMusic(this);">arp-04</a><br/><br/>
+				<a id="audio1" onclick="changeMusic(this);">8bit-harmony-lowcutoff-envelope</a><br/><a class="downloadLink" onclick="OpenInNewTab('https://www.freesound.org/people/DirtyJewbs/sounds/159392/');">download</a><br/><br/>
+				<a id="audio2" onclick="changeMusic(this);">Sequence-7</a><br/><a class="downloadLink" onclick="OpenInNewTab('https://www.freesound.org/people/reaktorplayer/sounds/98283/');">download</a><br/><br/>
+				<a id="audio3" onclick="changeMusic(this);">arp-04</a><br/><a class="downloadLink" onclick="OpenInNewTab('https://www.freesound.org/people/ac.verbeck/sounds/115361/');">download</a><br/><br/>
 			</div>
 		</div>
 	</body>
