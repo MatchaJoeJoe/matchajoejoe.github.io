@@ -5,6 +5,8 @@ body {
 	padding:0;
 	height: 100%;
 	overflow: hidden;
+	font-size: 20px;
+	line-height: 28px;
 }
 .whiteBG {
 	background-color:white;
@@ -214,11 +216,9 @@ a {
 #bubbleBox {
 	position: absolute;
 	bottom: 266px;
-	width: 256px;
+	width: 500px;
 	left: 0;
 	padding:20px;
-	font-size: 20px;
-	line-height: 28px;
 	border-radius: 25px;
 	text-align: center;
 	font-family: "Courier New", Courier, monospace;
@@ -292,8 +292,6 @@ select {
 	z-index:110;
 	background-color: rgba(30,30,30,.8);
 	color: white;
-	font-size: 20px;
-	line-height: 28px;
     overflow: scroll;
 }
 #closeButton{
@@ -344,8 +342,6 @@ div.videoWrapper iframe {
 	background-color: rgba(100,100,100,.5);
 	border-radius: 25px;
 	color: white;
-	font-size: 20px;
-	line-height: 28px;
 	width: 400px;
 	margin:5% auto;
 	padding: 5%;

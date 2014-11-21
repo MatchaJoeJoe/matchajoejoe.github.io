@@ -9,6 +9,8 @@ function eventWindowLoaded() {
 	if (theMeasurement<700){
 		theScale = (theMeasurement/700);
 		viewport.setAttribute('content', 'width=device-width, initial-scale='+theScale+', maximum-scale='+theScale+', user-scalable=0');
+		document.body.style.fontSize = (20/theScale)+'px';
+		document.body.style.lineHeight = (28/theScale)+'px';
 	}
 	var JoeBody = document.getElementById('JoeBody');
 	var JoeTshirt = document.getElementById('JoeTshirt');
