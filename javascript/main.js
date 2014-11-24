@@ -171,7 +171,7 @@ function loadContent(theCaller){
 		}, 500);
 	}
 	if (callerID.lastIndexOf("chair")===0){
-		theText = 'There is nothing better than curling up in a comfy chair and reading... or watching YouTube videos.';
+		theText = 'There is nothing better than curling up in a comfy chair and watching YouTube videos.';
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);
@@ -190,8 +190,19 @@ function loadContent(theCaller){
 			var linksDiv = document.getElementById('links');
 			var linksContents = linksDiv.innerHTML;
 			contentDiv.className = "quickfadein";
-			contentDiv.innerHTML = linksContents;
+			contentDiv.innerHTML = '<div class="greyBox">'+linksContents+'</div>';
 		}, 2000);
+	}
+	if (callerID.lastIndexOf("bookshelf")===0){
+		theText = 'Save some trees, buy eBooks... especially the ones I’ve designed.';
+		startTalking(theText);
+		setTimeout(function() {
+			stopTalking(theText);
+			var linksDiv = document.getElementById('books');
+			var linksContents = linksDiv.innerHTML;
+			contentDiv.className = "quickfadein";
+			contentDiv.innerHTML = '<div class="greyBox">'+linksContents+'</div>';
+		}, 2500);
 	}
 	if (callerID.lastIndexOf("phone")===0){
 		theText = 'Isn’t it great that we are always connected with anyone we’ve ever met? <br/>Isn’t it??';
@@ -242,7 +253,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			stopTalking(theText);
 			var audioListDiv = document.getElementById('audioList');
-			audioListDiv.className = "quickfadein";
+			audioListDiv.className = "greyBox quickfadein";
 			contentDiv.className = "quickfadein";
 		}, 2000);
 	}
@@ -308,8 +319,8 @@ function hideContent(){
 	removeBlocker();
 	var audioListDiv = document.getElementById('audioList');
 	var audioClass = audioListDiv.className;
-	if (audioClass !='hidden'){
-		audioListDiv.className = 'quickfadeout';
+	if (audioClass !='greyBox hidden'){
+		audioListDiv.className = 'greyBox quickfadeout';
 	}
 	var twitterwrapper = document.getElementById('twitterwrapper');
 	var twitterClass = twitterwrapper.className;
@@ -322,7 +333,7 @@ function hideContent(){
 		contentDiv.className = 'quickfadeout';
 	}
 	setTimeout(function() {
-		audioListDiv.className = 'hidden';
+		audioListDiv.className = 'greyBox hidden';
 		twitterwrapper.className = 'hidden';
 		contentDiv.innerHTML = '';
 		contentDiv.parentNode.removeChild(contentDiv);
