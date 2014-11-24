@@ -326,7 +326,7 @@ iframe.w90 {
 }
 #resume {
 	margin: 5% auto;
-	height: 90%;
+	height: 85%;
 	max-width: 90%;
 }
 .w50r{
@@ -355,7 +355,7 @@ div.videoWrapper iframe {
 	border-radius: 25px;
 	color: white;
 	width: 400px;
-	max-height: 65%;
+	max-height: 75%;
 	margin:5% auto;
 	padding: 5%;
 	position: relative;
