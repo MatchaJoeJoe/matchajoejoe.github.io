@@ -303,7 +303,7 @@ select {
 	z-index:110;
 	background-color: rgba(30,30,30,.8);
 	color: white;
-    overflow: auto;
+    overflow: hidden;
 }
 #closeButton{
 	position:absolute;
