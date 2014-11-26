@@ -17,17 +17,16 @@
 		<script type="text/javascript" src="javascript/main.js"></script>
 	</head>
 	<body id="body">
-		<div id="container">	
-			<div id="LoadingBackground">
-				<div id="LoadingContainer">&#160;<br/><br/><br/><img src="images/loading.gif" width="30" height="30" alt="loading" />&#160;<br/><br/>Loading...<br/><br/>You need to have Javascript enabled for this site to work.
-				</div>
+		<div id="LoadingBackground">
+			<div id="LoadingContainer">&#160;<br/><br/><br/><img src="images/loading.gif" width="30" height="30" alt="loading" />&#160;<br/><br/>Loading...<br/><br/>You need to have Javascript enabled for this site to work.
 			</div>
-			<div id="demo"></div>
+		</div>
+		<div id="inside">	
 			<div id="wall" onclick="loadContent(this)">&#160;</div>
 			<img id="art" onclick="loadContent(this)" src="images/window.jpg" width="128" height="428" alt="window" />
-			<div id="doorFrame">
-				<img id="outside" src="images/outside.jpg" width="80" height="160" alt="outside" />
-				<img id="door" class="hidden" src="images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
+			<div id="insideDoorFrame">
+				<div id="doorGrass">&#160;</div>
+				<img id="doorOut" class="hidden" src="images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
 			</div>
 			<div id="floor" onclick="loadContent(this)">&#160;</div>
 			<img id="diploma" src="images/frame.gif" width="154" height="129" alt="frame" onclick="loadContent(this)" />
@@ -40,12 +39,23 @@
 			<img id="table" src="images/table.gif" width="147" height="96" alt="table" onclick="loadContent(this)" />
 			<img id="phone" src="images/phone.gif" width="64" height="32" alt="phone" onclick="loadContent(this)" />
 		</div>
-		<div id="JoeContainer">
-			<img class="hidden" id="JoeBody" src="images/Joe8Bit_walking.gif" alt=""/>
+		<div id="outside">	
+			<div id="sky" onclick="loadContent(this)">&#160;</div>
+			<div id="house" onclick="loadContent(this)">&#160;</div>
+			<div id="outsideDoorFrame">
+				<div id="doorFloor">&#160;</div>
+				<img id="doorIn" class="hidden" src="images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
+			</div>
+			<div id="grass" onclick="loadContent(this)">&#160;</div>
+		</div>
+		<div id="content" class="hidden" onclick="hideContent();"></div>
+		<div id="JoeContainer" class="bottomLeft">
+			<img id="JoeBody" src="images/Joe8Bit_walking.gif" alt=""/>
 			<img class="hidden" id="JoeTshirt" src="images/Joe8Bit_T0.gif" alt="" onclick="changeShirts();"/>
+			<img class="hidden" id="earphones" src="images/earphones.gif" alt="" onclick="loadContent(this);"/>
 			<img class="hidden" id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/>
 			<img class="hidden" id="JoeMouth" src="images/Joe8Bit_talking.gif" alt=""/>
-			<span id="bubbleBox" class="hidden"></span>
+			<span id="bubbleBox" class="left hidden"></span>
 		</div>
 		<div id="loading" class="hidden">
 			<div id="links">

@@ -1,5 +1,4 @@
 body {
-	background-color: darkslategray;
 	font-family: Futura, "Gill Sans", sans-serif;
 	margin:0;
 	padding:0;
@@ -23,9 +22,22 @@ a {
 }
 #wall {
 	position: absolute;
+	background-color: #FFF;/*CFCFCF*/
+	background: -webkit-radial-gradient(#CFCFCF 0%, rgba(0,0,0,.5) 90%); /* Safari 5.1 to 6.0 */
+	background: -o-radial-gradient(#CFCFCF 0%, rgba(0,0,0,.5) 90%); /* For Opera 11.6 to 12.0 */
+	background: -moz-radial-gradient(#CFCFCF 0%, rgba(0,0,0,.5) 90%); /* For Firefox 3.6 to 15 */
+	background: radial-gradient(#CFCFCF 0%, rgba(0,0,0,.5) 90%); /* Standard syntax */
 	top: 0;
 	left: 0;
-	padding:10%;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	overflow: hidden;
+}
+#sky {
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 	z-index: 100;
@@ -41,7 +53,36 @@ a {
 	z-index: 101;
 	border-top: 10px solid white;
 }
-#doorFrame{
+#grass{
+	height: 128px;
+	width: 100%;
+    background-image: url("../images/grass.png");
+    background-color: green;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 101;
+}
+#doorGrass{
+	height: 80px;
+	width: 80px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 103;
+    background-image: url("../images/grass.png");
+    background-color: green;
+}
+#doorFloor{
+	height: 80px;
+	width: 80px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 103;
+    background-image: url("../images/floor.jpg");
+}
+#insideDoorFrame{
 	height: 160px;
 	width: 80px;
 	border-top: 10px solid white;
@@ -55,7 +96,42 @@ a {
 	-webkit-perspective:160px;
 	perspective:160px;
 }
-#door{
+#outsideDoorFrame{
+	height: 160px;
+	width: 80px;
+	border-top: 10px solid SaddleBrown;
+	border-right: 10px solid SaddleBrown;
+	border-left: 10px solid SaddleBrown;
+	background-color: black;
+	position: absolute;
+	bottom: 128px;
+	right: 16px;
+	z-index: 102;
+	-webkit-perspective:160px;
+	perspective:160px;
+}
+#house{
+	height: 300px;
+	width: 50%;
+	background-color: maroon;
+	position: absolute;
+	bottom: 128px;
+	right: 0;
+	z-index: 102;
+	-webkit-perspective:160px;
+	perspective:160px;
+    background-image: url("../images/brick.png");
+}
+#doorOut{
+	height: 160px;
+	width: 80px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 103;
+	cursor: pointer; cursor: hand;
+}
+#doorIn{
 	height: 160px;
 	width: 80px;
 	position: absolute;
@@ -109,38 +185,66 @@ a {
         transform-origin: 0% 0%;}
 }
 #JoeContainer {
+	z-index: 107;
 	position: absolute;
 	bottom: 0;
+}
+#bubbleBox {
+	display: inline-block;
+	position: absolute;
+	bottom: 266px;
+	width: 350px;
+	max-height: 300px;
+	padding:20px;
+	border-radius: 25px;
+	text-align: center;
+	font-family: "Courier New", Courier, monospace;
+	border: medium DarkSlateGray solid;
+	background-color: white;
+	z-index: 110;
+	overflow: auto;
+}
+.left {
 	left: 0;
-	z-index: 107;
+}
+.right {
+	right: 138px;
+}
+.bubbleleft {
+	left: 0;
+}
+.bubbleright {
+	right: -138px;
 }
 #JoeBody {
 	height: 256px;
 	position: absolute;
 	bottom: 0;
-	left: 10px;
 	z-index: 108;
 }
 #JoeMouth {
 	height: 256px;
 	position: absolute;
 	bottom: 0;
-	left: 10px;
 	z-index: 109;
 }
 #JoeEyes {
 	height: 256px;
 	position: absolute;
 	bottom: 0;
-	left: 10px;
 	z-index: 109;
 }
 #JoeTshirt {
 	height: 256px;
 	position: absolute;
 	bottom: 0;
-	left: 10px;
 	z-index: 110;
+}
+#earphones {
+	height: 256px;
+	position: absolute;
+	bottom: 0;
+	z-index: 111;
 }
 #art {
 	position: absolute;
@@ -221,22 +325,6 @@ a {
 	z-index: 107;
 	opacity: 0;
 }
-#bubbleBox {
-	display: inline-block;
-	position: absolute;
-	bottom: 266px;
-	width: 350px;
-	max-height: 300px;
-	left: 0;
-	padding:20px;
-	border-radius: 25px;
-	text-align: center;
-	font-family: "Courier New", Courier, monospace;
-	border: medium DarkSlateGray solid;
-	background-color: white;
-	z-index: 110;
-	overflow: auto;
-}
 #LoadingBackground {
 	display: table;
 	position: absolute;
@@ -244,7 +332,7 @@ a {
 	left:0;
 	width:100%;
 	height:110%;
-	background-color:DarkSlateGray;
+	background-color:black;
 	z-index: 110;
 }
 #LoadingContainer{
@@ -278,17 +366,23 @@ select {
 	padding-left: 10px;
 	text-align: center;
 }
-#container{
+#inside{
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #FFF;/*CFCFCF*/
-	background: -webkit-radial-gradient(#CFCFCF 0%, rgba(30,30,30,.5) 90%); /* Safari 5.1 to 6.0 */
-	background: -o-radial-gradient(#CFCFCF 0%, rgba(30,30,30,.5) 90%); /* For Opera 11.6 to 12.0 */
-	background: -moz-radial-gradient(#CFCFCF 0%, rgba(30,30,30,.5) 90%); /* For Firefox 3.6 to 15 */
-	background: radial-gradient(#CFCFCF 0%, rgba(30,30,30,.5) 90%); /* Standard syntax */
+	background-color: darkslategray;
+	z-index: 0;
+	overflow: hidden;
+}
+#outside{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: lightblue;
 	z-index: 0;
 	overflow: hidden;
 }
@@ -385,14 +479,6 @@ height: 70%;
 }
 .shirtdetail > img {
 height: 70%;
-}
-.hidden {
-	opacity:0;
-	height: 0;
-	width: 0;
-	display:none;
-	position: absolute;
-	bottom: -100%;
 }
 
 /*animations*/
@@ -511,7 +597,6 @@ height: 70%;
 	100% {opacity: .5;}
 }
 .walkIn {
-	opacity: 1;
 	-webkit-animation-name: walkIn;
 	-webkit-animation-duration:2s;
 	-webkit-animation-iteration-count: 1;
@@ -527,22 +612,19 @@ height: 70%;
 }
 @-moz-keyframes walkIn{
 	0% {-moz-transform: scale(.5,.5); 
-		bottom: 64;
-		left: 0;
+		bottom: 64px;
 	}
 	100% {}
 }
 @-webkit-keyframes walkIn{
 	0% {-webkit-transform: scale(.5,.5); 
-		bottom: 64;
-		left: 0;
+		bottom: 64px;
 	}
 	100% {}
 }
 @keyframes walkIn{
 	0% {transform: scale(.5,.5);
-		bottom: 64;
-		left: 0;
+		bottom: 64px;
 	}
 	100% {}
 }
@@ -571,4 +653,14 @@ height: 70%;
 .bookThumbnail {
 	height: 100px;
 	cursor: pointer; cursor: hand;
+}
+.hidden {
+	opacity: 0;
+	height: 0;
+	width: 0;
+	display: none;
+    visibility: hidden;
+	position: absolute;
+	bottom: 0;
+	z-index: -1;
 }
