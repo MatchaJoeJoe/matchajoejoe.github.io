@@ -11,6 +11,7 @@ user-select: none;
 .page{
 width:850px;
 overflow:hidden;
+margin: auto;
 }
 .leftbar{
 float:left;
