@@ -39,11 +39,6 @@ function eventWindowLoaded() {
 	var blockerDiv = document.createElement("div");
 	blockerDiv.id = 'blocker';
 	containerDiv.appendChild(blockerDiv);
-	var twitterDiv = document.createElement("div");
-	twitterDiv.id = 'twitterwrapper';
-	twitterDiv.className = 'hidden';
-	twitterDiv.innerHTML = '<a class="twitter-timeline" href="https://twitter.com/JoeFrizzell" data-widget-id="312040975352602624">Tweets by @JoeFrizzell</a>';
-	containerDiv.appendChild(twitterDiv);
 	setTimeout(function() {
 		loadTwitter();
 	}, 1000);
