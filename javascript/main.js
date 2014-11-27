@@ -280,13 +280,13 @@ function loadContent(theCaller){
 			theDoorOut.className = 'doorOpen';
 			theDoorIn.className = 'doorOpen';
 			setTimeout(function() {
-				stopTalking(theText);
 				JoeContainer.className = window.JoePosition +' fadeout';
+				window.JoePosition = 'right'
+				stopTalking(theText);
 				setTimeout(function() {
 					theDoorOut.className = 'doorClose';
 					theDoorIn.className = 'doorClose';
 					JoeEyes.className = 'hidden';
-					window.JoePosition = 'right'
 					JoeContainer.className = window.JoePosition;
 					JoeContainer.className = window.JoePosition +' quickfadein';
 					JoeTshirt.className = 'hidden';
@@ -325,6 +325,7 @@ function loadContent(theCaller){
 			theDoorOut.className = 'doorOpen';
 			theDoorIn.className = 'doorOpen';
 			setTimeout(function() {
+				window.JoePosition = 'left'
 				stopTalking(theText);
 				JoeContainer.className = window.JoePosition +' fadeout';
 				setTimeout(function() {
@@ -332,7 +333,6 @@ function loadContent(theCaller){
 					theDoorOut.className = 'doorClose';
 					theDoorIn.className = 'doorClose';
 					JoeEyes.className = 'hidden';
-					window.JoePosition = 'left'
 					JoeContainer.className = window.JoePosition;
 					JoeContainer.className = window.JoePosition +' quickfadein';
 					JoeTshirt.className = 'hidden';
@@ -478,7 +478,7 @@ function stopTalking(theText){
 	var bubbleBox = document.getElementById('bubbleBox');
 	bubbleBox.className = 'bubble'+window.JoePosition+' quickfadeout';
 	setTimeout(function() {
-		bubbleBox.className = 'hidden';
+		bubbleBox.className = 'bubble'+window.JoePosition+' hidden';
 	}, 500);
 }
 function changeShirts() {
