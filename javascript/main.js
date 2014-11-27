@@ -325,9 +325,9 @@ function loadContent(theCaller){
 			theDoorOut.className = 'doorOpen';
 			theDoorIn.className = 'doorOpen';
 			setTimeout(function() {
+				JoeContainer.className = window.JoePosition +' fadeout';
 				window.JoePosition = 'left'
 				stopTalking(theText);
-				JoeContainer.className = window.JoePosition +' fadeout';
 				setTimeout(function() {
 					JoeContainer.appendChild(JoeTshirt);
 					theDoorOut.className = 'doorClose';
