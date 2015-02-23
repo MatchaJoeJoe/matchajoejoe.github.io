@@ -564,8 +564,15 @@ function setTheTime(){
 			if(theHours === 0){theHours= 12}
 		}
 	}
-	theTime = theHours+":"+theDate.getMinutes()+amPM;
+	theTime = theHours+":"+leftPad(theDate.getMinutes(),2)+amPM;
 	outsideDiv.style.backgroundColor = window.theSkyColor;
 	insideDoorFrame.style.backgroundColor = window.theSkyColor;
 	return theTime;
+}
+function leftPad(number, targetLength) {
+    var output = number + '';
+    while (output.length < targetLength) {
+        output = '0' + output;
+    }
+    return output;
 }
