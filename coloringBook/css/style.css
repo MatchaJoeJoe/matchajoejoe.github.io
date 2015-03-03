@@ -32,7 +32,7 @@ text-align:center;
 float:left;
 }
 img.thumbs {
-width:207px;
+width:165px;
 border: thin dotted black;
 margin:0;
 }
@@ -41,11 +41,30 @@ text-align:center;
 }
 #canvas_container {
 float:left;
+width:520px;
+height:400px;
 }
 #painting_canvas {
 border: thin dotted black;
+z-index: 5;
+position: absolute;
+top:0;
+}
+#painting_canvas_img {
 cursor: crosshair !important;
 z-index: 5;
+position: absolute;
+top:1px;
+margin-left: 1px;
+max-height: 519px
+width: 399px;
+-moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
+-webkit-user-select: none;
+-ms-user-select: none; /* From IE10 only */
+user-select: none; /* Not valid CSS yet, as of July 2012 */
+
+-webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+user-drag: none;
 }
 #brushPreview {
 }

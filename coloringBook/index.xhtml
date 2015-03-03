@@ -4,7 +4,7 @@
 <title>Canvas Coloring Book</title>
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <script type="text/javascript" src="javascript/coloring.js"/>
-<meta name="viewport" content="width=850, height=600"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
 </head>
 <body>
 <div class="page">
@@ -28,7 +28,8 @@
 <canvas class="brush" id="otherBrush" width="40" height="40">Just go find one.</canvas>
 </div>
 <div id="canvas_container">
-<canvas id="painting_canvas" width="520" height="400">No canvas here, sorry.</canvas>
+<canvas id="painting_canvas" width="520" height="400" >No canvas here, sorry.</canvas>
+<img id="painting_canvas_img" src="images/clear.png"/>
 </div>
 <div class="rightbar" id="rightbar">
 <div class="dots">
@@ -57,6 +58,7 @@
 </div>
 </div>
 <div class="clear">&#160;</div>
+<img id="clear" class="thumbs" src="images/clear.png" alt=""/>
 <img id="bebop" class="thumbs" src="images/bebop.png" alt="Cowboy Bebop"/>
 <img id="spawn" class="thumbs" src="images/spawn.png" alt="Spawn"/>
 <img id="joker" class="thumbs" src="images/Joker.png" alt="Joker"/>
