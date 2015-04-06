@@ -1,0 +1,115 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+		<title>Joe Frizzell</title>
+		<link rel="stylesheet" href="../css/style.css" type="text/css" />
+		<link rel="apple-touch-icon" sizes="57x57" href="../images/ico/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="../images/ico/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="../images/ico/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="../images/ico/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="../images/ico/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="../images/ico/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="../images/ico/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="../images/ico/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="../images/ico/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="../images/ico/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../images/ico/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="../images/ico/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../images/ico/favicon-16x16.png">
+		<link rel="manifest" href="../images/ico/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="../images/ico/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-24306970-2']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		<script type="text/javascript" src="javascript/main.js"></script>
+	</head>
+	<body id="body">
+		<div id="LoadingBackground">
+			<div id="LoadingContainer">&#129412;<br/><br/><br/><img src="../images/loading.gif" width="30" height="30" alt="loading" />&#160;<br/><br/>Loading...<br/><br/>You need to have Javascript enabled for this site to work.
+			</div>
+		</div>
+		<div id="inside">	
+			<div id="wall" onclick="loadContent(this)">&#160;</div>
+			<div id="insideDoorFrame">
+				<div id="doorGrass">&#160;</div>
+				<img id="doorOut" class="hidden" src="../images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
+			</div>
+			<div id="floor" onclick="loadContent(this)">&#160;</div>
+			<img id="clock" src="../images/clock.gif" width="64" height="64" alt="clock" onclick="loadContent(this)" />
+			<img id="radio" src="../images/radio.gif" width="148" height="96" alt="radio" onclick="loadContent(this)" />
+			<img id="table" src="../images/table.gif" width="147" height="96" alt="table" onclick="loadContent(this)" />
+		</div>
+		<div id="outside">	
+			<div id="sky" onclick="loadContent(this)">&#160;</div>
+			<div id="house" onclick="loadContent(this)">&#160;</div>
+			<div id="outsideDoorFrame">
+				<div id="doorFloor">&#160;</div>
+				<img id="doorIn" class="hidden" src="../images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
+			</div>
+			<div id="grass" onclick="loadContent(this)">&#160;</div>
+		</div>
+		<div id="content" class="hidden" onclick="hideContent();"></div>
+		<div id="JoeContainer" class="bottomLeft">
+			<img id="JoeBody" src="../images/Joe8Bit_walking.gif" alt=""/>
+			<img class="hidden" id="JoeTshirt" src="../images/Joe8Bit_T0.gif" alt="" onclick="changeShirts();"/>
+			<img class="hidden" id="earphones" src="../images/earphones.gif" alt="" onclick="loadContent(this);"/>
+			<img class="hidden" id="JoeEyes" src="../images/Joe8Bit_eyes_forward.gif" alt=""/>
+			<img class="hidden" id="JoeMouth" src="../images/Joe8Bit_talking.gif" alt=""/>
+			<span id="bubbleBox" class="left hidden"></span>
+		</div>
+		<div id="loading" class="hidden">
+			<div id="links">
+				<a href="mailto:joefrizzell@gmail.com">eMail</a><br/><br/>
+				<a onclick="OpenInNewTab('https://github.com/joefrizzell');">GitHub</a><br/><br/>
+				<a onclick="OpenInNewTab('http://www.linkedin.com/in/joefrizzell');">Linked In</a><br/><br/>
+				<a onclick="OpenInNewTab('http://sublimishone.deviantart.com/')">Deviant Art</a><br/><br/>
+				<a onclick="OpenInNewTab('http://www.last.fm/user/joefrizzell')">Last FM</a><br/><br/>
+				<a onclick="OpenInNewTab('http://www.facebook.com/joefrizz')">Facebook</a><br/><br/>
+				<a onclick="OpenInNewTab('https://play.spotify.com/user/1256556439')">Spotify</a>
+			</div>
+			<div id="books">
+				<img onclick="OpenInNewTab('https://itunes.apple.com/us/book/josie-robin-science-fiend/id866583191?mt=11&uo=4')" class="bookThumbnail" src="../images/josie.jpg" alt="josie" /><br/><a href="https://itunes.apple.com/us/book/josie-robin-science-fiend/id866583191?mt=11&uo=4" target="itunes_store">Josie Robin, Science Fiend: A Fungus Among Us - Drew Filus</a><br/><br/>
+				<img onclick="OpenInNewTab('https://itunes.apple.com/us/book/schottenfreude/id709598402?mt=11&uo=4')" class="bookThumbnail" src="../images/schottenfruede.jpg" alt="schottenfruede" /><br/><a onclick="OpenInNewTab('https://itunes.apple.com/us/book/schottenfreude/id709598402?mt=11&uo=4')">Schottenfreude - Ben Schott</a><br/><br/>
+				<img onclick="OpenInNewTab('https://itunes.apple.com/us/book/malcolm-x-deluxe-enhanced/id572227026?mt=11&uo=4')" class="bookThumbnail" src="../images/malcolm.jpg" alt="malcolm" /><br/><a href="https://itunes.apple.com/us/book/malcolm-x-deluxe-enhanced/id572227026?mt=11&uo=4" target="itunes_store">Malcolm X Deluxe (Enhanced Edition) - Manning Marable</a>
+			</div>
+			<img src="../images/Frizzell-Joe_resume.jpg" alt="Frizzell-Joe_resume" />
+			<img src="../images/Joe8Bit.gif" alt=""/>
+			<img src="../images/Joe8Bit_T1.gif" width="64" height="128" alt="" />
+			<img src="../images/Joe8Bit_T2.gif" width="64" height="128" alt="" />
+			<img src="../images/Joe8Bit_T3.gif" width="64" height="128" alt="" />
+			<img src="../images/Joe8Bit_T4.gif" width="64" height="128" alt="" />
+			<img src="../images/Joe8Bit_T5.gif" width="64" height="128" alt="" />
+			<img src="../images/Joe8Bit_T6.gif" width="64" height="128" alt="" />
+			<img src="../images/Joe8Bit_T7.gif" width="64" height="128" alt="" />
+			<img src="../images/Joe8Bit_T8.gif" width="64" height="128" alt="" />
+			<audio><source src="audio/8bit-harmony-lowcutoff-envelope.mp3" type="audio/mpeg"><source src="audio/8bit-harmony-lowcutoff-envelope.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>
+			<audio><source src="audio/Sequence-7.mp3" type="audio/mpeg"><source src="audio/Sequence-7.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>
+			<audio><source src="audio/arp-04.mp3" type="audio/mpeg"><source src="audio/arp-04.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>
+			<div id="youTube">
+				<div class="videoWrapper">
+					<iframe width="100%" height="100%" src="http://www.youtube.com/embed/H-0GKrFG8kw?list=UUTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+				</div>
+			</div>
+		</div>
+		<div id="twitterwrapper" class="hidden">
+			<a class="twitter-timeline" href="https://twitter.com/JoeFrizzell" data-widget-id="312040975352602624">Tweets by @JoeFrizzell</a>
+		</div>
+		<div id="audioList" class="greyBox hidden">
+			<div id="backgroundMusic">
+			</div><br/><br/>
+			<a id="audio1" onclick="changeMusic(this);">8bit-harmony-lowcutoff-envelope</a><br/><a class="downloadLink" onclick="OpenInNewTab('https://www.freesound.org/people/DirtyJewbs/sounds/159392/');">download</a><br/><br/>
+			<a id="audio2" onclick="changeMusic(this);">Sequence-7</a><br/><a class="downloadLink" onclick="OpenInNewTab('https://www.freesound.org/people/reaktorplayer/sounds/98283/');">download</a><br/><br/>
+			<a id="audio3" onclick="changeMusic(this);">arp-04</a><br/><a class="downloadLink" onclick="OpenInNewTab('https://www.freesound.org/people/ac.verbeck/sounds/115361/');">download</a><br/><br/>
+		</div>
+	</body>
+</html>
