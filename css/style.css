@@ -7,6 +7,7 @@ body {
 	font-size: 20px;
 	line-height: 28px;
 }
+p{margin:0;}
 .whiteBG {
 	background-color:white;
 }
@@ -193,8 +194,7 @@ a {
 	display: inline-block;
 	position: absolute;
 	bottom: 266px;
-	width: 350px;
-	max-height: 300px;
+	width: 15em;
 	padding:20px;
 	border-radius: 25px;
 	text-align: center;
@@ -204,6 +204,22 @@ a {
 	z-index: 110;
 	overflow: auto;
 }
+@-webkit-keyframes type{ 
+  from { width: 0%; } 
+} 
+@keyframes type{ 
+  from { width: 0%; } 
+} 
+@-webkit-keyframes type2{
+  0%{width: 0%;}
+  50%{width: 0%;}
+  100%{ width: 100%; } 
+} 
+@keyframes type2{
+  0%{width: 0%;}
+  50%{width: 0%;}
+  100%{ width: 100%; } 
+} 
 .left {
 	left: 0;
 }
@@ -665,4 +681,7 @@ height: 70%;
 	position: absolute;
 	bottom: 0;
 	z-index: -1;
+}
+::selection{
+  background: none;
 }
