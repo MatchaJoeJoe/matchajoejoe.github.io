@@ -3,7 +3,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
 		<title>Joe Frizzell</title>
-		<link rel="stylesheet" href="../css/style.css" type="text/css" />
+		<link rel="stylesheet" href="style.css" type="text/css" />
 		<link rel="apple-touch-icon" sizes="57x57" href="../images/ico/apple-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="../images/ico/apple-icon-60x60.png">
 		<link rel="apple-touch-icon" sizes="72x72" href="../images/ico/apple-icon-72x72.png">
@@ -31,7 +31,7 @@
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			})();
 		</script>
-		<script type="text/javascript" src="javascript/main.js"></script>
+		<script type="text/javascript" src="main.js"></script>
 	</head>
 	<body id="body">
 		<div id="LoadingBackground">
@@ -40,23 +40,7 @@
 		</div>
 		<div id="inside">	
 			<div id="wall" onclick="loadContent(this)">&#160;</div>
-			<div id="insideDoorFrame">
-				<div id="doorGrass">&#160;</div>
-				<img id="doorOut" class="hidden" src="../images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
-			</div>
 			<div id="floor" onclick="loadContent(this)">&#160;</div>
-			<img id="clock" src="../images/clock.gif" width="64" height="64" alt="clock" onclick="loadContent(this)" />
-			<img id="radio" src="../images/radio.gif" width="148" height="96" alt="radio" onclick="loadContent(this)" />
-			<img id="table" src="../images/table.gif" width="147" height="96" alt="table" onclick="loadContent(this)" />
-		</div>
-		<div id="outside">	
-			<div id="sky" onclick="loadContent(this)">&#160;</div>
-			<div id="house" onclick="loadContent(this)">&#160;</div>
-			<div id="outsideDoorFrame">
-				<div id="doorFloor">&#160;</div>
-				<img id="doorIn" class="hidden" src="../images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
-			</div>
-			<div id="grass" onclick="loadContent(this)">&#160;</div>
 		</div>
 		<div id="content" class="hidden" onclick="hideContent();"></div>
 		<div id="JoeContainer" class="bottomLeft">
@@ -67,49 +51,133 @@
 			<img class="hidden" id="JoeMouth" src="../images/Joe8Bit_talking.gif" alt=""/>
 			<span id="bubbleBox" class="left hidden"></span>
 		</div>
-		<div id="loading" class="hidden">
-			<div id="links">
-				<a href="mailto:joefrizzell@gmail.com">eMail</a><br/><br/>
-				<a onclick="OpenInNewTab('https://github.com/joefrizzell');">GitHub</a><br/><br/>
-				<a onclick="OpenInNewTab('http://www.linkedin.com/in/joefrizzell');">Linked In</a><br/><br/>
-				<a onclick="OpenInNewTab('http://sublimishone.deviantart.com/')">Deviant Art</a><br/><br/>
-				<a onclick="OpenInNewTab('http://www.last.fm/user/joefrizzell')">Last FM</a><br/><br/>
-				<a onclick="OpenInNewTab('http://www.facebook.com/joefrizz')">Facebook</a><br/><br/>
-				<a onclick="OpenInNewTab('https://play.spotify.com/user/1256556439')">Spotify</a>
-			</div>
-			<div id="books">
-				<img onclick="OpenInNewTab('https://itunes.apple.com/us/book/josie-robin-science-fiend/id866583191?mt=11&uo=4')" class="bookThumbnail" src="../images/josie.jpg" alt="josie" /><br/><a href="https://itunes.apple.com/us/book/josie-robin-science-fiend/id866583191?mt=11&uo=4" target="itunes_store">Josie Robin, Science Fiend: A Fungus Among Us - Drew Filus</a><br/><br/>
-				<img onclick="OpenInNewTab('https://itunes.apple.com/us/book/schottenfreude/id709598402?mt=11&uo=4')" class="bookThumbnail" src="../images/schottenfruede.jpg" alt="schottenfruede" /><br/><a onclick="OpenInNewTab('https://itunes.apple.com/us/book/schottenfreude/id709598402?mt=11&uo=4')">Schottenfreude - Ben Schott</a><br/><br/>
-				<img onclick="OpenInNewTab('https://itunes.apple.com/us/book/malcolm-x-deluxe-enhanced/id572227026?mt=11&uo=4')" class="bookThumbnail" src="../images/malcolm.jpg" alt="malcolm" /><br/><a href="https://itunes.apple.com/us/book/malcolm-x-deluxe-enhanced/id572227026?mt=11&uo=4" target="itunes_store">Malcolm X Deluxe (Enhanced Edition) - Manning Marable</a>
-			</div>
-			<img src="../images/Frizzell-Joe_resume.jpg" alt="Frizzell-Joe_resume" />
-			<img src="../images/Joe8Bit.gif" alt=""/>
-			<img src="../images/Joe8Bit_T1.gif" width="64" height="128" alt="" />
-			<img src="../images/Joe8Bit_T2.gif" width="64" height="128" alt="" />
-			<img src="../images/Joe8Bit_T3.gif" width="64" height="128" alt="" />
-			<img src="../images/Joe8Bit_T4.gif" width="64" height="128" alt="" />
-			<img src="../images/Joe8Bit_T5.gif" width="64" height="128" alt="" />
-			<img src="../images/Joe8Bit_T6.gif" width="64" height="128" alt="" />
-			<img src="../images/Joe8Bit_T7.gif" width="64" height="128" alt="" />
-			<img src="../images/Joe8Bit_T8.gif" width="64" height="128" alt="" />
-			<audio><source src="audio/8bit-harmony-lowcutoff-envelope.mp3" type="audio/mpeg"><source src="audio/8bit-harmony-lowcutoff-envelope.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>
-			<audio><source src="audio/Sequence-7.mp3" type="audio/mpeg"><source src="audio/Sequence-7.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>
-			<audio><source src="audio/arp-04.mp3" type="audio/mpeg"><source src="audio/arp-04.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>
-			<div id="youTube">
-				<div class="videoWrapper">
-					<iframe width="100%" height="100%" src="http://www.youtube.com/embed/H-0GKrFG8kw?list=UUTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-				</div>
-			</div>
+		<div class="disco">
+			<img class="discoball" src="../images/discoball.gif"/>
 		</div>
-		<div id="twitterwrapper" class="hidden">
-			<a class="twitter-timeline" href="https://twitter.com/JoeFrizzell" data-widget-id="312040975352602624">Tweets by @JoeFrizzell</a>
+		<div class="creditsBox">
+			<h1 class="creditHead">Thanks to:</h1>			
+			<p class="credit">Rude Rodders</p>			
+			<p class="credit">Naomi Kennedy</p>			
+			<p class="missingCredit">If you do not see your name here and think you should, send me a tweet <a onclick="OpenInNewTab('http://www.twitter.com/joefrizzell')">@joefrizzell</a> and I'll get it sorted.</p>
 		</div>
-		<div id="audioList" class="greyBox hidden">
-			<div id="backgroundMusic">
-			</div><br/><br/>
-			<a id="audio1" onclick="changeMusic(this);">8bit-harmony-lowcutoff-envelope</a><br/><a class="downloadLink" onclick="OpenInNewTab('https://www.freesound.org/people/DirtyJewbs/sounds/159392/');">download</a><br/><br/>
-			<a id="audio2" onclick="changeMusic(this);">Sequence-7</a><br/><a class="downloadLink" onclick="OpenInNewTab('https://www.freesound.org/people/reaktorplayer/sounds/98283/');">download</a><br/><br/>
-			<a id="audio3" onclick="changeMusic(this);">arp-04</a><br/><a class="downloadLink" onclick="OpenInNewTab('https://www.freesound.org/people/ac.verbeck/sounds/115361/');">download</a><br/><br/>
-		</div>
-	</body>
+<!--Copy and paste into your HTML just above the close </BODY> tag. -->
+
+<p><font face="arial" size="-2">Free JavaScript from </font><br><font face="arial, helvetica" size="-2"><a href="http://rainbow.arch.scriptmania.com/scripts/">Rainbow Arch</a></font></p>
+<script>/*
+Float Up Drifter - JavaScript
+Visit www.rainbow.arch.scriptmania.com/scripts/index.html
+  for this script and many more
+*/
+    // Configure below - change number of images to render
+var no = 8; 
+    // Configure speed below
+var speed = 20;   // The smaller the number, the faster the movement
+
+var floatr = new Array();
+   //  Your image location
+floatr[0] = "../images/balloon.png"
+floatr[1] = "../images/balloon.png"
+floatr[2] = "../images/balloon.png"
+floatr[3] = "../images/balloon.png"
+floatr[4] = "../images/balloon.png"
+floatr[5] = "../images/balloon.png"
+floatr[6] = "../images/balloon.png"
+floatr[7] = "../images/balloon.png"
+
+
+var ns4up = (document.layers) ? 1 : 0;  // browser sniffer
+var ie4up = (document.all) ? 1 : 0;
+var ns6up = (document.getElementById&&!document.all) ? 1 : 0;
+var dx, xp, yp;    // coordinate and position variables
+var am, stx, sty;  // amplitude and step variables
+var i, doc_width = 800, doc_height = 1800;
+
+if (ns4up||ns6up) {
+        doc_width = self.innerWidth;
+        doc_height = self.innerHeight;
+} else if (ie4up) {
+        doc_width = document.body.clientWidth;
+        doc_height = document.body.clientHeight;
+}
+
+dx = new Array();
+xp = new Array();
+yp = new Array();
+am = new Array();
+stx = new Array();
+sty = new Array();
+j = 0;
+
+for (i = 0; i < no; ++ i) {
+        dx[i] = 0;                        // set coordinate variables
+        xp[i] = Math.random()*(doc_width-50);  // set position variables
+        yp[i] = Math.random()*doc_height;
+        am[i] = Math.random()*20;         // set amplitude variables
+        stx[i] = 0.02 + Math.random()/10; // set step variables
+        sty[i] = 0.7 + Math.random();     // set step variables
+        if (ns4up) {                      // set layers
+                if (i == 0) {
+                        document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src=\""+ floatr[j] + "\" border=\"0\"></layer>");
+                } else {
+                        document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src=\""+ floatr[j] + "\" border=\"0\"></layer>");
+                }        } else if (ie4up||ns6up) {                if (i == 0) 
+{
+                        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\"><img src=\"" + floatr[j] + "\" border=\"0\"></div>");
+                } else {
+                        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\"><img src=\"" + floatr[j] + "\" border=\"0\"></div>");
+                }
+        }
+        if (j == (floatr.length-1)) { j = 0; } else { j += 1; }
+}
+
+function floatrNS() {  // Netscape main animation function
+        for (i = 0; i < no; ++ i) {  // iterate for every dot
+                yp[i] -= sty[i];                if (yp[i] < -50) {
+                        xp[i] = Math.random()*(doc_width-am[i]-30);
+                        yp[i] = doc_height;
+                        stx[i] = 0.02 + Math.random()/10;
+                        sty[i] = 0.7 + Math.random();
+                        doc_width = self.innerWidth;
+                        doc_height = self.innerHeight;                }
+                dx[i] += stx[i];
+                document.layers["dot"+i].top = yp[i]+pageYOffset;
+                document.layers["dot"+i].left = xp[i] + 
+am[i]*Math.sin(dx[i]);
+        }
+        setTimeout("floatrNS()", speed);
+}
+
+function floatrIE_NS6() {  // IE main animation function
+        for (i = 0; i < no; ++ i) {  // iterate for every dot
+                yp[i] -= sty[i];
+                if (yp[i] < -50) {
+                        xp[i] = Math.random()*(doc_width-am[i]-30);
+                        yp[i] = doc_height;
+                        stx[i] = 0.02 + Math.random()/10;
+                        sty[i] = 0.7 + Math.random();
+                        doc_width = ns6up?window.innerWidth-5:document.body.clientWidth;
+                        doc_height = ns6up?window.innerHeight-5:document.body.clientHeight;
+                }
+                dx[i] += stx[i];
+                if (ie4up){
+                document.all["dot"+i].style.pixelTop = yp[i]+document.body.scrollTop;
+                document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
+                }
+                else if (ns6up){
+                document.getElementById("dot"+i).style.top=yp[i]+pageYOffset;
+                document.getElementById("dot"+i).style.left=xp[i] + am[i]*Math.sin(dx[i]);
+                }
+        }
+        setTimeout("floatrIE_NS6()", speed);
+}
+
+if (ns4up) {
+        floatrNS();
+} else if (ie4up||ns6up) {
+        floatrIE_NS6();
+}
+// End -->	
+</script>
+<audio src="celebrate.mp3" type="audio/mpeg" autoplay />
+</body>
 </html>
