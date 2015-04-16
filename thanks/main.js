@@ -1,6 +1,7 @@
 var JoePosition = 'left';
 var theSkyColor = 'lightblue';
 var thePaintColor = 'DarkSlateGray';
+var wootChoice = randomInteger(0, 7);
 window.addEventListener('load', eventWindowLoaded, false);	
 function eventWindowLoaded() {
 	var windowWidth = window.innerWidth;
@@ -44,12 +45,39 @@ function eventWindowLoaded() {
 						setTimeout(function() {
 							stopTalking(theText);
 							blockerDiv.parentNode.removeChild(blockerDiv);
+							wootCall ();
 						}, 5000);
 					}, 500);
 				}, 2000);
 			}, 500);
 		}, 2000);
 	}, 2000);
+	
+}
+function wootCall(){
+	var wootText = new Array();
+	var wootDelay = randomInteger(3000, 7000);
+	var newChoice = randomInteger(0, 7);
+	while (newChoice === window.wootChoice) {
+		var newChoice = randomInteger(0, 7);
+	}
+	window.wootChoice = newChoice;
+	wootText[0] = "Woo!"
+	wootText[1] = "Oh yeah..."
+	wootText[2] = "That's it..."
+	wootText[3] = "Get down!"
+	wootText[4] = "Party on..."
+	wootText[5] = "Celebrate!"
+	wootText[6] = "Thanks again!!!"
+	wootText[7] = "This is my jam..."
+    setTimeout(function(){
+		theText = wootText[window.wootChoice];
+		startTalking(theText);
+		setTimeout(function() {
+			stopTalking(theText);
+			wootCall ();
+		}, 1000);
+   },wootDelay);
 }
 function randomInteger(low, high) {
     return low + Math.floor(Math.random() * high);

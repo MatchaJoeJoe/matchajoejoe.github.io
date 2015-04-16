@@ -32,16 +32,16 @@ text-align: center;
 font-size: 1.5em;
 font-weight: bold;
 font-family: Impact,serif;
-margin-bottom: 1em;
 }
 .credit {
 	font-family: 'Nothing You Could Do', cursive;
 margin: 0;
 }
 .missingCredit {
+	position: absolute;
+	bottom: 20px;
 	font-size: .8em;
 	font-family: 'Nothing You Could Do', cursive;
-margin-top:3em;
 }
 @-webkit-keyframes hue {
   from {
@@ -492,11 +492,12 @@ select {
 	cursor: pointer; cursor: hand;
 }
 iframe.w90 {
-	height: 85%;
 	width: 90%;
-	margin: 5% auto;
+	height: 80%;
 	border-radius: 25px;
 	background-color: white;
+	border: none;
+	overflow: scroll;
 }
 #resume {
 	margin: 5% auto;
