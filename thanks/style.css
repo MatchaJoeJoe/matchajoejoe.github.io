@@ -16,32 +16,56 @@ body {
   -webkit-animation-direction: alternate;
 }
 .creditsBox{
-position: absolute;
-top: 10%;
-left: 30%;
-background-color: white;
-color: black;
-padding:2em;
-border-radius: 50px;
-width: 60%;
-height: 50%;
-overflow: auto;
-text-align: center;
+	position: absolute;
+	top: 10%;
+	right: 10%;
+	background-color: white;
+	color: black;
+	padding:2%;
+	border-radius: 50px;
+	width: 60%;
+	height: 60%;
+	overflow: hidden;
+	text-align: center;
+	z-index: 101;
 }
 .creditHead {
-font-size: 1.5em;
-font-weight: bold;
-font-family: Impact,serif;
+	position: absolute;
+	top: 10px;
+	width: 96%;
+	font-size: 1.5em;
+	font-weight: bold;
+	font-family: Impact,serif;
+	text-indent: 0;
+	padding:0;
 }
 .credit {
 	font-family: 'Nothing You Could Do', cursive;
-margin: 0;
+	margin: 0;
 }
 .missingCredit {
+	color:#fff;
 	position: absolute;
-	bottom: 20px;
+	top: 75%;
+	right: 10%;
+	width: 60%;
+	padding:0 2%;
 	font-size: .8em;
 	font-family: 'Nothing You Could Do', cursive;
+	text-align: center;
+	text-shadow: 2px 2px 3px #000;
+	z-index: 101;
+}
+iframe.w90 {
+	position: absolute;
+	top: 15%;
+	left:0;
+	width: 100%;
+	height: 85%;
+	border-radius: 25px;
+	background-color: white;
+	border: none;
+	overflow: auto;
 }
 @-webkit-keyframes hue {
   from {
@@ -62,6 +86,7 @@ margin: 0;
   height: 200px;
   position: absolute;
   top: -10px;
+  z-index: 102;
 }
 .hanger {
   background: #fff;
@@ -490,14 +515,6 @@ select {
 	padding:5px 7px;
 	border-radius: 20px;
 	cursor: pointer; cursor: hand;
-}
-iframe.w90 {
-	width: 90%;
-	height: 80%;
-	border-radius: 25px;
-	background-color: white;
-	border: none;
-	overflow: scroll;
 }
 #resume {
 	margin: 5% auto;
