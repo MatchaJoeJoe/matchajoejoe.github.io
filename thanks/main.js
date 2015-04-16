@@ -162,7 +162,7 @@ function  popMe(theBalloon){
 	window.balloonsPopped = balloonsPopped + 1;
 	var balloonCount = document.getElementById('balloonCount');
 	balloonCount.innerHTML = balloonsPopped;
-	if ((balloonsPopped-balloonReset) === window.balloonNumber){
+	if ((balloonsPopped-balloonReset) > (window.balloonNumber-1)){
 		balloonCount.innerHTML = balloonsPopped +'<br/><br/><a onclick="createBalloons()">MOAR BALLOONS!!!</a>';
 	}
 }

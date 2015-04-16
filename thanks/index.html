@@ -42,6 +42,14 @@
 			<div id="counter">Balloons Popped: <span id="balloonCount"></span></div>
 			<div id="wall" >&#160;</div>
 			<div id="floor" onclick="loadContent(this)">&#160;</div>
+			<div class="disco">
+				<img class="discoball" src="../images/discoball.gif"/>
+			</div>
+			<div class="creditsBox">
+				<h1 class="creditHead">Thanks to:</h1>			
+				<iframe class="w90" src="https://docs.google.com/document/d/19XeCdyx-CjBojiCB2EsxBKUAaemba9B-7XvM02GyYls/pub?embedded=true"></iframe>
+			</div>
+			<div id="balloonContainer"></div>
 		</div>
 		<div id="content" class="hidden" onclick="hideContent();"></div>
 		<div id="JoeContainer" class="bottomLeft">
@@ -51,15 +59,7 @@
 			<img class="hidden" id="JoeMouth" src="../images/Joe8Bit_talking.gif" alt=""/>
 			<span id="bubbleBox" class="left hidden"></span>
 		</div>
-		<div class="disco">
-			<img class="discoball" src="../images/discoball.gif"/>
-		</div>
-		<div class="creditsBox">
-			<h1 class="creditHead">Thanks to:</h1>			
-			<iframe class="w90" src="https://docs.google.com/document/d/19XeCdyx-CjBojiCB2EsxBKUAaemba9B-7XvM02GyYls/pub?embedded=true"></iframe>
-		</div>
 		<p class="missingCredit">If you do not see your name here and think you should, send me a tweet <a onclick="OpenInNewTab('http://www.twitter.com/joefrizzell')">@joefrizzell</a> and I'll get it sorted.</p>
-		<div id="balloonContainer"></div>
 		<audio src="celebrate.mp3" type="audio/mpeg" autoplay loop />
 	</body>
 </html>

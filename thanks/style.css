@@ -551,3 +551,8 @@ height: 70%;
 ::selection{
   background: none;
 }
+#balloonContainer{
+position: absolute;
+bottom:0;
+height: 100%;
+z-index: 10;
