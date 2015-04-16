@@ -15,6 +15,42 @@ body {
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
 }
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  
+  to {
+    -webkit-filter: hue-rotate(360deg);
+  }
+}
+.discoball {
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: hue;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  
+  height: 200px;
+  position: absolute;
+  top: -10px;
+  z-index: 102;
+}
+.popped{
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: .5s;
+  -webkit-animation-name: popped;
+  -webkit-animation-iteration-count: 1;
+}
+@-webkit-keyframes popped {
+  from {
+    -webkit-transform: scale(1,1);
+  }
+  
+  to {
+    -webkit-transform: scale(5,5);
+  }
+}
 .creditsBox{
 	position: absolute;
 	top: 10%;
@@ -66,27 +102,6 @@ iframe.w90 {
 	background-color: white;
 	border: none;
 	overflow: auto;
-}
-@-webkit-keyframes hue {
-  from {
-    -webkit-filter: hue-rotate(0deg);
-  }
-  
-  to {
-    -webkit-filter: hue-rotate(360deg);
-  }
-}
-.discoball {
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-name: hue;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-  
-  height: 200px;
-  position: absolute;
-  top: -10px;
-  z-index: 102;
 }
 .hanger {
   background: #fff;

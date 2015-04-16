@@ -39,7 +39,7 @@
 			</div>
 		</div>
 		<div id="inside">	
-			<div id="wall" onclick="loadContent(this)">&#160;</div>
+			<div id="wall" onclick="popMe(this)">&#160;</div>
 			<div id="floor" onclick="loadContent(this)">&#160;</div>
 		</div>
 		<div id="content" class="hidden" onclick="hideContent();"></div>
@@ -107,9 +107,9 @@
 									document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src=\""+ floatr[j] + "\" border=\"0\"></layer>");
 							}        } else if (ie4up||ns6up) {                if (i == 0) 
 			{
-									document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\"><img src=\"" + floatr[j] + "\" border=\"0\"></div>");
+									document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\"><img onclick='popMe(this)' src=\"" + floatr[j] + "\" border=\"0\"></div>");
 							} else {
-									document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\"><img src=\"" + floatr[j] + "\" border=\"0\"></div>");
+									document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\"><img onclick='popMe(this)' src=\"" + floatr[j] + "\" border=\"0\"></div>");
 							}
 					}
 					if (j == (floatr.length-1)) { j = 0; } else { j += 1; }

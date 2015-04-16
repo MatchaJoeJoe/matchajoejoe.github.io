@@ -44,7 +44,7 @@ function eventWindowLoaded() {
 						startTalking(theText);
 						setTimeout(function() {
 							stopTalking(theText);
-							blockerDiv.parentNode.removeChild(blockerDiv);
+							removeBlocker();
 							wootCall ();
 						}, 5000);
 					}, 500);
@@ -134,4 +134,6 @@ function stopTalking(theText){
 		bubbleBox.className = 'bubble'+window.JoePosition+' hidden';
 	}, 500);
 }
-
+function  popMe(theBalloon){
+	theBalloon.classname = 'popped';
+}
