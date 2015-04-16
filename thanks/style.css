@@ -35,7 +35,7 @@ body {
   height: 200px;
   position: absolute;
   top: -10px;
-  z-index: 102;
+  z-index: 2;
 }
 .popped{
   -webkit-animation-timing-function: linear;
@@ -64,7 +64,7 @@ body {
 	height: 60%;
 	overflow: hidden;
 	text-align: center;
-	z-index: 101;
+	z-index: 10;
 }
 .creditHead {
 	position: absolute;
@@ -83,7 +83,10 @@ body {
 	position:absolute;
 	top:10px;
 	right:10px;
+	z-index: 10;
+	text-align: right;
 }
+#balloon
 .credit {
 	font-family: 'Nothing You Could Do', cursive;
 	margin: 0;
@@ -99,7 +102,7 @@ body {
 	font-family: 'Nothing You Could Do', cursive;
 	text-align: center;
 	text-shadow: 2px 2px 3px #000;
-	z-index: 101;
+	z-index: 10;
 }
 iframe.w90 {
 	position: absolute;
@@ -134,7 +137,7 @@ a {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 100;
+	z-index: 0;
 }
 #floor{
 	height: 128px;
@@ -143,11 +146,11 @@ a {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	z-index: 101;
+	z-index: 1;
 	border-top: 10px solid white;
 }
 #JoeContainer {
-	z-index: 107;
+	z-index: 7;
 	position: absolute;
 	bottom: 0;
 }
@@ -162,7 +165,7 @@ a {
 	font-family: "Courier New", Courier, monospace;
 	border: medium DarkSlateGray solid;
 	background-color: white;
-	z-index: 110;
+	z-index: 10;
 	overflow: auto;
 }
 .left {
@@ -181,25 +184,25 @@ a {
 	height: 256px;
 	position: absolute;
 	bottom: 0;
-	z-index: 105;
+	z-index: 5;
 }
 #JoeMouth {
 	height: 256px;
 	position: absolute;
 	bottom: 0;
-	z-index: 106;
+	z-index: 6;
 }
 #JoeEyes {
 	height: 256px;
 	position: absolute;
 	bottom: 0;
-	z-index: 106;
+	z-index: 6;
 }
 #JoeTshirt {
 	height: 256px;
 	position: absolute;
 	bottom: 0;
-	z-index: 107;
+	z-index: 7;
 }
 #blocker {
 	height: 100%;
@@ -207,7 +210,7 @@ a {
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 108;
+	z-index: 999;
 	opacity: 0;
 }
 #Joeblocker {
@@ -216,7 +219,7 @@ a {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	z-index: 112;
+	z-index: 999;
 	opacity: 0;
 }
 #LoadingBackground {
@@ -227,7 +230,7 @@ a {
 	width:100%;
 	height:100%;
 	background-color:black;
-	z-index: 110;
+	z-index: 10;
 	overflow: hidden;
 }
 #LoadingContainer{
@@ -272,16 +275,7 @@ select {
 	z-index: 0;
 	overflow: hidden;
 }
-#outside{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: lightblue;
-	z-index: 0;
-	overflow: hidden;
-}
+
 #content {
 	text-align: center;
 	width: 100%;
@@ -290,7 +284,7 @@ select {
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index:110;
+	z-index:10;
 	background-color: rgba(30,30,30,.8);
 	color: white;
     overflow: hidden;
@@ -342,7 +336,7 @@ div.videoWrapper iframe {
 	margin:5% auto;
 	padding: 5%;
 	position: relative;
-	z-index: 111;
+	z-index: 11;
 	overflow: auto;
 }
 #twitterwrapper {
@@ -350,7 +344,7 @@ div.videoWrapper iframe {
 	width: 500px;
 	margin:5% auto;
 	position: relative;
-	z-index: 111;
+	z-index: 11;
 }
 .twitter-timeline {
 	height: 100%;
