@@ -2,8 +2,12 @@ var JoePosition = 'left';
 var theSkyColor = 'lightblue';
 var thePaintColor = 'DarkSlateGray';
 var wootChoice = randomInteger(0, 7);
+var balloonsPopped = 0;
 window.addEventListener('load', eventWindowLoaded, false);	
 function eventWindowLoaded() {
+	addBlocker();
+	var balloonCount = document.getElementById('balloonCount');
+	balloonCount.innerHTML = balloonsPopped;
 	var windowWidth = window.innerWidth;
 	var windowHeight = window.innerHeight;
 	var theMeasurement = Math.min(windowWidth, windowHeight);
@@ -17,15 +21,8 @@ function eventWindowLoaded() {
 	}
 	var JoeBody = document.getElementById('JoeBody');
 	var JoeTshirt = document.getElementById('JoeTshirt');
- 	JoeTshirt.className = 'hidden';
- 	JoeBody.className = 'walkIn';
-	var shirtName = 'Joe8Bit_T0.gif';
 	var LoadingBackground = document.getElementById('LoadingBackground');
 	LoadingBackground.className = 'hidden';
-	var containerDiv = document.getElementById('inside');
-	var blockerDiv = document.createElement("div");
-	blockerDiv.id = 'blocker';
-	containerDiv.appendChild(blockerDiv);
 	setTimeout(function() {
 		loadTwitter();
 	}, 1000);
@@ -44,8 +41,10 @@ function eventWindowLoaded() {
 						startTalking(theText);
 						setTimeout(function() {
 							stopTalking(theText);
+							setTimeout(function() {
+								wootCall ();
+							}, 5000);
 							removeBlocker();
-							wootCall ();
 						}, 5000);
 					}, 500);
 				}, 2000);
@@ -55,34 +54,47 @@ function eventWindowLoaded() {
 	
 }
 function wootCall(){
+	addBlocker();
 	var wootText = new Array();
 	var wootDelay = randomInteger(3000, 7000);
-	var newChoice = randomInteger(0, 7);
+	var newChoice = randomInteger(0, 8);
 	while (newChoice === window.wootChoice) {
-		var newChoice = randomInteger(0, 7);
+		newChoice = randomInteger(0, 8);
 	}
 	window.wootChoice = newChoice;
-	wootText[0] = "Woo!"
-	wootText[1] = "Oh yeah..."
-	wootText[2] = "That's it..."
-	wootText[3] = "Get down!"
-	wootText[4] = "Party on..."
-	wootText[5] = "Celebrate!"
-	wootText[6] = "Thanks again!!!"
-	wootText[7] = "This is my jam..."
-    setTimeout(function(){
-		theText = wootText[window.wootChoice];
-		startTalking(theText);
+	wootText[0] = "Woo!!!";
+	wootText[1] = "Oh yeah...";
+	wootText[2] = "You rock!!!";
+	wootText[3] = "Get down...";
+	wootText[4] = "Celebrate!!!";
+	wootText[5] = "Alright...";
+	wootText[6] = "Thanks again!!!";
+	wootText[7] = "This is my jam...";
+	theText = wootText[window.wootChoice];
+	startTalking(theText);
+	setTimeout(function() {
+		stopTalking(theText);
 		setTimeout(function() {
-			stopTalking(theText);
-			wootCall ();
+			removeBlocker();
 		}, 1000);
-   },wootDelay);
+	}, 1000);
 }
 function randomInteger(low, high) {
     return low + Math.floor(Math.random() * high);
 }
+function addBlocker(){
+	var JoecontainerDiv = document.getElementById('JoeContainer');
+	var JoeblockerDiv = document.createElement("div");
+	JoeblockerDiv.id = 'Joeblocker';
+	JoecontainerDiv.appendChild(JoeblockerDiv);
+	var containerDiv = document.getElementById('inside');
+	var blockerDiv = document.createElement("div");
+	blockerDiv.id = 'blocker';
+	containerDiv.appendChild(blockerDiv);
+}
 function removeBlocker(){
+	var JoeblockerDiv = document.getElementById("Joeblocker");
+	JoeblockerDiv.parentNode.removeChild(JoeblockerDiv);
 	var blockerDiv = document.getElementById("blocker");
 	blockerDiv.parentNode.removeChild(blockerDiv);
 }
@@ -135,5 +147,17 @@ function stopTalking(theText){
 	}, 500);
 }
 function  popMe(theBalloon){
-	theBalloon.classname = 'popped';
+	addBlocker();
+	theBalloon.className = 'popped';
+	theBalloon.src = '../images/popped.png';
+	setTimeout(function() {
+		theBalloon.parentNode.removeChild(theBalloon);
+		removeBlocker();
+	}, 200);
+	window.balloonsPopped = balloonsPopped + 1;
+	var balloonCount = document.getElementById('balloonCount');
+	balloonCount.innerHTML = balloonsPopped;
+	if (balloonsPopped >99) {
+		balloonCount.innerHTML = 'All of them!!!';
+	}
 }

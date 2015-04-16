@@ -39,15 +39,15 @@
 			</div>
 		</div>
 		<div id="inside">	
-			<div id="wall" onclick="popMe(this)">&#160;</div>
+			<div id="counter">Balloons Popped: <span id="balloonCount"></span></div>
+			<div id="wall" >&#160;</div>
 			<div id="floor" onclick="loadContent(this)">&#160;</div>
 		</div>
 		<div id="content" class="hidden" onclick="hideContent();"></div>
 		<div id="JoeContainer" class="bottomLeft">
 			<img id="JoeBody" src="../images/Joe8Bit_walking.gif" alt=""/>
-			<img class="hidden" id="JoeTshirt" src="../images/Joe8Bit_T0.gif" alt="" onclick="changeShirts();"/>
-			<img class="hidden" id="earphones" src="../images/earphones.gif" alt="" onclick="loadContent(this);"/>
-			<img class="hidden" id="JoeEyes" src="../images/Joe8Bit_eyes_forward.gif" alt=""/>
+			<img id="JoeTshirt" src="../images/Joe8Bit_T4.gif" alt="" onclick="wootCall();"/>
+			<img id="JoeEyes" src="../images/Joe8Bit_eyes_forward.gif" alt=""/>
 			<img class="hidden" id="JoeMouth" src="../images/Joe8Bit_talking.gif" alt=""/>
 			<span id="bubbleBox" class="left hidden"></span>
 		</div>
@@ -60,7 +60,7 @@
 		</div>
 			<p class="missingCredit">If you do not see your name here and think you should, send me a tweet <a onclick="OpenInNewTab('http://www.twitter.com/joefrizzell')">@joefrizzell</a> and I'll get it sorted.</p>
 		<script>
-			var no = 10; 
+			var no =100; 
 			var speed = 20;   // The smaller the number, the faster the movement
 			var floatr = new Array();
 			floatr[0] = "../images/balloon0.png"

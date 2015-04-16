@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Nothing+You+Could+Do);
+p{margin:0;}
 body {
 	font-family: Futura, "Gill Sans", sans-serif;
 	margin:0;
@@ -38,17 +39,17 @@ body {
 }
 .popped{
   -webkit-animation-timing-function: linear;
-  -webkit-animation-duration: .5s;
+  -webkit-animation-duration: .3s;
   -webkit-animation-name: popped;
   -webkit-animation-iteration-count: 1;
 }
 @-webkit-keyframes popped {
   from {
-    -webkit-transform: scale(1,1);
+    -webkit-transform: scale(.5,.5);
   }
   
   to {
-    -webkit-transform: scale(5,5);
+    -webkit-transform: scale(2,2);
   }
 }
 .creditsBox{
@@ -74,6 +75,14 @@ body {
 	font-family: Impact,serif;
 	text-indent: 0;
 	padding:0;
+}
+#counter{
+	color: white;
+	font-family: Impact,serif;
+	font-size: 2em;
+	position:absolute;
+	top:10px;
+	right:10px;
 }
 .credit {
 	font-family: 'Nothing You Could Do', cursive;
@@ -103,16 +112,6 @@ iframe.w90 {
 	border: none;
 	overflow: auto;
 }
-.hanger {
-  background: #fff;
-  width: 3px;
-  border-right: 2px solid #999;
-  height: 60px;
-  position: absolute;
-  top: 0;
-  left: 50%;
-}
-p{margin:0;}
 .whiteBG {
 	background-color:white;
 }
@@ -137,15 +136,6 @@ a {
 	height: 100%;
 	z-index: 100;
 }
-#sky {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 100;
-	overflow: hidden;
-}
 #floor{
 	height: 128px;
 	width: 100%;
@@ -155,137 +145,6 @@ a {
 	left: 0;
 	z-index: 101;
 	border-top: 10px solid white;
-}
-#grass{
-	height: 128px;
-	width: 100%;
-    background-image: url("../images/grass.png");
-    background-color: green;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	z-index: 101;
-}
-#doorGrass{
-	height: 80px;
-	width: 80px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	z-index: 103;
-    background-image: url("../images/grass.png");
-    background-color: green;
-}
-#doorFloor{
-	height: 80px;
-	width: 80px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	z-index: 103;
-    background-image: url("../images/floor.jpg");
-}
-#insideDoorFrame{
-	height: 160px;
-	width: 80px;
-	border-top: 10px solid white;
-	border-right: 10px solid white;
-	border-left: 10px solid white;
-	background-color: black;
-	position: absolute;
-	bottom: 128px;
-	left: 16px;
-	z-index: 102;
-	-webkit-perspective:160px;
-	perspective:160px;
-}
-#outsideDoorFrame{
-	height: 160px;
-	width: 80px;
-	border-top: 10px solid SaddleBrown;
-	border-right: 10px solid SaddleBrown;
-	border-left: 10px solid SaddleBrown;
-	background-color: black;
-	position: absolute;
-	bottom: 128px;
-	right: 16px;
-	z-index: 102;
-	-webkit-perspective:160px;
-	perspective:160px;
-}
-#house{
-	height: 300px;
-	width: 50%;
-	background-color: maroon;
-	position: absolute;
-	bottom: 128px;
-	right: 0;
-	z-index: 102;
-	-webkit-perspective:160px;
-	perspective:160px;
-    background-image: url("../images/brick.png");
-}
-#doorOut{
-	height: 160px;
-	width: 80px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	z-index: 103;
-	cursor: pointer; cursor: hand;
-}
-#doorIn{
-	height: 160px;
-	width: 80px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	z-index: 103;
-	cursor: pointer; cursor: hand;
-}
-.doorClose{
-	-webkit-animation-name: doorClose;
-	-webkit-animation-duration:1s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: linear;
-	animation-name: doorClose;
-	animation-duration:1s;
-	animation-iteration-count: 1;
-	animation-timing-function: linear;
-}
-@-webkit-keyframes doorClose{
-	0% {-webkit-transform: perspective(5000) rotateY(90deg);
-       -webkit-transform-origin: 0% 0%;}
-	100% {-webkit-transform: perspective(5000) rotateY(0deg);
-        -webkit-transform-origin: 0% 0%;}
-}
-@keyframes doorClose{
-	0% {transform: perspective(5000) rotateY(90deg);
-       transform-origin: 0% 0%;}
-	100% {transform: perspective(5000) rotateY(0deg);
-        transform-origin: 0% 0%;}
-}
-.doorOpen{
-	-webkit-animation-name: doorOpen;
-	-webkit-animation-duration:1s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: linear;
-	animation-name: doorOpen;
-	animation-duration:1s;
-	animation-iteration-count: 1;
-	animation-timing-function: linear;
-}
-@-webkit-keyframes doorOpen{
-	0% {-webkit-transform: perspective(5000) rotateY(0deg);
-       -webkit-transform-origin: 0% 0%;}
-	100% {-webkit-transform: perspective(5000) rotateY(90deg);
-        -webkit-transform-origin: 0% 0%;}
-}
-@keyframes doorOpen{
-	0% {transform: perspective(5000) rotateY(0deg);
-       transform-origin: 0% 0%;}
-	100% {transform: perspective(5000) rotateY(90deg);
-        transform-origin: 0% 0%;}
 }
 #JoeContainer {
 	z-index: 107;
@@ -306,22 +165,6 @@ a {
 	z-index: 110;
 	overflow: auto;
 }
-@-webkit-keyframes type{ 
-  from { width: 0%; } 
-} 
-@keyframes type{ 
-  from { width: 0%; } 
-} 
-@-webkit-keyframes type2{
-  0%{width: 0%;}
-  50%{width: 0%;}
-  100%{ width: 100%; } 
-} 
-@keyframes type2{
-  0%{width: 0%;}
-  50%{width: 0%;}
-  100%{ width: 100%; } 
-} 
 .left {
 	left: 0;
 }
@@ -338,109 +181,42 @@ a {
 	height: 256px;
 	position: absolute;
 	bottom: 0;
-	z-index: 108;
+	z-index: 105;
 }
 #JoeMouth {
 	height: 256px;
 	position: absolute;
 	bottom: 0;
-	z-index: 109;
+	z-index: 106;
 }
 #JoeEyes {
 	height: 256px;
 	position: absolute;
 	bottom: 0;
-	z-index: 109;
+	z-index: 106;
 }
 #JoeTshirt {
 	height: 256px;
 	position: absolute;
 	bottom: 0;
-	z-index: 110;
+	z-index: 107;
 }
-#earphones {
-	height: 256px;
-	position: absolute;
-	bottom: 0;
-	z-index: 111;
-}
-#art {
-	position: absolute;
-	bottom: 138px;
-	right: 20%;
-	z-index: 104;
-	cursor: pointer; cursor: hand;
-}
-#diploma {
-	position: absolute;
-	bottom: 60%;
-	left: 10%;
-	z-index: 104;
-	cursor: pointer; cursor: hand;
-}
-#clock {
-	position: absolute;
-	bottom: 300px;
-	left: 38px;
-	z-index: 104;
-	cursor: pointer; cursor: hand;
-}
-#radio {
-	position: absolute;
-	bottom: 45%;
-	left: 33%;
-	z-index: 104;
-	cursor: pointer; cursor: hand;
-}
-#bookshelf {
-	position: absolute;
-	bottom: 112px;
-	right: 33%;
-	z-index: 104;
-	cursor: pointer; cursor: hand;
-}
-#drafting{
-	position: absolute;
-	bottom: 5%;
-	right: 0;
-	z-index: 104;
-	cursor: pointer; cursor: hand;
-}
-#chair {
-	position: absolute;
-	bottom: 5%;
-	left: 32%;
-	z-index: 104;
-	cursor: pointer; cursor: hand;
-}
-#laptop {
-	position: absolute;
-	bottom: 0;
-	left: 25%;
-	z-index: 104;
-	cursor: pointer; cursor: hand;
-}
-#table {
-	position: absolute;
-	bottom: 0;
-	left: 45%;
-	z-index: 104;
-}
-#phone {
-	position: absolute;
-	bottom: 64px;
-	left: 50%;
-	z-index: 104;
-	cursor: pointer; cursor: hand;
-}
-
 #blocker {
 	height: 100%;
 	width: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 107;
+	z-index: 108;
+	opacity: 0;
+}
+#Joeblocker {
+	height: 256px;
+	width: 128px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 112;
 	opacity: 0;
 }
 #LoadingBackground {
