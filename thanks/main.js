@@ -3,7 +3,7 @@ var theSkyColor = 'lightblue';
 var thePaintColor = 'DarkSlateGray';
 var wootChoice = randomInteger(0, 7);
 var balloonsPopped = 0;
-var balloonNumber = 20;
+var balloonNumber = 25;
 var balloonReset = 0;
 var floatingStatus = "No";
 var speed = 25;
@@ -172,9 +172,6 @@ function createBalloons(){
 	balloonCount.innerHTML = balloonsPopped;
 	var balloonContainer = document.getElementById('balloonContainer');
 	balloonContainer.innerHTML = "";
-	if (balloonNumber <100){
-		balloonNumber = balloonNumber + 5;
-	}
 	if (speed >0){
 		speed = speed -5;
 	}
