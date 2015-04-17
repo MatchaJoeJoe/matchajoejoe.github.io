@@ -29,9 +29,6 @@ function eventWindowLoaded() {
 	var LoadingBackground = document.getElementById('LoadingBackground');
 	LoadingBackground.className = 'hidden';
 	setTimeout(function() {
-		loadTwitter();
-	}, 1000);
-	setTimeout(function() {
 		theText = 'Hey there my most awesome of patrons!';
 		startTalking(theText);
 		setTimeout(function() {
@@ -46,9 +43,6 @@ function eventWindowLoaded() {
 						startTalking(theText);
 						setTimeout(function() {
 							stopTalking(theText);
-							setTimeout(function() {
-								wootCall ();
-							}, 5000);
 							removeBlocker();
 						}, 5000);
 					}, 500);
@@ -103,37 +97,10 @@ function removeBlocker(){
 	var blockerDiv = document.getElementById("blocker");
 	blockerDiv.parentNode.removeChild(blockerDiv);
 }
-function hideContent(){
-	removeBlocker();
-	var audioListDiv = document.getElementById('audioList');
-	var audioClass = audioListDiv.className;
-	if (audioClass !='greyBox hidden'){
-		audioListDiv.className = 'greyBox quickfadeout';
-	}
-	var twitterwrapper = document.getElementById('twitterwrapper');
-	var twitterClass = twitterwrapper.className;
-	if (twitterClass !='hidden'){
-		twitterwrapper.className = 'quickfadeout';
-	}
-	var contentDiv = document.getElementById('content');
-	var tabClass = contentDiv.className;
-	if (tabClass !='hidden'){
-		contentDiv.className = 'quickfadeout';
-	}
-	setTimeout(function() {
-		audioListDiv.className = 'greyBox hidden';
-		twitterwrapper.className = 'hidden';
-		contentDiv.className = 'hidden';
-		contentDiv.innerHTML = '';
-	}, 500);
-}
 function OpenInNewTab(url) {
 	var win = window.open(url, '_blank');
 	win.blur();
 	window.focus();
-}
-function loadTwitter(){
-	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 }
 function startTalking(theText){
 	var bubbleBox = document.getElementById('bubbleBox');
@@ -151,7 +118,7 @@ function stopTalking(theText){
 		bubbleBox.className = 'bubble'+window.JoePosition+' hidden';
 	}, 500);
 }
-function  popMe(theBalloon){
+function popMe(theBalloon){
 	addBlocker();
 	theBalloon.className = 'popped';
 	theBalloon.src = '../images/popped.png';
@@ -166,7 +133,22 @@ function  popMe(theBalloon){
 		balloonCount.innerHTML = balloonsPopped +'<br/><br/><a onclick="createBalloons()">MOAR BALLOONS!!!</a>';
 	}
 }
-function createBalloons(){
+function showAudio() {
+	theText = 'Crank it up to 11!!!';
+	startTalking(theText);
+	setTimeout(function() {
+		stopTalking(theText);
+		var audioListDiv = document.getElementById('audioList');
+		audioListDiv.className = "quickfadein";
+	}, 2000);
+}
+function hideContent(theElement){
+	var thisClass = theElement.className;
+	theElement.className = 'quickfadeout';
+	setTimeout(function() {
+		theElement.className = 'hidden';
+	}, 500);
+}function createBalloons(){
 	window.balloonReset = balloonsPopped;
 	var balloonCount = document.getElementById('balloonCount');
 	balloonCount.innerHTML = balloonsPopped;
