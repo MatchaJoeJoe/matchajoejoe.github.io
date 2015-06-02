@@ -8,9 +8,6 @@ var theBrickColor2 = 'slategrey';
 var theFenceColor = 'DarkOliveGreen';
 var skyText = 'Yup, that’s the sky.';
 var masterVolume = 5;
-var windowWidth = window.innerWidth;
-var windowHeight = window.innerHeight;
-var theMeasurement = Math.min(windowWidth, windowHeight);
 var theScale = 1;
 var theDate = new Date();
 var theMonth = theDate.getMonth();
@@ -99,8 +96,11 @@ function startGame() {
 	changeFence();
 	setTheTime();
 	viewport = document.querySelector("meta[name=viewport]");
-	if (window.theMeasurement<700){
-		theScale = (theMeasurement/700);
+	var windowWidth = window.innerWidth;
+	var windowHeight = window.innerHeight;
+	var theMeasurement = Math.min(windowWidth, windowHeight);
+	if (window.theMeasurement<1000){
+		theScale = (theMeasurement/1000);
 		viewport.setAttribute('content', 'width=device-width, initial-scale='+theScale+', maximum-scale='+theScale+', user-scalable=0');
 		document.body.style.fontSize = (20/(theScale*1.25))+'px';
 		document.body.style.lineHeight = (28/(theScale*1.25))+'px';
