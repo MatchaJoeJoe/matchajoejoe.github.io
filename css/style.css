@@ -146,6 +146,18 @@ a {
 	perspective:160px;
     background-image: url("../images/brick.png");
 }
+#fence{
+	height: 256px;
+	width: 100%;
+	background-color: maroon;
+	position: absolute;
+	bottom: 128px;
+	right: 0;
+	z-index: 102;
+	-webkit-perspective:160px;
+	perspective:160px;
+    background-image: url("../images/postnobills.png") ;
+}
 #windows {
 	height:333px;
 	width: 228px;

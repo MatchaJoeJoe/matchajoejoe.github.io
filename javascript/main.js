@@ -5,6 +5,7 @@ var theSkyColor = 'lightblue';
 var thePaintColor = 'DarkSlateGray';
 var theBrickColor = 'Maroon';
 var theBrickColor2 = 'slategrey';
+var theFenceColor = 'DarkOliveGreen';
 var skyText = 'Yup, that’s the sky.';
 var masterVolume = 5;
 var windowWidth = window.innerWidth;
@@ -94,6 +95,8 @@ function startGame() {
 	changeLeaves();
 	changePaint();
 	changeBricks();
+	changeBricks2();
+	changeFence();
 	setTheTime();
 	viewport = document.querySelector("meta[name=viewport]");
 	if (window.theMeasurement<700){
@@ -467,6 +470,17 @@ function loadContent(theCaller){
 			stopTalking(theText);
 		}, 2500);
 	}
+	if (callerID=="fence"){
+		changeFence();
+ 		theText = 'That fence is '+window.theFenceColor+'...';
+		startTalking(theText);
+		setTimeout(function() {
+			setTimeout(function() {
+				removeBlocker();
+			}, 500);			
+			stopTalking(theText);
+		}, 2500);
+	}
 	if (callerID.lastIndexOf("clock")===0){
 		var theTime = setTheTime();
 		theText = 'It is '+theTime+'.';
@@ -656,6 +670,24 @@ function changeBricks2() {
 	}
 	window.theBrickColor2 = newColor;
 	building2Div.style.backgroundColor = window.theBrickColor2;
+}
+function changeFence() {
+	var fenceDiv = document.getElementById('fence');
+	var newColor = window.theFenceColor;
+	while (newColor === window.theFenceColor) {
+		var colorNumber = randomInteger(1,3);
+		if(colorNumber === 1){
+			newColor = 'DarkOliveGreen';
+		}
+		if(colorNumber === 2){
+			newColor = 'Beige';
+		}
+		if(colorNumber === 3){
+			newColor = 'DodgerBlue';
+		}
+	}
+	window.theFenceColor = newColor;
+	fenceDiv.style.backgroundColor = window.theFenceColor;
 }
 function setTheTime(){
 	var theTime = "";
