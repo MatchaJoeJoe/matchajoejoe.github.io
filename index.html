@@ -35,38 +35,43 @@
 	</head>
 	<body id="body">
 		<div id="LoadingBackground">
-			<div id="LoadingContainer">&#129412;<br/><br/><br/><img src="images/loading.gif" width="30" height="30" alt="loading" />&#160;<br/><br/>Loading...<br/><br/>You need to have Javascript enabled for this site to work.
+			<div id="LoadingContainer">You need to have Javascript enabled for this site to work.
 			</div>
 		</div>
-		<div id="inside">	
+		<div id="inside" class="hidden">	
 			<div id="wall" onclick="loadContent(this)">&#160;</div>
-			<img id="art" onclick="loadContent(this)" src="images/window.jpg" width="128" height="428" alt="window" />
 			<div id="insideDoorFrame">
-				<div id="doorGrass">&#160;</div>
+				<div id="doorSidewalk">&#160;</div>
 				<img id="doorOut" class="hidden" src="images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
 			</div>
+			<img id="art" onclick="loadContent(this)" src="images/06t.png" width="148" height="192" alt="window" />
 			<div id="floor" onclick="loadContent(this)">&#160;</div>
 			<img id="diploma" src="images/frame.gif" width="154" height="129" alt="frame" onclick="loadContent(this)" />
 			<img id="clock" src="images/clock.gif" width="64" height="64" alt="clock" onclick="loadContent(this)" />
-			<img id="radio" src="images/radio.gif" width="148" height="96" alt="radio" onclick="loadContent(this)" />
-			<img id="bookshelf" src="images/bookshelf.gif" width="128" height="136" alt="radio" onclick="loadContent(this)" />
+			<img id="radio" src="images/radio.gif" width="128" height="64" alt="radio" onclick="loadContent(this)" />
+			<img id="bookshelf" src="images/bookshelf.gif" width="128" height="180" alt="radio" onclick="loadContent(this)" />
 			<img id="drafting" src="images/draftingTable.gif" width="200" height="173" alt="draftingTable" onclick="loadContent(this)" />
 			<img id="chair" src="images/chair.gif" width="160" height="192" alt="chair" onclick="loadContent(this)" />
 			<img id="laptop" src="images/laptopTable.gif" width="96" height="160" alt="laptopTable" onclick="loadContent(this)" />
 			<img id="table" src="images/table.gif" width="147" height="96" alt="table" onclick="loadContent(this)" />
 			<img id="phone" src="images/phone.gif" width="64" height="32" alt="phone" onclick="loadContent(this)" />
 		</div>
-		<div id="outside">	
+		<div id="outside" class="hidden">	
 			<div id="sky" onclick="loadContent(this)">&#160;</div>
-			<div id="house" onclick="loadContent(this)">&#160;</div>
+			<div id="building" onclick="loadContent(this)">&#160;</div>
+			<div id="building2" onclick="loadContent(this)">&#160;</div>
+			<img id="windows" src="images/windows.png" onclick="loadContent(this)"/>
+			<img id="windows2" src="images/windows.png" onclick="loadContent(this)"/>
 			<div id="outsideDoorFrame">
 				<div id="doorFloor">&#160;</div>
-				<img id="doorIn" class="hidden" src="images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
+				<img id="doorIn" class="doorClose" src="images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
 			</div>
-			<div id="grass" onclick="loadContent(this)">&#160;</div>
+			<div id="sidewalk" onclick="loadContent(this)">&#160;</div>
+			<img id="tree" class="tree" src="images/tree.png" onclick="loadContent(this)"/>
+			<img id="leaves" class="tree" src="images/leavesWinter.png" onclick="loadContent(this)"/>
 		</div>
 		<div id="content" class="hidden" onclick="hideContent();"></div>
-		<div id="JoeContainer" class="bottomLeft">
+		<div id="JoeContainer" class="hidden">
 			<img id="JoeBody" src="images/Joe8Bit_walking.gif" alt=""/>
 			<img class="hidden" id="JoeTshirt" src="images/Joe8Bit_T0.gif" alt="" onclick="changeShirts();"/>
 			<img class="hidden" id="earphones" src="images/earphones.gif" alt="" onclick="loadContent(this);"/>
@@ -105,7 +110,7 @@
 			<audio><source src="audio/arp-04.mp3" type="audio/mpeg"><source src="audio/arp-04.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>
 			<div id="youTube">
 				<div class="videoWrapper">
-					<iframe width="100%" height="100%" src="http://www.youtube.com/embed/H-0GKrFG8kw?list=UUTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+					<iframe width="100%" height="100%" src="http://www.youtube.com/embed/H-0GKrFG8kw" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 				</div>
 			</div>
 		</div>

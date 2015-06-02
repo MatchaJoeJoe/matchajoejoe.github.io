@@ -48,8 +48,11 @@ function eventWindowLoaded() {
 					}
 					
 					self.className = 'current';
-					current.className = null;
-					
+					if (current == self){
+					}
+					else{
+						current.className = 'thumbShirt';
+					}
 					current = self;
 				},
 				10

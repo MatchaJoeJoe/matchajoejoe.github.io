@@ -10,6 +10,7 @@ body {
 p{margin:0;}
 .whiteBG {
 	background-color:white;
+	overflow: auto;
 }
 a {
 	color: inherit;
@@ -64,15 +65,25 @@ a {
 	left: 0;
 	z-index: 101;
 }
-#doorGrass{
+#doorSidewalk{
 	height: 80px;
 	width: 80px;
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	z-index: 103;
-    background-image: url("../images/grass.png");
-    background-color: green;
+    background-image: url("../images/sidewalk.jpg");
+    background-color: lightgrey;
+}
+#sidewalk{
+	height: 128px;
+	width: 100%;
+    background-image: url("../images/sidewalk.jpg");
+    background-color: lightgrey;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 101;
 }
 #doorFloor{
 	height: 80px;
@@ -106,14 +117,14 @@ a {
 	background-color: black;
 	position: absolute;
 	bottom: 128px;
-	right: 16px;
+	left: 16px;
 	z-index: 102;
 	-webkit-perspective:160px;
 	perspective:160px;
 }
-#house{
-	height: 300px;
-	width: 50%;
+#building{
+	height: 100%;
+	width: 288px;
 	background-color: maroon;
 	position: absolute;
 	bottom: 128px;
@@ -122,6 +133,46 @@ a {
 	-webkit-perspective:160px;
 	perspective:160px;
     background-image: url("../images/brick.png");
+}
+#building2{
+	height: 100%;
+	width: 288px;
+	background-color: maroon;
+	position: absolute;
+	bottom: 128px;
+	left: 0;
+	z-index: 102;
+	-webkit-perspective:160px;
+	perspective:160px;
+    background-image: url("../images/brick.png");
+}
+#windows {
+	height:333px;
+	width: 228px;
+	position: absolute;
+	bottom: 327px;
+	right: 28;
+	z-index: 102;
+	-webkit-perspective:160px;
+	perspective:160px;
+}
+#windows2 {
+	height:333px;
+	width: 228px;
+	position: absolute;
+	bottom: 327px;
+	left: 28;
+	z-index: 102;
+	-webkit-perspective:160px;
+	perspective:160px;
+}
+.tree{
+	height: 496px;
+	width: 380px;
+	position: absolute;
+	bottom: 64px;
+	right: 0;
+	z-index: 104;
 }
 #doorOut{
 	height: 160px;
@@ -264,15 +315,15 @@ a {
 }
 #art {
 	position: absolute;
-	bottom: 138px;
-	right: 20%;
-	z-index: 104;
+	top: 30%;
+	right: 15%;
+	z-index: 100;
 	cursor: pointer; cursor: hand;
 }
 #diploma {
 	position: absolute;
 	bottom: 60%;
-	left: 10%;
+	left: 15%;
 	z-index: 104;
 	cursor: pointer; cursor: hand;
 }
@@ -285,8 +336,8 @@ a {
 }
 #radio {
 	position: absolute;
-	bottom: 45%;
-	left: 33%;
+	bottom: 292px;
+	right: 33%;
 	z-index: 104;
 	cursor: pointer; cursor: hand;
 }
@@ -359,15 +410,22 @@ a {
 	position: absolute;
 	top: 0;
 	left: 0;
-	padding:10%;
+	padding:20% 10%;
 	width: 80%;
-	height: 80%;
+	height: 60%;
 	background-color: #CFCFCF;/*CFCFCF*/
 	background: -webkit-radial-gradient(#CFCFCF 0%, rgba(30,30,30,.5) 90%); /* Safari 5.1 to 6.0 */
 	background: -o-radial-gradient(#CFCFCF 0%, rgba(30,30,30,.5) 90%); /* For Opera 11.6 to 12.0 */
 	background: -moz-radial-gradient(#CFCFCF 0%, rgba(30,30,30,.5) 90%); /* For Firefox 3.6 to 15 */
 	background: radial-gradient(#CFCFCF 0%, rgba(30,30,30,.5) 90%); /* Standard syntax */
 	overflow: auto;
+}
+.options{
+	margin-bottom: 1em;
+	cursor: pointer; cursor: hand;
+}
+.options:hover{
+	text-shadow: 0 0 5px white;
 }
 input {
 	text-align: center;
@@ -412,10 +470,9 @@ select {
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index:110;
+	z-index:111;
 	background-color: rgba(30,30,30,.8);
 	color: white;
-    overflow: hidden;
 }
 #closeButton{
 	position:absolute;
@@ -486,7 +543,7 @@ div.videoWrapper iframe {
 }
 .textcenter {
 	text-align: center;
-	margin:3em;
+	margin:2em 0 0 0;
 }
 .thegallerycontainer {
 text-align: center;
@@ -496,9 +553,15 @@ height: 100%;
 height: 70%;
 }
 .shirtdetail > img {
-height: 70%;
+height: 100%;
 }
 
+.thumbShirt{
+height: 48px;
+}
+.current{
+height: 96px;
+}
 /*animations*/
 .quickfadein {
 	opacity: 1;
