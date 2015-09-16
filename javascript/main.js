@@ -62,9 +62,6 @@ function eventWindowLoaded() {
 	optionsButton.innerHTML = 'Options';
 	loadingContainer.appendChild(optionsButton);
 	optionsButton.addEventListener('click', openOptions, false);	
-	var	SongId = 'audio'+randomInteger(1,3);
-    var startingSong = document.getElementById(SongId);
-	changeMusic(startingSong);
 }
 function openOptions(){
 	var containerDiv = document.getElementById(window.theLocation);
@@ -84,6 +81,9 @@ function newGame(){
 	startGame();
 }
 function startGame() {
+	var	SongId = 'audio'+randomInteger(1,5);
+    var startingSong = document.getElementById(SongId);
+	changeMusic(startingSong);
 	if (window.theLocation ==""){
 		window.theLocation = "inside";
 	}
@@ -192,7 +192,7 @@ function randomInteger(low, high) {
     return low + Math.floor(Math.random() * high);
 }
 function changeMusic(theAudioLink){
-	for (var i = 1; i < 4; i++) {
+	for (var i = 1; i < 6; i++) {
 		var audioLink = document.getElementById('audio'+i);
 		audioLink.className = '';
 	}
