@@ -7,7 +7,7 @@ var theBrickColor = 'Maroon';
 var theBrickColor2 = 'slategrey';
 var theFenceColor = 'DarkOliveGreen';
 var skyText = 'Yup, that’s the sky.';
-var masterVolume = 5;
+var masterVolume = .2;
 var theScale = 1;
 var theDate = new Date();
 var theMonth = theDate.getMonth();
@@ -61,7 +61,11 @@ function eventWindowLoaded() {
 	optionsButton.className = 'options';
 	optionsButton.innerHTML = 'Options';
 	loadingContainer.appendChild(optionsButton);
-	optionsButton.addEventListener('click', openOptions, false);	
+	var disclaimerText = document.createElement('p');
+	disclaimerText.id = "disclaimerText";
+	disclaimerText.className = 'options';
+	disclaimerText.innerHTML = '&#160;<br/><a onclick="OpenInNewTab(\'javascript/main.js\');">Just FYI, this site stores cookies in your browser and reads them back again... It doesn’t look at anything other than the cookies it creates though... Don’t believe me? You can look at the main.js file yourself.</a>';
+	loadingContainer.appendChild(disclaimerText);
 }
 function openOptions(){
 	var containerDiv = document.getElementById(window.theLocation);
@@ -234,7 +238,6 @@ function loadContent(theCaller){
 			var youTubeContents = youTubeDiv.innerHTML;
 			contentDiv.className = "quickfadein";
 			contentDiv.innerHTML = youTubeContents;
-			changeVolume(0);
 		}, 4000);
 	}
 	if (callerID.lastIndexOf("laptop")===0){
@@ -275,7 +278,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			stopTalking(theText);
 			contentDiv.className = "quickfadein";
-			contentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="portfolio.html"/>';
+			contentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="shop/index.html"/>';
 		}, 3000);
 	}
 	if (callerID.lastIndexOf("drafting")===0){
