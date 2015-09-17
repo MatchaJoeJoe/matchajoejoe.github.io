@@ -7,7 +7,7 @@ var theBrickColor = 'Maroon';
 var theBrickColor2 = 'slategrey';
 var theFenceColor = 'DarkOliveGreen';
 var skyText = 'Yup, that’s the sky.';
-var masterVolume = .2;
+var masterVolume = 1.5;
 var theScale = 1;
 var theDate = new Date();
 var theMonth = theDate.getMonth();
@@ -209,6 +209,14 @@ function changeMusic(theAudioLink){
 	changeVolume(masterVolume);
 }
 function changeVolume(volumeLevel){
+	var myMusicPlayer = document.getElementById('musicPlayer');
+	var isPaused = myMusicPlayer.paused;
+	var isMuted = myMusicPlayer.muted;
+	if (volumeLevel>0 && isPaused == false && isMuted == false){
+		document.getElementById('speakers').className = "bounce";
+	}else{
+		document.getElementById('speakers').className = "";
+	}
 	volumeLevel = volumeLevel/10;
 	var musicPlayer = document.getElementById('musicPlayer');
 	musicPlayer.volume = volumeLevel;
@@ -305,7 +313,7 @@ function loadContent(theCaller){
 			contentDiv.innerHTML = '<img id="resume" onclick="OpenInNewTab(\'http://joefrizzell.com/Frizzell-Joe_resume.pdf\')" src="images/Frizzell-Joe_resume.jpg" alt="Frizzell-Joe_resume" />';
 		}, 2000);
 	}
-	if (callerID.lastIndexOf("radio")===0){
+	if (callerID.lastIndexOf("speakers")===0){
 		theText = 'Music to soothe the savage beats.';
 		startTalking(theText);
 		setTimeout(function() {
