@@ -15,6 +15,7 @@ var theUser = getCookie("joefrizzellUsername");
 var theLocation = getCookie("joefrizzellLocation");
 if (theLocation ==""){
 	theLocation = "inside";
+	createCookie('joefrizzellLocation',theLocation,30);
 }
 function createCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -61,11 +62,13 @@ function eventWindowLoaded() {
 	optionsButton.className = 'options';
 	optionsButton.innerHTML = 'Options';
 	loadingContainer.appendChild(optionsButton);
-	var disclaimerText = document.createElement('p');
-	disclaimerText.id = "disclaimerText";
-	disclaimerText.className = 'options';
-	disclaimerText.innerHTML = '&#160;<br/><a onclick="OpenInNewTab(\'javascript/main.js\');">Just FYI, this site stores cookies in your browser and reads them back again... It doesn’t look at anything other than the cookies it creates though... Don’t believe me? You can look at the main.js file yourself.</a>';
-	loadingContainer.appendChild(disclaimerText);
+	optionsButton.addEventListener('click', openOptions, false);	
+	var disclaimerButton = document.createElement('p');
+	disclaimerButton.id = "disclaimerText";
+	disclaimerButton.className = 'options';
+	disclaimerButton.innerHTML = 'About Cookies';
+	loadingContainer.appendChild(disclaimerButton);
+	disclaimerButton.addEventListener('click', displayDisclaimer, false);	
 }
 function openOptions(){
 	var containerDiv = document.getElementById(window.theLocation);
@@ -74,6 +77,16 @@ function openOptions(){
 	containerDiv.appendChild(blockerDiv);
 	var audioListDiv = document.getElementById('audioList');
 	audioListDiv.className = "greyBox quickfadein";
+	var contentDiv = document.getElementById('content');
+	contentDiv.className = "quickfadein";
+}
+function displayDisclaimer(){
+	var containerDiv = document.getElementById(window.theLocation);
+	var blockerDiv = document.createElement("div");
+	blockerDiv.id = 'blocker';
+	containerDiv.appendChild(blockerDiv);
+	var disclaimerDiv = document.getElementById('disclaimer');
+	disclaimerDiv.className = "greyBox quickfadein";
 	var contentDiv = document.getElementById('content');
 	contentDiv.className = "quickfadein";
 }
@@ -116,6 +129,9 @@ function startGame() {
  	JoeBody.className = 'walkIn';
  	JoeContainer.className = '';
  	var door = document.getElementById('doorOut');
+ 	if(window.theLocation ==="outside"){
+ 		door = document.getElementById('doorIn');
+ 	}
  	door.className = 'doorClose';
 	var shirtName = 'Joe8Bit_T0.gif';
 	var LoadingBackground = document.getElementById('LoadingBackground');
@@ -128,6 +144,9 @@ function startGame() {
 		loadTwitter();
 	}, 1000);
 	setTimeout(function() {
+	 	if(window.theLocation === "outside"){
+ 			document.getElementById('earphones').className = 'quickfadein';
+ 		}
 		var JoeEyes = document.getElementById('JoeEyes');
 		JoeEyes.className = "";
 		JoeBody.className = "";
