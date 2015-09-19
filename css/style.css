@@ -94,7 +94,7 @@ a {
 	z-index: 103;
     background-image: url("../images/floor.jpg");
 }
-#insideDoorFrame{
+#joesHouseDoorFrame{
 	height: 160px;
 	width: 80px;
 	border-top: 10px solid white;
@@ -108,7 +108,7 @@ a {
 	-webkit-perspective:160px;
 	perspective:160px;
 }
-#outsideDoorFrame{
+#BrooklynDoorFrame{
 	height: 160px;
 	width: 80px;
 	border-top: 10px solid SaddleBrown;
@@ -162,8 +162,18 @@ a {
 	height:333px;
 	width: 228px;
 	position: absolute;
-	bottom: 327px;
+	bottom: 455px;
 	right: 28;
+	z-index: 102;
+	-webkit-perspective:160px;
+	perspective:160px;
+}
+#joesSign {
+	height:128px;
+	width: 228px;
+	position: absolute;
+	bottom: 315px;
+	left: 28;
 	z-index: 102;
 	-webkit-perspective:160px;
 	perspective:160px;
@@ -172,7 +182,7 @@ a {
 	height:333px;
 	width: 228px;
 	position: absolute;
-	bottom: 327px;
+	bottom: 455px;
 	left: 28;
 	z-index: 102;
 	-webkit-perspective:160px;
@@ -267,6 +277,21 @@ a {
 	z-index: 110;
 	overflow: auto;
 }
+#gregsbubbleBox {
+	display: inline-block;
+	position: absolute;
+	bottom: 265px;
+	right: 0;
+	width: 15em;
+	padding:15px;
+	border-radius: 25px;
+	text-align: center;
+	font-family: "Courier New", Courier, monospace;
+	border: medium DarkSlateGray solid;
+	background-color: white;
+	z-index: 110;
+	overflow: auto;
+}
 @-webkit-keyframes type{ 
   from { width: 0%; } 
 } 
@@ -294,6 +319,13 @@ a {
 }
 .bubbleright {
 	right: -138px;
+}
+#greg {
+	height: 256px;
+	position: absolute;
+	bottom: 0;
+	right:0;
+	z-index: 108;
 }
 #JoeBody {
 	height: 256px;
@@ -461,7 +493,7 @@ select {
 	padding-left: 10px;
 	text-align: center;
 }
-#inside{
+#joesHouse{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -471,7 +503,7 @@ select {
 	z-index: 0;
 	overflow: hidden;
 }
-#outside{
+#Brooklyn{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -796,4 +828,7 @@ height: 96px;
 }
 ::selection{
   background: none;
+}
+.textLeft{
+	text-align: left;
 }

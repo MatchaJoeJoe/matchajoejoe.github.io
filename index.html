@@ -39,9 +39,9 @@
 				<br/><br/><a href="javascript/main.js">Just FYI, this site stores cookies in your browser and reads them back again... It doesn’t look at anything other than the cookies it creates though... Don’t believe me? You can look at the main.js file yourself.</a>
 			</div>
 		</div>
-		<div id="inside" class="hidden">	
+		<div id="joesHouse" class="hidden">	
 			<div id="wall" onclick="loadContent(this)">&#160;</div>
-			<div id="insideDoorFrame">
+			<div id="joesHouseDoorFrame">
 				<div id="doorSidewalk">&#160;</div>
 				<img id="doorOut" class="hidden" src="images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
 			</div>
@@ -58,19 +58,22 @@
 			<img id="table" src="images/table.gif" width="147" height="96" alt="table" onclick="loadContent(this)" />
 			<img id="phone" src="images/phone.gif" width="64" height="32" alt="phone" onclick="loadContent(this)" />
 		</div>
-		<div id="outside" class="hidden">	
+		<div id="Brooklyn" class="hidden">	
 			<div id="sky" onclick="loadContent(this)">&#160;</div>
 			<div id="fence" onclick="loadContent(this)">&#160;</div>
 			<div id="building" onclick="loadContent(this)">&#160;</div>
 			<div id="building2" onclick="loadContent(this)">&#160;</div>
 			<img id="windows" src="images/windows.png" onclick="loadContent(this)"/>
 			<img id="windows2" src="images/windows.png" onclick="loadContent(this)"/>
-			<div id="outsideDoorFrame">
+			<img id="joesSign" src="images/joesSign.png" onclick="loadContent(this)"/>
+			<div id="BrooklynDoorFrame">
 				<div id="doorFloor">&#160;</div>
 				<img id="doorIn" class="doorClose" src="images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
 			</div>
 			<div id="sidewalk" onclick="loadContent(this)">&#160;</div>
 			<img id="tree" class="tree" src="images/tree.png" onclick="loadContent(this)"/>
+			<img id="greg" src="images/Greg8bit.png" onclick="loadContent(this)"/>
+			<span id="gregsbubbleBox" class="hidden"></span>
 			<img id="leaves" class="tree" src="images/leavesWinter.png" onclick="loadContent(this)"/>
 		</div>
 		<div id="content" class="hidden" onclick="hideContent();"></div>
@@ -80,7 +83,7 @@
 			<img class="hidden" id="earphones" src="images/earphones.gif" alt="" onclick="loadContent(this);"/>
 			<img class="hidden" id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/>
 			<img class="hidden" id="JoeMouth" src="images/Joe8Bit_talking.gif" alt=""/>
-			<span id="bubbleBox" class="left hidden"></span>-->
+			<span id="bubbleBox" class="left hidden"></span>
 		</div>
 		<div id="loading" class="hidden">
 			<div id="links">
@@ -132,10 +135,12 @@
 			<a id="audio5" onclick="changeMusic(this);">Postcard</a><br/>
 		</div>
 		<div id="disclaimer" class="greybox hidden">
-			<p><a onclick="OpenInNewTab(\'javascript/main.js\');">Just FYI, this site stores cookies in your browser and reads them back again... It doesn’t look at anything other than the cookies it creates though... Don’t believe me? You can look at the main.js file yourself.</a></p>
-			<p>Here are the cookies and what they do:</p>
-			<p>joefrizzellUsername: Saves your name so I can remember you.</p>
-			<p>joefrizzellLocation: Saves the location of where you are in the game (inside, outside, etc.), not your actual physical coordinates.</p>
+			<p class="textLeft"><a onclick="OpenInNewTab('javascript/main.js');">Just FYI, this site stores cookies in your browser and reads them back again... It doesn’t look at anything other than the cookies it creates though... Don’t believe me? You can look at the main.js file yourself.</a></p>
+			<p class="textLeft">Here are the cookies and what they do:</p>
+			<ul>
+				<li class="textLeft">joefrizzellUsername: Saves your name so I can remember you.</p>
+				<li class="textLeft">joefrizzellLocation: Saves the location of where you are in the game (joesHouse, Brooklyn, etc.), not your actual physical coordinates.</p>
+			</ul>
 		</div>
 	</body>
 </html>

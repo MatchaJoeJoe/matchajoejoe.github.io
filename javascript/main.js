@@ -14,7 +14,7 @@ var theMonth = theDate.getMonth();
 var theUser = getCookie("joefrizzellUsername");
 var theLocation = getCookie("joefrizzellLocation");
 if (theLocation ==""){
-	theLocation = "inside";
+	theLocation = "joesHouse";
 	createCookie('joefrizzellLocation',theLocation,30);
 }
 function createCookie(cname, cvalue, exdays) {
@@ -93,7 +93,9 @@ function displayDisclaimer(){
 function newGame(){
 	var cookies = document.cookie.split(";");
 	for (var i = 0; i < cookies.length; i++){
-		eraseCookie(cookies[i].split("=")[0]);
+		if(cookies[i].indexOf('joefrizzell')===0){
+			eraseCookie(cookies[i].split("=")[0]);
+		}
 	}
 	startGame();
 }
@@ -102,7 +104,7 @@ function startGame() {
     var startingSong = document.getElementById(SongId);
 	changeMusic(startingSong);
 	if (window.theLocation ==""){
-		window.theLocation = "inside";
+		window.theLocation = "joesHouse";
 	}
 	var currentLocation = document.getElementById(window.theLocation);
 	currentLocation.className='fadein';
@@ -129,7 +131,7 @@ function startGame() {
  	JoeBody.className = 'walkIn';
  	JoeContainer.className = '';
  	var door = document.getElementById('doorOut');
- 	if(window.theLocation ==="outside"){
+ 	if(window.theLocation ==="Brooklyn"){
  		door = document.getElementById('doorIn');
  	}
  	door.className = 'doorClose';
@@ -144,7 +146,7 @@ function startGame() {
 		loadTwitter();
 	}, 1000);
 	setTimeout(function() {
-	 	if(window.theLocation === "outside"){
+	 	if(window.theLocation === "Brooklyn"){
  			document.getElementById('earphones').className = 'quickfadein';
  		}
 		var JoeEyes = document.getElementById('JoeEyes');
@@ -355,8 +357,8 @@ function loadContent(theCaller){
 /*Changing Areas*/
 	if (callerID.lastIndexOf("doorOut")===0){
 		setTheTime();
-		var insideDiv = document.getElementById('inside');
-		var outsideDiv = document.getElementById('outside');
+		var joesHouseDiv = document.getElementById('joesHouse');
+		var BrooklynDiv = document.getElementById('Brooklyn');
 		var theDoorOut = document.getElementById('doorOut');
 		var theDoorIn = document.getElementById('doorIn');
 		var JoeContainer = document.getElementById('JoeContainer');
@@ -364,7 +366,7 @@ function loadContent(theCaller){
 		var JoeBody = document.getElementById('JoeBody');
 		var JoeTshirt = document.getElementById('JoeTshirt');
 		var earphones = document.getElementById('earphones');
-		theText = 'Let’s go outside for a stroll...';
+		theText = 'Let’s see what’s happening in Brooklyn...';
 		startTalking(theText);
 		setTimeout(function() {
 			theDoorOut.className = 'doorOpen';
@@ -382,13 +384,13 @@ function loadContent(theCaller){
 					JoeTshirt.className = 'hidden';
 					JoeBody.className = 'walkIn';
 					JoeBody.src = "images/Joe8Bit_walking.gif";
-					insideDiv.className = 'fadeout';
-					outsideDiv.className = 'fadein';
-					window.theLocation = 'outside';
-				    createCookie('joefrizzellLocation','outside',30);
+					joesHouseDiv.className = 'fadeout';
+					BrooklynDiv.className = 'fadein';
+					window.theLocation = 'Brooklyn';
+				    createCookie('joefrizzellLocation','Brooklyn',30);
 					setTimeout(function() {
 						JoeBody.className = '';
-						insideDiv.className = 'hidden';
+						joesHouseDiv.className = 'hidden';
 						removeBlocker();
 						JoeEyes.className = '';
 						JoeTshirt.className = '';
@@ -401,8 +403,8 @@ function loadContent(theCaller){
 	}
 	if (callerID.lastIndexOf("doorIn")===0){
 		setTheTime();
-		var insideDiv = document.getElementById('inside');
-		var outsideDiv = document.getElementById('outside');
+		var joesHouseDiv = document.getElementById('joesHouse');
+		var BrooklynDiv = document.getElementById('Brooklyn');
 		var theDoorOut = document.getElementById('doorOut');
 		var theDoorIn = document.getElementById('doorIn');
 		var JoeContainer = document.getElementById('JoeContainer');
@@ -410,7 +412,7 @@ function loadContent(theCaller){
 		var JoeBody = document.getElementById('JoeBody');
 		var JoeTshirt = document.getElementById('JoeTshirt');
 		var earphones = document.getElementById('earphones');
-		theText = 'Let’s go back inside...';
+		theText = 'Let’s go back to my place...';
 		startTalking(theText);
 		setTimeout(function() {
 			theDoorOut.className = 'doorOpen';
@@ -430,13 +432,13 @@ function loadContent(theCaller){
 					earphones.className = 'hidden';
 					JoeBody.className = 'walkIn';
 					JoeBody.src = "images/Joe8Bit_walking.gif";
-					outsideDiv.className = 'fadeout';
-					insideDiv.className = 'fadein';
-					window.theLocation = 'inside';
-				    createCookie('joefrizzellLocation','inside',30);
+					BrooklynDiv.className = 'fadeout';
+					joesHouseDiv.className = 'fadein';
+					window.theLocation = 'joesHouse';
+				    createCookie('joefrizzellLocation','joesHouse',30);
 					setTimeout(function() {
 						JoeBody.className = '';
-						outsideDiv.className = 'hidden';
+						BrooklynDiv.className = 'hidden';
 						removeBlocker();
 						JoeEyes.className = '';
 						JoeTshirt.className = '';
@@ -447,6 +449,24 @@ function loadContent(theCaller){
 		}, 500);
 	}
 /*Just for fun*/
+	if (callerID.lastIndexOf("greg")===0){
+		theText = 'ACK!!! It’s a giant werewolf...';
+		startTalking(theText);
+		setTimeout(function() {
+			setTimeout(function() {
+				theText = 'I forget to shave one time and everyone has jokes...';
+				gregStartTalking(theText);
+				setTimeout(function() {
+					gregStopTalking(theText);
+					setTimeout(function() {
+						removeBlocker();
+						OpenInNewTab('https://twitch.tv/giantwerewolf');
+					}, 500);			
+				}, 2500);			
+			}, 500);			
+			stopTalking(theText);
+		}, 1500);
+	}
 	if (callerID.lastIndexOf("table")===0){
 		theText = 'That’s just a coffee table.';
 		startTalking(theText);
@@ -562,6 +582,16 @@ function loadContent(theCaller){
 			stopTalking(theText);
 		}, 1500);
 	}
+	if (callerID.lastIndexOf("joesSign")===0){
+		theText = 'Hey I can see my house from here...';
+		startTalking(theText);
+		setTimeout(function() {
+			setTimeout(function() {
+				removeBlocker();
+			}, 500);			
+			stopTalking(theText);
+		}, 1500);
+	}
 	if (callerID.lastIndexOf("leaves")===0){
 		theText = 'Hey, its a tree in New York...';
 		startTalking(theText);
@@ -579,6 +609,11 @@ function removeBlocker(){
 }
 function hideContent(){
 	removeBlocker();
+	var disclaimerDiv = document.getElementById('disclaimer');
+	var disclaimerClass = disclaimerDiv.className;
+	if (disclaimerClass !='greyBox hidden'){
+		disclaimerDiv.className = 'greyBox quickfadeout';
+	}
 	var audioListDiv = document.getElementById('audioList');
 	var audioClass = audioListDiv.className;
 	if (audioClass !='greyBox hidden'){
@@ -595,6 +630,7 @@ function hideContent(){
 		contentDiv.className = 'quickfadeout';
 	}
 	setTimeout(function() {
+		disclaimerDiv.className = 'greyBox hidden';
 		audioListDiv.className = 'greyBox hidden';
 		twitterwrapper.className = 'hidden';
 		contentDiv.className = 'hidden';
@@ -625,6 +661,18 @@ function stopTalking(theText){
 		bubbleBox.className = 'bubble'+window.JoePosition+' hidden';
 	}, 500);
 }
+function gregStartTalking(theText){
+	var gregsbubbleBox = document.getElementById('gregsbubbleBox');
+	gregsbubbleBox.className = 'quickfadein';
+	gregsbubbleBox.innerHTML = theText;
+}
+function gregStopTalking(theText){
+	var gregsbubbleBox = document.getElementById('gregsbubbleBox');
+	gregsbubbleBox.className = 'quickfadeout';
+	setTimeout(function() {
+		gregsbubbleBox.className = 'hidden';
+	}, 500);
+}
 function changeShirts() {
 	var JoeTshirt = document.getElementById('JoeTshirt');
 	var shirtName = 'Joe8Bit_T'+randomInteger(1,8)+'.gif';
@@ -646,8 +694,8 @@ function changeLeaves() {
 	}
 }
 function changePaint() {
-	var insideDiv = document.getElementById('inside');
-	var outsideDoorFrame = document.getElementById('outsideDoorFrame');
+	var joesHouseDiv = document.getElementById('joesHouse');
+	var BrooklynDoorFrame = document.getElementById('BrooklynDoorFrame');
 	var newColor = window.thePaintColor;
 	while (newColor === window.thePaintColor) {
 		var colorNumber = randomInteger(1,3);
@@ -662,8 +710,8 @@ function changePaint() {
 		}
 	}
 	window.thePaintColor = newColor;
-	insideDiv.style.backgroundColor = window.thePaintColor;
-	outsideDoorFrame.style.backgroundColor = window.thePaintColor;
+	joesHouseDiv.style.backgroundColor = window.thePaintColor;
+	BrooklynDoorFrame.style.backgroundColor = window.thePaintColor;
 }
 function changeBricks() {
 	var buildingDiv = document.getElementById('building');
@@ -723,19 +771,19 @@ function setTheTime(){
 	var theTime = "";
 	var theHours = 0;
 	var amPM = "";		
-	var outsideDiv = document.getElementById('outside');
-	var insideDoorFrame = document.getElementById('insideDoorFrame');
+	var BrooklynDiv = document.getElementById('Brooklyn');
+	var joesHouseDoorFrame = document.getElementById('joesHouseDoorFrame');
 	if(window.theDate.getHours()>5 && window.theDate.getHours()<18){
 		window.theSkyColor = 'DeepSkyBlue';
 		window.skyText = 'Those are lovely puffy clouds.';
-		outsideDiv.style.backgroundImage = "url('images/clouds.gif')";
-		insideDoorFrame.style.backgroundImage = "url('images/clouds.gif')";
+		BrooklynDiv.style.backgroundImage = "url('images/clouds.gif')";
+		joesHouseDoorFrame.style.backgroundImage = "url('images/clouds.gif')";
 	}
 	else{
 		window.theSkyColor = 'Black';
 		window.skyText = 'I love looking at the stars at night.';
-		outsideDiv.style.backgroundImage = "url('images/stars.gif')";
-		insideDoorFrame.style.backgroundImage = "url('images/stars.gif')";
+		BrooklynDiv.style.backgroundImage = "url('images/stars.gif')";
+		joesHouseDoorFrame.style.backgroundImage = "url('images/stars.gif')";
 	}
 	if(window.theDate.getHours()>12){
 		theHours = window.theDate.getHours()-12;
@@ -757,8 +805,8 @@ function setTheTime(){
 		}
 	}
 	theTime = theHours+":"+leftPad(window.theDate.getMinutes(),2)+amPM;
-	outsideDiv.style.backgroundColor = window.theSkyColor;
-	insideDoorFrame.style.backgroundColor = window.theSkyColor;
+	BrooklynDiv.style.backgroundColor = window.theSkyColor;
+	joesHouseDoorFrame.style.backgroundColor = window.theSkyColor;
 	return theTime;
 }
 function leftPad(number, targetLength) {
