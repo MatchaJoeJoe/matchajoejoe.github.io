@@ -48,7 +48,7 @@ a {
 #floor{
 	height: 128px;
 	width: 100%;
-    background-image: url("../images/floor.jpg");
+    background-image: url("http://joefrizzell.github.io/images/floor.jpg");
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -58,7 +58,7 @@ a {
 #grass{
 	height: 128px;
 	width: 100%;
-    background-image: url("../images/grass.png");
+    background-image: url("http://joefrizzell.github.io/images/grass.png");
     background-color: green;
 	position: absolute;
 	bottom: 0;
@@ -72,13 +72,13 @@ a {
 	bottom: 0;
 	left: 0;
 	z-index: 103;
-    background-image: url("../images/sidewalk.jpg");
+    background-image: url("http://joefrizzell.github.io/images/sidewalk.jpg");
     background-color: lightgrey;
 }
 #sidewalk{
 	height: 128px;
 	width: 100%;
-    background-image: url("../images/sidewalk.jpg");
+    background-image: url("http://joefrizzell.github.io/images/sidewalk.jpg");
     background-color: lightgrey;
 	position: absolute;
 	bottom: 0;
@@ -92,7 +92,7 @@ a {
 	bottom: 0;
 	left: 0;
 	z-index: 103;
-    background-image: url("../images/floor.jpg");
+    background-image: url("http://joefrizzell.github.io/images/floor.jpg");
 }
 #joesHouseDoorFrame{
 	height: 160px;
@@ -132,7 +132,7 @@ a {
 	z-index: 102;
 	-webkit-perspective:160px;
 	perspective:160px;
-    background-image: url("../images/brick.png");
+    background-image: url("http://joefrizzell.github.io/images/brick.png");
 }
 #building2{
 	height: 100%;
@@ -144,7 +144,7 @@ a {
 	z-index: 102;
 	-webkit-perspective:160px;
 	perspective:160px;
-    background-image: url("../images/brick.png");
+    background-image: url("http://joefrizzell.github.io/images/brick.png");
 }
 #fence{
 	height: 256px;
@@ -156,7 +156,7 @@ a {
 	z-index: 102;
 	-webkit-perspective:160px;
 	perspective:160px;
-    background-image: url("../images/postnobills.png") ;
+    background-image: url("http://joefrizzell.github.io/images/postnobills.png") ;
 }
 #windows {
 	height:333px;
