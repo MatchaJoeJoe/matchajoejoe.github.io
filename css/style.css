@@ -583,7 +583,7 @@ div.videoWrapper iframe {
 	overflow: auto;
 }
 #twitterwrapper {
-	height: 80%;
+	height: 100%;
 	width: 500px;
 	margin:5% auto;
 	position: relative;
