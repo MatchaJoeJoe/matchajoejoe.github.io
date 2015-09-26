@@ -215,48 +215,56 @@ a {
 	cursor: pointer; cursor: hand;
 }
 .doorClose{
-	-webkit-animation-name: doorClose;
-	-webkit-animation-duration:1s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: linear;
 	animation-name: doorClose;
 	animation-duration:1s;
 	animation-iteration-count: 1;
 	animation-timing-function: linear;
-}
-@-webkit-keyframes doorClose{
-	0% {-webkit-transform: perspective(5000) rotateY(90deg);
-       -webkit-transform-origin: 0% 0%;}
-	100% {-webkit-transform: perspective(5000) rotateY(0deg);
-        -webkit-transform-origin: 0% 0%;}
-}
-@keyframes doorClose{
-	0% {transform: perspective(5000) rotateY(90deg);
-       transform-origin: 0% 0%;}
-	100% {transform: perspective(5000) rotateY(0deg);
-        transform-origin: 0% 0%;}
-}
-.doorOpen{
-	-webkit-animation-name: doorOpen;
+	-webkit-animation-name: doorClose;
 	-webkit-animation-duration:1s;
 	-webkit-animation-iteration-count: 1;
 	-webkit-animation-timing-function: linear;
+}
+@keyframes doorClose{
+	0% {perspective:5000px;
+		transform: rotateY(90deg);
+		transform-origin: 0% 0%;}
+	100% {perspective:5000px;
+		transform:  rotateY(0deg);
+        transform-origin: 0% 0%;}
+}
+@-webkit-keyframes doorClose{
+	0% {-webkit-perspective:5000px;
+		-webkit-transform:rotateY(90deg);
+		-webkit-transform-origin: 0% 0%;}
+	100% {-webkit-perspective:5000px;
+		-webkit-transform: rotateY(0deg);
+    	-webkit-transform-origin: 0% 0%;}
+}
+.doorOpen{
 	animation-name: doorOpen;
 	animation-duration:1s;
 	animation-iteration-count: 1;
 	animation-timing-function: linear;
-}
-@-webkit-keyframes doorOpen{
-	0% {-webkit-transform: perspective(5000) rotateY(0deg);
-       -webkit-transform-origin: 0% 0%;}
-	100% {-webkit-transform: perspective(5000) rotateY(90deg);
-        -webkit-transform-origin: 0% 0%;}
+	-webkit-animation-name: doorOpen;
+	-webkit-animation-duration:1s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: linear;
 }
 @keyframes doorOpen{
-	0% {transform: perspective(5000) rotateY(0deg);
-       transform-origin: 0% 0%;}
-	100% {transform: perspective(5000) rotateY(90deg);
+	0% {perspective:5000px;
+		transform: rotateY(0deg);
+    	transform-origin: 0% 0%;}
+	100% {perspective:5000px;
+		transform: rotateY(90deg);
         transform-origin: 0% 0%;}
+}
+@-webkit-keyframes doorOpen{
+	0% {-webkit-perspective:5000px;
+		-webkit-transform: rotateY(0deg);
+    	-webkit-transform-origin: 0% 0%;}
+	100% {-webkit-perspective:5000px;
+		-webkit-transform: rotateY(90deg);
+        -webkit-transform-origin: 0% 0%;}
 }
 #JoeContainer {
 	z-index: 107;
@@ -324,37 +332,42 @@ a {
 	height: 256px;
 	position: absolute;
 	bottom: 0;
-	right:0;
+	right:64;
 	z-index: 108;
 }
 #JoeBody {
 	height: 256px;
 	position: absolute;
 	bottom: 0;
+	left: 64px;
 	z-index: 108;
 }
 #JoeMouth {
 	height: 256px;
 	position: absolute;
 	bottom: 0;
+	left: 64px;
 	z-index: 109;
 }
 #JoeEyes {
 	height: 256px;
 	position: absolute;
 	bottom: 0;
+	left: 64px;
 	z-index: 109;
 }
 #JoeTshirt {
 	height: 256px;
 	position: absolute;
 	bottom: 0;
+	left: 64px;
 	z-index: 110;
 }
 #earphones {
 	height: 256px;
 	position: absolute;
 	bottom: 0;
+	left: 64px;
 	z-index: 111;
 }
 #art {
@@ -396,6 +409,13 @@ a {
 	position: absolute;
 	bottom: 112px;
 	right: 33%;
+	z-index: 104;
+	cursor: pointer; cursor: hand;
+}
+#dumbbells {
+	position: absolute;
+	bottom: 82px;
+	right: 22%;
 	z-index: 104;
 	cursor: pointer; cursor: hand;
 }
@@ -538,10 +558,11 @@ select {
 	cursor: pointer; cursor: hand;
 }
 iframe.w90 {
-	height: 85%;
-	width: 90%;
+	height: 80%;
+	width: 85%;
 	margin: 5% auto;
-	border-radius: 25px;
+	padding:2.5%;
+	border-radius: 2.5%;
 	background-color: white;
 }
 #resume {
@@ -775,18 +796,21 @@ height: 96px;
 @-moz-keyframes walkIn{
 	0% {-moz-transform: scale(.5,.5); 
 		bottom: 64px;
+		left: 0;
 	}
 	100% {}
 }
 @-webkit-keyframes walkIn{
 	0% {-webkit-transform: scale(.5,.5); 
 		bottom: 64px;
+		left: 0;
 	}
 	100% {}
 }
 @keyframes walkIn{
 	0% {transform: scale(.5,.5);
 		bottom: 64px;
+		left: 0;
 	}
 	100% {}
 }

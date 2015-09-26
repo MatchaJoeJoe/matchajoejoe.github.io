@@ -303,8 +303,13 @@ function eventWindowLoaded() {
 	updateColors();
 	drawScreen();
 }
-
-//main painting function
+//function to blank out screen when new image is selected
+function drawScreen() {
+	var theCanvas = document.getElementById('painting_canvas');
+	var context = theCanvas.getContext('2d');
+	context.fillStyle = 'white';
+	context.fillRect(0, 0, theCanvas.width, theCanvas.height);
+}//main painting function
 function canvasApp(){  
 
 	//defining canvases and adding event handlers
@@ -357,13 +362,7 @@ function canvasApp(){
 	theCanvasIMG.src = "images/avengers.png"; //transparent png
 	drawScreen();
 	}
-	//function to blank out screen when new image is selected
-	function drawScreen() {
-		var theCanvas = document.getElementById('painting_canvas');
-		var context = theCanvas.getContext('2d');
-		context.fillStyle = 'white';
-		context.fillRect(0, 0, theCanvas.width, theCanvas.height);
-	}
+
 
 //defining buttons and adding handlers
 	var color1button = document.getElementById('savecolor1');

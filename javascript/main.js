@@ -85,10 +85,11 @@ function displayDisclaimer(){
 	var blockerDiv = document.createElement("div");
 	blockerDiv.id = 'blocker';
 	containerDiv.appendChild(blockerDiv);
-	var disclaimerDiv = document.getElementById('disclaimer');
-	disclaimerDiv.className = "greyBox quickfadein";
 	var contentDiv = document.getElementById('content');
+	var linksDiv = document.getElementById('disclaimer');
+	var linksContents = linksDiv.innerHTML;
 	contentDiv.className = "quickfadein";
+	contentDiv.innerHTML = '<div class="greyBox">'+linksContents+'</div>';
 }
 function newGame(){
 	var cookies = document.cookie.split(";");
@@ -280,6 +281,17 @@ function loadContent(theCaller){
 			contentDiv.innerHTML = '<div class="greyBox">'+linksContents+'</div>';
 		}, 2000);
 	}
+	if (callerID.lastIndexOf("dumbbells")===0){
+		theText = 'Time to do some leveling...';
+		startTalking(theText);
+		setTimeout(function() {
+			stopTalking(theText);
+			var linksDiv = document.getElementById('minmaxing');
+			var linksContents = linksDiv.innerHTML;
+			contentDiv.className = "quickfadein";
+			contentDiv.innerHTML = linksContents;
+		}, 1500);
+	}
 	if (callerID.lastIndexOf("bookshelf")===0){
 		theText = 'Save some trees, buy eBooks... especially the ones I’ve designed.';
 		startTalking(theText);
@@ -306,8 +318,10 @@ function loadContent(theCaller){
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);
+			var linksDiv = document.getElementById('shop');
+			var linksContents = linksDiv.innerHTML;
 			contentDiv.className = "quickfadein";
-			contentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="shop/index.html"/>';
+			contentDiv.innerHTML = linksContents;
 		}, 3000);
 	}
 	if (callerID.lastIndexOf("drafting")===0){
@@ -315,8 +329,10 @@ function loadContent(theCaller){
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);
+			var linksDiv = document.getElementById('coloring');
+			var linksContents = linksDiv.innerHTML;
 			contentDiv.className = "quickfadein";
-			contentDiv.innerHTML = '<iframe class="w90" frameborder="0" src="coloringBook/index.xhtml"/>';
+			contentDiv.innerHTML = linksContents;
 		}, 3500);
 	}
 	if (callerID.lastIndexOf("raven")===0){
@@ -609,11 +625,6 @@ function removeBlocker(){
 }
 function hideContent(){
 	removeBlocker();
-	var disclaimerDiv = document.getElementById('disclaimer');
-	var disclaimerClass = disclaimerDiv.className;
-	if (disclaimerClass !='greyBox hidden'){
-		disclaimerDiv.className = 'greyBox quickfadeout';
-	}
 	var audioListDiv = document.getElementById('audioList');
 	var audioClass = audioListDiv.className;
 	if (audioClass !='greyBox hidden'){
@@ -630,7 +641,6 @@ function hideContent(){
 		contentDiv.className = 'quickfadeout';
 	}
 	setTimeout(function() {
-		disclaimerDiv.className = 'greyBox hidden';
 		audioListDiv.className = 'greyBox hidden';
 		twitterwrapper.className = 'hidden';
 		contentDiv.className = 'hidden';

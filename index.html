@@ -47,15 +47,16 @@
 			</div>
 			<img id="art" onclick="loadContent(this)" src="images/06t.png" width="148" height="192" alt="window" />
 			<div id="floor" onclick="loadContent(this)">&#160;</div>
-			<img id="diploma" src="images/frame.gif" width="128" height="108" alt="frame" onclick="loadContent(this)" />
+			<img id="diploma" src="images/frame.gif" width="128" height="108" alt="diploma" onclick="loadContent(this)" />
 			<img id="clock" src="images/clock.gif" width="64" height="64" alt="clock" onclick="loadContent(this)" />
-			<img id="bookshelf" src="images/bookshelf.gif" width="128" height="180" alt="radio" onclick="loadContent(this)" />
+			<img id="bookshelf" src="images/bookshelf.gif" width="128" height="180" alt="bookshelf" onclick="loadContent(this)" />
+			<img id="dumbbells" src="images/dumbbells.gif" width="96" height="96" alt="dumbbells" onclick="loadContent(this)" />
 			<img id="radio" src="images/radio.gif" width="128" height="64" alt="radio" onclick="loadContent(this)" />
 			<img id="speakers" src="images/speakers.gif" width="128" height="64" alt="speakers" onclick="loadContent(this)" />
-			<img id="drafting" src="images/draftingTable.gif" width="200" height="173" alt="draftingTable" onclick="loadContent(this)" />
+			<img id="drafting" src="images/draftingTable.gif" width="200" height="173" alt="drafting table" onclick="loadContent(this)" />
 			<img id="chair" src="images/chair.gif" width="160" height="192" alt="chair" onclick="loadContent(this)" />
-			<img id="laptop" src="images/laptopTable.gif" width="96" height="160" alt="laptopTable" onclick="loadContent(this)" />
-			<img id="table" src="images/table.gif" width="147" height="96" alt="table" onclick="loadContent(this)" />
+			<img id="laptop" src="images/laptopTable.gif" width="96" height="160" alt="laptop table" onclick="loadContent(this)" />
+			<img id="table" src="images/table.gif" width="147" height="96" alt="coffee table" onclick="loadContent(this)" />
 			<img id="phone" src="images/phone.gif" width="64" height="32" alt="phone" onclick="loadContent(this)" />
 		</div>
 		<div id="Brooklyn" class="hidden">	
@@ -101,6 +102,15 @@
 				<img onclick="OpenInNewTab('https://itunes.apple.com/us/book/schottenfreude/id709598402?mt=11&uo=4')" class="bookThumbnail" src="images/schottenfruede.jpg" alt="schottenfruede" /><br/><a onclick="OpenInNewTab('https://itunes.apple.com/us/book/schottenfreude/id709598402?mt=11&uo=4')">Schottenfreude - Ben Schott</a><br/><br/>
 				<img onclick="OpenInNewTab('https://itunes.apple.com/us/book/malcolm-x-deluxe-enhanced/id572227026?mt=11&uo=4')" class="bookThumbnail" src="images/malcolm.jpg" alt="malcolm" /><br/><a href="https://itunes.apple.com/us/book/malcolm-x-deluxe-enhanced/id572227026?mt=11&uo=4" target="itunes_store">Malcolm X Deluxe (Enhanced Edition) - Manning Marable</a>
 			</div>
+			<div id="minmaxing">
+				<iframe class="w90" src="https://docs.google.com/spreadsheets/d/1zLiP0TU1svdAf0ml9zcguUF0QWmfmGgtXfcgAIpf2-M/pubhtml?gid=782444526&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+			</div>
+			<div id="shop">
+				<iframe class="w90" frameborder="0" src="shop/index.html"></iframe>
+			</div>
+			<div id="coloring">
+				<iframe class="w90" frameborder="0" src="coloringBook/index.xhtml"></iframe>
+			</div>
 			<img src="images/Frizzell-Joe_resume.jpg" alt="Frizzell-Joe_resume" />
 			<img src="images/Joe8Bit.gif" alt=""/>
 			<img src="images/Joe8Bit_T1.gif" width="64" height="128" alt="" />
@@ -128,6 +138,14 @@
 					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/videoseries?list=UUTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 				</div>
 			</div>
+			<div id="disclaimer" class="hidden">
+				<p class="textLeft"><a onclick="OpenInNewTab('javascript/main.js');">Just FYI, this site stores cookies in your browser and reads them back again... It doesn’t look at anything other than the cookies it creates though... Don’t believe me? You can look at the main.js file yourself.</a></p>
+				<p class="textLeft">Here are the cookies and what they do:</p>
+				<ul>
+					<li class="textLeft">joefrizzellUsername: Saves your name so I can remember you.</p>
+					<li class="textLeft">joefrizzellLocation: Saves the location of where you are in the game (joesHouse, Brooklyn, etc.), not your actual physical coordinates.</p>
+				</ul>
+			</div>
 		</div>
 		<div id="twitterwrapper" class="hidden">
 			<a class="twitter-timeline" href="https://twitter.com/JoeFrizzell" data-widget-id="312040975352602624">Tweets by @JoeFrizzell</a>
@@ -140,14 +158,6 @@
 			<a id="audio3" onclick="changeMusic(this);">Happyland</a><br/>
 			<a id="audio4" onclick="changeMusic(this);">Nintendo_Dreams</a><br/>
 			<a id="audio5" onclick="changeMusic(this);">Postcard</a><br/>
-		</div>
-		<div id="disclaimer" class="greybox hidden">
-			<p class="textLeft"><a onclick="OpenInNewTab('javascript/main.js');">Just FYI, this site stores cookies in your browser and reads them back again... It doesn’t look at anything other than the cookies it creates though... Don’t believe me? You can look at the main.js file yourself.</a></p>
-			<p class="textLeft">Here are the cookies and what they do:</p>
-			<ul>
-				<li class="textLeft">joefrizzellUsername: Saves your name so I can remember you.</p>
-				<li class="textLeft">joefrizzellLocation: Saves the location of where you are in the game (joesHouse, Brooklyn, etc.), not your actual physical coordinates.</p>
-			</ul>
 		</div>
 	</body>
 </html>
