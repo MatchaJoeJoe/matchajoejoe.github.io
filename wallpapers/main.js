@@ -1,10 +1,6 @@
 var JoePosition = 'left';
 var theSkyColor = 'lightblue';
 var thePaintColor = 'DarkSlateGray';
-var wootChoice = randomInteger(0, 7);
-var balloonsPopped = 0;
-var balloonNumber = 20;
-var balloonReset = 0;
 var floatingStatus = "No";
 var speed = 25;
 window.addEventListener('load', eventWindowLoaded, false);	
