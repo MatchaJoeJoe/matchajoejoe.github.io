@@ -188,6 +188,14 @@ a {
 	-webkit-perspective:160px;
 	perspective:160px;
 }
+#BilboDaCat{
+	height: 96px;
+	width: 130px;
+	position: absolute;
+	bottom: 84px;
+	left: 300px;
+	z-index: 104;
+}
 .tree{
 	height: 496px;
 	width: 380px;

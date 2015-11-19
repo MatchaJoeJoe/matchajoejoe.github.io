@@ -618,6 +618,17 @@ function loadContent(theCaller){
 			stopTalking(theText);
 		}, 1500);
 	}
+	if (callerID.lastIndexOf("BilboDaCat")===0){
+		theText = 'Hey, its a cat in a box...<br/>Shouldn’t you be in a deli somewhere?';
+		startTalking(theText);
+		setTimeout(function() {
+			setTimeout(function() {
+				removeBlocker();
+				OpenInNewTab('http://bilbodacat.github.io');
+			}, 500);			
+			stopTalking(theText);
+		}, 4000);
+	}
 }
 function removeBlocker(){
 	var blockerDiv = document.getElementById("blocker");
