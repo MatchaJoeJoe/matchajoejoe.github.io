@@ -27,7 +27,7 @@ function eventWindowLoaded() {
 		setTimeout(function() {
 			stopTalking(theText);
 			setTimeout(function() {
-				theText = 'Thanks so much for donating at least $3 to my patreon site.';
+				theText = 'Thanks so much for donating at least $2 to my patreon site.';
 				startTalking(theText);
 				setTimeout(function() {
 					stopTalking(theText);
