@@ -471,7 +471,7 @@ a {
 #camera {
 	position: absolute;
 	bottom: 64px;
-	left: 45%;
+	left: 47%;
 	z-index: 104;
 	cursor: pointer; cursor: hand;
 }
