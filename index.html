@@ -32,6 +32,7 @@
 			})();
 		</script>
 		<script type="text/javascript" src="javascript/main.js"></script>
+		<script type="text/javascript" src="javascript/instafeed.min.js"></script>
 	</head>
 	<body id="body">
 		<div id="LoadingBackground">
@@ -45,7 +46,8 @@
 				<div id="doorSidewalk">&#160;</div>
 				<img id="doorOut" class="hidden" src="images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
 			</div>
-			<img id="art" onclick="loadContent(this)" src="images/06t.png" width="148" height="192" alt="window" />
+			<img id="artframe" onclick="loadContent(this)" src="images/redcoat.png" width="112" height="112" alt="art" />
+			<img id="art" onclick="loadContent(this)" src="images/art.gif" width="128" height="128" alt="artframe" />
 			<div id="floor" onclick="loadContent(this)">&#160;</div>
 			<img id="diploma" src="images/frame.gif" width="128" height="108" alt="diploma" onclick="loadContent(this)" />
 			<img id="clock" src="images/clock.gif" width="64" height="64" alt="clock" onclick="loadContent(this)" />
@@ -58,6 +60,7 @@
 			<img id="laptop" src="images/laptopTable.gif" width="96" height="160" alt="laptop table" onclick="loadContent(this)" />
 			<img id="table" src="images/table.gif" width="147" height="96" alt="coffee table" onclick="loadContent(this)" />
 			<img id="phone" src="images/phone.gif" width="64" height="32" alt="phone" onclick="loadContent(this)" />
+			<img id="camera" src="images/camera.png" width="44" height="44" alt="camera" onclick="loadContent(this)" />
 		</div>
 		<div id="Brooklyn" class="hidden">	
 			<div id="sky" onclick="loadContent(this)">&#160;</div>
@@ -88,14 +91,27 @@
 			<span id="bubbleBox" class="left hidden"></span>
 		</div>
 		<div id="loading" class="hidden">
+			<script type="text/javascript">
+				var feed = new Instafeed({
+					get: 'user',
+					userId: 1970132825,
+					accessToken: '1970132825.8d91144.f9b635baa63b4125805a2724a517847f',
+					limit: 20
+				});
+				feed.run();
+			</script>
+			<div id="instawrapper">
+				<div id="instafeed"></div>
+			</div>
 			<div id="links">
 				<a href="mailto:joefrizzell@gmail.com">eMail</a><br/><br/>
 				<a onclick="OpenInNewTab('https://patreon.com/joefrizzell');">Patreon</a><br/><br/>
+				<a onclick="OpenInNewTab('https://www.tsu.co/joefrizzell');">Tsū</a><br/><br/>
 				<a onclick="OpenInNewTab('https://github.com/joefrizzell');">GitHub</a><br/><br/>
 				<a onclick="OpenInNewTab('http://www.linkedin.com/in/joefrizzell');">Linked In</a><br/><br/>
 				<a onclick="OpenInNewTab('http://sublimishone.deviantart.com/')">Deviant Art</a><br/><br/>
 				<a onclick="OpenInNewTab('http://www.last.fm/user/joefrizzell')">Last FM</a><br/><br/>
-				<a onclick="OpenInNewTab('http://www.facebook.com/joefrizz')">Facebook</a><br/><br/>
+				<a onclick="OpenInNewTab('http://www.facebook.com/joefrizzellnerd')">Facebook</a><br/><br/>
 				<a onclick="OpenInNewTab('https://play.spotify.com/user/1256556439')">Spotify</a>
 			</div>
 			<div id="books">
@@ -151,6 +167,38 @@
 		</div>
 		<div id="twitterwrapper" class="hidden">
 			<a class="twitter-timeline" href="https://twitter.com/JoeFrizzell" data-widget-id="312040975352602624">Tweets by @JoeFrizzell</a>
+			<div class="tumblrWrapper">
+				<div class='ji-tumblr-photos'><a id='ji-tumblr-url-joefrizzell-1' href=''><img border='0' style='margin:0' id='ji-tumblr-photo-joefrizzell-1' src='' alt='' /></a><a id='ji-tumblr-url-joefrizzell-2' href=''><img border='0' style='margin:0' id='ji-tumblr-photo-joefrizzell-2' src='' alt='' /></a><a id='ji-tumblr-url-joefrizzell-3' href=''><img border='0' style='margin:0' id='ji-tumblr-photo-joefrizzell-3' src='' alt='' /></a><a id='ji-tumblr-url-joefrizzell-4' href=''><img border='0' style='margin:0' id='ji-tumblr-photo-joefrizzell-4' src='' alt='' /></a><a id='ji-tumblr-url-joefrizzell-5' href=''><img border='0' style='margin:0' id='ji-tumblr-photo-joefrizzell-5' src='' alt='' /></a><a id='ji-tumblr-url-joefrizzell-6' href=''><img border='0' style='margin:0' id='ji-tumblr-photo-joefrizzell-6' src='' alt='' /></a><a id='ji-tumblr-url-joefrizzell-7' href=''><img border='0' style='margin:0' id='ji-tumblr-photo-joefrizzell-7' src='' alt='' /></a><a id='ji-tumblr-url-joefrizzell-8' href=''><img border='0' style='margin:0' id='ji-tumblr-photo-joefrizzell-8' src='' alt='' /></a><a id='ji-tumblr-url-joefrizzell-9' href=''><img border='0' style='margin:0' id='ji-tumblr-photo-joefrizzell-9' src='' alt='' /></a><a id='ji-tumblr-url-joefrizzell-10' href=''><img border='0' style='margin:0' id='ji-tumblr-photo-joefrizzell-10' src='' alt='' /></a><a id='ji-tumblr-url-joefrizzell-11' href=''><img border='0' style='margin:0' id='ji-tumblr-photo-joefrizzell-11' src='' alt='' /></a><a id='ji-tumblr-url-joefrizzell-12' href=''><img border='0' style='margin:0' id='ji-tumblr-photo-joefrizzell-12' src='' alt='' /></a>
+				<div style="width:100%; font-size:10px; text-align:right"><a target="_blank" href="http://jiapps.com/free-stuff/tumblr-widget-for-your-website.html">tumblr photo widget by JI Apps</a></div>
+				</div>
+				<script type='text/javascript' src='http://joefrizzell.tumblr.com/api/read/json?number=12&type=photo'></script>
+				<script type='text/javascript'>
+				document.getElementById('ji-tumblr-photo-joefrizzell-1').setAttribute('src', tumblr_api_read.posts[0]['photo-url-75']);
+				document.getElementById('ji-tumblr-url-joefrizzell-1').setAttribute('href', tumblr_api_read.posts[0]['url-with-slug']);
+				document.getElementById('ji-tumblr-photo-joefrizzell-2').setAttribute('src', tumblr_api_read.posts[1]['photo-url-75']);
+				document.getElementById('ji-tumblr-url-joefrizzell-2').setAttribute('href', tumblr_api_read.posts[1]['url-with-slug']);
+				document.getElementById('ji-tumblr-photo-joefrizzell-3').setAttribute('src', tumblr_api_read.posts[2]['photo-url-75']);
+				document.getElementById('ji-tumblr-url-joefrizzell-3').setAttribute('href', tumblr_api_read.posts[2]['url-with-slug']);
+				document.getElementById('ji-tumblr-photo-joefrizzell-4').setAttribute('src', tumblr_api_read.posts[3]['photo-url-75']);
+				document.getElementById('ji-tumblr-url-joefrizzell-4').setAttribute('href', tumblr_api_read.posts[3]['url-with-slug']);
+				document.getElementById('ji-tumblr-photo-joefrizzell-5').setAttribute('src', tumblr_api_read.posts[4]['photo-url-75']);
+				document.getElementById('ji-tumblr-url-joefrizzell-5').setAttribute('href', tumblr_api_read.posts[4]['url-with-slug']);
+				document.getElementById('ji-tumblr-photo-joefrizzell-6').setAttribute('src', tumblr_api_read.posts[5]['photo-url-75']);
+				document.getElementById('ji-tumblr-url-joefrizzell-6').setAttribute('href', tumblr_api_read.posts[5]['url-with-slug']);
+				document.getElementById('ji-tumblr-photo-joefrizzell-7').setAttribute('src', tumblr_api_read.posts[6]['photo-url-75']);
+				document.getElementById('ji-tumblr-url-joefrizzell-7').setAttribute('href', tumblr_api_read.posts[6]['url-with-slug']);
+				document.getElementById('ji-tumblr-photo-joefrizzell-8').setAttribute('src', tumblr_api_read.posts[7]['photo-url-75']);
+				document.getElementById('ji-tumblr-url-joefrizzell-8').setAttribute('href', tumblr_api_read.posts[7]['url-with-slug']);
+				document.getElementById('ji-tumblr-photo-joefrizzell-9').setAttribute('src', tumblr_api_read.posts[8]['photo-url-75']);
+				document.getElementById('ji-tumblr-url-joefrizzell-9').setAttribute('href', tumblr_api_read.posts[8]['url-with-slug']);
+				document.getElementById('ji-tumblr-photo-joefrizzell-10').setAttribute('src', tumblr_api_read.posts[9]['photo-url-75']);
+				document.getElementById('ji-tumblr-url-joefrizzell-10').setAttribute('href', tumblr_api_read.posts[9]['url-with-slug']);
+				document.getElementById('ji-tumblr-photo-joefrizzell-11').setAttribute('src', tumblr_api_read.posts[10]['photo-url-75']);
+				document.getElementById('ji-tumblr-url-joefrizzell-11').setAttribute('href', tumblr_api_read.posts[10]['url-with-slug']);
+				document.getElementById('ji-tumblr-photo-joefrizzell-12').setAttribute('src', tumblr_api_read.posts[11]['photo-url-75']);
+				document.getElementById('ji-tumblr-url-joefrizzell-12').setAttribute('href', tumblr_api_read.posts[11]['url-with-slug']);
+				</script>
+			</div>
 		</div>
 		<div id="audioList" class="greyBox hidden">
 			<div id="backgroundMusic">

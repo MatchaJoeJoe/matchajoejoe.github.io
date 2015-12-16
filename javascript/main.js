@@ -281,6 +281,17 @@ function loadContent(theCaller){
 			contentDiv.innerHTML = '<div class="greyBox">'+linksContents+'</div>';
 		}, 2000);
 	}
+	if (callerID.lastIndexOf("camera")===0){
+		theText = 'Do you see what I see?';
+		startTalking(theText);
+		setTimeout(function() {
+			stopTalking(theText);
+			var linksDiv = document.getElementById('instawrapper');
+			var linksContents = linksDiv.innerHTML;
+			contentDiv.className = "quickfadein";
+			contentDiv.innerHTML = linksContents;
+		}, 1500);
+	}
 	if (callerID.lastIndexOf("dumbbells")===0){
 		theText = 'Time to do some leveling...';
 		startTalking(theText);

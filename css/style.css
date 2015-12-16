@@ -385,6 +385,13 @@ a {
 	z-index: 100;
 	cursor: pointer; cursor: hand;
 }
+#artframe {
+	position: absolute;
+	top: 30%;
+	right: 15%;
+	z-index: 100;
+	cursor: pointer; cursor: hand;
+}
 #diploma {
 	position: absolute;
 	bottom: 60%;
@@ -458,6 +465,13 @@ a {
 	position: absolute;
 	bottom: 64px;
 	left: 50%;
+	z-index: 104;
+	cursor: pointer; cursor: hand;
+}
+#camera {
+	position: absolute;
+	bottom: 64px;
+	left: 45%;
 	z-index: 104;
 	cursor: pointer; cursor: hand;
 }
@@ -617,6 +631,17 @@ div.videoWrapper iframe {
 	margin:5% auto;
 	position: relative;
 	z-index: 111;
+}
+#instafeed {
+	text-align: center;
+	color: white;
+	max-width: 75%;
+	max-height: 75%;
+	margin:5% auto;
+	padding: 5%;
+	position: relative;
+	z-index: 111;
+	overflow: auto;
 }
 .twitter-timeline {
 	height: 100%;
@@ -864,3 +889,6 @@ height: 96px;
 .textLeft{
 	text-align: left;
 }
+.tumblrWrapper{
+width: 100%;
+text-align: center;
