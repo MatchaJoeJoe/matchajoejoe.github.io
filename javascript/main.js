@@ -119,12 +119,6 @@ function startGame() {
 	var windowWidth = window.innerWidth;
 	var windowHeight = window.innerHeight;
 	var theMeasurement = Math.min(windowWidth, windowHeight);
-	if (window.theMeasurement<1000){
-		theScale = (theMeasurement/1000);
-		viewport.setAttribute('content', 'width=device-width, initial-scale='+theScale+', maximum-scale='+theScale+', user-scalable=0');
-		document.body.style.fontSize = (20/(theScale*1.25))+'px';
-		document.body.style.lineHeight = (28/(theScale*1.25))+'px';
-	}
 	var JoeBody = document.getElementById('JoeBody');
 	var JoeContainer = document.getElementById('JoeContainer');
 	var JoeTshirt = document.getElementById('JoeTshirt');
