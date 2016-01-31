@@ -98,6 +98,19 @@ body {
 	text-align: center;
 	z-index: 10;
 }
+.wallpaperBox{
+	position: absolute;
+	top: 15%;
+	right: 10%;
+	background-color: white;
+	color: black;
+	padding:2%;
+	width: 70%;
+	height: 60%;
+	overflow: auto;
+	text-align: center;
+	z-index: 10;
+}
 .creditHead {
 	width: 96%;
 	font-size: 25px;
@@ -105,6 +118,15 @@ body {
 	font-family: Impact,Anton,sans-serif;
 	text-indent: 0;
 	padding:0;
+}
+.wallpaperHead {
+	font-size: 50px;
+	font-weight: bold;
+	font-family: 'Nothing You Could Do', cursive;
+	text-indent: 0;
+	padding:0;
+	text-align: center;
+	color: white;
 }
 #counter{
 	width: 35%;
