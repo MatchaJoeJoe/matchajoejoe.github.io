@@ -48,7 +48,7 @@ a {
 #floor{
 	height: 128px;
 	width: 100%;
-    background-image: url("http://joefrizzell.github.io/images/floor.jpg");
+    background-image: url("../images/floor.jpg");
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -406,7 +406,7 @@ a {
 	z-index: 104;
 	cursor: pointer; cursor: hand;
 }
-#radio {
+#iMac {
 	position: absolute;
 	bottom: 292px;
 	right: 33%;
@@ -434,9 +434,9 @@ a {
 	z-index: 104;
 	cursor: pointer; cursor: hand;
 }
-#drafting{
+#foldingTable{
 	position: absolute;
-	bottom: 5%;
+	bottom: 7%;
 	right: 0;
 	z-index: 104;
 	cursor: pointer; cursor: hand;

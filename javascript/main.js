@@ -228,11 +228,6 @@ function changeVolume(volumeLevel){
 	var myMusicPlayer = document.getElementById('musicPlayer');
 	var isPaused = myMusicPlayer.paused;
 	var isMuted = myMusicPlayer.muted;
-	if (volumeLevel>0 && isPaused == false && isMuted == false){
-		document.getElementById('speakers').className = "bounce";
-	}else{
-		document.getElementById('speakers').className = "";
-	}
 	volumeLevel = volumeLevel/10;
 	var musicPlayer = document.getElementById('musicPlayer');
 	musicPlayer.volume = volumeLevel;
@@ -329,7 +324,7 @@ function loadContent(theCaller){
 			contentDiv.innerHTML = linksContents;
 		}, 3000);
 	}
-	if (callerID.lastIndexOf("drafting")===0){
+	if (callerID.lastIndexOf("foldingTable")===0){
 		 theText = 'I used to love coloring when I was a kid... Good thing I’m still a kid at heart!';
 		startTalking(theText);
 		setTimeout(function() {
@@ -355,7 +350,7 @@ function loadContent(theCaller){
 			contentDiv.innerHTML = '<img id="resume" onclick="OpenInNewTab(\'http://joefrizzell.com/Frizzell-Joe_resume.pdf\')" src="images/Frizzell-Joe_resume.jpg" alt="Frizzell-Joe_resume" />';
 		}, 2000);
 	}
-	if (callerID.lastIndexOf("speakers")===0){
+	if (callerID.lastIndexOf("iMac")===0){
 		theText = 'Music to soothe the savage beats.';
 		startTalking(theText);
 		setTimeout(function() {
