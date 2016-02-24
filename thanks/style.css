@@ -589,3 +589,17 @@ bottom:0;
 height: 100%;
 z-index: 14;
 }
+#iMac {
+	position: absolute;
+	bottom: 292px;
+	left: 15%;
+	z-index: 13;
+	cursor: pointer; cursor: hand;
+}
+#bookshelf {
+	position: absolute;
+	bottom: 112px;
+	left: 15%;
+	z-index: 13;
+	cursor: pointer; cursor: hand;
+}
