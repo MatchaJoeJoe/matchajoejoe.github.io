@@ -892,3 +892,21 @@ height: 96px;
 .tumblrWrapper{
 width: 100%;
 text-align: center;
+}
+.avatar{
+height:128px;
+width: 64px;
+position: absolute;
+top: 0;
+left:0;
+}
+.avatar img{
+height:128px;
+width: 64px;
+position: absolute;
+top: 0;
+left:0;
+}
+#avatar_skin{
+-webkit-filter: hue-rotate(100deg);
+}
