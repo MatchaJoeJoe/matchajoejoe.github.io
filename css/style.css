@@ -909,10 +909,8 @@ left:10%;
 }
 #avatarInputs {
 position: absolute;
-top: 5%;
-right:10%;
-width: 300px;
-text-align: right;
+top: 0;
+left:300px;
 }
 .centered{
 text-align: center;
