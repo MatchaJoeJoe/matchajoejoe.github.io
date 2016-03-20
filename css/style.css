@@ -911,9 +911,7 @@ left:10%;
 position: absolute;
 top: 2.5%;
 left:300px;
-height: 512px;
 width: 384px;
-overflow: auto;
 }
 #avatarInputs input {
 width: 97%;
