@@ -260,15 +260,12 @@ function loadContent(theCaller){
 		}, 4000);
 	}
 	if (callerID.lastIndexOf("laptop")===0){
-		theText = 'Internet, why do you have all the things?';
+		theText = 'Time to code it up...';
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);
-			var linksDiv = document.getElementById('links');
-			var linksContents = linksDiv.innerHTML;
-			contentDiv.className = "quickfadein";
-			contentDiv.innerHTML = '<div class="greyBox">'+linksContents+'</div>';
-		}, 2000);
+			OpenIframe('https://github.com/joefrizzell');
+		}, 1000);
 	}
 	if (callerID.lastIndexOf("camera")===0){
 		theText = 'Do you see what I see?';
@@ -346,8 +343,7 @@ function loadContent(theCaller){
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);
-			contentDiv.className = "quickfadein";
-			contentDiv.innerHTML = '<img id="resume" onclick="OpenInNewTab(\'http://joefrizzell.com/Frizzell-Joe_resume.pdf\')" src="images/Frizzell-Joe_resume.jpg" alt="Frizzell-Joe_resume" />';
+			OpenIframe('http://www.linkedin.com/in/joefrizzell');
 		}, 2000);
 	}
 	if (callerID.lastIndexOf("iMac")===0){
@@ -476,7 +472,7 @@ function loadContent(theCaller){
 					gregStopTalking(theText);
 					setTimeout(function() {
 						removeBlocker();
-						OpenInNewTab('https://twitch.tv/giantwerewolf');
+						OpenIframe('https://twitch.tv/giantwerewolf');
 					}, 500);			
 				}, 2500);			
 			}, 500);			
@@ -624,7 +620,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			setTimeout(function() {
 				removeBlocker();
-				OpenInNewTab('http://bilbodacat.github.io');
+				OpenIframe('http://bilbodacat.github.io');
 			}, 500);			
 			stopTalking(theText);
 		}, 4000);
@@ -658,10 +654,14 @@ function hideContent(){
 		contentDiv.innerHTML = '';
 	}, 500);
 }
-function OpenInNewTab(url) {
-	var win = window.open(url, '_blank');
-	win.blur();
-	window.focus();
+function OpenIframe(url) {
+	var contentDiv = document.getElementById('content');
+	var containerDiv = document.getElementById(window.theLocation);
+	var blockerDiv = document.createElement("div");
+	blockerDiv.id = 'blocker';
+	containerDiv.appendChild(blockerDiv);
+	contentDiv.className = "quickfadein";
+	contentDiv.innerHTML = "<iframe class=\"w90\" src=\""+url+"\"></iframe>";
 }
 function loadTwitter(){
 	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
