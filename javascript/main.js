@@ -347,7 +347,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			stopTalking(theText);
 			contentDiv.className = "quickfadein";
-			contentDiv.innerHTML = '<img id="resume" onclick="OpenInNewTab(\'http://joefrizzell.com/Frizzell-Joe_resume.pdf\')" src="images/Frizzell-Joe_resume.jpg" alt="Frizzell-Joe_resume" />';
+			contentDiv.innerHTML = '<img id="resume" onclick="window.open(\'http://joefrizzell.com/Frizzell-Joe_resume.pdf\', \'_blank\')" src="images/Frizzell-Joe_resume.jpg" alt="Frizzell-Joe_resume" />';
 		}, 2000);
 	}
 	if (callerID.lastIndexOf("iMac")===0){
@@ -476,7 +476,7 @@ function loadContent(theCaller){
 					gregStopTalking(theText);
 					setTimeout(function() {
 						removeBlocker();
-						OpenInNewTab('https://twitch.tv/giantwerewolf');
+						window.open('https://twitch.tv/giantwerewolf', '_blank');
 					}, 500);			
 				}, 2500);			
 			}, 500);			
@@ -624,7 +624,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			setTimeout(function() {
 				removeBlocker();
-				OpenInNewTab('http://bilbodacat.github.io');
+				window.open('http://bilbodacat.github.io', '_blank');
 			}, 500);			
 			stopTalking(theText);
 		}, 4000);
