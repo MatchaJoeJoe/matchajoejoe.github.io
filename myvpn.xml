@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnyConnectProfile xmlns="http://schemas.xmlsoap.org/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.xmlsoap.org/encoding/ AnyConnectProfile.xsd">
+	<ClientInitialization>
+		<UseStartBeforeLogon UserControllable="true">false</UseStartBeforeLogon>
+		<AutomaticCertSelection UserControllable="true">false</AutomaticCertSelection>
+		<ShowPreConnectMessage>false</ShowPreConnectMessage>
+		<CertificateStore>All</CertificateStore>
+		<CertificateStoreOverride>false</CertificateStoreOverride>
+		<ProxySettings>Native</ProxySettings>
+		<AllowLocalProxyConnections>true</AllowLocalProxyConnections>
+		<AuthenticationTimeout>12</AuthenticationTimeout>
+		<AutoConnectOnStart UserControllable="true">false</AutoConnectOnStart>
+		<MinimizeOnConnect UserControllable="true">true</MinimizeOnConnect>
+		<LocalLanAccess UserControllable="true">true</LocalLanAccess>
+		<ClearSmartcardPin UserControllable="true">true</ClearSmartcardPin>
+		<IPProtocolSupport>IPv4,IPv6</IPProtocolSupport>
+		<AutoReconnect UserControllable="false">true
+			<AutoReconnectBehavior UserControllable="false">DisconnectOnSuspend</AutoReconnectBehavior>
+		</AutoReconnect>
+		<AutoUpdate UserControllable="false">true</AutoUpdate>
+		<RSASecurIDIntegration UserControllable="false">Automatic</RSASecurIDIntegration>
+		<WindowsLogonEnforcement>SingleLocalLogon</WindowsLogonEnforcement>
+		<WindowsVPNEstablishment>AllowRemoteUsers</WindowsVPNEstablishment>
+		<AutomaticVPNPolicy>false</AutomaticVPNPolicy>
+		<PPPExclusion UserControllable="false">Disable
+			<PPPExclusionServerIP UserControllable="false"></PPPExclusionServerIP>
+		</PPPExclusion>
+		<EnableScripting UserControllable="false">false</EnableScripting>
+		<CertificateMatch>
+			<KeyUsage>
+				<MatchKey>Non_Repudiation</MatchKey>
+				<MatchKey>Digital_Signature</MatchKey>
+			</KeyUsage>
+			<ExtendedKeyUsage>
+				<ExtendedMatchKey>ServerAuth</ExtendedMatchKey>
+				<ExtendedMatchKey>ClientAuth</ExtendedMatchKey>
+				<CustomExtendedMatchKey>1.3.6.1.5.5.7.3.11</CustomExtendedMatchKey>
+			</ExtendedKeyUsage>
+			<DistinguishedName>
+				<DistinguishedNameDefinition Operator="Equal" Wildcard="Enabled" MatchCase="Enabled">
+					<Name>CN</Name>
+					<Pattern>ASASecurity</Pattern>
+				</DistinguishedNameDefinition>
+				<DistinguishedNameDefinition Operator="Equal" Wildcard="Disabled" MatchCase="Disabled">
+					<Name>C</Name>
+					<Pattern>Boulder</Pattern>
+				</DistinguishedNameDefinition>
+			</DistinguishedName>
+		</CertificateMatch>
+		<MobilePolicy>
+			<DeviceLockRequired
+				PasswordComplexity="pin"/>
+		</MobilePolicy>
+		<EnableAutomaticServerSelection UserControllable="false">false
+			<AutoServerSelectionImprovement>20</AutoServerSelectionImprovement>
+			<AutoServerSelectionSuspendTime>4</AutoServerSelectionSuspendTime>
+		</EnableAutomaticServerSelection>
+		<RetainVpnOnLogoff>false
+		</RetainVpnOnLogoff>
+	</ClientInitialization>
+	<ServerList>
+		<HostEntry>
+			<HostName>myvpn</HostName>
+			<HostAddress>rap-a.rhbss.com</HostAddress>
+			<UserGroup>myvpn</UserGroup>
+		</HostEntry>
+	</ServerList>
+</AnyConnectProfile>
