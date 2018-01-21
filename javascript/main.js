@@ -624,7 +624,6 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			setTimeout(function() {
 				removeBlocker();
-				window.open('http://bilbodacat.github.io', '_blank');
 			}, 500);			
 			stopTalking(theText);
 		}, 4000);
