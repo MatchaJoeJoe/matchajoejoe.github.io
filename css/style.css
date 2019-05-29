@@ -308,22 +308,22 @@ a {
 	z-index: 110;
 	overflow: auto;
 }
-@-webkit-keyframes type{ 
-  from { width: 0%; } 
-} 
-@keyframes type{ 
-  from { width: 0%; } 
-} 
+@-webkit-keyframes type{
+  from { width: 0%; }
+}
+@keyframes type{
+  from { width: 0%; }
+}
 @-webkit-keyframes type2{
   0%{width: 0%;}
   50%{width: 0%;}
-  100%{ width: 100%; } 
-} 
+  100%{ width: 100%; }
+}
 @keyframes type2{
   0%{width: 0%;}
   50%{width: 0%;}
-  100%{ width: 100%; } 
-} 
+  100%{ width: 100%; }
+}
 .left {
 	left: 0;
 }
@@ -409,7 +409,7 @@ a {
 #iMac {
 	position: absolute;
 	bottom: 292px;
-	right: 33%;
+	right: 1%;
 	z-index: 104;
 	cursor: pointer; cursor: hand;
 }
@@ -827,14 +827,14 @@ height: 96px;
 	animation-timing-function: linear;
 }
 @-moz-keyframes walkIn{
-	0% {-moz-transform: scale(.5,.5); 
+	0% {-moz-transform: scale(.5,.5);
 		bottom: 64px;
 		left: 0;
 	}
 	100% {}
 }
 @-webkit-keyframes walkIn{
-	0% {-webkit-transform: scale(.5,.5); 
+	0% {-webkit-transform: scale(.5,.5);
 		bottom: 64px;
 		left: 0;
 	}
