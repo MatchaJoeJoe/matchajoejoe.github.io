@@ -1,4 +1,4 @@
-window.addEventListener('load', eventWindowLoaded, false);	
+window.addEventListener('load', eventWindowLoaded, false);
 
 var JoePosition = 'left';
 var theSkyColor = 'lightblue';
@@ -48,7 +48,7 @@ function eventWindowLoaded() {
 	newButton.className = 'options';
 	newButton.innerHTML = 'New Game';
 	loadingContainer.appendChild(newButton);
-	newButton.addEventListener('click', newGame, false);	
+	newButton.addEventListener('click', newGame, false);
 	if (window.theUser !== ""){
 		var continueButton = document.createElement('p');
 		continueButton.id = "continueButton";
@@ -62,13 +62,13 @@ function eventWindowLoaded() {
 	optionsButton.className = 'options';
 	optionsButton.innerHTML = 'Options';
 	loadingContainer.appendChild(optionsButton);
-	optionsButton.addEventListener('click', openOptions, false);	
+	optionsButton.addEventListener('click', openOptions, false);
 	var disclaimerButton = document.createElement('p');
 	disclaimerButton.id = "disclaimerText";
 	disclaimerButton.className = 'options';
 	disclaimerButton.innerHTML = 'About Cookies';
 	loadingContainer.appendChild(disclaimerButton);
-	disclaimerButton.addEventListener('click', displayDisclaimer, false);	
+	disclaimerButton.addEventListener('click', displayDisclaimer, false);
 }
 function openOptions(){
 	var containerDiv = document.getElementById(window.theLocation);
@@ -165,7 +165,7 @@ function startGame() {
 						}, 1500);
 					}, 500);
 				}, 1500);
-		} 
+		}
 		else {
 			theText = 'Hi, I’m Joe.';
 			startTalking(theText);
@@ -187,7 +187,7 @@ function startGame() {
 					}, 2000);
 				}, 500);
 			}, 1400);
-		}	
+		}
 	}, 2000);
 }
 function continueGame(){
@@ -347,7 +347,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			stopTalking(theText);
 			contentDiv.className = "quickfadein";
-			contentDiv.innerHTML = '<img id="resume" onclick="window.open(\'http://joefrizzell.com/Frizzell-Joe_resume.pdf\', \'_blank\')" src="images/Frizzell-Joe_resume.jpg" alt="Frizzell-Joe_resume" />';
+			contentDiv.innerHTML = '<img id="resume" onclick="window.open(\'https://joefrizzell.com/Frizzell-Joe_resume.pdf\', \'_blank\')" src="images/Frizzell-Joe_resume.jpg" alt="Frizzell-Joe_resume" />';
 		}, 2000);
 	}
 	if (callerID.lastIndexOf("iMac")===0){
@@ -412,7 +412,7 @@ function loadContent(theCaller){
 						JoeTshirt.className = '';
 						earphones.className = 'quickfadein';
 						JoeBody.src = "images/Joe8Bit.gif";
-					}, 2000);			
+					}, 2000);
 				}, 500);
 			}, 500);
 		}, 500);
@@ -459,7 +459,7 @@ function loadContent(theCaller){
 						JoeEyes.className = '';
 						JoeTshirt.className = '';
 						JoeBody.src = "images/Joe8Bit.gif";
-					}, 2000);			
+					}, 2000);
 				}, 500);
 			}, 500);
 		}, 500);
@@ -477,9 +477,9 @@ function loadContent(theCaller){
 					setTimeout(function() {
 						removeBlocker();
 						window.open('https://twitch.tv/giantwerewolf', '_blank');
-					}, 500);			
-				}, 2500);			
-			}, 500);			
+					}, 500);
+				}, 2500);
+			}, 500);
 			stopTalking(theText);
 		}, 1500);
 	}
@@ -489,7 +489,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			setTimeout(function() {
 				removeBlocker();
-			}, 500);			
+			}, 500);
 			stopTalking(theText);
 		}, 1500);
 	}
@@ -499,7 +499,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			setTimeout(function() {
 				removeBlocker();
-			}, 500);			
+			}, 500);
 			stopTalking(theText);
 		}, 1000);
 	}
@@ -510,7 +510,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			setTimeout(function() {
 				removeBlocker();
-			}, 500);			
+			}, 500);
 			stopTalking(theText);
 		}, 2500);
 	}
@@ -521,7 +521,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			setTimeout(function() {
 				removeBlocker();
-			}, 500);			
+			}, 500);
 			stopTalking(theText);
 		}, 2500);
 	}
@@ -532,7 +532,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			setTimeout(function() {
 				removeBlocker();
-			}, 500);			
+			}, 500);
 			stopTalking(theText);
 		}, 2500);
 	}
@@ -543,7 +543,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			setTimeout(function() {
 				removeBlocker();
-			}, 500);			
+			}, 500);
 			stopTalking(theText);
 		}, 2500);
 	}
@@ -554,7 +554,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			setTimeout(function() {
 				removeBlocker();
-			}, 500);			
+			}, 500);
 			stopTalking(theText);
 		}, 2000);
 	}
@@ -564,7 +564,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			setTimeout(function() {
 				removeBlocker();
-			}, 500);			
+			}, 500);
 			stopTalking(theText);
 		}, 2500);
 	}
@@ -574,7 +574,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			setTimeout(function() {
 				removeBlocker();
-			}, 500);			
+			}, 500);
 			stopTalking(theText);
 		}, 1000);
 	}
@@ -584,7 +584,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			setTimeout(function() {
 				removeBlocker();
-			}, 500);			
+			}, 500);
 			stopTalking(theText);
 		}, 2000);
 	}
@@ -594,7 +594,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			setTimeout(function() {
 				removeBlocker();
-			}, 500);			
+			}, 500);
 			stopTalking(theText);
 		}, 1500);
 	}
@@ -604,7 +604,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			setTimeout(function() {
 				removeBlocker();
-			}, 500);			
+			}, 500);
 			stopTalking(theText);
 		}, 1500);
 	}
@@ -614,7 +614,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			setTimeout(function() {
 				removeBlocker();
-			}, 500);			
+			}, 500);
 			stopTalking(theText);
 		}, 1500);
 	}
@@ -624,7 +624,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			setTimeout(function() {
 				removeBlocker();
-			}, 500);			
+			}, 500);
 			stopTalking(theText);
 		}, 4000);
 	}
@@ -790,7 +790,7 @@ function changeFence() {
 function setTheTime(){
 	var theTime = "";
 	var theHours = 0;
-	var amPM = "";		
+	var amPM = "";
 	var BrooklynDiv = document.getElementById('Brooklyn');
 	var joesHouseDoorFrame = document.getElementById('joesHouseDoorFrame');
 	if(window.theDate.getHours()>5 && window.theDate.getHours()<18){
