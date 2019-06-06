@@ -929,3 +929,7 @@ width: 100%;
 height: 100%;
 overflow: auto;
 }
+.credit {
+	font-family: 'Nothing You Could Do', cursive;
+	margin: 0;
+}
