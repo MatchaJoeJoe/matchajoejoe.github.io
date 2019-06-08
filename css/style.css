@@ -6,6 +6,11 @@ body {
 	overflow: hidden;
 	font-size: 20px;
 	line-height: 28px;
+	max-width: 1024px;
+}
+div.viewport {
+	width:1024px;
+	margin:auto;
 }
 p{margin:0;}
 .whiteBG {
@@ -182,6 +187,26 @@ a {
 	position: absolute;
 	bottom: 455px;
 	left: 28;
+	z-index: 102;
+	-webkit-perspective:160px;
+	perspective:160px;
+}
+#windows3 {
+	height:333px;
+	width: 228px;
+	position: absolute;
+	bottom: 800px;
+	left: 28;
+	z-index: 102;
+	-webkit-perspective:160px;
+	perspective:160px;
+}
+#windows4 {
+	height:333px;
+	width: 228px;
+	position: absolute;
+	bottom: 800px;
+	right: 28;
 	z-index: 102;
 	-webkit-perspective:160px;
 	perspective:160px;
@@ -404,58 +429,58 @@ a {
 	z-index: 104;
 	cursor: pointer; cursor: hand;
 }
+#legoart {
+	position: absolute;
+	bottom: 227px;
+	right: 5%;
+	z-index: 105;
+	cursor: pointer; cursor: hand;
+}
 #iMac {
 	position: absolute;
 	bottom: 242px;
-	right: 1%;
+	right: 3%;
 	z-index: 105;
-	cursor: pointer; cursor: hand;
-}
-#bookshelf {
-	position: absolute;
-	bottom: 112px;
-	right: 33%;
-	z-index: 105;
-	cursor: pointer; cursor: hand;
-}
-#dumbbells {
-	position: absolute;
-	bottom: 82px;
-	right: 22%;
-	z-index: 104;
 	cursor: pointer; cursor: hand;
 }
 #foldingTable{
 	position: absolute;
 	bottom: 78px;
-	right: 1%;
+	right: 0%;
 	z-index: 104;
 	cursor: pointer; cursor: hand;
 }
-#chair {
+#desk {
 	position: absolute;
-	bottom: 5%;
-	left: 32%;
+	bottom: 70px;
+	left: 40%;
 	z-index: 104;
 	cursor: pointer; cursor: hand;
 }
-#laptop {
+#ytmonitor {
 	position: absolute;
-	bottom: 0;
-	left: 25%;
+	bottom: 185px;
+	left: 39%;
+	z-index: 104;
+	cursor: pointer; cursor: hand;
+}
+#twitchmonitor {
+	position: absolute;
+	bottom: 185px;
+	left: 49%;
 	z-index: 104;
 	cursor: pointer; cursor: hand;
 }
 #table {
 	position: absolute;
 	bottom: 0;
-	left: 45%;
+	left: 17%;
 	z-index: 104;
 }
 #phone {
 	position: absolute;
 	bottom: 94px;
-	left: 50%;
+	left: 22%;
 	z-index: 104;
 	cursor: pointer; cursor: hand;
 }

@@ -245,8 +245,8 @@ function loadContent(theCaller){
 			contentDiv.className = "hidden";
 		}, 500);
 	}
-	if (callerID.lastIndexOf("chair")===0){
-		theText = 'There is nothing better than curling up in a comfy chair and watching YouTube videos.';
+	if (callerID.lastIndexOf("ytmonitor")===0){
+		theText = 'I guess we could watch some YouTube videos.';
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);
@@ -256,15 +256,15 @@ function loadContent(theCaller){
 			contentDiv.innerHTML = youTubeContents;
 		}, 4000);
 	}
-	if (callerID.lastIndexOf("laptop")===0){
-		theText = 'Internet, why do you have all the things?';
+	if (callerID.lastIndexOf("twitchmonitor")===0){
+		theText = 'I wonder what’s streaming on Twitch...';
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);
-			var linksDiv = document.getElementById('links');
-			var linksContents = linksDiv.innerHTML;
+			var twitchDiv = document.getElementById('twitch');
+			var twitchContents = twitchDiv.innerHTML;
 			contentDiv.className = "quickfadein";
-			contentDiv.innerHTML = '<div class="greyBox">'+linksContents+'</div>';
+			contentDiv.innerHTML = twitchContents;
 		}, 2000);
 	}
 	if (callerID.lastIndexOf("camera")===0){
@@ -311,7 +311,7 @@ function loadContent(theCaller){
 			contentDiv.innerHTML = linksContents;
 		}, 3000);
 	}
-	if (callerID.lastIndexOf("art")===0){
+	if (callerID.lastIndexOf("legoart")===0){
 		theText = 'Do you like art? I like t-shirts.';
 		startTalking(theText);
 		setTimeout(function() {
@@ -321,6 +321,17 @@ function loadContent(theCaller){
 			contentDiv.className = "quickfadein";
 			contentDiv.innerHTML = linksContents;
 		}, 3000);
+	}
+	if (callerID.lastIndexOf("desk")===0){
+		theText = 'Internet, why do you have all the things?';
+		startTalking(theText);
+		setTimeout(function() {
+			stopTalking(theText);
+			var linksDiv = document.getElementById('links');
+			var linksContents = linksDiv.innerHTML;
+			contentDiv.className = "quickfadein";
+			contentDiv.innerHTML = '<div class="greyBox">'+linksContents+'</div>';
+		}, 2000);
 	}
 	if (callerID.lastIndexOf("foldingTable")===0){
 		 theText = 'I used to love coloring when I was a kid... Good thing I’m still a kid at heart!';

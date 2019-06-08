@@ -36,9 +36,7 @@
 	</head>
 	<body id="body">
 		<div id="LoadingBackground">
-			<div id="LoadingContainer">You need to have Javascript enabled for this site to load up.
-				<br/><br/><a href="javascript/main.js">Just FYI, this site stores cookies in your browser and reads them back again... It doesn’t look at anything other than the cookies it creates though... Don’t believe me? You can look at the main.js file yourself.</a>
-			</div>
+			<div id="LoadingContainer"><br/><br/><br/><img src="images/loading.gif" width="30" height="30" alt="loading" />&#160;<br/><br/>Loading...</div>
 		</div>
 		<div id="joesHouse" class="hidden">
 			<div id="wall" onclick="loadContent(this)">&#160;</div>
@@ -46,14 +44,14 @@
 				<div id="doorSidewalk">&#160;</div>
 				<img id="doorOut" class="hidden" src="images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
 			</div>
-			<img id="artframe" onclick="loadContent(this)" src="images/RedCoat.png" width="112" height="112" alt="art" />
-			<img id="art" onclick="loadContent(this)" src="images/art.gif" width="128" height="128" alt="artframe" />
 			<div id="floor" onclick="loadContent(this)">&#160;</div>
 			<img id="clock" src="images/clock.gif" width="64" height="64" alt="clock" onclick="loadContent(this)" />
-			<img id="iMac" src="images/iMac.gif" width="98" height="84" alt="iMac" onclick="loadContent(this)" />
 			<img id="foldingTable" src="images/foldingTable.png" width="218" height="168" alt="folding able" onclick="loadContent(this)" />
-			<img id="chair" src="images/chair.png" width="102" height="220" alt="chair" onclick="loadContent(this)" />
-			<img id="laptop" src="images/laptopTable.gif" width="96" height="160" alt="laptop table" onclick="loadContent(this)" />
+			<img id="iMac" src="images/iMac.gif" width="98" height="84" alt="iMac" onclick="loadContent(this)" />
+			<img id="legoart" src="images/legoart.gif" width="54" height="22" alt="lego art" onclick="loadContent(this)" />
+			<img id="desk" src="images/desk.gif" width="426" height="218" alt="desk" onclick="loadContent(this)" />
+			<img id="ytmonitor" src="images/ytmonitor.gif" width="166" height="122" alt="youtube monitor" onclick="loadContent(this)" />
+			<img id="twitchmonitor" src="images/twitchmonitor.gif" width="166" height="122" alt="twitch monitor" onclick="loadContent(this)" />
 			<img id="table" src="images/table.gif" width="289‬" height="120" alt="coffee table" onclick="loadContent(this)" />
 			<img id="phone" src="images/phone.gif" width="64" height="32" alt="phone" onclick="loadContent(this)" />
 		</div>
@@ -64,6 +62,8 @@
 			<div id="building2" onclick="loadContent(this)">&#160;</div>
 			<img id="windows" src="images/windows.png" onclick="loadContent(this)"/>
 			<img id="windows2" src="images/windows.png" onclick="loadContent(this)"/>
+			<img id="windows3" src="images/windows.png" onclick="loadContent(this)"/>
+			<img id="windows4" src="images/windows.png" onclick="loadContent(this)"/>
 			<img id="joesSign" src="images/joesSign.png" onclick="loadContent(this)"/>
 			<div id="BrooklynDoorFrame">
 				<div id="doorFloor">&#160;</div>
@@ -140,6 +140,11 @@
 			<div id="youTube">
 				<div class="videoWrapper">
 					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/videoseries?list=LLTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+				</div>
+			</div>
+			<div id="twitch">
+				<div class="videoWrapper">
+					<iframe src="https://player.twitch.tv/?channel=matchajoejoe" height="100%" width="100%" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 				</div>
 			</div>
 			<div id="disclaimer" class="hidden">
