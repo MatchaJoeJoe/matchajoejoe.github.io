@@ -304,13 +304,14 @@ function loadContent(theCaller){
 		}, 2500);
 	}
 	if (callerID.lastIndexOf("phone")===0){
-		theText = 'Isn’t it great that we are always connected with anyone we’ve ever met?';
+		theText = 'I get all my news from my phone, don’t you?';
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);
+			var linksDiv = document.getElementById('newswrapper');
+			var linksContents = linksDiv.innerHTML;
 			contentDiv.className = "quickfadein";
-			var twitterwrapper = document.getElementById('twitterwrapper');
-			twitterwrapper.className = "quickfadein";
+			contentDiv.innerHTML = linksContents;
 		}, 3000);
 	}
 	if (callerID.lastIndexOf("art")===0){
@@ -640,11 +641,6 @@ function hideContent(){
 	if (audioClass !='greyBox hidden'){
 		audioListDiv.className = 'greyBox quickfadeout';
 	}
-	var twitterwrapper = document.getElementById('twitterwrapper');
-	var twitterClass = twitterwrapper.className;
-	if (twitterClass !='hidden'){
-		twitterwrapper.className = 'quickfadeout';
-	}
 	var contentDiv = document.getElementById('content');
 	var tabClass = contentDiv.className;
 	if (tabClass !='hidden'){
@@ -652,7 +648,6 @@ function hideContent(){
 	}
 	setTimeout(function() {
 		audioListDiv.className = 'greyBox hidden';
-		twitterwrapper.className = 'hidden';
 		contentDiv.className = 'hidden';
 		contentDiv.innerHTML = '';
 	}, 500);

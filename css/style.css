@@ -406,23 +406,16 @@ a {
 }
 #iMac {
 	position: absolute;
-	bottom: 292px;
+	bottom: 242px;
 	right: 1%;
-	z-index: 104;
-	cursor: pointer; cursor: hand;
-}
-#speakers {
-	position: absolute;
-	bottom: 292px;
-	right: 33%;
-	z-index: 104;
+	z-index: 105;
 	cursor: pointer; cursor: hand;
 }
 #bookshelf {
 	position: absolute;
 	bottom: 112px;
 	right: 33%;
-	z-index: 104;
+	z-index: 105;
 	cursor: pointer; cursor: hand;
 }
 #dumbbells {
@@ -434,7 +427,7 @@ a {
 }
 #foldingTable{
 	position: absolute;
-	bottom: 7%;
+	bottom: 78px;
 	right: 1%;
 	z-index: 104;
 	cursor: pointer; cursor: hand;
@@ -461,7 +454,7 @@ a {
 }
 #phone {
 	position: absolute;
-	bottom: 64px;
+	bottom: 94px;
 	left: 50%;
 	z-index: 104;
 	cursor: pointer; cursor: hand;
