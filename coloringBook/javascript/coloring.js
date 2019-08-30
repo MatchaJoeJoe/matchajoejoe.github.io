@@ -29,7 +29,7 @@ var g6 = 0;
 var b6 = 255;
 var o6 = 1;
 var x = 0;
-var y = 0;	
+var y = 0;
 var thefill = "rgba(" + r + "," + g + "," + b + "," + o + ")";
 var loffset = ((window.innerWidth - 519)/2);
 
@@ -54,11 +54,11 @@ function getCanvasOffset(){
 
 //function to update palette colors
 function updateColors() {
-	
+
 	//1st canvas color
 	var color1canvas = document.getElementById('color1');
 	var color1context = color1canvas.getContext("2d");
-	var color1text = document.getElementById('color1text');	
+	var color1text = document.getElementById('color1text');
 	color1text.innerHTML = thefill1;	//showing color value on screen
 	color1context.fillStyle = "rgba(255,255,255,1)"; //fill with white first to blank out canvas
 	color1context.fillRect(0,0,color1canvas.width,color1canvas.height);
@@ -66,19 +66,19 @@ function updateColors() {
 	color1context.fillStyle = thefill1;	//then fill with new color
 	color1context.fillRect(0,0,color1canvas.width,color1canvas.height);
 	color1context.fill();
-	
-	//the rest of the colors are just copies of the first	
+
+	//the rest of the colors are just copies of the first
 	var color2canvas = document.getElementById('color2');
 	var color2context = color2canvas.getContext("2d");
 	var color2text = document.getElementById('color2text');
-	color2text.innerHTML = thefill2;	
+	color2text.innerHTML = thefill2;
 	color2context.fillStyle = "rgba(255,255,255,1)";
 	color2context.fillRect(0,0,color2canvas.width,color2canvas.height);
 	color2context.fill();
 	color2context.fillStyle = thefill2;
 	color2context.fillRect(0,0,color2canvas.width,color2canvas.height);
 	color2context.fill();
-	
+
 	var color3canvas = document.getElementById('color3');
 	var color3context = color3canvas.getContext("2d");
 	var color3text = document.getElementById('color3text');
@@ -100,7 +100,7 @@ function updateColors() {
 	color4context.fillStyle = thefill4;
 	color4context.fillRect(0,0,color4canvas.width,color4canvas.height);
 	color4context.fill();
-	
+
 	var color5canvas = document.getElementById('color5');
 	var color5context = color5canvas.getContext("2d");
 	var color5text = document.getElementById('color5text');
@@ -126,7 +126,7 @@ function updateColors() {
 
 //functions to save colors when save button is clicked
 function saveColor1() {
-	window.thefill1 = thefill;	
+	window.thefill1 = thefill;
 	updateColors();
 	window.r1=r;
 	window.g1=g;
@@ -134,7 +134,7 @@ function saveColor1() {
 	window.o1=o;
 }
 function saveColor2() {
-	window.thefill2 = thefill;	
+	window.thefill2 = thefill;
 	updateColors();
 	window.r2=r;
 	window.g2=g;
@@ -142,7 +142,7 @@ function saveColor2() {
 	window.o2=o;
 }
 function saveColor3() {
-	window.thefill3 = thefill;	
+	window.thefill3 = thefill;
 	updateColors();
 	window.r3=r;
 	window.g3=g;
@@ -150,7 +150,7 @@ function saveColor3() {
 	window.o3=o;
 }
 function saveColor4() {
-	window.thefill4 = thefill;	
+	window.thefill4 = thefill;
 	updateColors();
 	window.r4=r;
 	window.g4=g;
@@ -158,7 +158,7 @@ function saveColor4() {
 	window.o4=o;
 }
 function saveColor5() {
-	window.thefill5 = thefill;	
+	window.thefill5 = thefill;
 	updateColors();
 	window.r5=r;
 	window.g5=g;
@@ -166,7 +166,7 @@ function saveColor5() {
 	window.o5=o;
 }
 function saveColor6() {
-	window.thefill6 = thefill;	
+	window.thefill6 = thefill;
 	updateColors();
 	window.r6=r;
 	window.g6=g;
@@ -181,7 +181,7 @@ function setColor1() {
 	window.b=b1;
 	window.o=o1;
 	window.thefill = thefill1;
-	circlePreview();	
+	circlePreview();
 	updateSliders();
 }
 function setColor2() {
@@ -190,7 +190,7 @@ function setColor2() {
 	window.b=b2;
 	window.o=o2;
 	window.thefill = thefill2;
-	circlePreview();	
+	circlePreview();
 	updateSliders();
 }
 function setColor3() {
@@ -199,7 +199,7 @@ function setColor3() {
 	window.b=b3;
 	window.o=o3;
 	window.thefill = thefill3;
-	circlePreview();	
+	circlePreview();
 	updateSliders();
 }
 function setColor4() {
@@ -208,7 +208,7 @@ function setColor4() {
 	window.b=b4;
 	window.o=o4;
 	window.thefill = thefill4;
-	circlePreview();	
+	circlePreview();
 	updateSliders();
 }
 function setColor5() {
@@ -217,7 +217,7 @@ function setColor5() {
 	window.b=b5;
 	window.o=o5;
 	window.thefill = thefill5;
-	circlePreview();	
+	circlePreview();
 	updateSliders();
 }
 function setColor6() {
@@ -226,7 +226,7 @@ function setColor6() {
 	window.b=b6;
 	window.o=o6;
 	window.thefill = thefill6;
-	circlePreview();	
+	circlePreview();
 	updateSliders();
 }
 
@@ -285,7 +285,7 @@ function brushPreview(){
 	squarecontext.fillRect(5, 5, 30, 30);
 	squarecontext.fill();
 	trianglecontext.beginPath();
-	trianglecontext.moveTo(20, 5); 
+	trianglecontext.moveTo(20, 5);
 	trianglecontext.lineTo(35, 35);
 	trianglecontext.lineTo(0, 35);
 	trianglecontext.lineTo(20, 5);
@@ -295,7 +295,7 @@ function brushPreview(){
 
 
 //functions that load automatically
-window.addEventListener('load', eventWindowLoaded, false);	
+window.addEventListener('load', eventWindowLoaded, false);
 function eventWindowLoaded() {
     canvasApp();
 	circlePreview();
@@ -310,7 +310,7 @@ function drawScreen() {
 	context.fillStyle = 'white';
 	context.fillRect(0, 0, theCanvas.width, theCanvas.height);
 }//main painting function
-function canvasApp(){  
+function canvasApp(){
 
 	//defining canvases and adding event handlers
 	var theCanvasIMG = document.getElementById('painting_canvas_img');
@@ -346,23 +346,6 @@ function canvasApp(){
 	theCanvasIMG.src = "images/clear.png"; //transparent png
 	drawScreen();
 	}
-	function setBebop(){
-	theCanvasIMG.src = "images/bebop.png"; //transparent png
-	drawScreen();
-	}
-	function setSpawn(){
-	theCanvasIMG.src = "images/spawn.png"; //transparent png
-	drawScreen();
-	}
-	function setJoker(){
-	theCanvasIMG.src = "images/Joker.png"; //transparent png
-	drawScreen();
-	}
-	function setAvengers(){
-	theCanvasIMG.src = "images/avengers.png"; //transparent png
-	drawScreen();
-	}
-
 
 //defining buttons and adding handlers
 	var color1button = document.getElementById('savecolor1');
@@ -379,7 +362,7 @@ function canvasApp(){
 	color6button.addEventListener('click', saveColor6, false);
 	var FillButton = document.getElementById('FillButton');
 	FillButton.addEventListener('click', fillColor, false);
-	
+
 //defining sliders and setting handlers
 	var RedInput = document.getElementById('RedInput');
 	RedInput.addEventListener('change', RedChange, true);
@@ -425,15 +408,7 @@ function canvasApp(){
 //defining images and adding handlers
 	var clearIMG = document.getElementById('clear');
 	clearIMG.addEventListener('click', setClear, false);
-	var bebopIMG = document.getElementById('bebop');
-	bebopIMG.addEventListener('click', setBebop, false);
-	var spawnIMG = document.getElementById('spawn');
-	spawnIMG.addEventListener('click', setSpawn, false);
-	var jokerIMG = document.getElementById('joker');
-	jokerIMG.addEventListener('click', setJoker, false);
-	var avengersIMG = document.getElementById('avengers');
-	avengersIMG.addEventListener('click', setAvengers, false);
-	
+
 //function that fills entire screen with selected color
 	function fillColor(){
 		context.fillStyle = thefill;
@@ -499,7 +474,7 @@ function canvasApp(){
 
 //Mouse Functions
     var begin_drawing = false; //default is not drawing
-    
+
     function mouse_pressed_down (ev) {
 		begin_drawing = true;//drawing turned on when left mouse button down
     }

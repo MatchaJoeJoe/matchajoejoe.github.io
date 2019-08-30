@@ -111,7 +111,7 @@ a {
 	-webkit-perspective:160px;
 	perspective:160px;
 }
-#BrooklynDoorFrame{
+#OutsideDoorFrame{
 	height: 160px;
 	width: 80px;
 	border-top: 10px solid SaddleBrown;
@@ -429,59 +429,74 @@ a {
 	z-index: 104;
 	cursor: pointer; cursor: hand;
 }
+#artcontaner{
+	position: absolute;
+	bottom: 78px;
+	right: 10px;
+}
 #legoart {
 	position: absolute;
-	bottom: 227px;
-	right: 5%;
+	bottom: 149px;
+	right: 100px;
 	z-index: 105;
 	cursor: pointer; cursor: hand;
 }
 #iMac {
 	position: absolute;
-	bottom: 242px;
-	right: 3%;
+	bottom: 164px;
+	right: 50px;
 	z-index: 105;
 	cursor: pointer; cursor: hand;
 }
 #foldingTable{
 	position: absolute;
-	bottom: 78px;
-	right: 0%;
+	bottom: 0;
+	right: 0;
 	z-index: 104;
 	cursor: pointer; cursor: hand;
 }
-#desk {
+#deskcontainer{
 	position: absolute;
 	bottom: 70px;
 	left: 40%;
-	z-index: 104;
+}
+#desk {
+	position:relative;
+	left:0;
+	bottom:0;
+	z-index: 107;
 	cursor: pointer; cursor: hand;
 }
 #ytmonitor {
 	position: absolute;
-	bottom: 185px;
-	left: 39%;
-	z-index: 104;
+	left:5px;
+	bottom: 115px;
+	z-index: 107;
 	cursor: pointer; cursor: hand;
 }
 #twitchmonitor {
 	position: absolute;
-	bottom: 185px;
-	left: 49%;
-	z-index: 104;
+	left:175px;
+	bottom: 115px;
+	z-index: 107;
 	cursor: pointer; cursor: hand;
+}
+#tablecontainer {
+	position: absolute;
+	bottom: 0;
+	left: 17%;
 }
 #table {
 	position: absolute;
 	bottom: 0;
-	left: 17%;
-	z-index: 104;
+	left: 0;
+	z-index: 108;
 }
 #phone {
 	position: absolute;
 	bottom: 94px;
-	left: 22%;
-	z-index: 104;
+	left: 50px;
+	z-index: 108;
 	cursor: pointer; cursor: hand;
 }
 #camera {
@@ -561,7 +576,7 @@ select {
 	z-index: 0;
 	overflow: hidden;
 }
-#Brooklyn{
+#Outside{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -573,12 +588,12 @@ select {
 }
 #content {
 	text-align: center;
-	width: 100%;
-	height: 100%;
 	margin:0;
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 20px;
+	left: 20px;
+	right: 20px;
+	bottom: 400px;
 	z-index:111;
 	background-color: rgba(30,30,30,.8);
 	color: white;
@@ -596,11 +611,13 @@ select {
 	cursor: pointer; cursor: hand;
 }
 iframe.w90 {
-	height: 80%;
-	width: 85%;
-	margin: 5% auto;
-	padding:2.5%;
-	border-radius: 2.5%;
+	position: absolute;
+	width: 95%;
+	height: 95%;
+	top: 2.5%;
+	left: 2.5%;
+	right: 2.5%;
+	bottom: 2.5%;
 	background-color: white;
 }
 #resume {
@@ -616,30 +633,29 @@ iframe.w90 {
 	height: 100%;
 }
 div.videoWrapper {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	height: 0;
 }
 div.videoWrapper iframe {
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 90%;
-	height: 80%;
-	margin: 5%;
+	top: 2.5%;
+	left: 2.5%;
+	width: 95%;
+	height: 95%;
+}
+#backgroundMusic{
+	margin: 5% 0 0 0;
 }
 .greyBox {
 	text-align: center;
 	background-color: rgba(100,100,100,.5);
-	border-radius: 25px;
 	color: white;
-	width: 400px;
-	max-height: 75%;
-	margin:5% auto;
-	padding: 5%;
-	position: relative;
+	position: absolute;
+	top: 2.5%;
+	left: 2.5%;
+	bottom: 2.5%;
+	right: 2.5%;
+	width: 95%;
+	height: 95%;
 	z-index: 111;
-	overflow: auto;
 }
 #twitterwrapper {
 	height: 100%;

@@ -32,7 +32,6 @@
 			})();
 		</script>
 		<script type="text/javascript" src="javascript/main.js"></script>
-		<script type="text/javascript" src="javascript/instafeed.min.js"></script>
 	</head>
 	<body id="body">
 		<div id="LoadingBackground">
@@ -46,16 +45,22 @@
 			</div>
 			<div id="floor" onclick="loadContent(this)">&#160;</div>
 			<img id="clock" src="images/clock.gif" width="64" height="64" alt="clock" onclick="loadContent(this)" />
-			<img id="foldingTable" src="images/foldingTable.png" width="218" height="168" alt="folding able" onclick="loadContent(this)" />
-			<img id="iMac" src="images/iMac.gif" width="98" height="84" alt="iMac" onclick="loadContent(this)" />
-			<img id="legoart" src="images/legoart.gif" width="54" height="22" alt="lego art" onclick="loadContent(this)" />
-			<img id="desk" src="images/desk.gif" width="426" height="218" alt="desk" onclick="loadContent(this)" />
-			<img id="ytmonitor" src="images/ytmonitor.gif" width="166" height="122" alt="youtube monitor" onclick="loadContent(this)" />
-			<img id="twitchmonitor" src="images/twitchmonitor.gif" width="166" height="122" alt="twitch monitor" onclick="loadContent(this)" />
-			<img id="table" src="images/table.gif" width="289‬" height="120" alt="coffee table" onclick="loadContent(this)" />
-			<img id="phone" src="images/phone.gif" width="64" height="32" alt="phone" onclick="loadContent(this)" />
+			<div id="artcontaner">
+				<img id="foldingTable" src="images/foldingTable.png" width="218" height="168" alt="folding able" onclick="loadContent(this)" />
+				<img id="iMac" src="images/iMac.gif" width="98" height="84" alt="iMac" onclick="loadContent(this)" />
+				<img id="legoart" src="images/legoart.gif" width="54" height="22" alt="lego art" onclick="loadContent(this)" />
+			</div>
+			<div id="deskcontainer">
+				<img id="desk" src="images/desk.gif" width="426" height="218" alt="desk" onclick="loadContent(this)" />
+				<img id="ytmonitor" src="images/ytmonitor.gif" width="166" height="122" alt="youtube monitor" onclick="loadContent(this)" />
+				<img id="twitchmonitor" src="images/twitchmonitor.gif" width="166" height="122" alt="twitch monitor" onclick="loadContent(this)" />
+			</div>
+			<div id="tablecontainer">
+				<img id="table" src="images/table.gif" width="289‬" height="120" alt="coffee table" onclick="loadContent(this)" />
+				<img id="phone" src="images/phone.gif" width="64" height="32" alt="phone" onclick="loadContent(this)" />
+			</div>
 		</div>
-		<div id="Brooklyn" class="hidden">
+		<div id="Outside" class="hidden">
 			<div id="sky" onclick="loadContent(this)">&#160;</div>
 			<div id="fence" onclick="loadContent(this)">&#160;</div>
 			<div id="building" onclick="loadContent(this)">&#160;</div>
@@ -65,7 +70,7 @@
 			<img id="windows3" src="images/windows.png" onclick="loadContent(this)"/>
 			<img id="windows4" src="images/windows.png" onclick="loadContent(this)"/>
 			<img id="joesSign" src="images/joesSign.png" onclick="loadContent(this)"/>
-			<div id="BrooklynDoorFrame">
+			<div id="OutsideDoorFrame">
 				<div id="doorFloor">&#160;</div>
 				<img id="doorIn" class="doorClose" src="images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
 			</div>
@@ -86,18 +91,6 @@
 			<span id="bubbleBox" class="left hidden"></span>
 		</div>
 		<div id="loading" class="hidden">
-			<script type="text/javascript">
-				var feed = new Instafeed({
-					get: 'user',
-					userId: 1970132825,
-					accessToken: '1970132825.8d91144.f9b635baa63b4125805a2724a517847f',
-					limit: 20
-				});
-				feed.run();
-			</script>
-			<div id="instawrapper">
-				<div id="instafeed"></div>
-			</div>
 			<div id="links">
 				<a href="mailto:joe@joefrizzell.com">eMail</a><br/><br/>
 				<a onclick="window.open('https://github.com/joefrizzell', '_blank');">GitHub</a><br/><br/>
@@ -114,7 +107,6 @@
 			<div id="newswrapper">
 				<iframe class="w90" frameborder="0" src="news/index.html"></iframe>
 			</div>
-			<img src="images/Frizzell-Joe_resume.jpg" alt="Frizzell-Joe_resume" />
 			<img src="images/Joe8Bit.gif" alt=""/>
 			<img src="images/Joe8Bit_walking.gif" alt=""/>
 			<img src="images/Joe8Bit_T1.gif" width="64" height="128" alt="" />
@@ -152,13 +144,13 @@
 				<p class="textLeft">Here are the cookies and what they do:</p>
 				<ul>
 					<li class="textLeft">joefrizzellUsername: Saves your name so I can remember you.</p>
-					<li class="textLeft">joefrizzellLocation: Saves the location of where you are in the game (joesHouse, Brooklyn, etc.), not your actual physical coordinates.</p>
+					<li class="textLeft">joefrizzellLocation: Saves the location of where you are in the game (joesHouse, Outside, etc.), not your actual physical coordinates.</p>
 				</ul>
 			</div>
 		</div>
 		<div id="audioList" class="greyBox hidden">
-			<div id="backgroundMusic">
-			</div><br/>
+			<div id="backgroundMusic"></div>
+			<br/>
 			<a id="audio1" onclick="changeMusic(this);">Blip_Master</a><br/>
 			<a id="audio2" onclick="changeMusic(this);">Happy_Chiptune_2</a><br/>
 			<a id="audio3" onclick="changeMusic(this);">Happyland</a><br/>
