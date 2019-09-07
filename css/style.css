@@ -3,14 +3,9 @@ body {
 	margin:0;
 	padding:0;
 	height: 100%;
-	overflow: hidden;
+	width: 100%;
 	font-size: 20px;
 	line-height: 28px;
-	max-width: 1024px;
-}
-div.viewport {
-	width:1024px;
-	margin:auto;
 }
 p{margin:0;}
 .whiteBG {
@@ -18,12 +13,71 @@ p{margin:0;}
 	overflow: auto;
 }
 a {
-	cursor: pointer; cursor: hand;
+	cursor: hand;
 }
 .downloadLink {
 	font-size: 80%;
 	color: blue;
     text-shadow: 2px 2px 5px #fff;
+}
+#LoadingBackground {
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:black;
+	z-index: 110;
+	overflow: hidden;
+}
+#LoadingContainer{
+	display: table-cell;
+	vertical-align: center;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #CFCFCF;/*CFCFCF*/
+	background: -webkit-radial-gradient(#CFCFCF 0%, rgba(30,30,30,.5) 90%); /* Safari 5.1 to 6.0 */
+	background: -o-radial-gradient(#CFCFCF 0%, rgba(30,30,30,.5) 90%); /* For Opera 11.6 to 12.0 */
+	background: -moz-radial-gradient(#CFCFCF 0%, rgba(30,30,30,.5) 90%); /* For Firefox 3.6 to 15 */
+	background: radial-gradient(#CFCFCF 0%, rgba(30,30,30,.5) 90%); /* Standard syntax */
+	overflow: hidden;
+}
+#loadingImg{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 2em;
+	height: 2em;
+	margin-top: -4em;
+	margin-left: -1em;
+	text-align: center;
+}
+#playGame{
+	position: absolute;
+	font-weight: bolder;
+	top: 50%;
+	left: 20%;
+	width: 60%;
+	margin-top: -1em;
+	line-height: 1em;
+	cursor: hand;
+	text-align: center;
+}
+#loadingText{
+	position: absolute;
+	top: 50%;
+	left: 20%;
+	width: 60%;
+	margin-top: -1em;
+	line-height: 1em;
+	text-align: center;
+}
+#playGame:hover{
+	text-shadow: 0 0 5px skyblue;
 }
 #wall {
 	position: absolute;
@@ -45,7 +99,7 @@ a {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 100;
+	z-index: 99;
 	overflow: hidden;
 }
 #floor{
@@ -61,8 +115,8 @@ a {
 #grass{
 	height: 128px;
 	width: 100%;
-    background-image: url("https://joefrizzell.github.io/images/grass.png");
-    background-color: green;
+  background-image: url("../images/grass.png");
+  background-color: green;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -75,14 +129,14 @@ a {
 	bottom: 0;
 	left: 0;
 	z-index: 103;
-    background-image: url("https://joefrizzell.github.io/images/sidewalk.jpg");
-    background-color: lightgrey;
+  background-image: url("../images/sidewalk.jpg");
+  background-color: lightgrey;
 }
 #sidewalk{
 	height: 128px;
 	width: 100%;
-    background-image: url("https://joefrizzell.github.io/images/sidewalk.jpg");
-    background-color: lightgrey;
+  background-image: url("../images/sidewalk.jpg");
+  background-color: lightgrey;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -95,7 +149,14 @@ a {
 	bottom: 0;
 	left: 0;
 	z-index: 103;
-    background-image: url("https://joefrizzell.github.io/images/floor.jpg");
+  background-image: url("../images/floor.jpg");
+}
+#clock {
+	position: absolute;
+	bottom: 192px;
+	left: 8px;
+	z-index: 104;
+	cursor: hand;
 }
 #joesHouseDoorFrame{
 	height: 160px;
@@ -106,10 +167,26 @@ a {
 	background-color: black;
 	position: absolute;
 	bottom: 128px;
-	left: 16px;
+	left: 7px;
 	z-index: 102;
 	-webkit-perspective:160px;
 	perspective:160px;
+}
+#leftBuilding {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 101;
+	height: 100%;
+	width: 50%;
+}
+#rightBuilding {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 101;
+	height: 100%;
+	width: 50%;
 }
 #OutsideDoorFrame{
 	height: 160px;
@@ -135,7 +212,7 @@ a {
 	z-index: 102;
 	-webkit-perspective:160px;
 	perspective:160px;
-    background-image: url("https://joefrizzell.github.io/images/brick.png");
+  background-image: url("../images/brick.png");
 }
 #building2{
 	height: 100%;
@@ -147,7 +224,7 @@ a {
 	z-index: 102;
 	-webkit-perspective:160px;
 	perspective:160px;
-    background-image: url("https://joefrizzell.github.io/images/brick.png");
+  background-image: url("../images/brick.png");
 }
 #fence{
 	height: 256px;
@@ -156,10 +233,10 @@ a {
 	position: absolute;
 	bottom: 128px;
 	right: 0;
-	z-index: 102;
+	z-index: 100;
 	-webkit-perspective:160px;
 	perspective:160px;
-    background-image: url("https://joefrizzell.github.io/images/postnobills.png") ;
+  background-image: url("../images/postnobills.png") ;
 }
 #windows {
 	height:333px;
@@ -234,7 +311,7 @@ a {
 	bottom: 0;
 	left: 0;
 	z-index: 103;
-	cursor: pointer; cursor: hand;
+	cursor: hand;
 }
 #doorIn{
 	height: 160px;
@@ -243,7 +320,7 @@ a {
 	bottom: 0;
 	left: 0;
 	z-index: 103;
-	cursor: pointer; cursor: hand;
+	cursor: hand;
 }
 .doorClose{
 	animation-name: doorClose;
@@ -401,90 +478,97 @@ a {
 	left: 64px;
 	z-index: 111;
 }
-#art {
-	position: absolute;
-	top: 30%;
-	right: 15%;
-	z-index: 100;
-	cursor: pointer; cursor: hand;
-}
-#artframe {
-	position: absolute;
-	top: 30%;
-	right: 15%;
-	z-index: 100;
-	cursor: pointer; cursor: hand;
-}
-#diploma {
-	position: absolute;
-	bottom: 60%;
-	left: 15%;
-	z-index: 104;
-	cursor: pointer; cursor: hand;
-}
-#clock {
-	position: absolute;
-	bottom: 300px;
-	left: 38px;
-	z-index: 104;
-	cursor: pointer; cursor: hand;
-}
 #artcontaner{
 	position: absolute;
 	bottom: 78px;
 	right: 10px;
+	z-index: 104;
 }
 #legoart {
 	position: absolute;
 	bottom: 149px;
 	right: 100px;
 	z-index: 105;
-	cursor: pointer; cursor: hand;
+	cursor: hand;
 }
 #iMac {
 	position: absolute;
 	bottom: 164px;
 	right: 50px;
 	z-index: 105;
-	cursor: pointer; cursor: hand;
+	cursor: hand;
 }
 #foldingTable{
 	position: absolute;
 	bottom: 0;
 	right: 0;
 	z-index: 104;
-	cursor: pointer; cursor: hand;
+	cursor: hand;
 }
 #deskcontainer{
 	position: absolute;
 	bottom: 70px;
 	left: 40%;
+	z-index: 107;
 }
 #desk {
 	position:relative;
 	left:0;
 	bottom:0;
 	z-index: 107;
-	cursor: pointer; cursor: hand;
 }
-#ytmonitor {
+#leftMonitor {
 	position: absolute;
 	left:5px;
 	bottom: 115px;
 	z-index: 107;
-	cursor: pointer; cursor: hand;
 }
-#twitchmonitor {
+#youTubeLogo {
+	position: absolute;
+	left:25px;
+	bottom: 195px;
+	z-index: 108;
+	cursor: hand;
+}
+#twitchLogo {
+	position: absolute;
+	left:73px;
+	bottom: 187px;
+	z-index: 108;
+	cursor: hand;
+}
+#githubLogo {
+	position: absolute;
+	left:119px;
+	bottom: 190px;
+	z-index: 108;
+	cursor: hand;
+}
+#itchLogo {
+	position: absolute;
+	left:25px;
+	bottom: 156px;
+	z-index: 108;
+	cursor: hand;
+}
+#soundcloudLogo {
+	position: absolute;
+	left:73px;
+	bottom: 162px;
+	z-index: 108;
+	cursor: hand;
+}
+#rightMonitor {
 	position: absolute;
 	left:175px;
 	bottom: 115px;
 	z-index: 107;
-	cursor: pointer; cursor: hand;
 }
 #tablecontainer {
 	position: absolute;
 	bottom: 0;
 	left: 17%;
+	z-index: 108;
 }
 #table {
 	position: absolute;
@@ -497,14 +581,21 @@ a {
 	bottom: 94px;
 	left: 50px;
 	z-index: 108;
-	cursor: pointer; cursor: hand;
+	cursor: hand;
+}
+#cookies {
+	position: absolute;
+	bottom: 96px;
+	left: 150px;
+	z-index: 108;
+	cursor: hand;
 }
 #camera {
 	position: absolute;
 	bottom: 64px;
 	left: 47%;
 	z-index: 104;
-	cursor: pointer; cursor: hand;
+	cursor: hand;
 }
 
 #blocker {
@@ -513,43 +604,8 @@ a {
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 107;
+	z-index: 109;
 	opacity: 0;
-}
-#LoadingBackground {
-	display: table;
-	position: absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	background-color:black;
-	z-index: 110;
-	overflow: hidden;
-}
-#LoadingContainer{
-	display: table-cell;
-	vertical-align: center;
-	text-align: center;
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding:20% 10%;
-	width: 80%;
-	height: 60%;
-	background-color: #CFCFCF;/*CFCFCF*/
-	background: -webkit-radial-gradient(#CFCFCF 0%, rgba(30,30,30,.5) 90%); /* Safari 5.1 to 6.0 */
-	background: -o-radial-gradient(#CFCFCF 0%, rgba(30,30,30,.5) 90%); /* For Opera 11.6 to 12.0 */
-	background: -moz-radial-gradient(#CFCFCF 0%, rgba(30,30,30,.5) 90%); /* For Firefox 3.6 to 15 */
-	background: radial-gradient(#CFCFCF 0%, rgba(30,30,30,.5) 90%); /* Standard syntax */
-	overflow: auto;
-}
-.options{
-	margin-bottom: 1em;
-	cursor: pointer; cursor: hand;
-}
-.options:hover{
-	text-shadow: 0 0 5px white;
 }
 input {
 	text-align: center;
@@ -608,7 +664,7 @@ select {
 	margin:0;
 	padding:5px 7px;
 	border-radius: 20px;
-	cursor: pointer; cursor: hand;
+	cursor: hand;
 }
 iframe.w90 {
 	position: absolute;
@@ -649,34 +705,15 @@ div.videoWrapper iframe {
 	background-color: rgba(100,100,100,.5);
 	color: white;
 	position: absolute;
-	top: 2.5%;
+	top: 5%;
 	left: 2.5%;
 	bottom: 2.5%;
 	right: 2.5%;
-	width: 95%;
-	height: 95%;
-	z-index: 111;
-}
-#twitterwrapper {
-	height: 100%;
-	width: 500px;
-	margin:5% auto;
-	position: relative;
-	z-index: 111;
-}
-#instafeed {
-	text-align: center;
-	color: white;
-	max-width: 75%;
-	max-height: 75%;
-	margin:5% auto;
-	padding: 5%;
-	position: relative;
+	width: 90%;
+	height: 75%;
+	padding: 2.5%;
 	z-index: 111;
 	overflow: auto;
-}
-.twitter-timeline {
-	height: 100%;
 }
 .textcenter {
 	text-align: center;
@@ -903,14 +940,14 @@ height: 96px;
 }
 .bookThumbnail {
 	height: 100px;
-	cursor: pointer; cursor: hand;
+	cursor: hand;
 }
 .hidden {
 	opacity: 0;
 	height: 0;
 	width: 0;
 	display: none;
-    visibility: hidden;
+  visibility: hidden;
 	position: absolute;
 	bottom: 0;
 	z-index: -1;
@@ -920,36 +957,6 @@ height: 96px;
 }
 .textLeft{
 	text-align: left;
-}
-.tumblrWrapper{
-width: 100%;
-text-align: center;
-}
-.avatar{
-height:512px;
-width: 256px;
-position: absolute;
-top: 0;
-left:0;
-}
-.avatar img{
-height:512px;
-width: 256px;
-position: absolute;
-top: 5%;
-left:10%;
-}
-#avatarInputs {
-position: absolute;
-top: 2.5%;
-left:0;
-padding-left: 300px;
-height: 512px;
-width: 384px;
-overflow: auto;
-}
-#avatarInputs input {
-width: 97%;
 }
 .centered{
 text-align: center;
@@ -964,4 +971,18 @@ overflow: auto;
 .credit {
 	font-family: 'Nothing You Could Do', sans-serif;
 	margin: 0;
+}
+@media screen and (max-width: 1020px){
+   #joesHouseDoorFrame, #deskcontainer, #JoeContainer, #leftBuilding {
+      transform: scale(.75);
+			transform-origin : 0% 100%;
+   }
+	 #fence{
+		 transform: scale(.75);
+		 transform-origin : 50% 100%;
+	 }
+	 #artcontaner, #tablecontainer, #rightBuilding {
+      transform: scale(.75);
+			transform-origin : 100% 100%;
+   }
 }

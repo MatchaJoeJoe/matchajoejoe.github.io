@@ -1,50 +1,63 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=.5"/>
-		<title>Joe Frizzell</title>
-		<link rel="stylesheet" href="css/style.css" type="text/css" />
-		<link rel="apple-touch-icon" sizes="57x57" href="images/ico/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="images/ico/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="images/ico/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="images/ico/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="images/ico/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="images/ico/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="images/ico/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="images/ico/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="images/ico/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="192x192"  href="images/ico/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="images/ico/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="images/ico/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="images/ico/favicon-16x16.png">
-		<link rel="manifest" href="images/ico/manifest.json">
-		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="images/ico/ms-icon-144x144.png">
-		<meta name="theme-color" content="#ffffff">
-		<script type="text/javascript">
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-24306970-2']);
-			_gaq.push(['_trackPageview']);
-			(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Joe Frizzell</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="apple-touch-icon" sizes="57x57" href="images/ico/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="images/ico/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/ico/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="images/ico/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/ico/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="images/ico/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="images/ico/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="images/ico/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/ico/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="images/ico/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/ico/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="images/ico/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/ico/favicon-16x16.png">
+	<link rel="manifest" href="images/ico/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="images/ico/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-24306970-2']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
 			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			})();
-		</script>
-		<script type="text/javascript" src="javascript/main.js"></script>
-	</head>
-	<body id="body">
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+	<script type="text/javascript" src="javascript/main.js"></script>
+</head>
+
+<body id="body">
+	<header>
+		<h1 class="hidden">Joe’s Website</h1>
 		<div id="LoadingBackground">
-			<div id="LoadingContainer"><br/><br/><br/><img src="images/loading.gif" width="30" height="30" alt="loading" />&#160;<br/><br/>Loading...</div>
+			<div id="LoadingContainer">
+				<img id="loadingImg" src="images/loading.gif" alt="loading image" />
+				<p id="loadingText" class="options">Loading...</p>
+			</div>
 		</div>
+	</header>
+	<main>
 		<div id="joesHouse" class="hidden">
 			<div id="wall" onclick="loadContent(this)">&#160;</div>
+			<div id="floor" onclick="loadContent(this)">&#160;</div>
 			<div id="joesHouseDoorFrame">
 				<div id="doorSidewalk">&#160;</div>
-				<img id="doorOut" class="hidden" src="images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
+				<img id="doorOut" class="hidden" src="images/door.gif" width="80" height="160" alt="door" onclick="loadContent(this)" />
+				<img id="clock" src="images/clock.gif" width="64" height="64" alt="clock" onclick="loadContent(this)" />
 			</div>
-			<div id="floor" onclick="loadContent(this)">&#160;</div>
-			<img id="clock" src="images/clock.gif" width="64" height="64" alt="clock" onclick="loadContent(this)" />
 			<div id="artcontaner">
 				<img id="foldingTable" src="images/foldingTable.png" width="218" height="168" alt="folding able" onclick="loadContent(this)" />
 				<img id="iMac" src="images/iMac.gif" width="98" height="84" alt="iMac" onclick="loadContent(this)" />
@@ -52,71 +65,63 @@
 			</div>
 			<div id="deskcontainer">
 				<img id="desk" src="images/desk.gif" width="426" height="218" alt="desk" onclick="loadContent(this)" />
-				<img id="ytmonitor" src="images/ytmonitor.gif" width="166" height="122" alt="youtube monitor" onclick="loadContent(this)" />
-				<img id="twitchmonitor" src="images/twitchmonitor.gif" width="166" height="122" alt="twitch monitor" onclick="loadContent(this)" />
+				<img id="leftMonitor" src="images/monitor.gif" width="166" height="122" alt="left monitor" onclick="loadContent(this)" />
+				<img id="youTubeLogo" src="images/youTubeLogo.gif" width="32" height="22" alt="YouTube Logo" onclick="loadContent(this)" />
+				<img id="twitchLogo" src="images/twitchLogo.gif" width="32" height="34" alt="Twitch Logo" onclick="loadContent(this)" />
+				<a onclick="window.open('https://github.com/joefrizzell', '_blank');"><img id="githubLogo" src="images/githubLogo.gif" width="32" height="32" alt="GitHub Logo" onclick="loadContent(this)" /></a>
+				<a onclick="window.open('https://matchajoejoe.itch.io', '_blank');"><img id="itchLogo" src="images/itchLogo.gif" width="34" height="32" alt="itch.io Logo" onclick="loadContent(this)" /></a>
+				<img id="soundcloudLogo" src="images/soundcloudLogo.gif" width="32" height="16" alt="Soundcloud Logo" onclick="loadContent(this)" />
+				<img id="rightMonitor" src="images/monitor.gif" width="166" height="122" alt="right monitor" onclick="loadContent(this)" />
 			</div>
 			<div id="tablecontainer">
 				<img id="table" src="images/table.gif" width="289‬" height="120" alt="coffee table" onclick="loadContent(this)" />
 				<img id="phone" src="images/phone.gif" width="64" height="32" alt="phone" onclick="loadContent(this)" />
+				<img id="cookies" src="images/cookies.gif" width="64" height="44" alt="cookies" onclick="loadContent(this)" />
 			</div>
 		</div>
 		<div id="Outside" class="hidden">
 			<div id="sky" onclick="loadContent(this)">&#160;</div>
-			<div id="fence" onclick="loadContent(this)">&#160;</div>
-			<div id="building" onclick="loadContent(this)">&#160;</div>
-			<div id="building2" onclick="loadContent(this)">&#160;</div>
-			<img id="windows" src="images/windows.png" onclick="loadContent(this)"/>
-			<img id="windows2" src="images/windows.png" onclick="loadContent(this)"/>
-			<img id="windows3" src="images/windows.png" onclick="loadContent(this)"/>
-			<img id="windows4" src="images/windows.png" onclick="loadContent(this)"/>
-			<img id="joesSign" src="images/joesSign.png" onclick="loadContent(this)"/>
-			<div id="OutsideDoorFrame">
-				<div id="doorFloor">&#160;</div>
-				<img id="doorIn" class="doorClose" src="images/door.gif" width="80" height="160" alt="door"  onclick="loadContent(this)"/>
-			</div>
 			<div id="sidewalk" onclick="loadContent(this)">&#160;</div>
-			<img id="tree" class="tree" src="images/tree.png" onclick="loadContent(this)"/>
-			<img id="greg" src="images/Greg/Greg8bit.png" onclick="loadContent(this)"/>
-			<span id="gregsbubbleBox" class="hidden"></span>
-			<img id="leaves" class="tree" src="images/leavesWinter.png" onclick="loadContent(this)"/>
-			<img id="BilboDaCat" src="images/BilboDaCat.png" onclick="loadContent(this)"/>
+			<div id="fence" onclick="loadContent(this)">&#160;</div>
+			<div id="leftBuilding">
+				<div id="building2" onclick="loadContent(this)">&#160;</div>
+				<img id="windows2" alt="building windows" src="images/windows.png" onclick="loadContent(this)" />
+				<img id="windows3" alt="building windows" src="images/windows.png" onclick="loadContent(this)" />
+				<img id="joesSign" alt="Joe's Sign" src="images/joesSign.png" onclick="loadContent(this)" />
+				<div id="OutsideDoorFrame">
+					<div id="doorFloor">&#160;</div>
+					<img id="doorIn" class="doorClose" src="images/door.gif" width="80" height="160" alt="door" onclick="loadContent(this)" />
+				</div>
+			</div>
+			<div id="rightBuilding">
+				<div id="building" onclick="loadContent(this)">&#160;</div>
+				<img id="windows" alt="building windows" src="images/windows.png" onclick="loadContent(this)" />
+				<img id="windows4" alt="building windows" src="images/windows.png" onclick="loadContent(this)" />
+				<img id="tree" alt="tree trunk" class="tree" src="images/tree.png" onclick="loadContent(this)" />
+				<img id="leaves" alt="tree leaves" class="tree" src="images/leavesWinter.png" onclick="loadContent(this)" />
+				<div id="gegContainer">
+					<img id="greg" src="images/Greg/Greg8bit.png" onclick="loadContent(this)" />
+					<span id="gregsbubbleBox" class="hidden"></span>
+				</div>
+			</div>
 		</div>
 		<div id="content" class="hidden" onclick="hideContent();"></div>
 		<div id="JoeContainer" class="hidden">
-			<img id="JoeBody" src="images/Joe8Bit_walking.gif" alt=""/>
-			<img class="hidden" id="JoeTshirt" src="images/Joe8Bit_T0.gif" alt="" onclick="changeShirts();"/>
-			<img class="hidden" id="earphones" src="images/earphones.gif" alt="" onclick="loadContent(this);"/>
-			<img class="hidden" id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt=""/>
-			<img class="hidden" id="JoeMouth" src="images/Joe8Bit_talking.gif" alt=""/>
+			<img id="JoeBody" src="images/Joe8Bit_walking.gif" alt="" />
+			<img class="hidden" id="JoeTshirt" src="images/Joe8Bit_T0.gif" alt="" onclick="changeShirts();" />
+			<img class="hidden" id="earphones" src="images/earphones.gif" alt="" onclick="loadContent(this);" />
+			<img class="hidden" id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt="" />
+			<img class="hidden" id="JoeMouth" src="images/Joe8Bit_talking.gif" alt="" />
 			<span id="bubbleBox" class="left hidden"></span>
 		</div>
-		<div id="loading" class="hidden">
-			<div id="links">
-				<a href="mailto:joe@joefrizzell.com">eMail</a><br/><br/>
-				<a onclick="window.open('https://github.com/joefrizzell', '_blank');">GitHub</a><br/><br/>
-				<a onclick="window.open('https://www.linkedin.com/in/joefrizzell', '_blank');">Linked In</a><br/><br/>
-				<a onclick="window.open('https://www.last.fm/user/joefrizzell', '_blank')">Last FM</a><br/><br/>
-				<a onclick="window.open('https://play.spotify.com/user/1256556439', '_blank')">Spotify</a>
-			</div>
-			<div id="shop">
-				<iframe class="w90" frameborder="0" src="shop/index.html"></iframe>
-			</div>
-			<div id="coloring">
-				<iframe class="w90" frameborder="0" src="coloringBook/index.xhtml"></iframe>
-			</div>
-			<div id="newswrapper">
-				<iframe class="w90" frameborder="0" src="news/index.html"></iframe>
-			</div>
-			<img src="images/Joe8Bit.gif" alt=""/>
-			<img src="images/Joe8Bit_walking.gif" alt=""/>
+		<div id="backgroundLoading" class="hidden">
+			<img src="images/Joe8Bit.gif" alt="" />
+			<img src="images/Joe8Bit_walking.gif" alt="" />
 			<img src="images/Joe8Bit_T1.gif" width="64" height="128" alt="" />
 			<img src="images/Joe8Bit_T2.gif" width="64" height="128" alt="" />
 			<img src="images/Joe8Bit_T3.gif" width="64" height="128" alt="" />
 			<img src="images/Joe8Bit_T4.gif" width="64" height="128" alt="" />
 			<img src="images/Joe8Bit_T5.gif" width="64" height="128" alt="" />
-			<img src="images/Joe8Bit_T6.gif" width="64" height="128" alt="" />
-			<img src="images/Joe8Bit_T7.gif" width="64" height="128" alt="" />
-			<img src="images/Joe8Bit_T8.gif" width="64" height="128" alt="" />
 			<img src="images/grass.png" alt="" />
 			<img src="images/sidewalk.jpg" alt="" />
 			<img src="images/floor.jpg" alt="" />
@@ -124,38 +129,78 @@
 			<img src="images/postnobills.png" alt="" />
 			<img src="images/grass.png" alt="" />
 			<img src="images/grass.png" alt="" />
-			<audio><source src="audio/Blip_Master.mp3" type="audio/mpeg"><source src="audio/Blip_Master.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>
-			<audio><source src="audio/Happy_Chiptune_2.mp3" type="audio/mpeg"><source src="audio/Happy_Chiptune_2.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>
-			<audio><source src="audio/Happyland.mp3" type="audio/mpeg"><source src="audio/Happyland.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>
-			<audio><source src="audio/Nintendo_Dreams.mp3" type="audio/mpeg"><source src="audio/Nintendo_Dreams.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>
-			<audio><source src="audio/Postcard.mp3" type="audio/mpeg"><source src="audio/Postcard.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome 8-bit jams because your browser is crap. Try using Chrome.</audio>
 			<div id="youTube">
 				<div class="videoWrapper">
-					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/videoseries?list=LLTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+					<iframe title="YouTube player" width="100%" height="100%" src="https://www.youtube.com/embed/videoseries?list=LLTDKXx4nSKZ9CGyeHyb9m4w" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 				</div>
 			</div>
 			<div id="twitch">
 				<div class="videoWrapper">
-					<iframe src="https://player.twitch.tv/?channel=matchajoejoe" height="100%" width="100%" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+					<iframe title="Twitch player" preload="metadata" src="https://player.twitch.tv/?channel=matchajoejoe" height="100%" width="100%" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 				</div>
 			</div>
-			<div id="disclaimer" class="hidden">
-				<p class="textLeft"><a onclick="window.open('javascript/main.js', '_blank');">Just FYI, this site stores cookies in your browser and reads them back again... It doesn’t look at anything other than the cookies it creates though... Don’t believe me? You can look at the main.js file yourself.</a></p>
-				<p class="textLeft">Here are the cookies and what they do:</p>
-				<ul>
-					<li class="textLeft">joefrizzellUsername: Saves your name so I can remember you.</p>
-					<li class="textLeft">joefrizzellLocation: Saves the location of where you are in the game (joesHouse, Outside, etc.), not your actual physical coordinates.</p>
-				</ul>
+			<div id="gregsTwitch">
+				<div class="videoWrapper">
+					<iframe title="Twitch player" preload="metadata" src="https://player.twitch.tv/?channel=giantwerewolf" height="100%" width="100%" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+				</div>
 			</div>
-		</div>
-		<div id="audioList" class="greyBox hidden">
-			<div id="backgroundMusic"></div>
-			<br/>
-			<a id="audio1" onclick="changeMusic(this);">Blip_Master</a><br/>
-			<a id="audio2" onclick="changeMusic(this);">Happy_Chiptune_2</a><br/>
-			<a id="audio3" onclick="changeMusic(this);">Happyland</a><br/>
-			<a id="audio4" onclick="changeMusic(this);">Nintendo_Dreams</a><br/>
-			<a id="audio5" onclick="changeMusic(this);">Postcard</a><br/>
-		</div>
-	</body>
+			<div id="soundcloud">
+				<iframe title="Soundcloud player" class="w90" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/43204509&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+			</div>
+			<div id="shop">
+				<iframe title="Joe’s Shop" class="w90" frameborder="0" src="shop/index.html"></iframe>
+			</div>
+			<div id="coloring">
+				<iframe title="Coloring book" class="w90" frameborder="0" src="coloringBook/index.xhtml"></iframe>
+			</div>
+			<div id="newswrapper">
+				<iframe title="Joe’s Newsletter signup" class="w90" frameborder="0" src="news/index.html"></iframe>
+			</div>
+			<div id="disclaimer">
+				<div class="greyBox padding10">
+					<p class="textLeft">Just FYI, this site stores cookies in your browser and reads them back again, but it only looks for cookies with the prefix "joefrizzell".</p>
+					<p class="textLeft">Here are the cookies and what they do:</p>
+					<ul>
+						<li class="textLeft">joefrizzellUsername: Saves the name you put in the text box so I can remember what to call you.</p>
+						<li class="textLeft">joefrizzellLocation: Saves the location of where you are in the game (joesHouse, Outside, etc.), not your actual physical coordinates.</p>
+					</ul>
+				</div>
+			</div>
+			<div id="audioList">
+				<div id="backgroundMusic">
+					<audio id="musicPlayer" loop controls>
+						<source src="audio/Blip_Master.mp3" type="audio/mpeg">
+						<source src="audio/Blip_Master.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome chiptune jams.</audio>
+					<audio>
+				</div>
+				Currently playing: <span id="currentTrack" class="glow">???</span>
+				<br />
+				<br />
+				<a id="audio1" onclick="changeMusic(this);">Blip_Master</a><br />
+				<a id="audio2" onclick="changeMusic(this);">Happy_Chiptune_2</a><br />
+				<a id="audio3" onclick="changeMusic(this);">Happyland</a><br />
+				<a id="audio4" onclick="changeMusic(this);">Nintendo_Dreams</a><br />
+				<a id="audio5" onclick="changeMusic(this);">Postcard</a><br />
+			</div>
+			<div id="audioHolder">
+				<audio id="audiosrc1">
+					<source src="audio/Blip_Master.mp3" type="audio/mpeg">
+					<source src="audio/Blip_Master.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome chiptune jams.</audio>
+				<audio id="audiosrc2">
+					<source src="audio/Happy_Chiptune_2.mp3" type="audio/mpeg">
+					<source src="audio/Happy_Chiptune_2.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome chiptune jams.</audio>
+				<audio id="audiosrc3">
+					<source src="audio/Happyland.mp3" type="audio/mpeg">
+					<source src="audio/Happyland.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome chiptune jams.</audio>
+				<audio id="audiosrc4">
+					<source src="audio/Nintendo_Dreams.mp3" type="audio/mpeg">
+					<source src="audio/Nintendo_Dreams.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome chiptune jams.</audio>
+				<audio id="audiosrc5">
+					<source src="audio/Postcard.mp3" type="audio/mpeg">
+					<source src="audio/Postcard.ogg" type="audio/ogg">Sorry, you don’t get to listen to these awesome chiptune jams.</audio>
+			</div>
+	</div>
+	</main>
+</body>
+
 </html>
