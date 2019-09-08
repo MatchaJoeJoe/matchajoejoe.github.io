@@ -11,7 +11,6 @@ var treeText = 'Yup, that’s a tree.';
 var masterVolume = 1.5;
 var theScale = 1;
 var theDate = new Date();
-var theMonth = theDate.getMonth();
 var theUser = getCookie("joefrizzellUsername");
 var theLocation = getCookie("joefrizzellLocation");
 if (theLocation ==""){
@@ -52,8 +51,8 @@ function eventWindowLoaded() {
 	newButton.addEventListener('click', startGame, false);
 }
 function startGame() {
-	var	SongId = 'audio'+randomInteger(1,5);
-    var startingSong = document.getElementById(SongId);
+	var	SongId = 'audio' + randomInteger(1,5);
+  var startingSong = document.getElementById(SongId);
 	changeMusic(startingSong);
 	if (window.theLocation ==""){
 		window.theLocation = "joesHouse";
@@ -74,7 +73,7 @@ function startGame() {
 	var JoeContainer = document.getElementById('JoeContainer');
 	var JoeTshirt = document.getElementById('JoeTshirt');
  	JoeTshirt.className = 'hidden';
- 	JoeBody.className = 'walkIn';
+ 	JoeBody.className = 'quickfadein';
  	JoeContainer.className = '';
  	var door = document.getElementById('doorOut');
  	if(window.theLocation ==="Outside"){
@@ -86,17 +85,14 @@ function startGame() {
 	LoadingBackground.className = 'hidden';
 	var containerDiv = document.getElementById(window.theLocation);
 	var blockerDiv = document.createElement("div");
-	blockerDiv.id = 'blocker';
-	blockerDiv.addEventListener("click", hideContent);
+	blockerDiv.className = 'blocker';
 	containerDiv.appendChild(blockerDiv);
 	setTimeout(function() {
 	 	if(window.theLocation === "Outside"){
  			document.getElementById('earphones').className = 'quickfadein';
  		}
 		var JoeEyes = document.getElementById('JoeEyes');
-		JoeEyes.className = "";
 		JoeBody.className = "";
-		JoeBody.src = "images/Joe8Bit.gif";
 		JoeTshirt.className = '';
 		if (window.theUser !== "") {
 				theText = 'Hey '+window.theUser+'.';
@@ -109,7 +105,7 @@ function startGame() {
 						setTimeout(function() {
 							stopTalking(theText);
 							setTimeout(function() {
-								blockerDiv.parentNode.removeChild(blockerDiv);
+								removeBlockers();
 							}, 500);
 						}, 1500);
 					}, 500);
@@ -131,13 +127,13 @@ function startGame() {
 							setTimeout(function() {
 								document.getElementById('JoeMouth').className = 'hidden';
 							}, 1400);
-							blockerDiv.parentNode.removeChild(blockerDiv);
+							removeBlockers();
 						}, 500);
 					}, 2000);
 				}, 500);
 			}, 1400);
 		}
-	}, 2000);
+	}, 500);
 }
 function continueGame(){
 	window.theUser = getCookie("joefrizzellUsername");
@@ -193,8 +189,7 @@ function loadContent(theCaller){
 	var callerID = theCaller.id;
 	var containerDiv = document.getElementById(window.theLocation);
 	var blockerDiv = document.createElement("div");
-	blockerDiv.id = 'blocker';
-	blockerDiv.addEventListener("click", hideContent);
+	blockerDiv.className = 'blocker';
 	containerDiv.appendChild(blockerDiv);
 	var contentDiv = document.getElementById('content');
 	var tabClass = contentDiv.className;
@@ -212,7 +207,7 @@ function loadContent(theCaller){
 			loadFromHidden("youTube");
 		}, 4000);
 	}
-	if (callerID.lastIndexOf("twitchLogo")===0){
+	else if (callerID.lastIndexOf("twitchLogo")===0){
 		theText = 'I wonder what’s streaming on Twitch?';
 		startTalking(theText);
 		setTimeout(function() {
@@ -220,7 +215,7 @@ function loadContent(theCaller){
 			loadFromHidden("twitch");
 		}, 2000);
 	}
-	if (callerID.lastIndexOf("soundcloudLogo")===0){
+	else if (callerID.lastIndexOf("soundcloudLogo")===0){
 		theText = 'Do you hear what I hear?';
 		startTalking(theText);
 		setTimeout(function() {
@@ -228,7 +223,7 @@ function loadContent(theCaller){
 			loadFromHidden("soundcloud");
 		}, 2000);
 	}
-	if (callerID.lastIndexOf("phone")===0){
+	else if (callerID.lastIndexOf("phone")===0){
 		theText = 'I get all my news from my phone, don’t you?';
 		startTalking(theText);
 		setTimeout(function() {
@@ -236,7 +231,7 @@ function loadContent(theCaller){
 			loadFromHidden("newswrapper");
 		}, 3000);
 	}
-	if (callerID.lastIndexOf("cookies")===0){
+	else if (callerID.lastIndexOf("cookies")===0){
 		theText = 'Mmmmm... Cookies...';
 		startTalking(theText);
 		setTimeout(function() {
@@ -244,7 +239,7 @@ function loadContent(theCaller){
 			loadFromHidden("disclaimer");
 		}, 1500);
 	}
-	if (callerID.lastIndexOf("legoart")===0){
+	else if (callerID.lastIndexOf("legoart")===0){
 		theText = 'Do you like art? I like t-shirts.';
 		startTalking(theText);
 		setTimeout(function() {
@@ -252,14 +247,7 @@ function loadContent(theCaller){
 			loadFromHidden("shop");
 		}, 3000);
 	}
-	if (callerID.lastIndexOf("desk")===0){
-		theText = 'Internet, why do you have all the things?';
-		startTalking(theText);
-		setTimeout(function() {
-			stopTalking(theText);
-		}, 2000);
-	}
-	if (callerID.lastIndexOf("foldingTable")===0){
+	else if (callerID.lastIndexOf("cintiq")===0){
 		 theText = 'I used to love coloring when I was a kid... Good thing I’m still a kid at heart!';
 		startTalking(theText);
 		setTimeout(function() {
@@ -267,20 +255,19 @@ function loadContent(theCaller){
 			loadFromHidden("coloring");
 		}, 3500);
 	}
-	if (callerID.lastIndexOf("iMac")===0 || callerID.lastIndexOf("earphones")===0){
+	else if (callerID.lastIndexOf("iMac")===0 || callerID.lastIndexOf("earphones")===0){
 		theText = 'Music to soothe the savage beats.';
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);
-			var audioListDiv = document.getElementById('audioList');
-			contentDiv.className = "quickfadein";
+			addBlockerEvent();
 			contentDiv.innerHTML = "";
-			contentDiv.appendChild(audioListDiv);
-			audioListDiv.className = "greyBox quickfadein";
+			var audioListDiv = document.getElementById('audioContent');
+			audioListDiv.className = "quickfadein";
 		}, 2000);
 	}
 	/*Changing Areas*/
-	if (callerID.lastIndexOf("doorOut")===0){
+	else if (callerID.lastIndexOf("doorOut")===0){
 		setTheTime();
 		var joesHouseDiv = document.getElementById('joesHouse');
 		var OutsideDiv = document.getElementById('Outside');
@@ -297,36 +284,29 @@ function loadContent(theCaller){
 			theDoorOut.className = 'doorOpen';
 			theDoorIn.className = 'doorOpen';
 			setTimeout(function() {
-				JoeContainer.className = window.JoePosition +' fadeout';
+				JoeContainer.className = window.JoePosition + ' fadeout';
 				window.JoePosition = 'left'
 				stopTalking(theText);
 				setTimeout(function() {
 					theDoorOut.className = 'doorClose';
 					theDoorIn.className = 'doorClose';
-					JoeEyes.className = 'hidden';
 					JoeContainer.className = window.JoePosition;
-					JoeContainer.className = window.JoePosition +' quickfadein';
-					JoeTshirt.className = 'hidden';
-					JoeBody.className = 'walkIn';
-					JoeBody.src = "images/Joe8Bit_walking.gif";
+					JoeContainer.className = window.JoePosition + ' quickfadein';
 					joesHouseDiv.className = 'fadeout';
 					OutsideDiv.className = 'fadein';
 					window.theLocation = 'Outside';
 				  createCookie('joefrizzellLocation','Outside',30);
+					earphones.className = 'quickfadein';
 					setTimeout(function() {
 						JoeBody.className = '';
 						joesHouseDiv.className = 'hidden';
-						removeBlocker();
-						JoeEyes.className = '';
-						JoeTshirt.className = '';
-						earphones.className = 'quickfadein';
-						JoeBody.src = "images/Joe8Bit.gif";
-					}, 2000);
+						removeBlockers();
+					}, 500);
 				}, 500);
 			}, 500);
 		}, 500);
 	}
-	if (callerID.lastIndexOf("doorIn")===0){
+	else if (callerID.lastIndexOf("doorIn")===0){
 		setTheTime();
 		var joesHouseDiv = document.getElementById('joesHouse');
 		var OutsideDiv = document.getElementById('Outside');
@@ -353,28 +333,24 @@ function loadContent(theCaller){
 					JoeEyes.className = 'hidden';
 					JoeContainer.className = window.JoePosition;
 					JoeContainer.className = window.JoePosition +' quickfadein';
-					JoeTshirt.className = 'hidden';
-					earphones.className = 'hidden';
-					JoeBody.className = 'walkIn';
-					JoeBody.src = "images/Joe8Bit_walking.gif";
 					OutsideDiv.className = 'fadeout';
 					joesHouseDiv.className = 'fadein';
 					window.theLocation = 'joesHouse';
-				    createCookie('joefrizzellLocation','joesHouse',30);
+				  createCookie('joefrizzellLocation','joesHouse',30);
+					earphones.className = 'hidden';
 					setTimeout(function() {
 						JoeBody.className = '';
 						OutsideDiv.className = 'hidden';
-						removeBlocker();
+						removeBlockers();
 						JoeEyes.className = '';
 						JoeTshirt.className = '';
-						JoeBody.src = "images/Joe8Bit.gif";
 					}, 2000);
 				}, 500);
 			}, 500);
 		}, 500);
 	}
 /*Just for fun*/
-	if (callerID.lastIndexOf("greg")===0){
+	else if (callerID.lastIndexOf("greg")===0){
 		theText = 'ACK!!! It’s a giant werewolf...';
 		startTalking(theText);
 		setTimeout(function() {
@@ -384,7 +360,7 @@ function loadContent(theCaller){
 				setTimeout(function() {
 					gregStopTalking(theText);
 					setTimeout(function() {
-						removeBlocker();
+						removeBlockers();
 						var gregsTwitchDiv = document.getElementById('gregsTwitch');
 						var gregsTwitchContents = gregsTwitchDiv.innerHTML;
 						contentDiv.className = "quickfadein";
@@ -395,102 +371,123 @@ function loadContent(theCaller){
 			stopTalking(theText);
 		}, 1500);
 	}
-	if (callerID.lastIndexOf("table")===0){
-		theText = 'That’s just a coffee table.';
-		saySomething(theText, 1500);
+	else if (callerID.lastIndexOf("desk")===0 || callerID.lastIndexOf("rightMonitor")===0 || callerID.lastIndexOf("leftMonitor")===0){
+		theText = 'Internet, why do you have all the things?';
+		saySomething(theText, 2000);
 	}
-	if (callerID.lastIndexOf("floor")===0){
+	else if (callerID.lastIndexOf("foldingTable")===0){
+		theText = 'Folding tables are the best.';
+		saySomething(theText, 1000);
+	}
+	else if (callerID.lastIndexOf("table")===0){
+		theText = 'That’s just a coffee table.';
+		saySomething(theText, 1000);
+	}
+	else if (callerID.lastIndexOf("floor")===0){
 		theText = 'Yup, that’s the floor.';
 		saySomething(theText, 1000);
 	}
-	if (callerID.lastIndexOf("wall")===0){
+	else if (callerID.lastIndexOf("wall")===0){
 		changePaint();
- 		theText = 'I really like how the paint came out. <br/>The color is '+window.thePaintColor+'.';
+ 		theText = 'I really like how the paint came out. <br/>The color is ' + window.thePaintColor + '.';
 		startTalking(theText);
 		saySomething(theText, 2500);
 	}
-	if (callerID=="building"){
+	else if (callerID=="building"){
 		changeBricks();
  		theText = 'That building is made of '+window.theBrickColor+' bricks.';
 		saySomething(theText, 2500);
 	}
-	if (callerID.lastIndexOf("building2")===0){
+	else if (callerID.lastIndexOf("building2")===0){
 		changeBricks2();
  		theText = 'My bilding is made of '+window.theBrickColor2+' bricks.';
 		saySomething(theText, 2500);
 	}
-	if (callerID=="fence"){
+	else if (callerID=="fence"){
 		changeFence();
  		theText = 'That fence is '+window.theFenceColor+'...';
 		saySomething(theText, 2500);
 	}
-	if (callerID.lastIndexOf("clock")===0){
+	else if (callerID.lastIndexOf("clock")===0){
 		var theTime = setTheTime();
 		theText = 'It is '+theTime+'.';
 		saySomething(theText, 2000);
 	}
-	if (callerID.lastIndexOf("sky")===0){
+	else if (callerID.lastIndexOf("sky")===0){
 		theText = window.skyText;
 		saySomething(theText, 2500);
 	}
-	if (callerID.lastIndexOf("grass")===0){
+	else if (callerID.lastIndexOf("grass")===0){
 		theText = 'Yup, that’s grass.';
 		saySomething(theText, 1000);
 	}
-	if (callerID.lastIndexOf("sidewalk")===0){
+	else if (callerID.lastIndexOf("sidewalk")===0){
 		theText = 'Yup, that’s the sidewalk...';
 		saySomething(theText, 2000);
 	}
-	if (callerID.lastIndexOf("windows")===0){
+	else if (callerID.lastIndexOf("windows")===0){
 		theText = 'Peepin’ peeps peepin’ peeps on the streets...';
 		saySomething(theText, 2000);
 	}
-	if (callerID.lastIndexOf("joesSign")===0){
+	else if (callerID.lastIndexOf("joesSign")===0){
 		theText = 'Hey I can see my house from here...';
 		saySomething(theText, 1500);
 	}
-	if (callerID.lastIndexOf("leaves")===0){
+	else if (callerID.lastIndexOf("leaves")===0){
 		saySomething(window.treeText, 1500);
+	}
+	else {
+		removeBlockers();
 	}
 }
 function loadFromHidden(targetID){
+	addBlockerEvent();
 	var contentDiv = document.getElementById('content');
 	var targetDiv = document.getElementById(targetID);
 	var newContents = targetDiv.innerHTML;
 	contentDiv.className = "quickfadein";
 	contentDiv.innerHTML = newContents;
 }
-function removeBlocker(){
-	var blockerDiv = document.getElementById("blocker");
-	if (blockerDiv != null){
-		blockerDiv.parentNode.removeChild(blockerDiv);
+function addBlockerEvent(){
+	var blockers = document.getElementsByClassName("blocker");
+	for(var i=0; i < blockers.length; i++) {
+		blockers[i].addEventListener("click", hideContent);
+	}
+}
+function removeBlockers(){
+	var blockers = document.getElementsByClassName("blocker");
+	while(blockers[0]) {
+		blockers[0].parentNode.removeChild(blockers[0]);
 	}
 }
 function hideContent(){
-	removeBlocker();
-	var audioListDiv = document.getElementById('audioList');
-	var thebody = document.getElementById('body');
-	var audioClass = audioListDiv.className;
-	if (audioClass !='greyBox hidden'){
-		audioListDiv.className = 'greyBox quickfadeout';
-	}
+	hideAudioContent();
+	removeBlockers();
 	var contentDiv = document.getElementById('content');
 	var tabClass = contentDiv.className;
 	if (tabClass !='hidden'){
 		contentDiv.className = 'quickfadeout';
 	}
 	setTimeout(function() {
-		thebody.appendChild(audioListDiv);
-		audioListDiv.className = 'greyBox hidden';
 		contentDiv.className = 'hidden';
 		contentDiv.innerHTML = '';
+	}, 500);
+}
+function hideAudioContent() {
+	var audioListDiv = document.getElementById('audioContent');
+	var audioClass = audioListDiv.className;
+	if (audioClass !='hidden'){
+		audioListDiv.className = 'quickfadeout';
+	}
+	setTimeout(function() {
+		audioListDiv.className = 'hidden';
 	}, 500);
 }
 function saySomething(theText, theDelay){
 	startTalking(theText);
 	setTimeout(function() {
 		setTimeout(function() {
-			removeBlocker();
+			removeBlockers();
 		}, 500);
 		stopTalking(theText);
 	}, theDelay);
@@ -525,26 +522,27 @@ function gregStopTalking(theText){
 }
 function changeShirts() {
 	var JoeTshirt = document.getElementById('JoeTshirt');
-	var shirtName = 'Joe8Bit_T'+randomInteger(0,6)+'.gif';
+	var shirtName = 'Joe8Bit_T'+randomInteger(0,5)+'.gif';
 	JoeTshirt.src = 'images/'+shirtName;
 }
 function changeLeaves() {
+	var theMonth = window.theDate.getMonth()+1;
 	var theLeaves = document.getElementById('leaves');
-	if (window.theMonth > 2 && window.theMonth < 6){
+	if (theMonth > 2 && theMonth < 6){
 		theLeaves.src = 'images/leavesSpring.png'
 		window.treeText= "I’d say that I had spring fever, but it’s probably just allergies."
 	}
-	if (window.theMonth > 5 && window.theMonth < 9){
+	if (theMonth > 5 && theMonth < 9){
 		theLeaves.src = 'images/leavesSummer.png'
 		window.treeText= "Summertime, and the living is easy."
 	}
-	if (window.theMonth > 8 && window.theMonth < 12){
+	if (theMonth > 8 && theMonth < 12){
 		theLeaves.src = 'images/leavesFall.png'
 		window.treeText= "Autumn, why does it seem so inviting?"
 	}
-	if (window.theMonth < 3 || window.theMonth > 11){
+	if (theMonth < 3 || theMonth > 11){
 		theLeaves.src = ''
-		window.treeText= "Walking in a winter wonderland"
+		window.treeText= "Walking in a winter wonderland."
 	}
 }
 function changePaint() {
