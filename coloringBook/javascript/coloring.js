@@ -20,26 +20,46 @@ var r4 = 255;
 var g4 = 0;
 var b4 = 0;
 var o4 = 1;
-var r5 = 0;
-var g5 = 255;
+var r5 = 255;
+var g5 = 127;
 var b5 = 0;
 var o5 = 1;
 var r6 = 0;
-var g6 = 0;
+var g6 = 255;
 var b6 = 255;
 var o6 = 1;
+var r7 = 0;
+var g7 = 255;
+var b7 = 0;
+var o7 = 1;
+var r8 = 0;
+var g8 = 0;
+var b8 = 255;
+var o8 = 1;
+var r9 = 0;
+var g9 = 255;
+var b9 = 255;
+var o9 = 1;
+var r10 = 255;
+var g10 = 0;
+var b10 = 255;
+var o10 = 1;
 var x = 0;
 var y = 0;
 var thefill = "rgba(" + r + "," + g + "," + b + "," + o + ")";
-var loffset = ((window.innerWidth - 519)/2);
+var loffset = 160;
 
 //palette defaults
 var thefill1 = "rgba(255,255,255,1)";
 var thefill2 = "rgba(127,127,127,1)";
 var thefill3 = "rgba(0,0,0,1)";
 var thefill4 = "rgba(255,0,0,1)";
-var thefill5 = "rgba(0,255,0,1)";
-var thefill6 = "rgba(0,0,255,1)";
+var thefill5 = "rgba(255,127,0,1)";
+var thefill6 = "rgba(255,255,0,1)";
+var thefill7 = "rgba(0,255,0,1)";
+var thefill8 = "rgba(0,0,255,1)";
+var thefill9 = "rgba(0,255,255,1)";
+var thefill10 = "rgba(255,0,255,1)";
 
 //brush defaults
 var setCircle = true;//default brush is circle
@@ -49,7 +69,7 @@ var setSpray = false;
 
 //how far right to make the brush
 function getCanvasOffset(){
-	window.loffset = ((window.innerWidth - 520)/2);
+	window.loffset = 160;
 }
 
 //function to update palette colors
@@ -122,6 +142,51 @@ function updateColors() {
 	color6context.fillStyle = thefill6;
 	color6context.fillRect(0,0,color6canvas.width,color6canvas.height);
 	color6context.fill();
+
+	var color7canvas = document.getElementById('color7');
+	var color7context = color7canvas.getContext("2d");
+	var color7text = document.getElementById('color7text');
+	color7text.innerHTML = thefill7;
+	color7context.fillStyle = "rgba(255,255,255,1)";
+	color7context.fillRect(0,0,color7canvas.width,color7canvas.height);
+	color7context.fill();
+	color7context.fillStyle = thefill7;
+	color7context.fillRect(0,0,color7canvas.width,color7canvas.height);
+	color7context.fill();
+
+	var color8canvas = document.getElementById('color8');
+	var color8context = color8canvas.getContext("2d");
+	var color8text = document.getElementById('color8text');
+	color8text.innerHTML = thefill8;
+	color8context.fillStyle = "rgba(255,255,255,1)";
+	color8context.fillRect(0,0,color8canvas.width,color8canvas.height);
+	color8context.fill();
+	color8context.fillStyle = thefill8;
+	color8context.fillRect(0,0,color8canvas.width,color8canvas.height);
+	color8context.fill();
+
+	var color9canvas = document.getElementById('color9');
+	var color9context = color9canvas.getContext("2d");
+	var color9text = document.getElementById('color9text');
+	color9text.innerHTML = thefill9;
+	color9context.fillStyle = "rgba(255,255,255,1)";
+	color9context.fillRect(0,0,color9canvas.width,color9canvas.height);
+	color9context.fill();
+	color9context.fillStyle = thefill9;
+	color9context.fillRect(0,0,color9canvas.width,color9canvas.height);
+	color9context.fill();
+
+	var color10canvas = document.getElementById('color10');
+	var color10context = color10canvas.getContext("2d");
+	var color10text = document.getElementById('color10text');
+	color10text.innerHTML = thefill10;
+	color10context.fillStyle = "rgba(255,255,0,1)";
+	color10context.fillRect(0,0,color10canvas.width,color10canvas.height);
+	color10context.fill();
+	color10context.fillStyle = thefill10;
+	color10context.fillRect(0,0,color10canvas.width,color10canvas.height);
+	color10context.fill();
+
 }
 
 //functions to save colors when save button is clicked
@@ -172,6 +237,38 @@ function saveColor6() {
 	window.g6=g;
 	window.b6=b;
 	window.o6=o;
+}
+function saveColor7() {
+	window.thefill7 = thefill;
+	updateColors();
+	window.r7=r;
+	window.g7=g;
+	window.b7=b;
+	window.o7=o;
+}
+function saveColor8() {
+	window.thefill8 = thefill;
+	updateColors();
+	window.r8=r;
+	window.g8=g;
+	window.b8=b;
+	window.o8=o;
+}
+function saveColor9() {
+	window.thefill9 = thefill;
+	updateColors();
+	window.r9=r;
+	window.g9=g;
+	window.b9=b;
+	window.o9=o;
+}
+function saveColor10() {
+	window.thefill10 = thefill;
+	updateColors();
+	window.r10=r;
+	window.g10=g;
+	window.b10=b;
+	window.o10=o;
 }
 
 //functions to set saved color to current color
@@ -229,16 +326,52 @@ function setColor6() {
 	circlePreview();
 	updateSliders();
 }
+function setColor7() {
+	window.r=r7;
+	window.g=g7;
+	window.b=b7;
+	window.o=o7;
+	window.thefill = thefill7;
+	circlePreview();
+	updateSliders();
+}
+function setColor8() {
+	window.r=r8;
+	window.g=g8;
+	window.b=b8;
+	window.o=o8;
+	window.thefill = thefill8;
+	circlePreview();
+	updateSliders();
+}
+function setColor9() {
+	window.r=r9;
+	window.g=g9;
+	window.b=b9;
+	window.o=o9;
+	window.thefill = thefill9;
+	circlePreview();
+	updateSliders();
+}
+function setColor10() {
+	window.r=r10;
+	window.g=g10;
+	window.b=b10;
+	window.o=o10;
+	window.thefill = thefill10;
+	circlePreview();
+	updateSliders();
+}
 
 //function to update sliders
 function updateSliders() {
 	document.getElementById('RedInput').value = r;
 	document.getElementById("RedValue").innerHTML=r;
-    document.getElementById('GreenInput').value = g;
+  document.getElementById('GreenInput').value = g;
 	document.getElementById("GreenValue").innerHTML=g;
-    document.getElementById('BlueInput').value = b;
+  document.getElementById('BlueInput').value = b;
 	document.getElementById("BlueValue").innerHTML=b;
-    document.getElementById('OpacityInput').value = (o*100);
+  document.getElementById('OpacityInput').value = (o*100);
 	document.getElementById("OpacityValue").innerHTML=(o*100)+"%";
 }
 
@@ -334,32 +467,42 @@ function canvasApp(){
 	color5canvas.addEventListener('click', setColor5, false);
 	var color6canvas = document.getElementById('color6');
 	color6canvas.addEventListener('click', setColor6, false);
-    var circleBrush = document.getElementById('circleBrush');
+	var color7canvas = document.getElementById('color7');
+	color7canvas.addEventListener('click', setColor7, false);
+	var color8canvas = document.getElementById('color8');
+	color8canvas.addEventListener('click', setColor8, false);
+	var color9canvas = document.getElementById('color9');
+	color9canvas.addEventListener('click', setColor9, false);
+	var color10canvas = document.getElementById('color10');
+	color10canvas.addEventListener('click', setColor10, false);
+  var circleBrush = document.getElementById('circleBrush');
 	circleBrush.addEventListener('click', makeCircle, false);
-    var squareBrush = document.getElementById('squareBrush');
+  var squareBrush = document.getElementById('squareBrush');
 	squareBrush.addEventListener('click', makeSquare, false);
-    var triangleBrush = document.getElementById('triangleBrush');
+  var triangleBrush = document.getElementById('triangleBrush');
 	triangleBrush.addEventListener('click', makeTriangle, false);
 
-	//functions to set the image source
-	function setClear(){
-	theCanvasIMG.src = "images/clear.png"; //transparent png
-	drawScreen();
-	}
-
 //defining buttons and adding handlers
-	var color1button = document.getElementById('savecolor1');
+	var color1button = document.getElementById('saveColor1');
 	color1button.addEventListener('click', saveColor1, false);
-	var color2button = document.getElementById('savecolor2');
+	var color2button = document.getElementById('saveColor2');
 	color2button.addEventListener('click', saveColor2, false);
-	var color3button = document.getElementById('savecolor3');
+	var color3button = document.getElementById('saveColor3');
 	color3button.addEventListener('click', saveColor3, false);
-	var color4button = document.getElementById('savecolor4');
+	var color4button = document.getElementById('saveColor4');
 	color4button.addEventListener('click', saveColor4, false);
-	var color5button = document.getElementById('savecolor5');
+	var color5button = document.getElementById('saveColor5');
 	color5button.addEventListener('click', saveColor5, false);
-	var color6button = document.getElementById('savecolor6');
+	var color6button = document.getElementById('saveColor6');
 	color6button.addEventListener('click', saveColor6, false);
+	var color7button = document.getElementById('saveColor7');
+	color7button.addEventListener('click', saveColor7, false);
+	var color8button = document.getElementById('saveColor8');
+	color8button.addEventListener('click', saveColor8, false);
+	var color9button = document.getElementById('saveColor9');
+	color9button.addEventListener('click', saveColor9, false);
+	var color10button = document.getElementById('saveColor10');
+	color10button.addEventListener('click', saveColor10, false);
 	var FillButton = document.getElementById('FillButton');
 	FillButton.addEventListener('click', fillColor, false);
 
@@ -404,10 +547,6 @@ function canvasApp(){
 	OpacityInput.addEventListener('mousedown', OpacityChange, false);
 	OpacityInput.addEventListener('mousemove', OpacityChange, false);
 	OpacityInput.addEventListener('mouseup', OpacityChange, false);
-
-//defining images and adding handlers
-	var clearIMG = document.getElementById('clear');
-	clearIMG.addEventListener('click', setClear, false);
 
 //function that fills entire screen with selected color
 	function fillColor(){

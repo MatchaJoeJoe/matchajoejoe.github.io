@@ -1,87 +1,108 @@
 body {
-font-size: small;
-font-family: Georgia;
-margin:0;
--webkit-user-select: none;
--moz-user-select: -moz-none;
--webkit-user-select: none;
--ms-user-select: none;
-user-select: none;
+  font-size: 10px;
+  font-family: Arial;
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
 }
-.page{
-width:850px;
-overflow:hidden;
-margin: auto;
+.leftbar {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 160px;
+  height: 100%;
+  margin: 0;
+  text-align: center;
 }
-.leftbar{
-float:left;
-width:160px;
-height:400px;
-margin: 0 1px 0 0;
-text-align:center;
-border: thin dotted black;
+.rightbar {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 160px;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  background-color: white;
 }
-.rightbar{
-float:left;
-width:160px;
-height:400px;
-margin: 0 0 0 1px;
-text-align:center;
-}
-.brush{
-float:left;
-}
-img.thumbs {
-width:165px;
-border: thin dotted black;
-margin:0;
-}
-div.options {
-text-align:center;
-}
-#canvas_container {
-float:left;
-width:520px;
-height:400px;
-}
-#painting_canvas {
-border: thin dotted black;
-z-index: 5;
-position: absolute;
-top:0;
-}
-#painting_canvas_img {
-cursor: crosshair !important;
-z-index: 5;
-position: absolute;
-top:1px;
-margin-left: 1px;
-max-height: 519px
-width: 399px;
--moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
--webkit-user-select: none;
--ms-user-select: none; /* From IE10 only */
-user-select: none; /* Not valid CSS yet, as of July 2012 */
 
--webkit-user-drag: none; /* Prevents dragging of images/divs etc */
-user-drag: none;
+.brush {
+  float: left;
 }
-#brushPreview {
+
+img.thumbs {
+  width: 165px;
+  margin: 0;
 }
+
+div.options {
+  text-align: center;
+}
+
+#canvas_container {
+  position: absolute;
+  left: 160px;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  z-index: 0;
+}
+
+#painting_canvas {
+  border: thin dotted black;
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 1080px;
+}
+
+#painting_canvas_img {
+  cursor: crosshair !important;
+  z-index: 5;
+  position: absolute;
+  top: 1px;
+  margin-left: 1px;
+  width: 1920px;
+  height: 1080px;
+  -moz-user-select: none;
+  /* These user-select properties are inheritable, used to prevent text selection */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  /* From IE10 only */
+  user-select: none;
+  /* Not valid CSS yet, as of July 2012 */
+  -webkit-user-drag: none;
+  /* Prevents dragging of images/divs etc */
+  user-drag: none;
+}
+
+#brushPreview {}
+
 .clear {
-clear:both;
+  clear: both;
 }
-input {
-}
+
+input {}
+
 .colorbox {
-float: left;
-border: thin dotted black;
+  z-index: 2;
+  float: left;
+  border: thin dotted black;
 }
+
 .savebutton {
-margin: 12px 0 0 0;
+  margin: 12px 0 0 0;
 }
+
 .dots {
-padding: 3px;
-margin:2px;
-border: thin dotted black;
+  padding: 3px;
+  margin: 2px;
+  border: thin dotted black;
 }
