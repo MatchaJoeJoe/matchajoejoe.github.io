@@ -165,9 +165,10 @@
 					<p class="textLeft">Just FYI, this site stores cookies in your browser and reads them back again, but it only looks for cookies with the prefix "joefrizzell".</p>
 					<p class="textLeft">Here are the cookies and what they do:</p>
 					<ul>
-						<li class="textLeft">joefrizzellUsername: Saves the name you put in the text box so I can remember what to call you.</p>
-						<li class="textLeft">joefrizzellLocation: Saves the location of where you are in the game (joesHouse, Outside, etc.), not your actual physical coordinates.</p>
+						<li class="textLeft"><b>joefrizzellUsername</b>: Saves the name you put in the text box so I can remember what to call you. Current value "<b><span id="theUserText">Missing</span></b>".</li>
+						<li class="textLeft"><b>joefrizzellLocation</b>: Saves the location of where you are in the game (joesHouse, Outside, etc.), not your actual physical coordinates. Current value "<b><span id="theLocationText">Missing</span></b>".</li>
 					</ul>
+					<p class="textCenter"><button id="cookieButton" class="glow" onclick="eraseAllCookies()">Delete Joe’s Cookies</button></p>
 				</div>
 			</div>
 			<div id="audioHolder">

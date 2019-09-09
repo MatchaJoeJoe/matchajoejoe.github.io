@@ -26,6 +26,14 @@ function createCookie(cname, cvalue, exdays) {
 function eraseCookie(name) {
     createCookie(name,"",-1);
 }
+function eraseAllCookies(){
+	var theCookieButton = document.getElementById('cookieButton');
+	eraseCookie("joefrizzellUsername");
+	eraseCookie("joefrizzellLocation");
+	updateDisclaimer();
+	theCookieButton.innerHTML = "Cookies Deleted &#x1F622";
+	theCookieButton.className = '';
+}
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -38,19 +46,33 @@ function getCookie(cname) {
     }
     return "";
 }
-
+function updateDisclaimer(){
+	var theUser = getCookie("joefrizzellUsername");
+	var theLocation = getCookie("joefrizzellLocation");
+	var theUserText = document.getElementById('theUserText');
+	var theLocationText = document.getElementById('theLocationText');
+	if (theUser == '') {
+		theUser = 'Missing';
+	}
+	if (theLocation == '') {
+		theLocation = 'Missing';
+	}
+	theUserText.innerHTML = theUser;
+	theLocationText.innerHTML = theLocation;
+}
 function eventWindowLoaded() {
 	document.getElementById('LoadingBackground').className='';
 	var loadingContainer = document.getElementById('LoadingContainer');
 	loadingContainer.innerHTML= '';
-	var newButton = document.createElement('p');
+	var newButton = document.createElement('button');
 	newButton.id = "playGame";
-	newButton.className = 'options';
+	newButton.className = 'glow';
 	newButton.innerHTML = 'Play Game';
 	loadingContainer.appendChild(newButton);
 	newButton.addEventListener('click', startGame, false);
 }
 function startGame() {
+	updateDisclaimer();
 	var	SongId = 'audio' + randomInteger(1,5);
   var startingSong = document.getElementById(SongId);
 	changeMusic(startingSong);
@@ -122,7 +144,7 @@ function startGame() {
 					setTimeout(function() {
 						stopTalking(theText);
 						setTimeout(function() {
-							theText = 'What’s your name?<br/><input aria-label="name input" autofocus="autofocus" type="text" id="NewName" onkeydown="if (event.keyCode == 13) {createCookie(\'joefrizzellUsername\', \' \' + this.value, 30);continueGame();};"/>';
+							theText = 'What’s your name?<br/><input aria-label="name input" autofocus="autofocus" type="text" id="NewName" onkeydown="if (event.keyCode == 13) {createCookie(\'joefrizzellUsername\', \' \' + this.value, 30);continueGame();updateDisclaimer();};"/>';
 							startTalking(theText);
 							setTimeout(function() {
 								document.getElementById('JoeMouth').className = 'hidden';
@@ -137,10 +159,13 @@ function startGame() {
 }
 function continueGame(){
 	window.theUser = getCookie("joefrizzellUsername");
-	theText = 'What’s your name?<br/>'+window.theUser;
+	theText = 'What’s your name?<br/>' + window.theUser;
 	stopTalking(theText);
 	setTimeout(function() {
-		theText = 'Nice to meet you'+window.theUser+'.';
+		theText = 'Nice to meet you.';
+		if (window.theUser != ''){
+			theText = 'Nice to meet you '+ window.theUser + '.';
+		}
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);

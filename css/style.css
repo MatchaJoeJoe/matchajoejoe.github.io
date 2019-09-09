@@ -17,6 +17,24 @@ p {
 a {
   cursor: hand;
 }
+button {
+  color: white;
+  background-color: black;
+  border: thin solid white;
+  height: 2em;
+  border-radius: 10px;
+  font-weight: bold;
+}
+button:hover{
+  color:black;
+  background-color: white;
+  border: thin solid black;
+}
+button:active{
+  color: black;
+  background-color: grey;
+  border: thin solid black;
+}
 .downloadLink {
   font-size: 80%;
   color: blue;
@@ -67,8 +85,8 @@ a {
   position: absolute;
   font-weight: bolder;
   top: 50%;
-  left: 20%;
-  width: 60%;
+  left: 40%;
+  width: 20%;
   margin-top: -1em;
   line-height: 1em;
   cursor: hand;
@@ -90,11 +108,11 @@ a {
   position: absolute;
   bottom: 5%;
   left: 0%;
-  width: 100%;
+  width: 96%;
   text-align: center;
   color: black;
   background-color: white;
-  padding: 1em;
+  padding: 2%;
 }
 #wall {
   position: absolute;
