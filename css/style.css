@@ -215,7 +215,7 @@ button:active{
 #leftBuilding {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 128px;
   z-index: 101;
   height: 200%;
   width: 288px;
@@ -223,7 +223,7 @@ button:active{
 #rightBuilding {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 128px;
   z-index: 101;
   height: 200%;
   width: 288px;
@@ -236,7 +236,7 @@ button:active{
   border-left: 10px solid SaddleBrown;
   background-color: black;
   position: absolute;
-  bottom: 128px;
+  bottom: 0;
   left: 16px;
   z-index: 102;
   -webkit-perspective: 160px;
@@ -247,7 +247,7 @@ button:active{
   width: 288px;
   background-color: maroon;
   position: absolute;
-  bottom: 128px;
+  bottom: 0;
   right: 0;
   z-index: 102;
   -webkit-perspective: 160px;
@@ -259,7 +259,7 @@ button:active{
   width: 288px;
   background-color: maroon;
   position: absolute;
-  bottom: 128px;
+  bottom: 0;
   left: 0;
   z-index: 102;
   -webkit-perspective: 160px;
@@ -282,7 +282,7 @@ button:active{
   height: 128px;
   width: 228px;
   position: absolute;
-  bottom: 315px;
+  bottom: 187px;
   left: 28;
   z-index: 102;
   -webkit-perspective: 160px;
@@ -294,7 +294,7 @@ button:active{
   width: 228px;
   position: absolute;
   left: 28;
-  bottom: 455px;
+  bottom: 327px;
   z-index: 102;
   -webkit-perspective: 160px;
   perspective: 160px;
@@ -304,7 +304,7 @@ button:active{
   width: 228px;
   position: absolute;
   left: 28;
-  bottom: 800px;
+  bottom: 672px;
   z-index: 102;
   -webkit-perspective: 160px;
   perspective: 160px;
@@ -313,7 +313,7 @@ button:active{
   height: 333px;
   width: 228px;
   position: absolute;
-  bottom: 1155px;
+  bottom: 1027px;
   left: 28;
   z-index: 102;
   -webkit-perspective: 160px;
@@ -323,7 +323,7 @@ button:active{
   height: 333px;
   width: 228px;
   position: absolute;
-  bottom: 1510px;
+  bottom: 1382px;
   left: 28;
   z-index: 102;
   -webkit-perspective: 160px;
@@ -333,7 +333,7 @@ button:active{
   height: 333px;
   width: 228px;
   position: absolute;
-  bottom: 455px;
+  bottom: 327px;
   right: 28;
   z-index: 102;
   -webkit-perspective: 160px;
@@ -343,7 +343,7 @@ button:active{
   height: 333px;
   width: 228px;
   position: absolute;
-  bottom: 800px;
+  bottom: 672px;
   right: 28;
   z-index: 102;
   -webkit-perspective: 160px;
@@ -353,7 +353,7 @@ button:active{
   height: 333px;
   width: 228px;
   position: absolute;
-  bottom: 1155px;
+  bottom: 1027px;
   right: 28;
   z-index: 102;
   -webkit-perspective: 160px;
@@ -363,7 +363,7 @@ button:active{
   height: 333px;
   width: 228px;
   position: absolute;
-  bottom: 1510px;
+  bottom: 1382px;
   right: 28;
   z-index: 102;
   -webkit-perspective: 160px;
@@ -381,7 +381,7 @@ button:active{
   height: 496px;
   width: 380px;
   position: absolute;
-  bottom: 64px;
+  bottom: -64px;
   right: 0;
   z-index: 104;
 }
@@ -552,7 +552,7 @@ button:active{
 #greg {
   height: 256px;
   position: absolute;
-  bottom: 0;
+  bottom: -128px;
   right: 64;
   z-index: 108;
 }
@@ -560,35 +560,35 @@ button:active{
   height: 256px;
   position: absolute;
   bottom: 0;
-  left: 64px;
+  left: 96px;
   z-index: 108;
 }
 #JoeMouth {
   height: 256px;
   position: absolute;
   bottom: 0;
-  left: 64px;
+  left: 96px;
   z-index: 109;
 }
 #JoeEyes {
   height: 256px;
   position: absolute;
   bottom: 0;
-  left: 64px;
+  left: 96px;
   z-index: 109;
 }
 #JoeTshirt {
   height: 256px;
   position: absolute;
   bottom: 0;
-  left: 64px;
+  left: 96px;
   z-index: 110;
 }
 #earphones {
   height: 256px;
   position: absolute;
   bottom: 0;
-  left: 64px;
+  left: 96px;
   z-index: 111;
 }
 #artcontaner {
@@ -632,7 +632,7 @@ button:active{
 #leftMonitor {
   position: absolute;
   left: 5px;
-  bottom: 115px;
+  bottom: 116px;
   z-index: 107;
 }
 #youTubeLogo {
@@ -672,8 +672,8 @@ button:active{
 }
 #cintiq {
   position: absolute;
-  left: 175px;
-  bottom: 115px;
+  left: 190px;
+  bottom: 116px;
   z-index: 107;
   cursor: hand;
 }
@@ -1236,24 +1236,6 @@ div.videoWrapper iframe {
     left: 0;
     right: 0;
     bottom: 220px
-  }
-  #building, #building2, #OutsideDoorFrame {
-    bottom: 256px;
-  }
-  #joesSign {
-    bottom: 443px;
-  }
-  #windows1, #windows5 {
-    bottom: 573px;
-  }
-  #windows2, #windows6 {
-    bottom: 928px;
-  }
-  #windows3, #windows7 {
-    bottom: 1283px;
-  }
-  #windows4, #windows8 {
-    bottom: 1638px;
   }
   iframe.w90 {
     width: 126.6667%;

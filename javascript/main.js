@@ -396,10 +396,6 @@ function loadContent(theCaller){
 			stopTalking(theText);
 		}, 1500);
 	}
-	else if (callerID.lastIndexOf("desk")===0 || callerID.lastIndexOf("rightMonitor")===0 || callerID.lastIndexOf("leftMonitor")===0){
-		theText = 'Internet, why do you have all the things?';
-		saySomething(theText, 2000);
-	}
 	else if (callerID.lastIndexOf("foldingTable")===0){
 		theText = 'Folding tables are the best.';
 		saySomething(theText, 1000);
