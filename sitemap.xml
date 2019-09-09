@@ -6,14 +6,47 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
+
 <url>
-  <loc>http://joefrizzell.github.io/</loc>
-  <lastmod>2015-05-27T20:12:09+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <loc>https://joefrizzell.com/</loc>
+  <lastmod>2019-09-09T01:29:19+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://joefrizzell.github.io/thanks</loc>
-  <lastmod>2015-05-27T20:12:09+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <loc>https://joefrizzell.com/shop/index.html</loc>
+  <lastmod>2019-09-09T01:29:19+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
+<url>
+  <loc>https://joefrizzell.com/coloringBook/index.xhtml</loc>
+  <lastmod>2019-09-09T01:29:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joefrizzell.com/news/index.html</loc>
+  <lastmod>2019-09-09T01:29:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joefrizzell.com/news/archive/20190607.html</loc>
+  <lastmod>2019-09-09T01:29:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joefrizzell.com/news/archive/20190908.html</loc>
+  <lastmod>2019-09-09T01:29:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joefrizzell.com/news/unsubscribe/</loc>
+  <lastmod>2019-09-09T01:29:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joefrizzell.com/news/</loc>
+  <lastmod>2019-09-09T01:29:19+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
 </urlset>
