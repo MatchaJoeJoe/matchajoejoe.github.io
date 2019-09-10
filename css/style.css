@@ -18,10 +18,10 @@ a {
   cursor: hand;
 }
 button {
+  padding: 1em;
   color: white;
   background-color: black;
   border: thin solid white;
-  height: 2em;
   border-radius: 10px;
   font-weight: bold;
 }
@@ -85,15 +85,13 @@ button:active{
   position: absolute;
   font-weight: bolder;
   top: 50%;
-  left: 40%;
-  width: 20%;
+  left: 50%;
+  width: 200px;
   margin-top: -1em;
+  margin-left: -100px;
   line-height: 1em;
   cursor: hand;
   text-align: center;
-}
-#playGame:hover {
-  text-shadow: 0 0 5px skyblue;
 }
 #loadingText {
   position: absolute;
@@ -276,7 +274,7 @@ button:active{
   z-index: 100;
   -webkit-perspective: 160px;
   perspective: 160px;
-  background-image: url("../images/postnobills.png");
+  background-image: url("../images/fence.png");
 }
 #joesSign {
   height: 128px;
@@ -1139,8 +1137,7 @@ div.videoWrapper iframe {
   overflow: auto;
 }
 .credit {
-  font-family: 'Nothing You Could Do', sans-serif;
-  margin: 0;
+  margin: 0 1em;
 }
 
 @media screen and (max-width: 1020px) {
