@@ -230,6 +230,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			stopTalking(theText);
 			loadFromHidden("youTube");
+			changeVolume(0);
 		}, 4000);
 	}
 	else if (callerID.lastIndexOf("twitchLogo")===0){
@@ -238,6 +239,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			stopTalking(theText);
 			loadFromHidden("twitch");
+			changeVolume(0);
 		}, 2000);
 	}
 	else if (callerID.lastIndexOf("soundcloudLogo")===0){
@@ -246,6 +248,7 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			stopTalking(theText);
 			loadFromHidden("soundcloud");
+			changeVolume(0);
 		}, 2000);
 	}
 	else if (callerID.lastIndexOf("phone")===0){
@@ -386,10 +389,8 @@ function loadContent(theCaller){
 					gregStopTalking(theText);
 					setTimeout(function() {
 						removeBlockers();
-						var gregsTwitchDiv = document.getElementById('gregsTwitch');
-						var gregsTwitchContents = gregsTwitchDiv.innerHTML;
-						contentDiv.className = "quickfadein";
-						contentDiv.innerHTML = gregsTwitchContents;
+						loadFromHidden("gregsTwitch");
+						changeVolume(0);
 					}, 500);
 				}, 2500);
 			}, 500);
