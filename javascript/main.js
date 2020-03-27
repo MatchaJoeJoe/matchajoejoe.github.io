@@ -276,11 +276,11 @@ function loadContent(theCaller){
 		}, 3000);
 	}
 	else if (callerID.lastIndexOf("cintiq")===0){
-		 theText = 'I used to love coloring when I was a kid... Good thing I’m still a kid at heart!';
+		 theText = 'I used to love drawing when I was a kid... Good thing I’m still a kid at heart!';
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);
-			loadFromHidden("coloring");
+			loadFromHidden("commissions");
 		}, 3500);
 	}
 	else if (callerID.lastIndexOf("iMac")===0 || callerID.lastIndexOf("earphones")===0){
