@@ -1466,7 +1466,7 @@ form button:disabled {
 #container05 {
 	display: flex;
 	width: 100%;
-	min-height: 12rem;
+	min-height: 6rem;
 	-moz-align-items: center;
 	-webkit-align-items: center;
 	-ms-align-items: center;

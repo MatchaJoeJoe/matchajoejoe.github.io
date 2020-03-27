@@ -143,9 +143,8 @@ hr.divider:before {
 }
 .fullcontainer>.inner {
 	text-align: left;
-	padding: 5rem 4rem;
+	padding: 2rem 1rem;
 	width: 100%;
-	max-width: 66rem;
 }
 .fullcontainer >.inner> :nth-child(1) {
 	width: 100%;
@@ -185,7 +184,7 @@ hr.divider:before {
 	-ms-flex-grow: 0;
 	flex-grow: 0;
 	max-width: 100%;
-	padding: 0 0 0 8rem;
+	padding: 0;
 }
 
 .fullcontainer.columns>.inner>*>* {
@@ -202,7 +201,7 @@ hr.divider:before {
 }
 
 .fullcontainer.columns>.inner>*:first-child {
-	margin-left: -8rem;
+	margin-left: 0;
 }
 
 .fullcontainer.default>.inner>.full {
@@ -300,4 +299,16 @@ hr.divider:before {
 }
 .left5{
 	margin-left: 5%;
+}
+@media (min-width: 480px) {
+	.fullcontainer>.inner {
+		padding: 5rem 4rem;
+		max-width: 66rem;
+	}
+	.fullcontainer.columns>.inner>* {
+		padding: 0 0 0 8rem;
+	}
+	.fullcontainer.columns>.inner>*:first-child {
+		margin-left: -8rem;
+	}
 }
