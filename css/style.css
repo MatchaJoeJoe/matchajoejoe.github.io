@@ -668,6 +668,13 @@ button:active{
   z-index: 108;
   cursor: hand;
 }
+#kofiLogo {
+  position: absolute;
+  left: 114px;
+	bottom: 152px;
+  z-index: 108;
+  cursor: hand;
+}
 #cintiq {
   position: absolute;
   left: 190px;
