@@ -14,9 +14,10 @@ p {
   background-color: white;
   overflow: auto;
 }
-a {
+a, a>img {
   cursor: hand;
 }
+.hand {cursor: hand}
 button {
   padding: 1em;
   color: white;
@@ -189,6 +190,13 @@ button:active{
   z-index: 103;
   background-image: url("../images/floor.jpg");
 }
+#windowOut {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 104;
+  cursor: hand;
+}
 #clock {
   position: absolute;
   bottom: 192px;
@@ -209,6 +217,16 @@ button:active{
   z-index: 102;
   -webkit-perspective: 160px;
   perspective: 160px;
+}
+#joesHouseWindowFrame {
+  height: 128px;
+  width: 128px;
+  background-color: black;
+  position: absolute;
+  bottom: 248px;
+  left: 7px;
+  z-index: 102;
+  overflow: hidden;
 }
 #leftBuilding {
   position: absolute;
@@ -376,11 +394,11 @@ button:active{
   z-index: 104;
 }
 .tree {
-  height: 496px;
-  width: 380px;
+  height: 248px;
+  width: 190px;
   position: absolute;
-  bottom: -64px;
-  right: 0;
+  bottom: -128px;
+  right: -95;
   z-index: 104;
 }
 #doorOut {
@@ -597,9 +615,9 @@ button:active{
 }
 #legoart {
   position: absolute;
-  bottom: 149px;
-  right: 100px;
-  z-index: 105;
+  bottom: 102px;
+  left: 155px;
+  z-index: 108;
   cursor: hand;
 }
 #iMac {
@@ -786,6 +804,14 @@ iframe.w90 {
   margin: 5% auto;
   height: 85%;
   max-width: 90%;
+}
+.middle{
+  width: 40%;
+  margin-left: 30%;
+  padding-top: 5%;
+}
+.w100{
+  width: 100%;
 }
 .w50r {
   position: absolute;
@@ -1183,7 +1209,7 @@ div.videoWrapper iframe {
   #content, #audioContent {
     bottom: 300px
   }
-  #joesHouseDoorFrame, #deskcontainer, #JoeContainer, #leftBuilding {
+  #joesHouseDoorFrame, #deskcontainer, #JoeContainer, #leftBuilding, #joesHouseWindowFrame {
     transform: scale(.75);
     transform-origin: 0% 100%;
   }
@@ -1247,7 +1273,7 @@ div.videoWrapper iframe {
     transform: scale(0.75);
     transform-origin: 0 0;
   }
-  #joesHouseDoorFrame, #deskcontainer, #JoeContainer, #leftBuilding {
+  #joesHouseDoorFrame, #deskcontainer, #JoeContainer, #leftBuilding, #joesHouseWindowFrame {
     transform: scale(.5);
     transform-origin: 0% 100%;
   }

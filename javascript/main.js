@@ -11,68 +11,35 @@ var treeText = 'Yup, that’s a tree.';
 var masterVolume = 1.5;
 var theScale = 1;
 var theDate = new Date();
-var theUser = getCookie("joefrizzellUsername");
-var theLocation = getCookie("joefrizzellLocation");
-if (theLocation ==""){
-	theLocation = "joesHouse";
-	createCookie('joefrizzellLocation',theLocation,30);
-}
-function createCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires=" + d.toGMTString();
-    document.cookie = cname+"="+cvalue+"; "+expires;
-}
-function eraseCookie(name) {
-    createCookie(name,"",-1);
-}
-function eraseAllCookies(){
-	var theCookieButton = document.getElementById('cookieButton');
-	eraseCookie("joefrizzellUsername");
-	eraseCookie("joefrizzellLocation");
-	updateDisclaimer();
-	theCookieButton.innerHTML = "Cookies Deleted &#x1F622";
-	theCookieButton.className = '';
-}
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') {c = c.substring(1);}
-        if (c.indexOf(name) != -1) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-function updateDisclaimer(){
-	var theUser = getCookie("joefrizzellUsername");
-	var theLocation = getCookie("joefrizzellLocation");
-	var theUserText = document.getElementById('theUserText');
-	var theLocationText = document.getElementById('theLocationText');
-	if (theUser == '') {
-		theUser = 'Missing';
+var theLocation = "joesHouse";
+
+function checkHash(){
+	var currentHref = window.location.href;
+	var hash = "home"
+	if(currentHref.indexOf("#") > 0){
+		hash = currentHref.substr(currentHref.indexOf("#") + 1,currentHref.length);
 	}
-	if (theLocation == '') {
-		theLocation = 'Missing';
-	}
-	theUserText.innerHTML = theUser;
-	theLocationText.innerHTML = theLocation;
+	return hash;
 }
+
 function eventWindowLoaded() {
-	document.getElementById('LoadingBackground').className='';
-	var loadingContainer = document.getElementById('LoadingContainer');
-	loadingContainer.innerHTML= '';
-	var newButton = document.createElement('button');
-	newButton.id = "playGame";
-	newButton.className = 'glow';
-	newButton.innerHTML = 'Play Game';
-	loadingContainer.appendChild(newButton);
-	newButton.addEventListener('click', startGame, false);
+	var theHash = checkHash();
+	if (theHash != "home") {
+		document.getElementById('LoadingBackground').className='';
+		var loadingContainer = document.getElementById('LoadingContainer');
+		loadingContainer.innerHTML= '';
+		var newButton = document.createElement('button');
+		newButton.id = "playGame";
+		newButton.className = 'glow';
+		newButton.innerHTML = 'Play Game';
+		loadingContainer.appendChild(newButton);
+		newButton.addEventListener('click', startGame, false);
+	} else{
+		startGame(theHash);
+	}
 }
-function startGame() {
-	updateDisclaimer();
+
+function startGame(theHash = "home") {
 	var	SongId = 'audio' + randomInteger(1,5);
   var startingSong = document.getElementById(SongId);
 	changeMusic(startingSong);
@@ -83,9 +50,6 @@ function startGame() {
 	currentLocation.className='fadein';
 	changeLeaves();
 	changePaint();
-	changeBricks();
-	changeBricks2();
-	changeFence();
 	setTheTime();
 	viewport = document.querySelector("meta[name=viewport]");
 	var windowWidth = window.innerWidth;
@@ -101,7 +65,7 @@ function startGame() {
  	if(window.theLocation ==="Outside"){
  		door = document.getElementById('doorIn');
  	}
- 	door.className = 'doorClose';
+ 	// door.className = 'doorClose';
 	var shirtName = 'Joe8Bit_T0.gif';
 	var LoadingBackground = document.getElementById('LoadingBackground');
 	LoadingBackground.className = 'hidden';
@@ -116,67 +80,26 @@ function startGame() {
 		var JoeEyes = document.getElementById('JoeEyes');
 		JoeBody.className = "";
 		JoeTshirt.className = '';
-		if (window.theUser !== "") {
-				theText = 'Hey '+window.theUser+'.';
-				startTalking(theText);
-				setTimeout(function() {
-					stopTalking(theText);
-					setTimeout(function() {
-						theText = 'Welcome back.';
-						startTalking(theText);
-						setTimeout(function() {
-							stopTalking(theText);
-							setTimeout(function() {
-								removeBlockers();
-							}, 500);
-						}, 1500);
-					}, 500);
-				}, 1500);
-		}
-		else {
-			theText = 'Hi, I’m Joe.';
-			startTalking(theText);
-			setTimeout(function() {
-				stopTalking(theText);
-				setTimeout(function() {
-					theText = 'Welcome to my site.';
-					startTalking(theText);
-					setTimeout(function() {
-						stopTalking(theText);
-						setTimeout(function() {
-							theText = 'What’s your name?<br/><input aria-label="name input" autofocus="autofocus" type="text" id="NewName" onkeydown="if (event.keyCode == 13) {createCookie(\'joefrizzellUsername\', \' \' + this.value, 30);continueGame();updateDisclaimer();};"/>';
-							startTalking(theText);
-							setTimeout(function() {
-								document.getElementById('JoeMouth').className = 'hidden';
-							}, 1400);
-							removeBlockers();
-						}, 500);
-					}, 2000);
-				}, 500);
-			}, 1400);
-		}
-	}, 500);
-}
-function continueGame(){
-	window.theUser = getCookie("joefrizzellUsername");
-	theText = 'What’s your name?<br/>' + window.theUser;
-	stopTalking(theText);
-	setTimeout(function() {
-		theText = 'Nice to meet you.';
-		if (window.theUser != ''){
-			theText = 'Nice to meet you '+ window.theUser + '.';
-		}
+		theText = 'Hi, I’m Joe.';
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);
 			setTimeout(function() {
-				theText = 'Take a look around. If you click on something, I’ll tell you about it.';
+				theText = 'Welcome to my site.';
 				startTalking(theText);
 				setTimeout(function() {
 					stopTalking(theText);
-				}, 3000);
+					setTimeout(function() {
+						theText = 'Take a look around. If you click on something, I’ll tell you about it.';
+						removeBlockers();
+						startTalking(theText);
+						setTimeout(function() {
+							stopTalking(theText);
+						}, 3000);
+					}, 500);
+				}, 2000);
 			}, 500);
-		}, 2000);
+		}, 1400);
 	}, 500);
 }
 function randomInteger(low, high) {
@@ -194,16 +117,23 @@ function changeMusic(theAudioLink){
 	musicPlayer = document.getElementById('musicPlayer');
 	musicPlayer.innerHTML = audioSrcTag.innerHTML;
 	musicPlayer.load();
-	musicPlayer.play();
 	audioName = theAudioLink.innerHTML;
 	currentTrackTag = document.getElementById("currentTrack");
 	currentTrackTag.innerHTML = audioName;
 	changeVolume(masterVolume);
 }
-function changeVolume(volumeLevel){
+function checkIfAudioIsPlaying(){
 	var myMusicPlayer = document.getElementById('musicPlayer');
 	var isPaused = myMusicPlayer.paused;
 	var isMuted = myMusicPlayer.muted;
+	var iMacTag = document.getElementById('iMac');
+	if(isPaused || isMuted){
+		iMacTag.src = 'images/iMac_off.gif'
+	} else {
+		iMacTag.src = 'images/iMac_on.gif'
+	}
+}
+function changeVolume(volumeLevel){
 	volumeLevel = volumeLevel/10;
 	var musicPlayer = document.getElementById('musicPlayer');
 	musicPlayer.volume = volumeLevel;
@@ -259,16 +189,8 @@ function loadContent(theCaller){
 			loadFromHidden("newswrapper");
 		}, 3000);
 	}
-	else if (callerID.lastIndexOf("cookies")===0){
-		theText = 'Mmmmm... Cookies...';
-		startTalking(theText);
-		setTimeout(function() {
-			stopTalking(theText);
-			loadFromHidden("disclaimer");
-		}, 1500);
-	}
 	else if (callerID.lastIndexOf("legoart")===0){
-		theText = 'Do you like art? I like t-shirts.';
+		theText = 'Do you like art? Why not buy some of mine?';
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);
@@ -294,109 +216,7 @@ function loadContent(theCaller){
 			audioListDiv.className = "quickfadein";
 		}, 2000);
 	}
-	/*Changing Areas*/
-	else if (callerID.lastIndexOf("doorOut")===0){
-		setTheTime();
-		var joesHouseDiv = document.getElementById('joesHouse');
-		var OutsideDiv = document.getElementById('Outside');
-		var theDoorOut = document.getElementById('doorOut');
-		var theDoorIn = document.getElementById('doorIn');
-		var JoeContainer = document.getElementById('JoeContainer');
-		var JoeEyes = document.getElementById('JoeEyes');
-		var JoeBody = document.getElementById('JoeBody');
-		var JoeTshirt = document.getElementById('JoeTshirt');
-		var earphones = document.getElementById('earphones');
-		theText = 'Let’s see what’s happening outside...';
-		startTalking(theText);
-		setTimeout(function() {
-			theDoorOut.className = 'doorOpen';
-			theDoorIn.className = 'doorOpen';
-			setTimeout(function() {
-				JoeContainer.className = window.JoePosition + ' fadeout';
-				window.JoePosition = 'left'
-				stopTalking(theText);
-				setTimeout(function() {
-					theDoorOut.className = 'doorClose';
-					theDoorIn.className = 'doorClose';
-					JoeContainer.className = window.JoePosition;
-					JoeContainer.className = window.JoePosition + ' quickfadein';
-					joesHouseDiv.className = 'fadeout';
-					OutsideDiv.className = 'fadein';
-					window.theLocation = 'Outside';
-				  createCookie('joefrizzellLocation','Outside',30);
-					earphones.className = 'quickfadein';
-					setTimeout(function() {
-						JoeBody.className = '';
-						joesHouseDiv.className = 'hidden';
-						removeBlockers();
-					}, 500);
-				}, 500);
-			}, 500);
-		}, 500);
-	}
-	else if (callerID.lastIndexOf("doorIn")===0){
-		setTheTime();
-		var joesHouseDiv = document.getElementById('joesHouse');
-		var OutsideDiv = document.getElementById('Outside');
-		var theDoorOut = document.getElementById('doorOut');
-		var theDoorIn = document.getElementById('doorIn');
-		var JoeContainer = document.getElementById('JoeContainer');
-		var JoeEyes = document.getElementById('JoeEyes');
-		var JoeBody = document.getElementById('JoeBody');
-		var JoeTshirt = document.getElementById('JoeTshirt');
-		var earphones = document.getElementById('earphones');
-		theText = 'Let’s go back to my place...';
-		startTalking(theText);
-		setTimeout(function() {
-			theDoorOut.className = 'doorOpen';
-			theDoorIn.className = 'doorOpen';
-			setTimeout(function() {
-				JoeContainer.className = window.JoePosition +' fadeout';
-				window.JoePosition = 'left'
-				stopTalking(theText);
-				setTimeout(function() {
-					JoeContainer.appendChild(JoeTshirt);
-					theDoorOut.className = 'doorClose';
-					theDoorIn.className = 'doorClose';
-					JoeEyes.className = 'hidden';
-					JoeContainer.className = window.JoePosition;
-					JoeContainer.className = window.JoePosition +' quickfadein';
-					OutsideDiv.className = 'fadeout';
-					joesHouseDiv.className = 'fadein';
-					window.theLocation = 'joesHouse';
-				  createCookie('joefrizzellLocation','joesHouse',30);
-					earphones.className = 'hidden';
-					setTimeout(function() {
-						JoeBody.className = '';
-						OutsideDiv.className = 'hidden';
-						removeBlockers();
-						JoeEyes.className = '';
-						JoeTshirt.className = '';
-					}, 2000);
-				}, 500);
-			}, 500);
-		}, 500);
-	}
 /*Just for fun*/
-	else if (callerID.lastIndexOf("greg")===0){
-		theText = 'ACK!!! It’s a giant werewolf...';
-		startTalking(theText);
-		setTimeout(function() {
-			setTimeout(function() {
-				theText = 'I forget to shave one time and everyone has jokes...';
-				gregStartTalking(theText);
-				setTimeout(function() {
-					gregStopTalking(theText);
-					setTimeout(function() {
-						removeBlockers();
-						loadFromHidden("gregsTwitch");
-						changeVolume(0);
-					}, 500);
-				}, 2500);
-			}, 500);
-			stopTalking(theText);
-		}, 1500);
-	}
 	else if (callerID.lastIndexOf("foldingTable")===0){
 		theText = 'Folding tables are the best.';
 		saySomething(theText, 1000);
@@ -415,45 +235,9 @@ function loadContent(theCaller){
 		startTalking(theText);
 		saySomething(theText, 2500);
 	}
-	else if (callerID=="building"){
-		changeBricks();
- 		theText = 'That building is made of '+window.theBrickColor+' bricks.';
-		saySomething(theText, 2500);
-	}
-	else if (callerID.lastIndexOf("building2")===0){
-		changeBricks2();
- 		theText = 'My bilding is made of '+window.theBrickColor2+' bricks.';
-		saySomething(theText, 2500);
-	}
-	else if (callerID=="fence"){
-		changeFence();
- 		theText = 'That fence is '+window.theFenceColor+'...';
-		saySomething(theText, 2500);
-	}
-	else if (callerID.lastIndexOf("clock")===0){
-		var theTime = setTheTime();
-		theText = 'It is '+theTime+'.';
-		saySomething(theText, 2000);
-	}
-	else if (callerID.lastIndexOf("sky")===0){
+	else if (callerID.lastIndexOf("windowOut")===0){
 		theText = window.skyText;
 		saySomething(theText, 2500);
-	}
-	else if (callerID.lastIndexOf("grass")===0){
-		theText = 'Yup, that’s grass.';
-		saySomething(theText, 1000);
-	}
-	else if (callerID.lastIndexOf("sidewalk")===0){
-		theText = 'Yup, that’s the sidewalk...';
-		saySomething(theText, 2000);
-	}
-	else if (callerID.lastIndexOf("windows")===0){
-		theText = 'Peepin’ peeps peepin’ peeps on the streets...';
-		saySomething(theText, 2000);
-	}
-	else if (callerID.lastIndexOf("joesSign")===0){
-		theText = 'Hey I can see my house from here...';
-		saySomething(theText, 1500);
 	}
 	else if (callerID.lastIndexOf("leaves")===0){
 		saySomething(window.treeText, 1500);
@@ -481,6 +265,7 @@ function removeBlockers(){
 	while(blockers[0]) {
 		blockers[0].parentNode.removeChild(blockers[0]);
 	}
+	checkIfAudioIsPlaying();
 }
 function hideContent(){
 	hideAudioContent();
@@ -569,7 +354,6 @@ function changeLeaves() {
 }
 function changePaint() {
 	var joesHouseDiv = document.getElementById('joesHouse');
-	var OutsideDoorFrame = document.getElementById('OutsideDoorFrame');
 	var newColor = window.thePaintColor;
 	while (newColor === window.thePaintColor) {
 		var colorNumber = randomInteger(1,5);
@@ -591,7 +375,6 @@ function changePaint() {
 	}
 	window.thePaintColor = newColor;
 	joesHouseDiv.style.backgroundColor = window.thePaintColor;
-	OutsideDoorFrame.style.backgroundColor = window.thePaintColor;
 }
 function changeBricks() {
 	var buildingDiv = document.getElementById('building');
@@ -651,19 +434,16 @@ function setTheTime(){
 	var theTime = "";
 	var theHours = window.theDate.getHours();
 	var amPM = "";
-	var OutsideDiv = document.getElementById('Outside');
-	var joesHouseDoorFrame = document.getElementById('joesHouseDoorFrame');
+	var windowFrame = document.getElementById('joesHouseWindowFrame');
 	if(theHours > 5 && theHours < 18){
 		window.theSkyColor = 'DeepSkyBlue';
 		window.skyText = 'Those are lovely puffy clouds.';
-		OutsideDiv.style.backgroundImage = "url('images/clouds.gif')";
-		joesHouseDoorFrame.style.backgroundImage = "url('images/clouds.gif')";
+		windowFrame.style.backgroundImage = "url('images/clouds.gif')";
 	}
 	else{
 		window.theSkyColor = 'Black';
 		window.skyText = 'I love looking at the stars at night.';
-		OutsideDiv.style.backgroundImage = "url('images/stars.gif')";
-		joesHouseDoorFrame.style.backgroundImage = "url('images/stars.gif')";
+		windowFrame.style.backgroundImage = "url('images/stars.gif')";
 	}
 	if(theHours>11){
 		amPM = " pm";
@@ -676,8 +456,7 @@ function setTheTime(){
 		if(theHours === 0){theHours= 12}
 	}
 	theTime = theHours + ":" + leftPad(window.theDate.getMinutes(),2)+amPM;
-	OutsideDiv.style.backgroundColor = window.theSkyColor;
-	joesHouseDoorFrame.style.backgroundColor = window.theSkyColor;
+	windowFrame.style.backgroundColor = window.theSkyColor;
 	return theTime;
 }
 function leftPad(number, targetLength) {
