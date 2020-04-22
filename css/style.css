@@ -219,8 +219,8 @@ button:active{
   perspective: 160px;
 }
 #joesHouseWindowFrame {
-  height: 128px;
-  width: 128px;
+  height: 120px;
+  width: 120px;
   background-color: black;
   position: absolute;
   bottom: 248px;
@@ -400,6 +400,9 @@ button:active{
   bottom: -128px;
   right: -95;
   z-index: 104;
+}
+#leaves {
+  opacity: .5;
 }
 #doorOut {
   height: 160px;

@@ -12,6 +12,7 @@ var masterVolume = 1.5;
 var theScale = 1;
 var theDate = new Date();
 var theLocation = "joesHouse";
+var shirtName = 'Joe8Bit_T'+randomInteger(0,5)+'.gif';
 
 function checkHash(){
 	var currentHref = window.location.href;
@@ -23,23 +24,6 @@ function checkHash(){
 }
 
 function eventWindowLoaded() {
-	var theHash = checkHash();
-	if (theHash != "home") {
-		document.getElementById('LoadingBackground').className='';
-		var loadingContainer = document.getElementById('LoadingContainer');
-		loadingContainer.innerHTML= '';
-		var newButton = document.createElement('button');
-		newButton.id = "playGame";
-		newButton.className = 'glow';
-		newButton.innerHTML = 'Play Game';
-		loadingContainer.appendChild(newButton);
-		newButton.addEventListener('click', startGame, false);
-	} else{
-		startGame(theHash);
-	}
-}
-
-function startGame(theHash = "home") {
 	var	SongId = 'audio' + randomInteger(1,5);
   var startingSong = document.getElementById(SongId);
 	changeMusic(startingSong);
@@ -50,6 +34,7 @@ function startGame(theHash = "home") {
 	currentLocation.className='fadein';
 	changeLeaves();
 	changePaint();
+	changeShirts();
 	setTheTime();
 	viewport = document.querySelector("meta[name=viewport]");
 	var windowWidth = window.innerWidth;
@@ -73,34 +58,36 @@ function startGame(theHash = "home") {
 	var blockerDiv = document.createElement("div");
 	blockerDiv.className = 'blocker';
 	containerDiv.appendChild(blockerDiv);
-	setTimeout(function() {
-	 	if(window.theLocation === "Outside"){
- 			document.getElementById('earphones').className = 'quickfadein';
- 		}
-		var JoeEyes = document.getElementById('JoeEyes');
-		JoeBody.className = "";
-		JoeTshirt.className = '';
-		theText = 'Hi, I’m Joe.';
-		startTalking(theText);
+	var theHash = checkHash();
+	if(theHash == "home"){
 		setTimeout(function() {
-			stopTalking(theText);
+			var JoeEyes = document.getElementById('JoeEyes');
+			JoeBody.className = "";
+			JoeTshirt.className = '';
+			theText = 'Hi, I’m Joe.';
+			startTalking(theText);
 			setTimeout(function() {
-				theText = 'Welcome to my site.';
-				startTalking(theText);
+				stopTalking(theText);
 				setTimeout(function() {
-					stopTalking(theText);
+					theText = 'Welcome to my site.';
+					startTalking(theText);
 					setTimeout(function() {
-						theText = 'Take a look around. If you click on something, I’ll tell you about it.';
-						removeBlockers();
-						startTalking(theText);
+						stopTalking(theText);
 						setTimeout(function() {
-							stopTalking(theText);
-						}, 3000);
-					}, 500);
-				}, 2000);
-			}, 500);
-		}, 1400);
-	}, 500);
+							theText = 'Take a look around. If you click on something, I’ll tell you about it.';
+							removeBlockers();
+							startTalking(theText);
+							setTimeout(function() {
+								stopTalking(theText);
+							}, 3000);
+						}, 500);
+					}, 2000);
+				}, 500);
+			}, 1400);
+		}, 500);
+	} else {
+		loadContentFromHash(theHash);
+	}
 }
 function randomInteger(low, high) {
     return low + Math.floor(Math.random() * high);
@@ -139,6 +126,13 @@ function changeVolume(volumeLevel){
 	musicPlayer.volume = volumeLevel;
 	window.masterVolume = volumeLevel*10;
 }
+function loadContentFromHash(theHash){
+	var hashElement = document.getElementById(theHash);
+	setTimeout(function() {
+		loadContent(hashElement);
+	}, 500);
+}
+
 function loadContent(theCaller){
 	var theText = "...";
 	var callerID = theCaller.id;
@@ -181,15 +175,15 @@ function loadContent(theCaller){
 			changeVolume(0);
 		}, 2000);
 	}
-	else if (callerID.lastIndexOf("phone")===0){
+	else if (callerID.lastIndexOf("phone")===0 || callerID.lastIndexOf("news")===0){
 		theText = 'I get all my news from my phone, don’t you?';
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);
-			loadFromHidden("newswrapper");
+			loadFromHidden("news");
 		}, 3000);
 	}
-	else if (callerID.lastIndexOf("legoart")===0){
+	else if (callerID.lastIndexOf("legoart")===0 || callerID.lastIndexOf("shop")===0){
 		theText = 'Do you like art? Why not buy some of mine?';
 		startTalking(theText);
 		setTimeout(function() {
@@ -197,7 +191,7 @@ function loadContent(theCaller){
 			loadFromHidden("shop");
 		}, 3000);
 	}
-	else if (callerID.lastIndexOf("cintiq")===0){
+	else if (callerID.lastIndexOf("cintiq")===0 || callerID.lastIndexOf("commissions")===0){
 		 theText = 'I used to love drawing when I was a kid... Good thing I’m still a kid at heart!';
 		startTalking(theText);
 		setTimeout(function() {
@@ -330,26 +324,26 @@ function gregStopTalking(theText){
 function changeShirts() {
 	var JoeTshirt = document.getElementById('JoeTshirt');
 	var shirtName = 'Joe8Bit_T'+randomInteger(0,5)+'.gif';
+	while (shirtName == window.shirtName) {
+		shirtName = 'Joe8Bit_T'+randomInteger(0,5)+'.gif';
+	}
+	window.shirtName = shirtName;
 	JoeTshirt.src = 'images/'+shirtName;
 }
 function changeLeaves() {
-	var theMonth = window.theDate.getMonth()+1;
 	var theLeaves = document.getElementById('leaves');
+	var theMonth = window.theDate.getMonth()+1;
 	if (theMonth > 2 && theMonth < 6){
 		theLeaves.src = 'images/leavesSpring.png'
-		window.treeText= "I’d say that I had spring fever, but it’s probably just allergies."
 	}
 	if (theMonth > 5 && theMonth < 9){
 		theLeaves.src = 'images/leavesSummer.png'
-		window.treeText= "Summertime, and the living is easy."
 	}
 	if (theMonth > 8 && theMonth < 12){
 		theLeaves.src = 'images/leavesFall.png'
-		window.treeText= "Autumn, why does it seem so inviting?"
 	}
 	if (theMonth < 3 || theMonth > 11){
 		theLeaves.src = ''
-		window.treeText= "Walking in a winter wonderland."
 	}
 }
 function changePaint() {
@@ -375,60 +369,6 @@ function changePaint() {
 	}
 	window.thePaintColor = newColor;
 	joesHouseDiv.style.backgroundColor = window.thePaintColor;
-}
-function changeBricks() {
-	var buildingDiv = document.getElementById('building');
-	var newColor = window.theBrickColor;
-	while (newColor === window.theBrickColor) {
-		var colorNumber = randomInteger(1,3);
-		if(colorNumber === 1){
-			newColor = 'maroon';
-		}
-		if(colorNumber === 2){
-			newColor = 'sienna';
-		}
-		if(colorNumber === 3){
-			newColor = 'slategray';
-		}
-	}
-	window.theBrickColor = newColor;
-	buildingDiv.style.backgroundColor = window.theBrickColor;
-}
-function changeBricks2() {
-	var building2Div = document.getElementById('building2');
-	var newColor = window.theBrickColor2;
-	while (newColor === window.theBrickColor2) {
-		var colorNumber = randomInteger(1,3);
-		if(colorNumber === 1){
-			newColor = 'maroon';
-		}
-		if(colorNumber === 2){
-			newColor = 'sienna';
-		}
-		if(colorNumber === 3){
-			newColor = 'slategray';
-		}
-	}
-	window.theBrickColor2 = newColor;
-	building2Div.style.backgroundColor = window.theBrickColor2;
-}
-function changeFence() {
-	var fenceDiv = document.getElementById('fence');
-	var newColor = window.theFenceColor;
-	while (newColor === window.theFenceColor) {
-		var colorNumber = randomInteger(1,3);
-		if(colorNumber === 1){
-			newColor = 'DarkOliveGreen';
-		}
-		if(colorNumber === 2){
-			newColor = 'Beige';
-		}
-		if(colorNumber === 3){
-			newColor = 'DodgerBlue';
-		}
-	}
-	window.theFenceColor = newColor;
-	fenceDiv.style.backgroundColor = window.theFenceColor;
 }
 function setTheTime(){
 	var theTime = "";
