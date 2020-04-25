@@ -401,9 +401,6 @@ button:active{
   right: -95;
   z-index: 104;
 }
-#leaves {
-  opacity: .5;
-}
 #doorOut {
   height: 160px;
   width: 80px;

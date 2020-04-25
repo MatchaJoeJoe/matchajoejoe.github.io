@@ -375,15 +375,18 @@ function setTheTime(){
 	var theHours = window.theDate.getHours();
 	var amPM = "";
 	var windowFrame = document.getElementById('joesHouseWindowFrame');
+	var leavesImg = document.getElementById('leaves');
 	if(theHours > 5 && theHours < 18){
 		window.theSkyColor = 'DeepSkyBlue';
 		window.skyText = 'Those are lovely puffy clouds.';
 		windowFrame.style.backgroundImage = "url('images/clouds.gif')";
+		leavesImg.style.opacity = '1';
 	}
 	else{
 		window.theSkyColor = 'Black';
 		window.skyText = 'I love looking at the stars at night.';
 		windowFrame.style.backgroundImage = "url('images/stars.gif')";
+		leavesImg.style.opacity = '.5';
 	}
 	if(theHours>11){
 		amPM = " pm";
