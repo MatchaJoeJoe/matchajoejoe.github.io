@@ -796,7 +796,8 @@ select {
   background-color: rgba(24, 24, 24, 1);
   color: white;
   max-width: 1200px;
-}
+  overflow-y: scroll;
+  overflow-x: hidden;}
 iframe.w90 {
   position: absolute;
   width: 95%;
@@ -808,6 +809,11 @@ iframe.w90 {
   background-color: white;
 }
 #resume {
+  margin: 5% auto;
+  height: 85%;
+  max-width: 90%;
+}
+#news {
   margin: 5% auto;
   height: 85%;
   max-width: 90%;

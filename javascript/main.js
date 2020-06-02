@@ -13,6 +13,7 @@ var theScale = 1;
 var theDate = new Date();
 var theLocation = "joesHouse";
 var shirtName = 'Joe8Bit_T3.gif';
+var displayedContent = document.getElementById('news');
 
 function checkHash(){
 	var currentHref = window.location.href;
@@ -243,9 +244,9 @@ function loadFromHidden(targetID){
 	addBlockerEvent();
 	var contentDiv = document.getElementById('content');
 	var targetDiv = document.getElementById(targetID);
-	var newContents = targetDiv.innerHTML;
 	contentDiv.className = "quickfadein";
-	contentDiv.innerHTML = newContents;
+	targetDiv.className = "quickfadein";
+	window.displayedContent = targetDiv;
 }
 function addBlockerEvent(){
 	var blockers = document.getElementsByClassName("blocker");
@@ -270,7 +271,8 @@ function hideContent(){
 	}
 	setTimeout(function() {
 		contentDiv.className = 'hidden';
-		contentDiv.innerHTML = '';
+		children = contentDiv.children;
+		window.displayedContent.className = "hidden";
 	}, 500);
 }
 function hideAudioContent() {
