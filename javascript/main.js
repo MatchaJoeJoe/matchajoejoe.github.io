@@ -12,7 +12,7 @@ var masterVolume = 1.5;
 var theScale = 1;
 var theDate = new Date();
 var theLocation = "joesHouse";
-var shirtName = 'Joe8Bit_T'+randomInteger(0,5)+'.gif';
+var shirtName = 'Joe8Bit_T3.gif';
 
 function checkHash(){
 	var currentHref = window.location.href;
@@ -34,7 +34,6 @@ function eventWindowLoaded() {
 	currentLocation.className='fadein';
 	changeLeaves();
 	changePaint();
-	changeShirts();
 	setTheTime();
 	viewport = document.querySelector("meta[name=viewport]");
 	var windowWidth = window.innerWidth;
