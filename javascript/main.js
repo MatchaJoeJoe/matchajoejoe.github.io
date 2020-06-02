@@ -40,12 +40,10 @@ function eventWindowLoaded() {
 	var windowWidth = window.innerWidth;
 	var windowHeight = window.innerHeight;
 	var theMeasurement = Math.min(windowWidth, windowHeight);
-	var JoeBody = document.getElementById('JoeBody');
 	var JoeContainer = document.getElementById('JoeContainer');
 	var JoeTshirt = document.getElementById('JoeTshirt');
- 	JoeTshirt.className = 'hidden';
- 	JoeBody.className = 'quickfadein';
- 	JoeContainer.className = '';
+	JoeContainer.className = 'quickfadein';
+	JoeTshirt.className = '';
  	var door = document.getElementById('doorOut');
  	if(window.theLocation ==="Outside"){
  		door = document.getElementById('doorIn');
@@ -62,8 +60,6 @@ function eventWindowLoaded() {
 	if(theHash == "home"){
 		setTimeout(function() {
 			var JoeEyes = document.getElementById('JoeEyes');
-			JoeBody.className = "";
-			JoeTshirt.className = '';
 			theText = 'Hi, I’m Joe.';
 			startTalking(theText);
 			setTimeout(function() {
