@@ -201,7 +201,6 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			stopTalking(theText);
 			addBlockerEvent();
-			contentDiv.innerHTML = "";
 			var audioListDiv = document.getElementById('audioContent');
 			audioListDiv.className = "quickfadein";
 		}, 2000);
