@@ -1,5 +1,9 @@
+@font-face {
+  font-family: JoeHand;
+  src: url("../fonts/JoeHand-Regular.woff");
+}
 body {
-  font-family: Futura, "Gill Sans", sans-serif;
+  font-family: "JoeHand", sans-serif;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -500,7 +504,6 @@ button:active{
   padding: 20px;
   border-radius: 25px;
   text-align: center;
-  font-family: "Courier New", Courier, monospace;
   border: medium DarkSlateGray solid;
   background-color: white;
   z-index: 110;
@@ -515,7 +518,6 @@ button:active{
   padding: 15px;
   border-radius: 25px;
   text-align: center;
-  font-family: "Courier New", Courier, monospace;
   border: medium DarkSlateGray solid;
   background-color: white;
   z-index: 110;
@@ -752,10 +754,8 @@ button:active{
 input {
   text-align: center;
   font-size: 20px;
-  font-family: "Courier New", Courier, monospace;
 }
 select {
-  font-family: Futura, "Gill Sans", sans-serif;
   height: 25px;
   position: relative;
   top: -5px;
