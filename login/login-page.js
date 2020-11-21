@@ -1,9 +1,17 @@
 function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  document.getElementById('username').innerHTML = profile.getName();
-  document.getElementById('userimage').src = profile.getImageUrl();
-  document.getElementById('signed-in').style.display = "block";
-  document.getElementById('signed-out').style.display = "none";
+  var id_token = googleUser.getAuthResponse().id_token;
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://gardenlifegame.com/php/Megs/tokensignin.php');
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+    console.log('Signed in as: ' + xhr.responseText);
+    var profile = googleUser.getBasicProfile();
+    document.getElementById('username').innerHTML = profile.getName();
+    document.getElementById('userimage').src = profile.getImageUrl();
+    document.getElementById('signed-in').style.display = "block";
+    document.getElementById('signed-out').style.display = "none";
+  };
+  xhr.send('id_token=' + id_token);
 }
 
 function signOut() {
