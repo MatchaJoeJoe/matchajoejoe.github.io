@@ -11,6 +11,7 @@ function onSignIn(googleUser) {
       document.getElementById('userimage').src = profile.getImageUrl();
       document.getElementById('signed-in').style.display = "block";
       document.getElementById('signed-out').style.display = "none";
+      checkAllowed(profile.getEmail());
     }
     else
     {
@@ -19,7 +20,16 @@ function onSignIn(googleUser) {
   };
   xhr.send('id_token=' + id_token);
 }
-
+function checkAllowed(email_address){
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://gardenlifegame.com/php/Megs/checkemail.php');
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+    console.log('Response: ' + xhr.responseText);
+    document.getElementById('access-response').innerHTML = xhr.responseText;
+  }
+  xhr.send('email_address=' + email_address);
+}
 function signOut() {
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.signOut().then(function () {

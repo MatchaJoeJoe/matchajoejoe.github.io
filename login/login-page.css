@@ -43,7 +43,6 @@ p {
 }
 .user {
   margin: 2vh;
-  float: right;
   text-align: right;
 }
 #userimage {
@@ -52,4 +51,7 @@ p {
   margin-top: -1em;
   width: 2em;
   line-height: 0;
+}
+#access-response {
+  margin-left: 2vh;
 }
