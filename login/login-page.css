@@ -12,10 +12,9 @@ body {
 p {
   margin: 0;
 }
-.text {
-  margin: 10vh 0 1vh 0;
+#prompt {
+  margin: 1vh;
   text-align: center;
-  color: #3a3a3a;
 }
 .g-signin2{
   margin: auto;
@@ -30,7 +29,7 @@ p {
   background-color: #3a3a3a;
 }
 #main-holder {
-  width: 30vw;
+  width: 30vh;
   height: 30vh;
   display: grid;
   justify-items: center;
