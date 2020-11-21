@@ -10,8 +10,10 @@ body {
   background-color: #efefef;
 }
 section{
-  height: 100%;
   margin: auto;
+}
+p {
+  margin: 0;
 }
 .text {
   margin: 10vh 0 1vh 0;
@@ -21,6 +23,15 @@ section{
 .g-signin2{
   margin: auto;
 }
-.signed-in {
+#signed-in {
   display: none;
+  visibility: hidden;
+}
+.user {
+  margin: 1vh 1vw;
+  float: right;
+  text-align: right;
+}
+#userimage {
+  width: 200px;
 }

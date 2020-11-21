@@ -1,9 +1,7 @@
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  document.getElementById('username').innerHTML = profile.getName();
+  document.getElementById('userimage').src = profile.getImageUrl();
   document.getElementById('signed-in').style.display = "block";
   document.getElementById('signed-out').style.display = "none";
 }
