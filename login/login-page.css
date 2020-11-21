@@ -30,8 +30,8 @@ p {
   background-color: #3a3a3a;
 }
 #main-holder {
-  width: 50vw;
-  height: 50vh;
+  width: 30vw;
+  height: 30vh;
   display: grid;
   justify-items: center;
   align-items: center;
@@ -43,10 +43,14 @@ p {
   display: none;
 }
 .user {
-  margin: 1vh 1vw;
+  margin: 2vh;
   float: right;
   text-align: right;
 }
 #userimage {
-  width: 200px;
+  position: relative;
+  top: .75em;
+  margin-top: -1em;
+  width: 2em;
+  line-height: 0;
 }
