@@ -1,4 +1,7 @@
+var email = 'not signed in';
+var googleUser;
 function onSignIn(googleUser) {
+  window.googleUser = googleUser;
   var id_token = googleUser.getAuthResponse().id_token;
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'https://gardenlifegame.com/php/Megs/tokensignin.php');
@@ -26,11 +29,16 @@ function checkAllowed(email_address){
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   xhr.onload = function() {
     console.log('Response: ' + xhr.responseText);
-    document.getElementById('access-response').innerHTML = xhr.responseText;
+    if(xhr.responseText.startsWith("0")){
+      document.getElementById('access-response').style.display = "none";
+    } else {
+      document.getElementById('access-response').innerHTML = "Access Denied for " + email_address;
+    }
   }
   xhr.send('email_address=' + email_address);
 }
 function signOut() {
+  window.googleUser = null;
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.signOut().then(function () {
     console.log('User signed out.');
