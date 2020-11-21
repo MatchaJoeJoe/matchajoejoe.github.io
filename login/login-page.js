@@ -26,5 +26,5 @@ function signOut() {
     console.log('User signed out.');
   });
   document.getElementById('signed-in').style.display = "none";
-  document.getElementById('signed-out').style.display = "block";
+  document.getElementById('signed-out').style.display = "grid";
 }
