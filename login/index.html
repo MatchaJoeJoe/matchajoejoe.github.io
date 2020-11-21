@@ -12,8 +12,13 @@
 </head>
 
 <body>
-<div class="g-signin2" data-onsuccess="onSignIn"></div>
-<a class="signout" href="#" onclick="signOut();">Sign out</a>
+  <section id="signed-out">
+    <div class="text">Please use the button below to sign in:</div>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  </section>
+  <section id="signed-in">
+    <a class="signout" href="#" onclick="signOut();">Sign out</a>
+  </section>
 </body>
 
 </html>

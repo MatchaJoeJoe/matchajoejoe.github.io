@@ -4,7 +4,8 @@ function onSignIn(googleUser) {
   console.log('Name: ' + profile.getName());
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  document.getElementsByClassName('signout')[0].style.display = "block";
+  document.getElementsByClassName('signed-in')[0].style.display = "block";
+  document.getElementsByClassName('signed-out')[0].style.display = "hidden";
 }
 
 function signOut() {
@@ -12,4 +13,6 @@ function signOut() {
   auth2.signOut().then(function () {
     console.log('User signed out.');
   });
+  document.getElementsByClassName('signed-in')[0].style.display = "hidden";
+  document.getElementsByClassName('signed-out')[0].style.display = "block";
 }
