@@ -45,4 +45,5 @@ function signOut() {
   });
   document.getElementById('signed-in').style.display = "none";
   document.getElementById('signed-out').style.display = "grid";
+  document.getElementById('access-response').innerHTML = "Access not checked";
 }
