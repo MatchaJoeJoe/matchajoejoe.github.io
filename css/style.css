@@ -578,42 +578,42 @@ button:active{
   height: 256px;
   position: absolute;
   bottom: 0;
-  left: 96px;
+  left: 50px;
   z-index: 108;
 }
 #JoeMouth {
   height: 256px;
   position: absolute;
   bottom: 0;
-  left: 96px;
+  left: 50px;
   z-index: 109;
 }
 #JoeMask {
   height: 256px;
   position: absolute;
   bottom: 0;
-  left: 96px;
+  left: 50px;
   z-index: 109;
 }
 #JoeEyes {
   height: 256px;
   position: absolute;
   bottom: 0;
-  left: 96px;
+  left: 50px;
   z-index: 109;
 }
 #JoeTshirt {
   height: 256px;
   position: absolute;
   bottom: 0;
-  left: 96px;
+  left: 50px;
   z-index: 110;
 }
 #earphones {
   height: 256px;
   position: absolute;
   bottom: 0;
-  left: 96px;
+  left: 50px;
   z-index: 111;
 }
 #artcontaner {
@@ -826,6 +826,8 @@ iframe.w90 {
 }
 .shopitem {
   padding: 5% 0;
+  max-width: 80%;
+  margin: auto;
 }
 .w100{
   width: 100%;
@@ -1262,7 +1264,7 @@ div.videoWrapper iframe {
     }
   }
   #deskcontainer {
-    left: 25%;
+    left: 15%;
   }
   #artcontaner {
     right: 0;
