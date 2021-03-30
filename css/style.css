@@ -228,7 +228,7 @@ button:active{
   background-color: black;
   position: absolute;
   bottom: 248px;
-  left: 7px;
+  left: 300px;
   z-index: 102;
   overflow: hidden;
 }
@@ -624,15 +624,15 @@ button:active{
 }
 #legoart {
   position: absolute;
-  bottom: 102px;
-  left: 155px;
+  bottom: 164px;
+  right: 80px;
   z-index: 108;
   cursor: hand;
 }
 #iMac {
   position: absolute;
   bottom: 164px;
-  right: 50px;
+  right: 80px;
   z-index: 105;
   cursor: hand;
 }
@@ -674,7 +674,7 @@ button:active{
   z-index: 108;
   cursor: hand;
 }
-#soundcloudLogo {
+#githubLogo {
   position: absolute;
   left: 114px;
 	bottom: 188px;
@@ -685,13 +685,6 @@ button:active{
   position: absolute;
 	left: 24px;
   bottom: 152px;
-  z-index: 108;
-  cursor: hand;
-}
-#githubLogo {
-  position: absolute;
-	left: 69px;
-	bottom: 152px;
   z-index: 108;
   cursor: hand;
 }

@@ -12,7 +12,7 @@ var masterVolume = 1.5;
 var theScale = 1;
 var theDate = new Date();
 var theLocation = "joesHouse";
-var shirtName = 'Joe8Bit_T3.gif';
+var shirtName = 'Joe8Bit_T1.gif';
 var displayedContent = document.getElementById('news');
 
 function checkHash(){
@@ -25,9 +25,6 @@ function checkHash(){
 }
 
 function eventWindowLoaded() {
-	var	SongId = 'audio' + randomInteger(1,5);
-  var startingSong = document.getElementById(SongId);
-	changeMusic(startingSong);
 	if (window.theLocation ==""){
 		window.theLocation = "joesHouse";
 	}
@@ -48,8 +45,6 @@ function eventWindowLoaded() {
  	if(window.theLocation ==="Outside"){
  		door = document.getElementById('doorIn');
  	}
- 	// door.className = 'doorClose';
-	var shirtName = 'Joe8Bit_T0.gif';
 	var LoadingBackground = document.getElementById('LoadingBackground');
 	LoadingBackground.className = 'hidden';
 	var containerDiv = document.getElementById(window.theLocation);
@@ -87,40 +82,6 @@ function eventWindowLoaded() {
 }
 function randomInteger(low, high) {
     return low + Math.floor(Math.random() * high);
-}
-function changeMusic(theAudioLink){
-	for (var i = 1; i < 6; i++) {
-		var audioLink = document.getElementById('audio'+i);
-		audioLink.className = '';
-	}
-	theAudioLink.className = 'glow';
-	audioLinkID = theAudioLink.id;
-	audioSrcID = audioLinkID.replace("audio", "audiosrc");
-	audioSrcTag = document.getElementById(audioSrcID);
-	musicPlayer = document.getElementById('musicPlayer');
-	musicPlayer.innerHTML = audioSrcTag.innerHTML;
-	musicPlayer.load();
-	audioName = theAudioLink.innerHTML;
-	currentTrackTag = document.getElementById("currentTrack");
-	currentTrackTag.innerHTML = audioName;
-	changeVolume(masterVolume);
-}
-function checkIfAudioIsPlaying(){
-	var myMusicPlayer = document.getElementById('musicPlayer');
-	var isPaused = myMusicPlayer.paused;
-	var isMuted = myMusicPlayer.muted;
-	var iMacTag = document.getElementById('iMac');
-	if(isPaused || isMuted){
-		iMacTag.src = 'images/iMac_off.gif'
-	} else {
-		iMacTag.src = 'images/iMac_on.gif'
-	}
-}
-function changeVolume(volumeLevel){
-	volumeLevel = volumeLevel/10;
-	var musicPlayer = document.getElementById('musicPlayer');
-	musicPlayer.volume = volumeLevel;
-	window.masterVolume = volumeLevel*10;
 }
 function loadContentFromHash(theHash){
 	var hashElement = document.getElementById(theHash);
@@ -201,8 +162,6 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			stopTalking(theText);
 			addBlockerEvent();
-			var audioListDiv = document.getElementById('audioContent');
-			audioListDiv.className = "quickfadein";
 		}, 2000);
 	}
 /*Just for fun*/
@@ -254,10 +213,8 @@ function removeBlockers(){
 	while(blockers[0]) {
 		blockers[0].parentNode.removeChild(blockers[0]);
 	}
-	checkIfAudioIsPlaying();
 }
 function hideContent(){
-	hideAudioContent();
 	removeBlockers();
 	var contentDiv = document.getElementById('content');
 	var tabClass = contentDiv.className;
@@ -268,16 +225,6 @@ function hideContent(){
 		contentDiv.className = 'hidden';
 		children = contentDiv.children;
 		window.displayedContent.className = "hidden";
-	}, 500);
-}
-function hideAudioContent() {
-	var audioListDiv = document.getElementById('audioContent');
-	var audioClass = audioListDiv.className;
-	if (audioClass !='hidden'){
-		audioListDiv.className = 'quickfadeout';
-	}
-	setTimeout(function() {
-		audioListDiv.className = 'hidden';
 	}, 500);
 }
 function saySomething(theText, theDelay){
@@ -303,18 +250,6 @@ function stopTalking(theText){
 	bubbleBox.className = 'bubble'+window.JoePosition+' quickfadeout';
 	setTimeout(function() {
 		bubbleBox.className = 'bubble'+window.JoePosition+' hidden';
-	}, 500);
-}
-function gregStartTalking(theText){
-	var gregsbubbleBox = document.getElementById('gregsbubbleBox');
-	gregsbubbleBox.className = 'quickfadein';
-	gregsbubbleBox.innerHTML = theText;
-}
-function gregStopTalking(theText){
-	var gregsbubbleBox = document.getElementById('gregsbubbleBox');
-	gregsbubbleBox.className = 'quickfadeout';
-	setTimeout(function() {
-		gregsbubbleBox.className = 'hidden';
 	}, 500);
 }
 function changeShirts() {
