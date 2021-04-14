@@ -1,0 +1,135 @@
+@font-face {
+  font-family: JoeHand;
+  src: url("/fonts/JoeHand-Regular.woff");
+}
+* {
+  box-sizing: border-box
+}
+body {
+  font-family: "JoeHand", sans-serif;
+  color: white;
+  background-color: #383838;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+h2 {
+  text-align: center;
+  margin: 0.5em;
+  padding: 0;
+}
+button{
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+}
+button:hover{
+  cursor: pointer;
+}
+button:focus{
+  outline: none;
+}
+button.active {
+  background-color:#ddd;
+  color:#383838;
+}
+#blocker{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.tab-bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  text-align: center;
+  z-index: 1;
+  background: rgba(22, 22, 22, 0.5);
+}
+.tab {
+  margin: 8rem 2rem 2rem 2rem;
+  width: calc(100% - 4rem);
+}
+.pixel-art-slides, .illustration-slides, .model-slides {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+model-viewer{
+  height: 100%;
+  width: 100%;
+  border: none;
+  --poster-color: transparent;
+}
+.copyright {
+  text-align: center;
+  font-size: 1rem;
+}
+.ko-fi {
+  color: white;
+  background: rgba(22, 22, 22, 0.5);
+  padding: .5em;
+}
+@media only screen and (max-width: 960px) {
+  .tab-bar {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    padding: 1rem;
+  }
+  .tab {
+    margin: 8rem 0 0 0;
+    width: 100%;
+  }
+}

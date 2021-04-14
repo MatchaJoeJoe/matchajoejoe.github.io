@@ -141,11 +141,11 @@ function loadContent(theCaller){
 		}, 3000);
 	}
 	else if (callerID.lastIndexOf("legoart")===0 || callerID.lastIndexOf("shop")===0){
-		theText = 'Do you like art? Why not buy some of mine?';
+		theText = 'Do you like art? You should check out some of mine!';
 		startTalking(theText);
 		setTimeout(function() {
 			stopTalking(theText);
-			loadFromHidden("shop");
+			loadFromHidden("portfolio");
 		}, 3000);
 	}
 	else if (callerID.lastIndexOf("cintiq")===0 || callerID.lastIndexOf("commissions")===0){
