@@ -1,122 +1,131 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-24306970-2"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
 
-		  gtag('config', 'UA-24306970-2');
-		</script>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Joe's Portfolio</title>
-		<link rel="stylesheet" href="style.css" type="text/css" />
-		<script type="text/javascript" src="portfolio.js"></script>
-		<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:site" content="@MatchaJoeJoe" />
-		<meta name="twitter:title" content="Joe's Porfolio" />
-		<meta name="twitter:description" content="Check out my art!" />
-		<meta name="twitter:image" content="images/portfolio_preview.jpg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
-	<body>
-		<div class="tab-bar">
-			<button class="tab-button active" onclick="showTab(event, 'All')">All</button> |
-			<button class="tab-button" onclick="showTab(event, 'illustrations')">Illustrations</button> |
-			<button class="tab-button" onclick="showTab(event, 'pixel-art')">Pixel Art</button> |
-			<button class="tab-button" onclick="showTab(event, 'models')">3D Models</button>
-		</div>
-		<div class="tab" id="illustrations">
-			<h2>Illustrations</h2>
-			<div class="slideshow-container">
-				<div class="illustration-slides">
-					<img alt="Illustration of a dragonborn barbarian holding an ice themed axe in a snowy forest." src="images/illustrations/carathius.jpg">
-				</div>
-				<div class="illustration-slides">
-					<img alt="Illustration of Great Grey Wolf Sif from Dark Souls." src="images/illustrations/sif.jpg">
-				</div>
-				<div class="illustration-slides">
-					<img alt="Illustration of a purple tiefling holding a white pseudodragon with a the moon and stars behind her." src="images/illustrations/kalianah.jpg">
-				</div>
-				<div class="illustration-slides">
-					<img alt="Illustration of a wyvern in a volcanic cave." src="images/illustrations/wyvern.jpg">
-				</div>
-				<div class="illustration-slides">
-					<img alt="Illustration of a woman with blue hair, golden eyes, and nebula freckles wearing a purple, flowing dress holding a large paintbrush while standing in a blue paint puddle with a  starry, rainbow background. Two koi fish swim above her head almost look like a crown." src="images/illustrations/qinnidallr.jpg">
-				</div>
-				<div class="illustration-slides">
-					<img alt="Illustration of Isabelle from Animal Crossing standing on the shoulder of the Doom Slayer while yelling and pointing where to shoot." src="images/illustrations/isadoom.jpg">
-				</div>
-				<div class="illustration-slides">
-					<img alt="Illustration of Sentry from High Rollers D&D with a cracked left eye." src="images/illustrations/sentry.jpg">
-				</div>
-				<div class="illustration-slides">
-					<img alt="Illustration of a raven falling from a night's sky into a fire." src="images/illustrations/ravensfall.jpg">
-				</div>
-				<div class="illustration-slides">
-					<img alt="Illustration of a warforged artificer casting a fire spell using gears and wooden strands taken from his own body." src="images/illustrations/dos.jpg">
-				</div>
-				<a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-				<a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-24306970-2"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'UA-24306970-2');
+	</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Joe's Portfolio</title>
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<script type="text/javascript" src="portfolio.js"></script>
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@MatchaJoeJoe" />
+	<meta name="twitter:title" content="Joe's Porfolio" />
+	<meta name="twitter:description" content="Check out my art!" />
+	<meta name="twitter:image" content="images/portfolio_preview.jpg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="tab-bar">
+		<button class="tab-button active" onclick="showTab(event, 'All')">All</button> | <button class="tab-button" onclick="showTab(event, 'illustrations')">Illustrations</button> | <button class="tab-button" onclick="showTab(event, 'pixel-art')">Pixel Art</button> | <button class="tab-button" onclick="showTab(event, 'models')">3D Models</button>
+	</div>
+	<div class="tab" id="illustrations">
+		<h2>Illustrations</h2>
+		<div class="slideshow-container">
+			<div class="illustration-slides">
+				<img alt="Illustration of a dragonborn barbarian holding an ice themed axe in a snowy forest." src="images/illustrations/carathius.jpg">
 			</div>
-		</div>
-		<div class="tab" id="pixel-art">
-			<h2>Pixel Art</h2>
-			<div class="slideshow-container">
-			  <div class="pixel-art-slides">
-					<img alt="Two rotating poses of standing and walk animation sprites of a pixel art space space suit reminiscent of the old Russian/Soviet cosmonaut suits." src="images/pixel-art/spaceman.gif">
-				</div>
-				<div class="pixel-art-slides">
-					<img alt="Pixel art playlist cover with a NES style controller that has music symbols replacing the button labels and the word 'Lentando' where the Nintendo logo should be. Light green text reads 'Ambient Gaming' at the top, with a blue to purple gradient with circles in the background." src="images/pixel-art/ambient-gaming.png">
-				</div>
-				<div class="pixel-art-slides">
-					<img alt="Three greyscale pixel art idle animations of a barbarian holding an axe and thumping it on the ground." src="images/pixel-art/barb-idle.gif">
-				</div>
-				<div class="pixel-art-slides">
-					<img alt="Greyscale pixel art animation of a barbarian running to the right" src="images/pixel-art/	barb_run.gif">
-				</div>
-				<div class="pixel-art-slides">
-					<img alt="Pixel art illustration of a blacksmith's house showing both exterior and interior." src="images/pixel-art/blacksmiths-house.png">
-				</div>
-				<div class="pixel-art-slides">
-					<img alt="Pixel art trans flag with a fist in the middle and 'Black Lives Matter' in white text at the bottom." src="images/pixel-art/pixel-fist.png">
-				</div>
-				<div class="pixel-art-slides">
-					<img alt="Pixel art image of a room with a blue wall, unmade bed, a desk with a chair, books, computer, rubix cube, magic cards and multi-colored blocks that spell out the word 'ART'." src="images/pixel-art/pixel-room.png">
-				</div>
-				<div class="pixel-art-slides">
-					<img alt="Pixel art greyscale image of a rogue with a bandana and flowing cap." src="images/pixel-art/rogue.png">
-				</div>
-				<div class="pixel-art-slides">
-					<img alt="Pixel art greyscale image of a wolf with a red eye." src="images/pixel-art/wolf.png">
-				</div>
-				<a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-			  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+			<div class="illustration-slides">
+				<img alt="Illustration of Great Grey Wolf Sif from Dark Souls." src="images/illustrations/sif.jpg">
 			</div>
-		</div>
-		<div class="tab" id="models">
-			<h2>3D Models</h2>
-			<div class="slideshow-container">
-				<div class="model-slides">
-					<model-viewer camera-controls autoplay reveal="interaction" src="images/models/elephant-ear.glb" alt="3D model of an elephant ear plant in a clay pot." poster="images/models/elephant-ear_poster.png">
-					</model-viewer>
-				</div>
-				<div class="model-slides">
-					<model-viewer camera-controls reveal="interaction" src="images/models/watering-can.glb" alt="3D model of a watering can." poster="images/models/watering-can_poster.png">
-					</model-viewer>
-				</div>
-				<div class="model-slides">
-					<model-viewer camera-controls reveal="interaction" src="images/models/birb.glb" alt="3D model of a bird with a concerned look on its face." poster="images/models/birb_poster.png">
-					</model-viewer>
-				</div>
-				<a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
-				<a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+			<div class="illustration-slides">
+				<img alt="Illustration of a purple tiefling holding a white pseudodragon with a the moon and stars behind her." src="images/illustrations/kalianah.jpg">
 			</div>
+			<div class="illustration-slides">
+				<img alt="Illustration of a wyvern in a volcanic cave." src="images/illustrations/wyvern.jpg">
+			</div>
+			<div class="illustration-slides">
+				<img alt="Illustration of a woman with blue hair, golden eyes, and nebula freckles wearing a purple, flowing dress holding a large paintbrush while standing in a blue paint puddle with a  starry, rainbow background. Two koi fish swim above her head almost look like a crown." src="images/illustrations/qinnidallr.jpg">
+			</div>
+			<div class="illustration-slides">
+				<img alt="Illustration of Isabelle from Animal Crossing standing on the shoulder of the Doom Slayer while yelling and pointing where to shoot." src="images/illustrations/isadoom.jpg">
+			</div>
+			<div class="illustration-slides">
+				<img alt="Illustration of Sentry from High Rollers D&D with a cracked left eye." src="images/illustrations/sentry.jpg">
+			</div>
+			<div class="illustration-slides">
+				<img alt="Illustration of a raven falling from a night's sky into a fire." src="images/illustrations/ravensfall.jpg">
+			</div>
+			<div class="illustration-slides">
+				<img alt="Illustration of a warforged artificer casting a fire spell using gears and wooden strands taken from his own body." src="images/illustrations/dos.jpg">
+			</div>
+			<a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
 		</div>
-		<p class="copyright">Copyright © 2020 Joe Frizzell. All Rights Reserved</p>
-		<div id="zoomBox" style="display:none" onclick="closeZoom()"></div>
-	</body>
+	</div>
+	<div class="tab" id="pixel-art">
+		<h2>Pixel Art</h2>
+		<div class="slideshow-container">
+			<div class="pixel-art-slides">
+				<img alt="Two rotating poses of standing and walk animation sprites of a pixel art space space suit reminiscent of the old Russian/Soviet cosmonaut suits." src="images/pixel-art/spaceman.gif">
+			</div>
+			<div class="pixel-art-slides">
+				<img alt="Pixel art playlist cover with a NES style controller that has music symbols replacing the button labels and the word 'Lentando' where the Nintendo logo should be. Light green text reads 'Ambient Gaming' at the top, with a blue to purple gradient with circles in the background." src="images/pixel-art/ambient-gaming.png">
+			</div>
+			<div class="pixel-art-slides">
+				<img alt="Three greyscale pixel art idle animations of a barbarian holding an axe and thumping it on the ground." src="images/pixel-art/barb-idle.gif">
+			</div>
+			<div class="pixel-art-slides">
+				<img alt="Greyscale pixel art animation of a barbarian running to the right" src="images/pixel-art/	barb_run.gif">
+			</div>
+			<div class="pixel-art-slides">
+				<img alt="Pixel art illustration of a blacksmith's house showing both exterior and interior." src="images/pixel-art/blacksmiths-house.png">
+			</div>
+			<div class="pixel-art-slides">
+				<img alt="Pixel art trans flag with a fist in the middle and 'Black Lives Matter' in white text at the bottom." src="images/pixel-art/pixel-fist.png">
+			</div>
+			<div class="pixel-art-slides">
+				<img alt="Pixel art image of a room with a blue wall, unmade bed, a desk with a chair, books, computer, rubix cube, magic cards and multi-colored blocks that spell out the word 'ART'." src="images/pixel-art/pixel-room.png">
+			</div>
+			<div class="pixel-art-slides">
+				<img alt="Pixel art greyscale image of a rogue with a bandana and flowing cap." src="images/pixel-art/rogue.png">
+			</div>
+			<div class="pixel-art-slides">
+				<img alt="Pixel art greyscale image of a wolf with a red eye." src="images/pixel-art/wolf.png">
+			</div>
+			<a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+		</div>
+	</div>
+	<div class="tab" id="models">
+		<h2>3D Models</h2>
+		<div class="slideshow-container">
+			<div class="model-slides">
+				<div class="sketchfab-embed-wrapper"> <iframe title="Elephant Ear" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="fullscreen; autoplay; vr" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/9e9e576a3db84fa2808aa3c55b261e33/embed?ui_theme=dark"> </iframe>
+					<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/elephant-ear-9e9e576a3db84fa2808aa3c55b261e33?utm_medium=embed&utm_campaign=share-popup&utm_content=9e9e576a3db84fa2808aa3c55b261e33" target="_blank" style="font-weight: bold; color: #1CAAD9;"> Elephant Ear </a> by <a href="https://sketchfab.com/matchajoejoe?utm_medium=embed&utm_campaign=share-popup&utm_content=9e9e576a3db84fa2808aa3c55b261e33" target="_blank" style="font-weight: bold; color: #1CAAD9;"> matchajoejoe </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=9e9e576a3db84fa2808aa3c55b261e33" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p>
+				</div>
+			</div>
+			<div class="model-slides">
+				<div class="sketchfab-embed-wrapper"> <iframe title="Watering Can" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="fullscreen; autoplay; vr" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/e1123c5e510d4a418a6efd3c9cd18953/embed?ui_theme=dark"> </iframe>
+					<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/watering-can-e1123c5e510d4a418a6efd3c9cd18953?utm_medium=embed&utm_campaign=share-popup&utm_content=e1123c5e510d4a418a6efd3c9cd18953" target="_blank" style="font-weight: bold; color: #1CAAD9;"> Watering Can </a> by <a href="https://sketchfab.com/matchajoejoe?utm_medium=embed&utm_campaign=share-popup&utm_content=e1123c5e510d4a418a6efd3c9cd18953" target="_blank" style="font-weight: bold; color: #1CAAD9;"> matchajoejoe </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=e1123c5e510d4a418a6efd3c9cd18953" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p>
+				</div>
+			</div>
+			<div class="model-slides">
+				<div class="sketchfab-embed-wrapper"> <iframe title="Concerned Birb" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="fullscreen; autoplay; vr" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/7e79f19eedb145b8a6bf84d8cc1e42cf/embed?ui_theme=dark"> </iframe>
+					<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/concerned-birb-7e79f19eedb145b8a6bf84d8cc1e42cf?utm_medium=embed&utm_campaign=share-popup&utm_content=7e79f19eedb145b8a6bf84d8cc1e42cf" target="_blank" style="font-weight: bold; color: #1CAAD9;"> Concerned Birb </a> by <a href="https://sketchfab.com/matchajoejoe?utm_medium=embed&utm_campaign=share-popup&utm_content=7e79f19eedb145b8a6bf84d8cc1e42cf" target="_blank" style="font-weight: bold; color: #1CAAD9;"> matchajoejoe </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=7e79f19eedb145b8a6bf84d8cc1e42cf" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p>
+				</div>
+			</div>
+			<div class="model-slides">
+				<div class="sketchfab-embed-wrapper"> <iframe title="Ghost Bull Piñata" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="fullscreen; autoplay; vr" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/f790f08d63f44e169c4c29c7282edc9e/embed?ui_theme=dark"> </iframe>
+					<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/ghost-bull-pinata-f790f08d63f44e169c4c29c7282edc9e?utm_medium=embed&utm_campaign=share-popup&utm_content=f790f08d63f44e169c4c29c7282edc9e" target="_blank" style="font-weight: bold; color: #1CAAD9;"> Ghost Bull Piñata </a> by <a href="https://sketchfab.com/matchajoejoe?utm_medium=embed&utm_campaign=share-popup&utm_content=f790f08d63f44e169c4c29c7282edc9e" target="_blank" style="font-weight: bold; color: #1CAAD9;"> matchajoejoe </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=f790f08d63f44e169c4c29c7282edc9e" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p>
+				</div>
+			</div>
+			<a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+		</div>
+	</div>
+	<p class="copyright">Copyright © 2020 Joe Frizzell. All Rights Reserved</p>
+	<div id="zoomBox" style="display:none" onclick="closeZoom()"></div>
+</body>
+
 </html>
