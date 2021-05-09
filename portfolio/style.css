@@ -64,11 +64,20 @@ iframe{
   margin: 8rem 2rem 2rem 2rem;
   width: calc(100% - 4rem);
 }
-.pixel-art-slides, .illustration-slides, .model-slides {
+.pixel-art-slides, .illustration-slides, .model-slides{
   display: none;
   justify-content: center;
   align-items: center;
   height: 600px;
+}
+.game-slides {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+}
+.game-poster {
+  cursor: pointer;
 }
 img {
   vertical-align: middle;
@@ -76,7 +85,6 @@ img {
   max-height: 100%;
   margin: auto;
 }
-
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;

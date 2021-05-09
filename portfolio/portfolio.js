@@ -4,6 +4,7 @@ function eventWindowLoaded(){
   showSlides(1, 0);
   showSlides(1, 1);
   showSlides(1, 2);
+  showSlides(1, 3);
   imgs = document.getElementsByTagName('img')
   for (i = 0; i < imgs.length; i++) {
     imgs[i].addEventListener("contextmenu", rightClick);
@@ -63,8 +64,8 @@ function showTab(e, tabID) {
 }
 
 var bodyTag;
-var slideIndex = [1,1,1];
-var slideId = ["illustration-slides", "pixel-art-slides", "model-slides"]
+var slideIndex = [1,1,1,1];
+var slideId = ["illustration-slides", "pixel-art-slides", "model-slides","game-slides"]
 
 function plusSlides(n, no) {
   showSlides(slideIndex[no] += n, no);
@@ -79,4 +80,30 @@ function showSlides(n, no) {
      x[i].style.display = "none";
   }
   x[slideIndex[no]-1].style.display = "flex";
+}
+
+function displayGame(gameID){
+  gameFrame = document.getElementById(gameID);
+  gamePoster = document.getElementById(gameID+"-poster");
+  gameFrame.style.display = "block";
+  gamePoster.style.display = "none";
+  if(gameID == "garden"){
+    gameFrame.src="../games/garden-life/index.html";
+  } else if(gameID == "bar"){
+    gameFrame.src="../games/the-bar/index.html";
+  } else if(gameID == "scrappers"){
+    gameFrame.src="../games/scrappers/index.html";
+  }
+}
+
+function unloadGames(){
+  gameFrames = document.getElementsByClassName("game-frame");
+  for (i = 0; i < gameFrames.length; i++) {
+     gameFrames[i].style.display = "none";
+     gameFrames[i].src = "";
+  }
+  gamePosters = document.getElementsByClassName("game-poster");
+  for (i = 0; i < gamePosters.length; i++) {
+     gamePosters[i].style.display = "block";
+  }
 }
