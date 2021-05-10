@@ -501,7 +501,7 @@ button:active{
   position: absolute;
   bottom: 266px;
   width: 15em;
-  padding: 20px;
+  padding: 15px;
   border-radius: 25px;
   text-align: center;
   border: medium DarkSlateGray solid;
@@ -1268,6 +1268,8 @@ div.videoWrapper iframe {
   #bubbleBox {
     transform: scale(2);
     transform-origin: 0% 100%;
+    width: 12.2em;
+    left:20px;
   }
   #gregsbubbleBox {
     transform: scale(2);
@@ -1285,16 +1287,33 @@ div.videoWrapper iframe {
     transform: scale(0.75);
     transform-origin: 0 0;
   }
-  #joesHouseDoorFrame, #deskcontainer, #JoeContainer, #leftBuilding, #joesHouseWindowFrame {
-    transform: scale(.5);
+  #joesHouseDoorFrame, #leftBuilding, #joesHouseWindowFrame {
+    transform: scale(.65);
     transform-origin: 0% 100%;
   }
   #fence {
     transform: scale(.5);
     transform-origin: 50% 100%;
   }
-  #artcontaner, #tablecontainer, #rightBuilding {
+  #tablecontainer, #rightBuilding {
     transform: scale(.5);
     transform-origin: 100% 100%;
+  }
+  #JoeContainer{
+    transform: scale(.65);
+    transform-origin: 0% 100%;
+    left: -18px;
+  }
+  #deskcontainer {
+    transform: scale(.65);
+    transform-origin: 0% 100%;
+    left: 0;
+    bottom: 60px;
+  }
+  #artcontaner {
+    transform: scale(.65);
+    transform-origin: 100% 100%;
+    right: -20px;
+    bottom: 68px;
   }
 }

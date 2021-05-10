@@ -111,7 +111,6 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			stopTalking(theText);
 			loadFromHidden("youTube");
-			changeVolume(0);
 		}, 4000);
 	}
 	else if (callerID.lastIndexOf("twitchLogo")===0){
@@ -120,7 +119,6 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			stopTalking(theText);
 			loadFromHidden("twitch");
-			changeVolume(0);
 		}, 2000);
 	}
 	else if (callerID.lastIndexOf("soundcloudLogo")===0){
@@ -129,7 +127,6 @@ function loadContent(theCaller){
 		setTimeout(function() {
 			stopTalking(theText);
 			loadFromHidden("soundcloud");
-			changeVolume(0);
 		}, 2000);
 	}
 	else if (callerID.lastIndexOf("phone")===0 || callerID.lastIndexOf("news")===0){
