@@ -27,7 +27,11 @@
 
 <body>
 	<div class="tab-bar">
-		<button class="tab-button active" onclick="showTab(event, 'All')">All</button> | <button class="tab-button" onclick="showTab(event, 'illustrations')">Illustrations</button> | <button class="tab-button" onclick="showTab(event, 'pixel-art')">Pixel Art</button> | <button class="tab-button" onclick="showTab(event, 'models')">3D Models</button> | <button class="tab-button" onclick="showTab(event, 'games')">Games</button>
+		<button class="tab-button active" onclick="showTab(event, 'All')">All</button> <span aria-hidden="true">|</span>
+		<button class="tab-button" onclick="showTab(event, 'illustrations')">Illustrations</button> <span aria-hidden="true">|</span>
+		<button class="tab-button" onclick="showTab(event, 'pixel-art')">Pixel Art</button> <span aria-hidden="true">|</span>
+		<button class="tab-button" onclick="showTab(event, 'models')">3D Models</button> <span aria-hidden="true">|</span>
+		<button class="tab-button" onclick="showTab(event, 'games')">Games</button>
 	</div>
 	<div class="tab" id="illustrations">
 		<h2>Illustrations</h2>

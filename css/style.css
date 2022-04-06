@@ -45,6 +45,16 @@ button:active{
   color: blue;
   text-shadow: 2px 2px 5px #fff;
 }
+.textbutton {
+  text-align: right;
+  display: block;
+}
+.textbutton::before{
+  content: "["
+}
+.textbutton::after{
+  content: "]"
+}
 #LoadingBackground {
   position: absolute;
   top: 0;

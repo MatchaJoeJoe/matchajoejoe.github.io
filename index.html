@@ -48,7 +48,9 @@
 			<div id="LoadingContainer">
 				<img id="loadingImg" src="images/loading.gif" alt="loading image" />
 				<p id="loadingText" class="options">Loading...</p>
-				<p id="loadingWarning" class="options">FYI, you need to have Javascript enabled for this website to work properly.</p>
+				<noscript>
+					<p id="loadingWarning" class="options">FYI, you need to have Javascript enabled for this website to work properly.</p>
+				</noscript>
 			</div>
 		</div>
 	</header>
@@ -70,9 +72,9 @@
 				<img id="leftMonitor" src="images/monitor.gif" width="166" height="122" alt="left monitor"/>
 				<img id="youTubeLogo" src="images/youTubeLogo.gif" width="36" height="36" alt="YouTube Logo" onclick="loadContent(this)" />
 				<img id="twitchLogo" src="images/twitchLogo.gif" width="36" height="36" alt="Twitch Logo" onclick="loadContent(this)" />
-				<a onclick="window.open('https://github.com/matchajoejoe', '_blank');"><img id="githubLogo" src="images/githubLogo.gif" width="36" height="36" alt="GitHub Logo" onclick="loadContent(this)" /></a>
-				<a onclick="window.open('https://matchajoejoe.itch.io', '_blank');"><img id="itchLogo" src="images/itchLogo.gif" width="36" height="36" alt="itch.io Logo" onclick="loadContent(this)" /></a>
-				<a onclick="window.open('https://ko-fi.com/matchajoejoe', '_blank');"><img id="kofiLogo" src="images/kofi.gif" width="36" height="36" alt="Ko-fi Logo" onclick="loadContent(this)" /></a>
+				<img id="githubLogo" src="images/githubLogo.gif" width="36" height="36" alt="GitHub Logo" onclick="loadContent(this)" />
+				<img id="itchLogo" src="images/itchLogo.gif" width="36" height="36" alt="itch.io Logo" onclick="loadContent(this)" />
+				<img id="kofiLogo" src="images/kofi.gif" width="36" height="36" alt="Ko-fi Logo" onclick="loadContent(this)" />
 				<img id="cintiq" src="images/cintiq.gif" width="150" height="98" alt="cintiq" onclick="loadContent(this)" />
 			</div>
 			<!-- <div id="tablecontainer">
