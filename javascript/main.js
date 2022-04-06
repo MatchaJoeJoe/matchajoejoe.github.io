@@ -200,10 +200,9 @@ function hideContent(){
 	}
 	setTimeout(function() {
 		contentDiv.className = 'hidden';
-		children = contentDiv.children;
-		children.forEach((child, i) => {
-			child.className = "hidden";
-		});
+		for (let i = 0; i < contentDiv.children.length; i++) {
+			contentDiv.children[i].className = "hidden";
+		}
 	}, 500);
 }
 function loopThroughText(theTextList, finalFunction, finalText = "close"){
