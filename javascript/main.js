@@ -91,49 +91,49 @@ function loadContent(theCaller){
 		loopThroughText([theText], function(){
 			stopTalking();
 			loadFromHidden("youTube");
-		},"show");
+		},"show youtube");
 	}
 	else if (callerID.lastIndexOf("twitchLogo")===0){
 		theText = 'I wonder what’s streaming on Twitch?';
 		loopThroughText([theText], function(){
 			stopTalking();
 			loadFromHidden("twitch");
-		},"show");
+		},"show twitch");
 	}
 	else if (callerID.lastIndexOf("legoart")===0 || callerID.lastIndexOf("shop")===0){
 		theText = 'Do you like art? You should check out some of mine!';
 		loopThroughText([theText], function(){
 			stopTalking();
 			loadFromHidden("portfolio");
-		},"show");
+		},"show portfolio");
 	}
 	else if (callerID.lastIndexOf("cintiq")===0 || callerID.lastIndexOf("commissions")===0){
 		theText = 'I used to love drawing when I was a kid... Good thing I’m still a kid at heart!';
 		loopThroughText([theText], function(){
 			stopTalking();
 			loadFromHidden("commissions");
-		},"show");
+		},"show commissions");
 	}
 	else if (callerID.lastIndexOf("githubLogo")===0){
 		theText = 'I always git a bit nervous showing other people my code...';
 		loopThroughText([theText], function(){
 			stopTalking();
 			window.open('https://github.com/matchajoejoe', '_blank');
-		},"open");
+		},"open github");
 	}
 	else if (callerID.lastIndexOf("itchLogo")===0){
 		theText = 'I have an itch for some indie games!';
 		loopThroughText([theText], function(){
 			stopTalking();
 			window.open('https://matchajoejoe.itch.io', '_blank');
-		},"open");
+		},"open itch.io");
 	}
 	else if (callerID.lastIndexOf("kofiLogo")===0){
 		theText = "A cat's gotta eat...";
 		loopThroughText([theText], function(){
 			stopTalking();
 			window.open('https://ko-fi.com/matchajoejoe', '_blank');
-		},"open");
+		},"open ko-fi");
 	}
 /*Just for fun*/
 	else if (callerID.lastIndexOf("foldingTable")===0){
