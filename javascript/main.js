@@ -128,7 +128,7 @@ function loadContent(theCaller){
 			window.open('https://matchajoejoe.itch.io', '_blank');
 		},"open itch.io");
 	}
-	else if (callerID.lastIndexOf("itchLogo")===0){
+	else if (callerID.lastIndexOf("mastodon")===0){
 		theText = 'Social media is a trash fire and I\'m just here to watch it burn...';
 		loopThroughText([theText], function(){
 			stopTalking();
