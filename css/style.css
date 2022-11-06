@@ -698,6 +698,13 @@ button:active{
   z-index: 108;
   cursor: hand;
 }
+#mastodon {
+  position: absolute;
+	left: 69px;
+  bottom: 152px;
+  z-index: 108;
+  cursor: hand;
+}
 #kofiLogo {
   position: absolute;
   left: 114px;

@@ -128,6 +128,13 @@ function loadContent(theCaller){
 			window.open('https://matchajoejoe.itch.io', '_blank');
 		},"open itch.io");
 	}
+	else if (callerID.lastIndexOf("itchLogo")===0){
+		theText = 'Social media is a trash fire and I\'m just here to watch it burn...';
+		loopThroughText([theText], function(){
+			stopTalking();
+			window.open('https://mastodon.art/@matchajoejoe', '_blank');
+		},"open mastodon");
+	}
 	else if (callerID.lastIndexOf("kofiLogo")===0){
 		theText = "A cat's gotta eat...";
 		loopThroughText([theText], function(){
