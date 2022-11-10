@@ -129,7 +129,7 @@ function loadContent(theCaller){
 		},"open itch.io");
 	}
 	else if (callerID.lastIndexOf("mastodon")===0){
-		theText = 'Social media is a trash fire and I\'m just here to watch it burn...';
+		theText = 'Join me on the fediverse!'';
 		loopThroughText([theText], function(){
 			stopTalking();
 			window.open('https://mastodon.art/@matchajoejoe', '_blank');
