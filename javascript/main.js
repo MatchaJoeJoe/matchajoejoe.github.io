@@ -270,7 +270,7 @@ function changeLeaves() {
 		theLeaves.src = 'images/leavesFall.png'
 	}
 	if (theMonth < 3 || theMonth > 11){
-		theLeaves.src = ''
+		theLeaves.className = 'tree hidden'
 	}
 }
 function changePaint() {
