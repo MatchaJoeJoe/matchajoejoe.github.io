@@ -91,7 +91,18 @@
 			</div>
 			<div id="twitch" class="hidden">
 				<div class="videoWrapper">
-					<iframe title="Twitch player" preload="metadata" src="https://player.twitch.tv/?channel=matchajoejoe&parent=matchajoejoe.github.io" height="100%" width="100%" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+					<div id="twitch-embed"></div>
+					<!-- Load the Twitch embed JavaScript file -->
+					<script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+					<!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
+					<script type="text/javascript">
+						new Twitch.Embed("twitch-embed", {
+						channel: "matchajoejoe",
+						// Only needed if this page is going to be embedded on other websites
+						parent: ["matchajoejoe.github.io"]
+						});
+					</script>
 				</div>
 			</div>
 			<div id="portfolio" class="hidden">
