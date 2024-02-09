@@ -260,7 +260,7 @@ button:active{
   bottom: 540px;
   width: 15em;
   padding: 15px;
-  border: 15px solid #363636;
+  border: 15px solid #383838;
   text-align: justify;
   background-color: white;
   z-index: 110;
@@ -535,7 +535,7 @@ select {
   right: 0;
   bottom: 325;
   z-index: 111;
-  background-color: #363636;
+  background-color: #383838;
   color: white;
   max-width: 1200px;
   overflow: hidden;}
