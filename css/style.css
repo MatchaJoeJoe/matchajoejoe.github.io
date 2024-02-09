@@ -246,308 +246,12 @@ button:active{
   z-index: 103;
   background-image: url("../images/floor.jpg");
 }
-#windowOut {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 104;
-  cursor: hand;
-}
-#clock {
-  position: absolute;
-  bottom: 192px;
-  left: 8px;
-  z-index: 104;
-  cursor: hand;
-}
-#joesHouseDoorFrame {
-  height: 160px;
-  width: 80px;
-  border-top: 10px solid white;
-  border-right: 10px solid white;
-  border-left: 10px solid white;
-  background-color: black;
-  position: absolute;
-  bottom: 128px;
-  left: 7px;
-  z-index: 102;
-  -webkit-perspective: 160px;
-  perspective: 160px;
-}
-#joesHouseWindowFrame {
-  height: 120px;
-  width: 120px;
-  background-color: black;
-  position: absolute;
-  bottom: 248px;
-  left: 300px;
-  z-index: 102;
-  overflow: hidden;
-}
-#leftBuilding {
-  position: absolute;
-  left: 0;
-  bottom: 128px;
-  z-index: 101;
-  height: 200%;
-  width: 288px;
-}
-#rightBuilding {
-  position: absolute;
-  right: 0;
-  bottom: 128px;
-  z-index: 101;
-  height: 200%;
-  width: 288px;
-}
-#OutsideDoorFrame {
-  height: 160px;
-  width: 80px;
-  border-top: 10px solid SaddleBrown;
-  border-right: 10px solid SaddleBrown;
-  border-left: 10px solid SaddleBrown;
-  background-color: black;
-  position: absolute;
-  bottom: 0;
-  left: 16px;
-  z-index: 102;
-  -webkit-perspective: 160px;
-  perspective: 160px;
-}
-#building {
-  height: 100%;
-  width: 288px;
-  background-color: maroon;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: 102;
-  -webkit-perspective: 160px;
-  perspective: 160px;
-  background-image: url("../images/brick.png");
-}
-#building2 {
-  height: 100%;
-  width: 288px;
-  background-color: maroon;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 102;
-  -webkit-perspective: 160px;
-  perspective: 160px;
-  background-image: url("../images/brick.png");
-}
-#fence {
-  height: 512px;
-  width: 100%;
-  background-color: maroon;
-  position: absolute;
-  bottom: 128px;
-  right: 0;
-  z-index: 100;
-  -webkit-perspective: 160px;
-  perspective: 160px;
-  background-image: url("../images/fence.png");
-}
-#joesSign {
-  height: 128px;
-  width: 228px;
-  position: absolute;
-  bottom: 187px;
-  left: 28;
-  z-index: 102;
-  -webkit-perspective: 160px;
-  perspective: 160px;
-}
 
-#windows1 {
-  height: 333px;
-  width: 228px;
-  position: absolute;
-  left: 28;
-  bottom: 327px;
-  z-index: 102;
-  -webkit-perspective: 160px;
-  perspective: 160px;
-}
-#windows2 {
-  height: 333px;
-  width: 228px;
-  position: absolute;
-  left: 28;
-  bottom: 672px;
-  z-index: 102;
-  -webkit-perspective: 160px;
-  perspective: 160px;
-}
-#windows3 {
-  height: 333px;
-  width: 228px;
-  position: absolute;
-  bottom: 1027px;
-  left: 28;
-  z-index: 102;
-  -webkit-perspective: 160px;
-  perspective: 160px;
-}
-#windows4 {
-  height: 333px;
-  width: 228px;
-  position: absolute;
-  bottom: 1382px;
-  left: 28;
-  z-index: 102;
-  -webkit-perspective: 160px;
-  perspective: 160px;
-}
-#windows5 {
-  height: 333px;
-  width: 228px;
-  position: absolute;
-  bottom: 327px;
-  right: 28;
-  z-index: 102;
-  -webkit-perspective: 160px;
-  perspective: 160px;
-}
-#windows6 {
-  height: 333px;
-  width: 228px;
-  position: absolute;
-  bottom: 672px;
-  right: 28;
-  z-index: 102;
-  -webkit-perspective: 160px;
-  perspective: 160px;
-}
-#windows7 {
-  height: 333px;
-  width: 228px;
-  position: absolute;
-  bottom: 1027px;
-  right: 28;
-  z-index: 102;
-  -webkit-perspective: 160px;
-  perspective: 160px;
-}
-#windows8 {
-  height: 333px;
-  width: 228px;
-  position: absolute;
-  bottom: 1382px;
-  right: 28;
-  z-index: 102;
-  -webkit-perspective: 160px;
-  perspective: 160px;
-}
-#BilboDaCat {
-  height: 96px;
-  width: 130px;
-  position: absolute;
-  bottom: 84px;
-  left: 300px;
-  z-index: 104;
-}
-.tree {
-  height: 248px;
-  width: 190px;
-  position: absolute;
-  bottom: -128px;
-  right: -95;
-  z-index: 104;
-}
-#doorOut {
-  height: 160px;
-  width: 80px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 103;
-  cursor: hand;
-}
-#doorIn {
-  height: 160px;
-  width: 80px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 103;
-  cursor: hand;
-}
-.doorClose {
-  animation-name: doorClose;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-  -webkit-animation-name: doorClose;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-timing-function: linear;
-}
-@keyframes doorClose {
-  0% {
-    perspective: 5000px;
-    transform: rotateY(90deg);
-    transform-origin: 0% 0%;
-  }
-  100% {
-    perspective: 5000px;
-    transform: rotateY(0deg);
-    transform-origin: 0% 0%;
-  }
-}
-@-webkit-keyframes doorClose {
-  0% {
-    -webkit-perspective: 5000px;
-    -webkit-transform: rotateY(90deg);
-    -webkit-transform-origin: 0% 0%;
-  }
-  100% {
-    -webkit-perspective: 5000px;
-    -webkit-transform: rotateY(0deg);
-    -webkit-transform-origin: 0% 0%;
-  }
-}
-.doorOpen {
-  animation-name: doorOpen;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-  -webkit-animation-name: doorOpen;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-timing-function: linear;
-}
-@keyframes doorOpen {
-  0% {
-    perspective: 5000px;
-    transform: rotateY(0deg);
-    transform-origin: 0% 0%;
-  }
-  100% {
-    perspective: 5000px;
-    transform: rotateY(90deg);
-    transform-origin: 0% 0%;
-  }
-}
-@-webkit-keyframes doorOpen {
-  0% {
-    -webkit-perspective: 5000px;
-    -webkit-transform: rotateY(0deg);
-    -webkit-transform-origin: 0% 0%;
-  }
-  100% {
-    -webkit-perspective: 5000px;
-    -webkit-transform: rotateY(90deg);
-    -webkit-transform-origin: 0% 0%;
-  }
-}
 #JoeContainer {
   z-index: 107;
   position: absolute;
   left: -25px;
-  bottom: -230px;
+  bottom: -210px;
 }
 #bubbleBox {
   display: inline-block;
@@ -810,6 +514,7 @@ select {
   background-color: darkslategray;
   z-index: 0;
   overflow: hidden;
+  margin:auto;
 }
 #Outside {
   position: absolute;
@@ -1296,16 +1001,17 @@ div.videoWrapper iframe {
     }
   }
   #bubbleBox {
-    transform: scale(2);
+    transform: scale(1.8);
     transform-origin: 0% 100%;
     width: 55vw;
-    left: 58px;
+    left: 14px;
+    bottom: 574px;
   }
   #content, #audioContent {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 220px
+    bottom: 232px
   }
   iframe.w90 {
     width: 126.6667%;
@@ -1313,22 +1019,10 @@ div.videoWrapper iframe {
     transform: scale(0.75);
     transform-origin: 0 0;
   }
-  #joesHouseDoorFrame, #leftBuilding, #joesHouseWindowFrame {
-    transform: scale(.65);
-    transform-origin: 0% 100%;
-  }
-  #fence {
-    transform: scale(.5);
-    transform-origin: 50% 100%;
-  }
-  #tablecontainer, #rightBuilding {
-    transform: scale(.5);
-    transform-origin: 100% 100%;
-  }
   #JoeContainer{
     transform: scale(.65);
     transform-origin: 50% 100%;
-    left: -43px;
+    left: -10px;
     bottom: -140;
   }
   #deskcontainer {
@@ -1336,8 +1030,12 @@ div.videoWrapper iframe {
     transform-origin: 100% 69%;
     right:-15;
   }
+  #monitorcontainer {
+    left: 380px;
+    bottom: 300px;
+  }
   #cintiq {
-    left: 455px;
-    bottom: 239px;
+    left: 396px;
+    bottom: 152px;
   }
 }
