@@ -31,13 +31,10 @@ function eventWindowLoaded() {
 	}
 	var currentLocation = document.getElementById(window.theLocation);
 	currentLocation.className='fadein';
-	changeLeaves();
 	changePaint();
-	setTheTime();
 	viewport = document.querySelector("meta[name=viewport]");
 	var windowWidth = window.innerWidth;
 	var windowHeight = window.innerHeight;
-	var theMeasurement = Math.min(windowWidth, windowHeight);
 	var JoeContainer = document.getElementById('JoeContainer');
 	var JoeTshirt = document.getElementById('JoeTshirt');
 	JoeContainer.className = 'quickfadein';
@@ -81,7 +78,7 @@ function loadContent(theCaller){
 	var contentDiv = document.getElementById('content');
 	var tabClass = contentDiv.className;
 	if (tabClass !='hidden'){
-	contentDiv.className = "quickfadeout";
+	contentDiv.className = "quickfadeout pixelborder";
 		setTimeout(function() {
 			contentDiv.className = "hidden";
 		}, 500);
@@ -101,39 +98,39 @@ function loadContent(theCaller){
 		},"show twitch");
 	}
 	else if (callerID.lastIndexOf("legoart")===0 || callerID.lastIndexOf("shop")===0){
-		theText = 'Do you like art? You should check out some of mine!';
+		theText = 'Anything can be art if you care enough...';
 		loopThroughText([theText], function(){
 			stopTalking();
 			loadFromHidden("portfolio");
 		},"show portfolio");
 	}
 	else if (callerID.lastIndexOf("cintiq")===0 || callerID.lastIndexOf("commissions")===0){
-		theText = 'I used to love drawing when I was a kid... Good thing I’m still a kid at heart!';
+		theText = 'My art could be your art...';
 		loopThroughText([theText], function(){
 			stopTalking();
 			loadFromHidden("commissions");
 		},"show commissions");
 	}
 	else if (callerID.lastIndexOf("githubLogo")===0){
-		theText = 'I always git a bit nervous showing other people my code...';
+		theText = 'Lets code something...';
 		loopThroughText([theText], function(){
 			stopTalking();
 			window.open('https://github.com/matchajoejoe', '_blank');
 		},"open github");
 	}
 	else if (callerID.lastIndexOf("itchLogo")===0){
-		theText = 'I have an itch for some indie games!';
+		theText = 'I have an itch for some indie games...';
 		loopThroughText([theText], function(){
 			stopTalking();
 			window.open('https://matchajoejoe.itch.io', '_blank');
 		},"open itch.io");
 	}
-	else if (callerID.lastIndexOf("mastodon")===0){
-		theText = 'Join me on the fediverse!';
+	else if (callerID.lastIndexOf("soundcloud")===0){
+		theText = 'I played guitar once...';
 		loopThroughText([theText], function(){
 			stopTalking();
-			window.open('https://mastodon.art/@matchajoejoe', '_blank');
-		},"open mastodon");
+			window.open('https://soundcloud.com/matchajoejoe', '_blank');
+		},"open soundcloud");
 	}
 	else if (callerID.lastIndexOf("kofiLogo")===0){
 		theText = "A cat's gotta eat...";
@@ -143,29 +140,9 @@ function loadContent(theCaller){
 		},"open ko-fi");
 	}
 /*Just for fun*/
-	else if (callerID.lastIndexOf("foldingTable")===0){
-		theText = 'Folding tables are the best.';
-		loopThroughText([theText], stopTalking);
-	}
-	else if (callerID.lastIndexOf("table")===0){
-		theText = 'That’s just a coffee table.';
-		loopThroughText([theText], stopTalking);
-	}
-	else if (callerID.lastIndexOf("floor")===0){
-		theText = 'Yup, that’s the floor.';
-		loopThroughText([theText], stopTalking);
-	}
 	else if (callerID.lastIndexOf("wall")===0){
 		changePaint();
  		theText = 'I really like how the paint came out. <br/>The color is ' + window.thePaintColor + '.';
-		loopThroughText([theText], stopTalking);
-	}
-	else if (callerID.lastIndexOf("windowOut")===0){
-		theText = window.skyText;
-		loopThroughText([theText], stopTalking);
-	}
-	else if (callerID.lastIndexOf("leaves")===0){
-		theText = window.treeText;
 		loopThroughText([theText], stopTalking);
 	}
 	else {
@@ -177,7 +154,7 @@ function loadFromHidden(targetID){
 	addBlockerEvent();
 	var contentDiv = document.getElementById('content');
 	var targetDiv = document.getElementById(targetID);
-	contentDiv.className = "quickfadein";
+	contentDiv.className = "quickfadein pixelborder";
 	targetDiv.className = "quickfadein";
 }
 function addBlockerEvent(){
@@ -203,7 +180,7 @@ function hideContent(){
 	var contentDiv = document.getElementById('content');
 	var tabClass = contentDiv.className;
 	if (tabClass !='hidden'){
-		contentDiv.className = 'quickfadeout';
+		contentDiv.className = 'quickfadeout pixelborder';
 	}
 	setTimeout(function() {
 		contentDiv.className = 'hidden';
@@ -229,7 +206,7 @@ function loopThroughText(theTextList, finalFunction, finalText = "close"){
 }
 function startTalking(theText){
 	var bubbleBox = document.getElementById('bubbleBox');
-	bubbleBox.className = 'bubble'+window.JoePosition+' quickfadein';
+	bubbleBox.className = 'bubble'+window.JoePosition+' pixelborder quickfadein';
 	bubbleBox.innerHTML = theText;
 	var JoeMouth = document.getElementById('JoeMouth');
 	JoeMouth.className = '';
@@ -242,7 +219,7 @@ function stopTalking(){
 	JoeMouth.className = 'hidden';
 	var bubbleBox = document.getElementById('bubbleBox');
 	if(!bubbleBox.className.includes('hidden')){
-		bubbleBox.className = 'bubble'+window.JoePosition+' quickfadeout';
+		bubbleBox.className = 'bubble'+window.JoePosition+' pixelborder quickfadeout';
 		setTimeout(function() {
 			bubbleBox.className = 'bubble'+window.JoePosition+' hidden';
 		}, 500);

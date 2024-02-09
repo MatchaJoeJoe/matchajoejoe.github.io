@@ -1,37 +1,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
 
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-24306970-2"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-24306970-2');
-	</script>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Joe's Website</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
-	<link rel="apple-touch-icon" sizes="57x57" href="images/ico/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="images/ico/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/ico/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="images/ico/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/ico/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="images/ico/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="images/ico/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="images/ico/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="images/ico/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192" href="images/ico/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="images/ico/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="images/ico/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="images/ico/favicon-16x16.png">
-	<link rel="manifest" href="images/ico/manifest.json">
-	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="images/ico/ms-icon-144x144.png">
-	<meta name="theme-color" content="#ffffff">
 	<meta property="og:site_name" content="Joe's Website">
 	<meta property="og:title" content="Joe's Website" />
 	<meta property="og:type" content="website" />
@@ -39,6 +13,9 @@
 	<meta property="og:image" content="https://matchajoejoe.com/images/portfolio_preview.jpg" />
 	<meta name="twitter:image" content="https://matchajoejoe.com/images/portfolio_preview.jpg">
 	<script type="text/javascript" src="javascript/main.js"></script>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap')
+	</style>
 </head>
 
 <body id="body">
@@ -57,26 +34,20 @@
 	<main id="main">
 		<div id="joesHouse" class="hidden">
 			<div id="wall" onclick="loadContent(this)">&#160;</div>
-			<div id="floor" onclick="loadContent(this)">&#160;</div>
-			<div id="joesHouseWindowFrame">
-				<img id="tree" alt="tree trunk" class="tree" src="images/tree.png" onclick="loadContent(this)" />
-				<img id="leaves" alt="tree leaves" class="tree" src="images/leavesWinter.png" onclick="loadContent(this)" />
-				<img id="windowOut" src="images/window.gif" width="120" height="120" alt="window" onclick="loadContent(this)" />
-			</div>
-			<div id="artcontaner">
-				<img id="foldingTable" src="images/foldingTable.png" width="218" height="168" alt="folding table" onclick="loadContent(this)" />
-				<img id="legoart" src="images/legoart.gif" width="54" height="22" alt="lego art" onclick="loadContent(this)" />
-			</div>
 			<div id="deskcontainer">
-				<img id="desk" src="images/desk.gif" width="426" height="218" alt="desk"/>
-				<img id="leftMonitor" src="images/monitor.gif" width="166" height="122" alt="left monitor"/>
-				<img id="youTubeLogo" src="images/youTubeLogo.gif" width="36" height="36" alt="YouTube Logo" onclick="loadContent(this)" />
-				<img id="twitchLogo" src="images/twitchLogo.gif" width="36" height="36" alt="Twitch Logo" onclick="loadContent(this)" />
-				<img id="githubLogo" src="images/githubLogo.gif" width="36" height="36" alt="GitHub Logo" onclick="loadContent(this)" />
-				<img id="itchLogo" src="images/itchLogo.gif" width="36" height="36" alt="itch.io Logo" onclick="loadContent(this)" />
-				<img id="mastodon" src="images/mastodon.gif" width="36" height="36" alt="mastodon Logo" onclick="loadContent(this)" />
-				<img id="kofiLogo" src="images/kofi.gif" width="36" height="36" alt="Ko-fi Logo" onclick="loadContent(this)" />
-				<img id="cintiq" src="images/cintiq.gif" width="150" height="98" alt="cintiq" onclick="loadContent(this)" />
+				<img id="desk" src="images/desk.gif" width="852" height="436" alt="desk"/>
+				<div id="monitorcontainer">
+					<img id="leftMonitor" src="images/monitor.gif" width="332" height="244" alt="left monitor"/>
+					<img id="youTubeLogo" src="images/youTubeLogo.gif" width="72" height="72" alt="YouTube Logo" onclick="loadContent(this)" />
+					<img id="twitchLogo" src="images/twitchLogo.gif" width="72" height="72" alt="Twitch Logo" onclick="loadContent(this)" />
+					<img id="githubLogo" src="images/githubLogo.gif" width="72" height="72" alt="GitHub Logo" onclick="loadContent(this)" />
+					<img id="itchLogo" src="images/itchLogo.gif" width="72" height="72" alt="itch.io Logo" onclick="loadContent(this)" />
+					<img id="soundcloud" src="images/soundcloud.gif" width="72" height="72" alt="SoundCloud Logo" onclick="loadContent(this)" />
+					<img id="kofiLogo" src="images/kofi.gif" width="72" height="72" alt="Ko-fi Logo" onclick="loadContent(this)" />
+				</div>
+				<img id="cintiq" src="images/cintiq.gif" width="300" height="196" alt="cintiq" onclick="loadContent(this)" />
+				<img id="phone" src="images/phone.gif" width="128" height="88" alt="cintiq" onclick="loadContent(this)" />
+				<img id="legoart" src="images/legoart.gif" width="108" height="44" alt="lego art" onclick="loadContent(this)" />
 			</div>
 			<!-- <div id="tablecontainer">
 				<img id="table" src="images/table.gif" width="289" height="120" alt="coffee table" onclick="loadContent(this)" />
@@ -100,7 +71,7 @@
 						new Twitch.Embed("twitch-embed", {
 						channel: "matchajoejoe",
 						// Only needed if this page is going to be embedded on other websites
-						parent: ["matchajoejoe.github.io"]
+						parent: ["matchajoejoe.games"]
 						});
 					</script>
 				</div>
@@ -117,19 +88,19 @@
 
 		</div>
 		<div id="JoeContainer" class="hidden">
+			<span id="bubbleBox" class="pixelborder left hidden"></span>
 			<img id="JoeBody" src="images/Joe8Bit.gif" alt="" />
 			<img class="hidden" id="JoeTshirt" src="images/Joe8Bit_T1.gif" alt="" onclick="changeShirts();" />
 			<img class="" id="JoeEyes" src="images/Joe8Bit_eyes_forward.gif" alt="" />
 			<img class="hidden" id="JoeMouth" src="images/Joe8Bit_talking.gif" alt="" />
 			<!--<img class="" id="JoeMask" src="images/Joe8Bit_mask.gif" alt="" />-->
-			<span id="bubbleBox" class="left hidden"></span>
 		</div>
 		<div id="backgroundLoading" class="hidden">
 			<img src="images/Joe8Bit.gif" alt="" />
-			<img src="images/Joe8Bit_T1.gif" width="64" height="128" alt="" />
-			<img src="images/Joe8Bit_T2.gif" width="64" height="128" alt="" />
-			<img src="images/Joe8Bit_T3.gif" width="64" height="128" alt="" />
-			<img src="images/Joe8Bit_T4.gif" width="64" height="128" alt="" />
+			<img src="images/Joe8Bit_T1.gif" alt="" />
+			<img src="images/Joe8Bit_T2.gif" alt="" />
+			<img src="images/Joe8Bit_T3.gif" alt="" />
+			<img src="images/Joe8Bit_T4.gif" alt="" />
 		</div>
 	</main>
 	<a rel="me" href="https://mastodon.art/@matchajoejoe">&#160;</a>

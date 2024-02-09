@@ -3,13 +3,15 @@
   src: url("../fonts/JoeHand-Regular.woff");
 }
 body {
-  font-family: "JoeHand", sans-serif;
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 30px;
+  line-height: 35px;
+  overflow: hidden;
 }
 p {
   margin: 0;
@@ -17,6 +19,46 @@ p {
 .whiteBG {
   background-color: white;
   overflow: auto;
+}
+.pixelborder {
+  clip-path: polygon(
+    0px calc(100% - 20px),
+    4px calc(100% - 20px),
+    4px calc(100% - 12px),
+    8px calc(100% - 12px),
+    8px calc(100% - 8px),
+    12px calc(100% - 8px),
+    12px calc(100% - 4px),
+    20px calc(100% - 4px),
+    20px 100%,
+    calc(100% - 20px) 100%,
+    calc(100% - 20px) calc(100% - 4px),
+    calc(100% - 12px) calc(100% - 4px),
+    calc(100% - 12px) calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 12px),
+    calc(100% - 4px) calc(100% - 12px),
+    calc(100% - 4px) calc(100% - 20px),
+    100% calc(100% - 20px),
+    100% 20px,
+    calc(100% - 4px) 20px,
+    calc(100% - 4px) 12px,
+    calc(100% - 8px) 12px,
+    calc(100% - 8px) 8px,
+    calc(100% - 12px) 8px,
+    calc(100% - 12px) 4px,
+    calc(100% - 20px) 4px,
+    calc(100% - 20px) 0px,
+    20px 0px,
+    20px 4px,
+    12px 4px,
+    12px 8px,
+    8px 8px,
+    8px 12px,
+    4px 12px,
+    4px 20px,
+    0px 20px
+  );
 }
 a, a>img {
   cursor: hand;
@@ -297,7 +339,7 @@ button:active{
   background-image: url("../images/brick.png");
 }
 #fence {
-  height: 256px;
+  height: 512px;
   width: 100%;
   background-color: maroon;
   position: absolute;
@@ -504,35 +546,22 @@ button:active{
 #JoeContainer {
   z-index: 107;
   position: absolute;
-  bottom: 0;
+  left: -25px;
+  bottom: -230px;
 }
 #bubbleBox {
   display: inline-block;
   position: absolute;
-  bottom: 266px;
+  left: 25px;
+  bottom: 540px;
   width: 15em;
   padding: 15px;
-  border-radius: 25px;
-  text-align: center;
-  border: medium DarkSlateGray solid;
+  border: 15px solid #363636;
+  text-align: justify;
   background-color: white;
   z-index: 110;
   overflow: auto;
-}
-#gregsbubbleBox {
-  display: inline-block;
-  position: absolute;
-  bottom: 265px;
-  right: 0;
-  width: 15em;
-  padding: 15px;
-  border-radius: 25px;
-  text-align: center;
-  border: medium DarkSlateGray solid;
-  background-color: white;
-  z-index: 110;
-  overflow: auto;
-}
+  }
 @-webkit-keyframes type {
   from {
     width: 0%;
@@ -577,50 +606,43 @@ button:active{
 .bubbleright {
   right: -138px;
 }
-#greg {
-  height: 256px;
-  position: absolute;
-  bottom: -128px;
-  right: 64;
-  z-index: 108;
-}
 #JoeBody {
-  height: 256px;
+  height: 512px;
   position: absolute;
   bottom: 0;
   left: 50px;
   z-index: 108;
 }
 #JoeMouth {
-  height: 256px;
+  height: 512px;
   position: absolute;
   bottom: 0;
   left: 50px;
   z-index: 109;
 }
 #JoeMask {
-  height: 256px;
+  height: 512px;
   position: absolute;
   bottom: 0;
   left: 50px;
   z-index: 109;
 }
 #JoeEyes {
-  height: 256px;
+  height: 512px;
   position: absolute;
   bottom: 0;
   left: 50px;
   z-index: 109;
 }
 #JoeTshirt {
-  height: 256px;
+  height: 512px;
   position: absolute;
   bottom: 0;
   left: 50px;
   z-index: 110;
 }
 #earphones {
-  height: 256px;
+  height: 512px;
   position: absolute;
   bottom: 0;
   left: 50px;
@@ -634,8 +656,8 @@ button:active{
 }
 #legoart {
   position: absolute;
-  bottom: 164px;
-  right: 80px;
+  bottom: 436px;
+  right: 28px;
   z-index: 108;
   cursor: hand;
 }
@@ -654,8 +676,8 @@ button:active{
 }
 #deskcontainer {
   position: absolute;
-  bottom: 70px;
-  left: 40%;
+  bottom: -170px;
+  right: 0;
   z-index: 107;
 }
 #desk {
@@ -664,58 +686,63 @@ button:active{
   bottom: 0;
   z-index: 107;
 }
-#leftMonitor {
+#monitorcontainer {
   position: absolute;
-  left: 5px;
-  bottom: 116px;
+  left: 64px;
+  bottom: 236px;
+}
+#leftMonitor{
+  position: absolute;
+  left: 0;
+  bottom: 0;
   z-index: 107;
 }
 #youTubeLogo {
   position: absolute;
-  left: 24px;
-	bottom: 188px;
+  left: 22px;
+	bottom: 150px;
   z-index: 108;
   cursor: hand;
 }
 #twitchLogo {
   position: absolute;
-  left: 69px;
-  bottom: 188px;
+  left: 132px;
+  bottom: 150px;
   z-index: 108;
   cursor: hand;
 }
 #githubLogo {
   position: absolute;
-  left: 114px;
-	bottom: 188px;
+  left: 240px;
+	bottom: 150px;
   z-index: 108;
   cursor: hand;
 }
 #itchLogo {
   position: absolute;
-	left: 24px;
-  bottom: 152px;
+	left: 22px;
+  bottom: 72px;
   z-index: 108;
   cursor: hand;
 }
-#mastodon {
+#soundcloud {
   position: absolute;
-	left: 69px;
-  bottom: 152px;
+	left: 132px;
+  bottom: 72px;
   z-index: 108;
   cursor: hand;
 }
 #kofiLogo {
   position: absolute;
-  left: 114px;
-	bottom: 152px;
+  left: 240px;
+	bottom: 72px;
   z-index: 108;
   cursor: hand;
 }
 #cintiq {
   position: absolute;
-  left: 190px;
-  bottom: 116px;
+  left: 400px;
+  bottom: 238px;
   z-index: 107;
   cursor: hand;
 }
@@ -796,14 +823,14 @@ select {
 }
 #content, #audioContent {
   text-align: center;
-  margin: auto;
+  margin:auto;
   position: absolute;
-  top: 20px;
-  left: 20px;
-  right: 20px;
-  bottom: 400px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 325;
   z-index: 111;
-  background-color: rgba(24, 24, 24, 1);
+  background-color: #363636;
   color: white;
   max-width: 1200px;
   overflow: hidden;}
@@ -1224,34 +1251,29 @@ div.videoWrapper iframe {
       left: 0;
     }
   }
-  #deskcontainer {
-    left: 25%;
-  }
   #bubbleBox {
     transform: scale(1.333);
     transform-origin: 0% 100%;
   }
-  #gregsbubbleBox {
-    transform: scale(1.333);
-    transform-origin: 100% 100%;
-  }
+
   #content, #audioContent {
     bottom: 300px
   }
-  #joesHouseDoorFrame, #deskcontainer, #JoeContainer, #leftBuilding, #joesHouseWindowFrame {
+  #JoeContainer {
     transform: scale(.75);
-    transform-origin: 0% 100%;
+    transform-origin: 100% 0%;
+    bottom: -160px;
+  }
+  #deskcontainer {
+    transform: scale(.75);
+    transform-origin: 100% 60%;
   }
   #fence {
     transform: scale(.75);
     transform-origin: 50% 100%;
   }
-  #artcontaner, #tablecontainer, #rightBuilding {
-    transform: scale(.75);
-    transform-origin: 100% 100%;
-  }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
   @-moz-keyframes walkIn {
     0% {
       -moz-transform: scale(.5, .5);
@@ -1273,24 +1295,11 @@ div.videoWrapper iframe {
       left: 0;
     }
   }
-  #deskcontainer {
-    left: 15%;
-  }
-  #artcontaner {
-    right: 0;
-  }
-  #tablecontainer {
-    left: 30%;
-  }
   #bubbleBox {
     transform: scale(2);
     transform-origin: 0% 100%;
-    width: 12.2em;
-    left:20px;
-  }
-  #gregsbubbleBox {
-    transform: scale(2);
-    transform-origin: 100% 100%;
+    width: 55vw;
+    left: 58px;
   }
   #content, #audioContent {
     top: 0;
@@ -1318,19 +1327,17 @@ div.videoWrapper iframe {
   }
   #JoeContainer{
     transform: scale(.65);
-    transform-origin: 0% 100%;
-    left: -18px;
+    transform-origin: 50% 100%;
+    left: -43px;
+    bottom: -140;
   }
   #deskcontainer {
     transform: scale(.65);
-    transform-origin: 0% 100%;
-    left: 0;
-    bottom: 60px;
+    transform-origin: 100% 69%;
+    right:-15;
   }
-  #artcontaner {
-    transform: scale(.65);
-    transform-origin: 100% 100%;
-    right: -20px;
-    bottom: 68px;
+  #cintiq {
+    left: 455px;
+    bottom: 239px;
   }
 }

@@ -7,7 +7,7 @@ body:after {
 }
 h1, h2, h3, h4, h5, h6, .button {
 color: #636363;
-font-family: Futura, "Gill Sans", sans-serif;
+font-family: "Pixelify Sans", sans-serif;
 }
 h3{
 	color: #636363;
@@ -85,16 +85,14 @@ li.text {
 	text-indent: -1.25rem;
 }
 li.text::before {
-	content: "✹ ";
-	font-size: .8em;
+	content: "▪ ";
 }
 li.indent {
 	padding-left: 2.2rem;
 	text-indent: -1.1rem;
 }
 li.indent::before {
-	content: "✹ ";
-	font-size: .7em;
+	content: "▪ ";
 }
 .text {
 	color: #595959;
