@@ -250,14 +250,17 @@ button:active{
 #JoeContainer {
   z-index: 107;
   position: absolute;
-  left: -25px;
-  bottom: -210px;
+  left: 0;
+  bottom: 0;
+  width: 256px;
+  height: 300px;
+  overflow: hidden;
 }
 #bubbleBox {
   display: inline-block;
   position: absolute;
-  left: 25px;
-  bottom: 540px;
+  left: 0;
+  bottom: 320px;
   width: 15em;
   padding: 15px;
   border: 15px solid #383838;
@@ -313,50 +316,37 @@ button:active{
 #JoeBody {
   height: 512px;
   position: absolute;
-  bottom: 0;
-  left: 50px;
+  bottom: -210px;
+  left: 0;
   z-index: 108;
 }
 #JoeMouth {
   height: 512px;
   position: absolute;
-  bottom: 0;
-  left: 50px;
+  bottom: -210px;
+  left: 0;
   z-index: 109;
 }
 #JoeMask {
   height: 512px;
   position: absolute;
-  bottom: 0;
-  left: 50px;
+  bottom: -210px;
+  left: 0;
   z-index: 109;
 }
 #JoeEyes {
   height: 512px;
   position: absolute;
-  bottom: 0;
-  left: 50px;
+  bottom: -210px;
+  left: 0;
   z-index: 109;
 }
 #JoeTshirt {
   height: 512px;
   position: absolute;
-  bottom: 0;
-  left: 50px;
+  bottom: -210px;
+  left: 0;
   z-index: 110;
-}
-#earphones {
-  height: 512px;
-  position: absolute;
-  bottom: 0;
-  left: 50px;
-  z-index: 111;
-}
-#artcontaner {
-  position: absolute;
-  bottom: 78px;
-  right: 10px;
-  z-index: 104;
 }
 #legoart {
   position: absolute;
@@ -405,7 +395,7 @@ button:active{
   position: absolute;
   left: 22px;
 	bottom: 150px;
-  z-index: 108;
+  z-index: 111;
   cursor: hand;
 }
 #twitchLogo {
@@ -426,7 +416,7 @@ button:active{
   position: absolute;
 	left: 22px;
   bottom: 72px;
-  z-index: 108;
+  z-index: 109;
   cursor: hand;
 }
 #soundcloud {
@@ -581,7 +571,6 @@ iframe.w90 {
   width: 40%;
   height: 100%;
 }
-div.videoWrapper {}
 div.videoWrapper iframe {
   position: absolute;
   top: 2.5%;
@@ -589,9 +578,7 @@ div.videoWrapper iframe {
   width: 95%;
   height: 95%;
 }
-#backgroundMusic {
-  margin: 5% 0 0 0;
-}
+
 .greyBox {
   text-align: center;
   background-color: rgba(50, 50, 50, 1);
@@ -605,20 +592,6 @@ div.videoWrapper iframe {
   bottom: 2.5%;
   z-index: 111;
   overflow: auto;
-}
-.textcenter {
-  text-align: center;
-  margin: 2em 0 0 0;
-}
-.thegallerycontainer {
-  text-align: center;
-  height: 100%;
-}
-.shirtdetail {
-  height: 70%;
-}
-.shirtdetail>img {
-  height: 100%;
 }
 .thumbShirt {
   height: 48px;
@@ -783,122 +756,6 @@ div.videoWrapper iframe {
     opacity: .5;
   }
 }
-.bounce {
-  transform: scale(1);
-  -webkit-animation-name: bounce;
-  -webkit-animation-duration: .5s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease;
-  -moz-animation-name: bounce;
-  -moz-animation-duration: .5s;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-timing-function: ease;
-  animation-name: bounce;
-  animation-duration: .5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease;
-}
-@-webkit-keyframes bounce {
-  0% {
-    -webkit-transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(.95);
-  }
-  100% {
-    -webkit-transform: scale(1);
-  }
-}
-@-moz-keyframes bounce {
-  0% {
-    -moz-transform: scale(1);
-  }
-  50% {
-    -moz-transform: scale(.95);
-  }
-  100% {
-    -moz-transform: scale(1);
-  }
-}
-@keyframes bounce {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(.95);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-.walkIn {
-  -webkit-animation-name: walkIn;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-timing-function: linear;
-  -moz-animation-name: walkIn;
-  -moz-animation-duration: 2s;
-  -moz-animation-iteration-count: 1;
-  -moz-animation-timing-function: linear;
-  animation-name: walkIn;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-}
-@-moz-keyframes walkIn {
-  0% {
-    -moz-transform: scale(.5, .5);
-    bottom: 64px;
-    left: 0;
-  }
-  100% {}
-}
-@-webkit-keyframes walkIn {
-  0% {
-    -webkit-transform: scale(.5, .5);
-    bottom: 64px;
-    left: 0;
-  }
-  100% {}
-}
-@keyframes walkIn {
-  0% {
-    transform: scale(.5, .5);
-    bottom: 64px;
-    left: 0;
-  }
-  100% {}
-}
-.popUp {
-  -webkit-animation-name: popUp;
-  -webkit-animation-duration: .5s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-timing-function: linear;
-  animation-name: popUp;
-  animation-duration: 1s;
-  animation-iteration-count: .5;
-  animation-timing-function: linear;
-}
-@-webkit-keyframes popUp {
-  0% {
-    -webkit-transform: perspective(1000) rotateX(90deg);
-    -webkit-transform-origin: 100% 100%;
-  }
-  100% {
-    -webkit-transform: perspective(1000) rotateX(0deg);
-    -webkit-transform-origin: 100% 100%;
-  }
-}
-@keyframes popUp {
-  0% {
-    transform: perspective(1000) rotateX(90deg);
-    transform-origin: 100% 100%;
-  }
-  100% {
-    transform: perspective(1000) rotateX(0deg);
-    transform-origin: 100% 100%;
-  }
-}
 .bookThumbnail {
   height: 100px;
   cursor: hand;
@@ -935,83 +792,25 @@ div.videoWrapper iframe {
 }
 
 @media screen and (max-width: 1020px) {
-  @-moz-keyframes walkIn {
-    0% {
-      -moz-transform: scale(.5, .5);
-      bottom: 200px;
-      left: 0;
-    }
-  }
-  @-webkit-keyframes walkIn {
-    0% {
-      -webkit-transform: scale(.5, .5);
-      bottom: 128px;
-      left: 0;
-    }
-  }
-  @keyframes walkIn {
-    0% {
-      transform: scale(.5, .5);
-      bottom: 128px;
-      left: 0;
-    }
-  }
-  #bubbleBox {
-    transform: scale(1.333);
-    transform-origin: 0% 100%;
-  }
-
-  #content, #audioContent {
-    bottom: 300px
+  #content, #bubbleBox {
+    bottom: 240px;
   }
   #JoeContainer {
     transform: scale(.75);
-    transform-origin: 100% 0%;
-    bottom: -160px;
+    transform-origin: 0% 100%;
   }
   #deskcontainer {
     transform: scale(.75);
     transform-origin: 100% 60%;
   }
-  #fence {
-    transform: scale(.75);
-    transform-origin: 50% 100%;
-  }
 }
 @media screen and (max-width: 660px) {
-  @-moz-keyframes walkIn {
-    0% {
-      -moz-transform: scale(.5, .5);
-      bottom: 200px;
-      left: 0;
-    }
-  }
-  @-webkit-keyframes walkIn {
-    0% {
-      -webkit-transform: scale(.5, .5);
-      bottom: 200px;
-      left: 0;
-    }
-  }
-  @keyframes walkIn {
-    0% {
-      transform: scale(.5, .5);
-      bottom: 200px;
-      left: 0;
-    }
-  }
-  #bubbleBox {
-    transform: scale(1.8);
-    transform-origin: 0% 100%;
-    width: 55vw;
-    left: 14px;
-    bottom: 574px;
-  }
-  #content, #audioContent {
-    top: 0;
+
+  #content, #bubbleBox {
+    bottom: 232px;
+    width: auto;
     left: 0;
-    right: 0;
-    bottom: 232px
+    right: 0
   }
   iframe.w90 {
     width: 126.6667%;
@@ -1021,9 +820,7 @@ div.videoWrapper iframe {
   }
   #JoeContainer{
     transform: scale(.65);
-    transform-origin: 50% 100%;
-    left: -10px;
-    bottom: -140;
+    transform-origin: 0% 100%;
   }
   #deskcontainer {
     transform: scale(.65);
@@ -1037,5 +834,18 @@ div.videoWrapper iframe {
   #cintiq {
     left: 396px;
     bottom: 152px;
+  }
+}
+@media screen and (max-width: 440px) {
+  #content, #bubbleBox {
+    bottom: 200px;
+  }
+ #deskcontainer {
+    transform: scale(.55);
+    transform-origin: 100% 65%;
+    right:-15;
+  }
+  #JoeContainer{
+    left:calc(100vw - 400px);
   }
 }

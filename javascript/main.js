@@ -33,22 +33,15 @@ function eventWindowLoaded() {
 	currentLocation.className='fadein';
 	changePaint();
 	viewport = document.querySelector("meta[name=viewport]");
-	var windowWidth = window.innerWidth;
-	var windowHeight = window.innerHeight;
 	var JoeContainer = document.getElementById('JoeContainer');
 	var JoeTshirt = document.getElementById('JoeTshirt');
 	JoeContainer.className = 'quickfadein';
 	JoeTshirt.className = '';
- 	var door = document.getElementById('doorOut');
- 	if(window.theLocation ==="Outside"){
- 		door = document.getElementById('doorIn');
- 	}
 	var LoadingBackground = document.getElementById('LoadingBackground');
 	LoadingBackground.className = 'hidden';
 	addBlocker();
 	var theHash = checkHash();
 	if(theHash == "home"){
-		var JoeEyes = document.getElementById('JoeEyes');
 		theTextList = ['Hi, I’m Joe. Welcome to my site!','Take a look around. If you click on something, I’ll tell you about it.'];
 		loopThroughText(theTextList, stopTalking);
 	} else {
@@ -97,7 +90,7 @@ function loadContent(theCaller){
 			loadFromHidden("twitch");
 		},"show twitch");
 	}
-	else if (callerID.lastIndexOf("legoart")===0 || callerID.lastIndexOf("shop")===0){
+	else if (callerID.lastIndexOf("legoart")===0 || callerID.lastIndexOf("portfolio")===0){
 		theText = 'Anything can be art if you care enough...';
 		loopThroughText([theText], function(){
 			stopTalking();

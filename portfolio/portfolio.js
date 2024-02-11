@@ -88,11 +88,11 @@ function displayGame(gameID){
   gameFrame.style.display = "block";
   gamePoster.style.display = "none";
   if(gameID == "garden"){
-    gameFrame.src="../games/garden-life/index.html";
+    gameFrame.src="../garden-life/index.html";
   } else if(gameID == "bar"){
-    gameFrame.src="../games/the-bar/index.html";
+    gameFrame.src="../the-bar/index.html";
   } else if(gameID == "scrappers"){
-    gameFrame.src="../games/scrappers/index.html";
+    gameFrame.src="../scrappers/index.html";
   }
 }
 
