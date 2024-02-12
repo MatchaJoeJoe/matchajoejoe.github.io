@@ -118,12 +118,12 @@ function loadContent(theCaller){
 			window.open('https://matchajoejoe.itch.io', '_blank');
 		},"open itch.io");
 	}
-	else if (callerID.lastIndexOf("soundcloud")===0){
-		theText = 'I played guitar once...';
+	else if (callerID.lastIndexOf("discord")===0){
+		theText = 'Come hang out and chat...';
 		loopThroughText([theText], function(){
 			stopTalking();
-			window.open('https://soundcloud.com/matchajoejoe', '_blank');
-		},"open soundcloud");
+			window.open('https://discord.com/invite/9qDnaWpcme', '_blank');
+		},"open discord");
 	}
 	else if (callerID.lastIndexOf("kofiLogo")===0){
 		theText = "A cat's gotta eat...";
