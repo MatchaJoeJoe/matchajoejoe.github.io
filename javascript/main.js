@@ -30,12 +30,12 @@ function eventWindowLoaded() {
 		window.theLocation = "joesHouse";
 	}
 	var currentLocation = document.getElementById(window.theLocation);
-	currentLocation.className='fadein';
+	currentLocation.className='';
 	changePaint();
 	viewport = document.querySelector("meta[name=viewport]");
 	var JoeContainer = document.getElementById('JoeContainer');
 	var JoeTshirt = document.getElementById('JoeTshirt');
-	JoeContainer.className = 'quickfadein';
+	JoeContainer.className = '';
 	JoeTshirt.className = '';
 	var LoadingBackground = document.getElementById('LoadingBackground');
 	LoadingBackground.className = 'hidden';

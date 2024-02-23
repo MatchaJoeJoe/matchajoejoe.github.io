@@ -23,8 +23,15 @@
 		<h1 class="hidden">Joe’s Website</h1>
 		<div id="LoadingBackground">
 			<div id="LoadingContainer">
-				<img id="loadingImg" src="images/loading.gif" alt="loading image" />
-				<p id="loadingText" class="options">Loading...</p>
+				<div id="deskcontainer">
+					<img id="desk" src="images/desk.gif" width="852" height="436" alt="desk"/>
+					<div id="monitorcontainer">
+						<img id="leftMonitor" src="images/monitor.gif" width="332" height="244" alt="left monitor"/>
+						<img id="loadingImg" src="images/loading.gif" alt="loading image" />
+						<p id="loadingText" class="options">Loading...</p>
+					</div>
+					<img id="cintiq" src="images/cintiq.gif" width="300" height="196" alt="cintiq" onclick="loadContent(this)" />
+				</div>
 				<noscript>
 					<p id="loadingWarning" class="options">FYI, you need to have Javascript enabled for this website to work properly.</p>
 				</noscript>
@@ -81,7 +88,6 @@
 			<div id="news" class="hidden">
 				<!--<a class="twitter-timeline" data-lang="en" data-dnt="true" data-theme="dark" href="https://twitter.com/MatchaJoeJoe?ref_src=twsrc%5Etfw">Tweets by MatchaJoeJoe</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>-->
 			</div>
-
 		</div>
 		<span id="bubbleBox" class="pixelborder left hidden"></span>
 		<div id="JoeContainer" class="hidden">
