@@ -122,7 +122,7 @@ function loadContent(theCaller){
 		theText = 'Come hang out and chat...';
 		loopThroughText([theText], function(){
 			stopTalking();
-			window.open('https://discord.com/invite/NcEdVkG2M8', '_blank');
+			window.open('https://discord.gg/qTzYGFFSWB', '_blank');
 		},"open discord");
 	}
 	else if (callerID.lastIndexOf("kofiLogo")===0){
